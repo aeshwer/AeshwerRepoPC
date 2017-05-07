@@ -1,0 +1,6 @@
+
+public class HelloWorld {
+
+	String str = "Hello World";
+    system.out.println(str);
+}
