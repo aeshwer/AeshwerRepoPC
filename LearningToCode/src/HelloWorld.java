@@ -1,9 +1,10 @@
 
 public class HelloWorld {
 
-	 String str1 = "Hello World";
+	
+	 StringBuffer str1 = new StringBuffer("Hello World");
     public static void main(String args[])
     {  HelloWorld obj  =new HelloWorld();
-    	System.out.println(obj.str1);
+    	System.out.println(obj.str1 );
     }
 }
