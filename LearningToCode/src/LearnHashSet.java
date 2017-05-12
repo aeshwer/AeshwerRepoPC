@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 
-public class LearnHashSet {
+public class LearnHashSet{
 	
 	public static void main(String args[]){  
 	//Creating HashSet and adding elements  

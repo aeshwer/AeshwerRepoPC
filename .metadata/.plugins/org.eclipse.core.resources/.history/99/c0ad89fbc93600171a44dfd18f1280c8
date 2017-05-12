@@ -1,0 +1,10 @@
+public class TestSimulationDuck {
+
+	
+	public static void main(String[] args) { 
+		
+		Duck modelDuck = new ModelDuck(); 
+		
+	}
+	
+}

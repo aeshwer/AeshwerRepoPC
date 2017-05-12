@@ -1,0 +1,10 @@
+
+public class Squeek implements QuackBehaviour {
+
+	@Override
+	public void performQuack() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

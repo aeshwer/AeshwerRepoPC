@@ -1,0 +1,10 @@
+
+public class ModelDuck extends Duck {
+
+	@Override
+	void display() {
+		System.out.println("I AM A MODEL DUCKKY");
+
+	}
+
+}
