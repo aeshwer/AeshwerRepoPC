@@ -6,4 +6,10 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="FlyBehaviour"/>
+<fullyQualifiedTypeName name="Quack"/>
+<fullyQualifiedTypeName name="NoFly"/>
+<fullyQualifiedTypeName name="ModelDuck"/>
+<fullyQualifiedTypeName name="Duck"/>
+<fullyQualifiedTypeName name="Squeek"/>
 </qualifiedTypeNameHistroy>
