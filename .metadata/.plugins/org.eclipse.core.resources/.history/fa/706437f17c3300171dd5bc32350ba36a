@@ -1,9 +1,0 @@
-
-public class HelloWorld {
-
-	 String str1 = "Hello World";
-    public static void main(str[] arg)
-    {
-    	System.out.println(str1);
-    }
-}

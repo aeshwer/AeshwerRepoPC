@@ -1,0 +1,19 @@
+package hashingTutorials;
+
+
+/*Given a list of tickets, find itinerary in order using the given list.
+ * 
+ * Input:
+"Chennai" -> "Banglore"
+"Bombay" -> "Delhi"
+"Goa"    -> "Chennai"
+"Delhi"  -> "Goa"
+
+Output: 
+Bombay->Delhi, Delhi->Goa, Goa->Chennai, Chennai->Banglore,
+ * 
+ */
+
+public class ItineraryFromTicket {
+
+}

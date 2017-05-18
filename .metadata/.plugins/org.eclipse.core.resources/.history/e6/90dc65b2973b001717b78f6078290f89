@@ -1,0 +1,11 @@
+package hashingTutorials;
+/*Given an array containing only 0s and 1s, find 
+ * the largest subarray which contain equal no of 0s and 1s.
+ *  Expected time complexity is O(n).
+ */
+
+public class LargestSubArrayWithEqual1And0 {
+	public static void main(String[] args) {
+	
+	}
+}

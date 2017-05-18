@@ -1,0 +1,26 @@
+package hashingTutorials;
+
+import java.util.HashMap;
+
+
+/*Given a list of tickets, find itinerary in order using the given list.
+ * Input:
+"Chennai" -> "Banglore"
+"Bombay" -> "Delhi"
+"Goa"    -> "Chennai"
+"Delhi"  -> "Goa"
+Output: 
+Bombay->Delhi, Delhi->Goa, Goa->Chennai, Chennai->Banglore,
+ * 
+ */
+
+public class ItineraryFromTicket {
+	
+	public static void main(String[] args){
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		
+	}
+
+}

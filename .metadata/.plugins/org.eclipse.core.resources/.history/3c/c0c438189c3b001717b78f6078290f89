@@ -1,0 +1,13 @@
+package hashingTutorials;
+
+/*Given an integer n. Print first n elements of Recaman’s sequence.
+ * 
+ */
+
+public class RecamansSequence {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package hashingTutorials;
+
+/*Two pairs (a, b) and (c, d) are said to be symmetric if c is equal to b and a is equal to d.
+ *  For example (10, 20) and (20, 10) are symmetric. Given an array of pairs find all symmetric pairs in it.
+ * It may be assumed that first elements of all pairs are distinct.
+ * 
+ */
+
+public class SymmetricPairsInArray {
+	public static void main(String[] args) {
+	
+}
+
+}
