@@ -1,0 +1,12 @@
+package hashingTutorials;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class ComplexArrayProblem {
+		public static void main(String[] args) throws IOException{
+			
+			BufferedReader read = new BufferedReader(new InputStream(System.in))
+	
+}
+}

@@ -1,0 +1,37 @@
+package hashingTutorials;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+/*Write a C program that, given an array A[] of n numbers and another number x, 
+ * determines whether or not there exist two elements in S whose sum is exactly x. 
+ */
+
+public class SumofArrayEqualToANumber {
+	
+	
+	
+	int findNumberOfPairs(int[] arr)
+	{
+		int n =arr.length;
+		ArrayList< Integer> list = new ArrayList<Integer>();
+		for(Integer i : arr)
+		{
+			list.add(arr[i]);
+		}
+		//Sort the hashmap
+            
+            }
+        }
+        return 0;
+	}
+
+	public static void main(String[] args) {
+		int arr[] = {1, 4, 45, 6, 10, -8};
+		int x = 16; // the given sum ..we can also take this form console
+		SumofArrayEqualToANumber sumofArrayEqualToANumber = new SumofArrayEqualToANumber();
+		int pairs = sumofArrayEqualToANumber.findNumberOfPairs(arr);
+		System.out.println("Total pairs are" + pairs);
+
+	}
+
+}

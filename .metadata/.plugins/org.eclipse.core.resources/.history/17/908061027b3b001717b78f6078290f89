@@ -1,0 +1,7 @@
+package StratergyPattern;
+
+public interface QuackBehaviour {
+	
+	void performQuack();
+
+}

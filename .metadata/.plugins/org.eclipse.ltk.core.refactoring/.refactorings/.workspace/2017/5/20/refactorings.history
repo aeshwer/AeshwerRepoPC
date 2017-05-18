@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SimuDuck_StratergyPattern&apos; to &apos;Design_Patterns&apos;" description="Rename resource &apos;SimuDuck_StratergyPattern&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SimuDuck_StratergyPattern" name="Design_Patterns" stamp="1495078546420" updateReferences="true"/>
+</session>

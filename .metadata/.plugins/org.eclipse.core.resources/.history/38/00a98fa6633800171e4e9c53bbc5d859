@@ -1,0 +1,19 @@
+package hashingTutorials;
+
+/*Given an unsorted array that may contain duplicates. Also given a number k which is smaller than size of array.
+ *  Write a function that returns true if array contains duplicates within k distance.
+ */
+public class DublicateElemenstInArray {
+	static boolean checkDuplicatesWithinK(int arr[], int k)
+    {
+		
+    }
+	
+	public static void main(String[] args){
+		int arr[] = {10, 5, 3, 4, 3, 5, 6};
+        if (checkDuplicatesWithinK(arr, 3))
+           System.out.println("Yes");
+        else
+           System.out.println("No");
+    }
+}
