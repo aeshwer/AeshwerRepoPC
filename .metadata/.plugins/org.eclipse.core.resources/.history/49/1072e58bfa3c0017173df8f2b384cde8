@@ -1,0 +1,15 @@
+package DynamicProgrammingLearn;
+/*Given an array of n integers. The task is to remove or delete minimum number of elements
+ *  from the array so that when the remaining 
+ * elements are placed in the same sequence order form a sorted sequence.
+ * Input : {5, 6, 1, 7, 4} Output : 2
+	Removing 1 and 4 leaves the remaining sequence order as
+	5 6 7 which is a sorted sequence.
+ */
+
+public class ASortingDPPoblem {
+	
+	public static void main(String[] args) {
+	
+}
+}

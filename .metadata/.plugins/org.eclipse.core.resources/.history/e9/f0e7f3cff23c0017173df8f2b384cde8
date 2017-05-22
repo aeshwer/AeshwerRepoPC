@@ -1,0 +1,6 @@
+package observer.Pattern;
+
+public interface IObservable {
+	
+
+}

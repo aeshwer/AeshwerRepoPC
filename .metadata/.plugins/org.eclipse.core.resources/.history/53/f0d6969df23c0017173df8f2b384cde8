@@ -1,0 +1,8 @@
+package observer.Pattern;
+
+public class OserverPatternDemo {
+	
+	public static void main(String[] args) {
+	
+}
+}

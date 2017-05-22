@@ -1,0 +1,13 @@
+package observer.Pattern;
+
+import java.util.Observable;
+import java.util.Observer;
+
+public class BinaryObserver implements Observer {
+
+	@Override
+	public void update(Observable o, Object arg) {
+		BinaryObserver = (BinaryObserver)o;
+	}
+
+}
