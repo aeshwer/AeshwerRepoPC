@@ -1,0 +1,108 @@
+package LinkListProblems;
+
+import LinkListProblems.LinkedListBasic.Node;
+
+public class LinkListInsertionsAndDeletions {
+	
+	Node head;
+	public static class Node
+	{
+		int data;
+		Node next;
+		Node(int data)
+		{
+			this.data =data;
+			this.next = null;
+		}
+		
+	} 
+
+	 /* Inserts a new Node at front of the list. */	
+	void addInFront(int data)
+	{   
+		Node new_Node = new Node(data);
+		//update new node added to point to what ever head was pointing 
+		new_Node.next = head;
+		
+		//Update Head node to the newly added node
+		head = new_Node;
+		
+ 	}
+	
+	
+	void addInEnd(int data)
+	{
+		Node new_Node = new Node(data);
+		
+		if(head == null)
+		{	
+			//Update Head node to the newly added node and new_Node.next by default point to Null which is what we want
+			head = new_Node;
+			return;
+		}
+		
+		Node last = head;
+		while(last.next != null){
+			last = last.next;
+		}
+		// reach the last node by traversal and then point that to the new node
+		last.next = new_Node;
+		
+	}
+	
+	void insertAfter(Node pre_node,int data)
+	{   
+		Node new_Node = new Node(data);
+
+		if(pre_node == null)
+		{
+		     System.out.println("The given previous node cannot be null");
+	         return;
+	    }
+		
+		// this if is not required but for understanding i have added it .. it only saves 1 extra object been created
+		if(pre_node.next == null)
+		{
+		     pre_node.next = new_Node;	
+		     return;
+		}
+		
+		Node temp;
+		temp = pre_node.next;
+		pre_node.next = new_Node;
+		new_Node.next = temp;
+	}
+	
+	void printList()
+	{
+	     Node tnode = head;
+	     while (tnode != null)
+	     {
+	         System.out.print(tnode.data+" ");  // converting to a string
+	         tnode = tnode.next;
+	     }
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		LinkListInsertionsAndDeletions llist = new LinkListInsertionsAndDeletions();
+		
+		llist.addInEnd(6);
+		
+		llist.addInFront(7);
+
+		llist.addInFront(1);
+		
+		llist.addInEnd(4);
+		//Till now  we have  1->7->6->4->NUllist
+		
+		// Insert 8, after 7. So linked list becomes   1->7->8->6->4->NUllist
+		llist.insertAfter(llist.head.next, 8);
+
+	    System.out.println("\nCreated Linked list is: ");
+	    llist.printList();
+		
+	}
+	
+}

@@ -1,0 +1,21 @@
+package LinkListProblems;
+
+public class LinkListIntro {
+	
+    Node head;  // head of list
+ 
+    /* Linked list Node.  This inner class is made static so that
+       main() can access it */
+    static class Node {
+        int data;
+        Node next;
+        // Constructor
+        Node(int data)  
+       { this.data = data;  
+        next=null; } 
+    }
+
+    public static void main(String[] args) {
+	
+	}
+}
