@@ -17,14 +17,10 @@
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="BasicConcept.NameComparator"/>
 <fullyQualifiedTypeName name="BasicConcept.LocationComparator"/>
 <fullyQualifiedTypeName name="BasicConcept.AgeComparator"/>
@@ -38,12 +34,18 @@
 <fullyQualifiedTypeName name="java.util.Observable"/>
 <fullyQualifiedTypeName name="observer.Pattern.Subject"/>
 <fullyQualifiedTypeName name="observer.Pattern.Displays"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.NO_IMPLEMENT"/>
 <fullyQualifiedTypeName name="java.lang.NoClassDefFoundError"/>
 <fullyQualifiedTypeName name="LinkListProblems.LinkListInsertionsAndDeletions.Node"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="javax.xml.crypto.dsig.keyinfo.KeyInfo"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

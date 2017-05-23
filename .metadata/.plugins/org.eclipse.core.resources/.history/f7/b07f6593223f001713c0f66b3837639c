@@ -1,0 +1,21 @@
+package DynamicProgrammingLearn;
+
+public class MaxSizeSubRectangleWithAll1 {
+
+	
+	void printMaxSubRectangle(Integer arr[][],int len)
+	{
+		
+	}
+	
+	public static void main(String[] args) {
+		  Integer M[][] ={{0, 1, 1, 0, 1}, 
+				      	  {1, 1, 0, 1, 0}, 
+		                  {0, 1, 1, 1, 0},
+		                  {1, 1, 1, 1, 0},
+		                  {1, 1, 1, 1, 1},
+		                  {0, 0, 0, 0, 0} };
+		                
+		  printMaxSubRectangle(M,5);
+	}
+}

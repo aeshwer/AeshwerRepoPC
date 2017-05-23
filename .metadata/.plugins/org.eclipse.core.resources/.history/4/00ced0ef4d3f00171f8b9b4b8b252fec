@@ -1,0 +1,5 @@
+package Decorator.Pattern;
+
+public abstract class ShapeDecorator implements Shape{
+
+}

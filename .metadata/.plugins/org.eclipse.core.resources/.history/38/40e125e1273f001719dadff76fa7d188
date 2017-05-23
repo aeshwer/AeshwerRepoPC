@@ -1,0 +1,19 @@
+package DynamicProgrammingLearn;
+
+/*Find the largest rectangular area possible in a given histogram where the largest rectangle can be made of a 
+ * number of contiguous bars. For simplicity, assume that all bars have same width and the width is 1 unit.
+ */
+public class LargestAreaRectangleInHistogram {
+
+	
+	void getMaxArea(Integer[] hist, intlen)
+	{
+		
+	}
+	
+	public static void main(String[] args) {
+		Integer hist[] = {6, 2, 5, 4, 5, 1, 6};
+	    int len = hist.length;
+	    System.out.println("Maximum area is " + getMaxArea(hist, len);
+	}
+}
