@@ -1,6 +1,5 @@
 package LinkListProblems;
 
-import org.omg.CORBA.NO_IMPLEMENT;
 
 import LinkListProblems.LinkedListBasic.Node;
 
@@ -272,10 +271,10 @@ public class LinkListInsertionsAndDeletions {
 	    llist.reverseLinkList();
 	    System.out.println("\nLinked list after Reversal is : ");
 	    llist.printList(llist.head);
-	    
+	/*    
 	    Node result = llist.reverseLinkListByRecursion(llist.head, null);
 	    System.out.println("\nLinked list after Reversal is : ");
-	    llist.printList(result);
+	    llist.printList(result);*/
 	}
 	
 }

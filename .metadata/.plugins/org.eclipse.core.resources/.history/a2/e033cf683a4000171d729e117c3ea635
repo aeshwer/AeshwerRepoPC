@@ -1,0 +1,9 @@
+package StackAndQueues;
+
+public class NextGreaterNumber {
+
+	
+	public static void main(String[] args) {
+		
+	}
+}

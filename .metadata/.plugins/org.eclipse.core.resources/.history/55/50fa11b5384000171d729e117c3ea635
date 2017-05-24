@@ -1,0 +1,26 @@
+package StackAndQueues;
+
+import java.util.Stack;
+
+public class ReverseStringUsingStack {
+
+	 static void reverse(StringBuffer str)
+	 {
+		 Stack s = new Stack();
+		 int len = str.length();
+		 
+		 
+	 }
+	
+	
+	public static void main(String[] args) {
+
+		//create a new string
+        StringBuffer  s = new StringBuffer("GeeksforGeeks");
+        //call reverse method
+        reverse(s);
+        //print the reversed string
+        System.out.println("Reversed string is : " + s);
+	}
+
+}

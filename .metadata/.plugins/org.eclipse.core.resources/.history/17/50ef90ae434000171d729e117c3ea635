@@ -1,0 +1,17 @@
+package StackAndQueues;
+
+public class StockSpanProblem {
+	
+	static void calculateSpan(int[] price, int len)
+	{
+		
+		
+	}
+	
+	public static void main(String[] args) {
+	    int price[] = {10, 4, 5, 90, 120, 80};
+	    int len = price.length;
+	    calculateSpan(price, len);
+	}
+
+}

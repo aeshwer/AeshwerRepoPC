@@ -1,0 +1,36 @@
+package StackAndQueues;
+
+import java.util.Stack;
+
+/*
+ * Given an array, print the Next Greater Element (NGE) for every element. The Next greater Element for an element x is the first greater element 
+ * on the right side of x in array. Elements for which no greater element exist, consider next greater element as -1.
+ * LINK:: http://www.geeksforgeeks.org/?p=8405
+ */
+public class NextGreaterNumber {
+	
+	static void printNGE(Integer[] arr,int len)
+	{
+		Stack<Integer> s = new Stack<Integer>();
+		s.push(arr[0]);
+		int next = 0; // marks the current element
+		
+		 for(int i= 1; i<len; i ++)
+		 {
+			 	next = arr[i];
+			 	if(!s.isEmpty()){
+			 		int temp = s.pop();
+			 		if(next > temp)
+			 		{
+			 			System.err.print(next + " ");
+			 		}
+			 	}
+		 }
+	}
+	
+	public static void main(String[] args) {
+	    Integer arr[]= {11, 13, 21, 3};
+	    int len = arr.length;
+	    printNGE(arr, len);
+	}
+}

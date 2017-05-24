@@ -1,0 +1,33 @@
+package StackAndQueues;
+
+public class StackImplementationUsingLinkList {
+
+	Node head;
+	class Node{
+		
+		int data;
+		Node next;
+		Node(int data)
+		{
+			this.data = data;
+  			this.next = null;
+		}
+	}
+	
+	boolean isEmpty()
+	{
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		StackImplementationUsingLinkList s = new StackImplementationUsingLinkList();
+		
+		s.push(10);
+        s.push(20);
+        s.push(30);
+        System.out.println(s.pop() + " Popped from stack");
+
+	}
+
+}

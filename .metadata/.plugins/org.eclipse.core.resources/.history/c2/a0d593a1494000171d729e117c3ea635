@@ -1,0 +1,28 @@
+package BinaryTrees;
+
+import LinkListProblems.LinkedListBasic.Node;
+
+public class BinaryTreeBasic {
+
+	Node root; 	// Root of Binary Tree
+	class Node
+	{
+	    int key;
+	    Node left, right;
+	    public Node(int key)
+	    {
+	        this.key = key;
+	        left = right = null;
+	    }
+	
+	}
+	
+	public static void main(String[] args) {
+		
+		BinaryTreeBasic tree = new BinaryTreeBasic();
+		tree.root = new Node(10);
+
+
+	}
+
+}

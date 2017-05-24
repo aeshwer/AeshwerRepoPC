@@ -1,0 +1,32 @@
+package StackAndQueues;
+
+import java.util.Stack;
+
+public class StockSpanProblem {
+	
+	static void calculateSpan(int[] price, int len, int[] span)
+	{	
+		Stack<Integer> s = new Stack<Integer>();
+		s.push(price[0]);
+		int next = 0, temp=0; // marks the current element
+		
+		for(int i= 1; i<len; i ++)
+		 {
+			next = price[i];
+		 	if(s.isEmpty() == false)
+		 	{
+			
+			
+			
+		 }
+		
+		
+	}
+	
+	public static void main(String[] args) {
+	    int price[] = {10, 4, 5, 90, 120, 80};
+	    int len = price.length;
+	    calculateSpan(price, len,;
+	}
+
+}

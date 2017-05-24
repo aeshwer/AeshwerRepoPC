@@ -1,0 +1,52 @@
+package LinkListProblems;
+
+public class DetectLoopInILinkList {
+	
+	Node head;
+	class Node
+	{
+		int data;
+		Node next;
+		Node(int data)
+		{
+			this.data= data;
+			next =null;
+		}
+		
+	}
+	
+	/* Inserts a new Node at front of the list. */
+    public void push(int new_data)
+    {
+    	Node new_node = new Node(new_data);
+    	if(head==null)
+    	{
+    		head= new_node;
+    		return;
+    	}
+    	
+    	new_node.next = head;
+    	head = new_node;
+    }
+	
+    public void print()
+    {
+    	Node tnode= head;
+    	while(tnode!=next)
+    	{
+    		System.out.println(tnode.data + " ");
+    		tnode=tnode.next;
+    	}
+    }
+	public static void main(String[] args) {
+		
+		DetectLoopInILinkList llist = new DetectLoopInILinkList();
+		
+        llist.push(20);
+        llist.push(4);
+        llist.push(15);
+        llist.push(10);
+         
+	}
+		
+}
