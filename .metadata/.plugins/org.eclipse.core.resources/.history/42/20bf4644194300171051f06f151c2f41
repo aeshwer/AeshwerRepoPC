@@ -1,0 +1,8 @@
+package BinaryTrees;
+/*
+ * Use Postorder for this, because before deleting the parent node we should delete its children nodes first
+ */
+
+public class DeleteATree {
+
+}

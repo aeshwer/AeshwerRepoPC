@@ -1,0 +1,36 @@
+package BinaryTrees;
+
+import BinaryTrees.DeleteATree.Node;
+/*
+ * http://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/
+ */
+public class MirrorImageTree {
+	
+	Node root;
+	public static class Node
+	{
+		int key;
+		Node left;
+		Node right;
+		Node(int key){
+			this.key = key;
+			left = right = null; 
+		}
+	}
+	void MirrorImageTree(Node leftRoot,Node rightRoot){
+		
+	}
+
+	public static void main(String[] args) {
+
+		MirrorImageTree tree = new MirrorImageTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        
+        tree.MirrorImageTree(tree.root.left,tree.root.right);
+	}
+
+}

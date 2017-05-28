@@ -1,0 +1,42 @@
+package BinaryTrees;
+
+/*
+ * Using Morris Traversal, we can traverse the tree without using stack and recursion. The idea of Morris Traversal is based on Threaded Binary Tree. 
+ * In this traversal, we first create links to In-order successor and print the data using these links, and finally revert the changes to restore original tree.
+ */
+import BinaryTrees.HeightOfBinaryTreeIterative.Node;
+public class InorderTraversalWithoutStackOrRecursion {
+	
+	Node root;
+	static class Node
+	{
+		Node left;
+		Node right;
+		int key;
+		Node(int key)
+		{
+			this.left= left;
+			this.right= right;
+			this.key =key;
+		}
+	}
+	
+	void MorrisTraversal(){
+		//base case
+		 if (root == null)
+	        {return;}
+	       Node current = root;
+		
+	}
+	public static void main(String[] args) {
+		
+		InorderTraversalWithoutStackOrRecursion tree = new InorderTraversalWithoutStackOrRecursion();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        
+        tree.MorrisTraversal();
+	}
+}

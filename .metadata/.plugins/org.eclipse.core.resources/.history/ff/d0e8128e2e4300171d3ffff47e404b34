@@ -1,0 +1,44 @@
+package BinaryTrees;
+
+import BinaryTrees.IdenticalTrees.Node;
+
+public class CountLeafNodes {
+	Node root;
+	static class Node
+	{
+		Node left;
+		Node right;
+		int key;
+		Node(int key)
+		{
+			this.left= left;
+			this.right= right;
+			this.key = key;
+		}
+	}
+
+	int CountLeaf(Node root,int leaf){
+
+		if(root == null){return 0;}
+		
+		if(root.left == null && root.right== null){leaf++;}
+		CountLeaf(root.left,leaf);
+		CountLeaf(root.right,leaf);
+		return leaf;
+	}
+	
+	public static void main(String[] args) {
+
+		CountLeafNodes tree = new CountLeafNodes();
+		//first tree
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        System.out.println("The Number of leafs are :: " + tree.CountLeaf(tree.root,0));
+        
+        
+	}
+
+}

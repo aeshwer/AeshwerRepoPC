@@ -1,5 +1,0 @@
-package observer.Pattern;
-
-public class BinaryObserver {
-
-}

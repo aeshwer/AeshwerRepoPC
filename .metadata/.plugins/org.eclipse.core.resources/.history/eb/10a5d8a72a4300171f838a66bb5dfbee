@@ -1,0 +1,53 @@
+package BinaryTrees;
+/*
+ * Given a binary tree, print out all of its root-to-leaf paths one per line.
+ */
+import BinaryTrees.MirrorImageTree.Node;
+
+public class RootToLeafPath {
+	
+	Node root;
+	public static class Node
+	{
+		int key;
+		Node left;
+		Node right;
+		Node(int key){
+			this.key = key;
+			left = right = null; 
+		}
+	}
+	
+	void rootToLeafPaths(Node root,int path[],int pathLen)
+	{
+		if(root == null ){return;}
+		
+		if(root.left != null){
+			System.out.print(root.key + " ");
+			rootToLeafPaths(root.left);
+			
+			
+		}
+	}
+	
+	 /* Given a binary tree, print out all of its root-to-leaf
+    paths, one per line. Uses a recursive helper to do the work.*/
+	void printPaths(Node node) 
+	{
+		int path[] = new int[1000];
+		rootToLeafPaths(node, path, 0);
+	}
+	
+	public static void main(String[] args) {
+		
+		RootToLeafPath tree = new RootToLeafPath();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        
+        /* Print all root-to-leaf paths of the input tree */
+        tree.printPaths(tree.root);
+	}
+}

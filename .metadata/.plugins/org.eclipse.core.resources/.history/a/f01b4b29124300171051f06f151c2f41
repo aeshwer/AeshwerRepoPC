@@ -1,0 +1,23 @@
+package BinaryTrees;
+
+import BinaryTrees.HeightOfBinaryTreeIterative.Node;
+
+public class IdenticalTrees {
+	Node root;
+	static class Node
+	{
+		Node left;
+		Node right;
+		int key;
+		Node(int key)
+		{
+			this.left= left;
+			this.right= right;
+			this.key =key;
+		}
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

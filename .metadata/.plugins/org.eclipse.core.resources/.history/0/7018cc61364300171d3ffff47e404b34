@@ -1,0 +1,38 @@
+package BinaryTrees;
+
+import BinaryTrees.ChildrenSumProperty.Node;
+
+public class LevelOrderInspiral {
+
+	Node root;
+	public static class Node
+	{
+	    int key;
+	    Node left, right;
+	 
+	    public Node(int key)
+	    {
+	        this.key = key;
+	        left = right = null;
+	    }
+	}
+	
+	void printSpiral(Node root){
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		LevelOrderInspiral tree = new LevelOrderInspiral();
+	        tree.root = new Node(1);
+	        tree.root.left = new Node(2);
+	        tree.root.right = new Node(3);
+	        tree.root.left.left = new Node(7);
+	        tree.root.left.right = new Node(6);
+	        tree.root.right.left = new Node(5);
+	        tree.root.right.right = new Node(4);
+	        System.out.println("Spiral order traversal of Binary Tree is ");
+	        tree.printSpiral(tree.root);
+	}
+
+}

@@ -1,0 +1,46 @@
+package BinaryTrees;
+
+import BinaryTrees.LevelOrderTransversal.Node;
+/*
+ * For every node, data value must be equal to sum of data values in left and right children. 
+ * Consider data value as 0 for NULL children. Below tree is an example
+ */
+
+public class ChildrenSumProperty {
+	
+	Node root;
+	public static class Node
+	{
+	    int key;
+	    Node left, right;
+	 
+	    public Node(int key)
+	    {
+	        this.key = key;
+	        left = right = null;
+	    }
+	}
+	
+	void isSumProperty()
+	{
+		
+		
+	}
+	
+	public static void main(String[] args) {
+
+		ChildrenSumProperty tree = new ChildrenSumProperty();
+		tree.root = new Node(10);
+        tree.root.left = new Node(8);
+        tree.root.right = new Node(2);
+        tree.root.left.left = new Node(3);
+        tree.root.left.right = new Node(5);
+        tree.root.right.right = new Node(2);
+        
+        
+        
+        tree.isSumProperty();
+        
+	}
+
+}

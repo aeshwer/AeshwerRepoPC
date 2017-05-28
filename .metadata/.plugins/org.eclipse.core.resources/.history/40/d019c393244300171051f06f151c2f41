@@ -1,0 +1,39 @@
+package BinaryTrees;
+
+import BinaryTrees.MirrorImageTree.Node;
+
+public class RootToLeafPath {
+	Node root;
+	public static class Node
+	{
+		int key;
+		Node left;
+		Node right;
+		Node(int key){
+			this.key = key;
+			left = right = null; 
+		}
+	}
+	
+	void rootToLeafPaths(Node root)
+	{
+		if(root == null ){return;}
+		
+		if(root.left != null){
+			System.out.print(root.key);
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		RootToLeafPath tree = new RootToLeafPath();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+		
+        tree.rootToLeafPaths(tree.root);
+	}
+}

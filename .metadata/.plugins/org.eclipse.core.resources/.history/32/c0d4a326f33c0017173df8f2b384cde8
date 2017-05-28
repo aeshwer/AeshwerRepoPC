@@ -1,9 +1,0 @@
-package observer.Pattern;
-
-import java.io.InvalidObjectException;
-import java.util.Observable;
-
-public class Subject extends Observable{
-
-	
-}

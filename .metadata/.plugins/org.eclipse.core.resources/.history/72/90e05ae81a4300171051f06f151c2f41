@@ -1,0 +1,28 @@
+package BinaryTrees;
+
+import BinaryTrees.DeleteATree.Node;
+
+public class BinaryTreeToMirroTree {
+
+	Node root;
+	Class Node{
+		int key;
+		Node left;
+		Node right;
+		Node(int key){
+			this.key = key
+			this.left = null; 
+			this.right =  null;
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		BinaryTreeToMirroTree tree = new BinaryTreeToMirroTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+	}
+}

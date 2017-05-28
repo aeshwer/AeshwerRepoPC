@@ -1,6 +1,0 @@
-package StratergyPattern;
-
-public interface FlyBehaviour {
-
-	void performFly();
-}

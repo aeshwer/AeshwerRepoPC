@@ -1,0 +1,51 @@
+package BinaryTrees;
+
+import BinaryTrees.HeightOfBinaryTreeIterative.Node;
+
+public class IdenticalTrees {
+	Node root1,root2;
+	static class Node
+	{
+		Node left;
+		Node right;
+		int key;
+		Node(int key)
+		{
+			this.left= left;
+			this.right= right;
+			this.key =key;
+		}
+	}
+	
+	boolean checkIdentical()
+	{
+		 /*1. both empty */
+	    if (root1 == null && root2 == null)
+	        return true;
+	 
+		
+	}
+	
+	public static void main(String[] args) {
+		
+
+		IdenticalTrees tree = new IdenticalTrees();
+		//first tree
+        tree.root1 = new Node(1);
+        tree.root1.left = new Node(2);
+        tree.root1.right = new Node(3);
+        tree.root1.left.left = new Node(4);
+        tree.root1.left.right = new Node(5);
+        
+        //second tree
+        tree.root2 = new Node(1);
+        tree.root2.left = new Node(2);
+        tree.root2.right = new Node(3);
+        tree.root2.left.left = new Node(4);
+        tree.root2.left.right = new Node(5);
+        
+        System.out.println("Trees are identical :: "+ tree.checkIdentical);
+		
+	}
+
+}
