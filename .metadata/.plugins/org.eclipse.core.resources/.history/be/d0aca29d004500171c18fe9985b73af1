@@ -1,0 +1,22 @@
+package ArraysProblems;
+/*
+ * Given an array A[] consisting 0s, 1s and 2s, write a function that sorts A[]. The functions should put all 0s first, then all 1s and all 2s in last.
+ */
+
+public class Sort012Array {
+	
+	void sort(int[] arr, int len)
+	{
+		
+	}
+	
+	 public static void main(String[] args) {
+		int arr[] = {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1};
+		Sort012Array obj = new Sort012Array();
+		obj.sort(arr,arr.length);
+		
+		 System.out.print("Array after sorting is ");
+	        for (int i  = 0; i < arr.length; i++)
+	            System.out.print(arr[i] + " ");
+	}
+}

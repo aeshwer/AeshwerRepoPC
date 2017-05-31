@@ -1,0 +1,17 @@
+import java.util.HashSet;
+
+/*Print common characters of two Strings in alphabetical order
+ * http://www.geeksforgeeks.org/print-common-characters-two-strings-alphabetical-order-2/
+ */
+public class CommonCharOfTwoStrings {
+
+	public static void main(String[] args) {
+		 String str1 = "geeks";
+		 String str2 = "forgeeks";
+		 CommonCharOfTwoStrings test = new CommonCharOfTwoStrings();
+	        HashSet<String> set = new HashSet<String>();
+	        permutation.permute(str, 0, n-1,set);
+		
+	}
+	
+}

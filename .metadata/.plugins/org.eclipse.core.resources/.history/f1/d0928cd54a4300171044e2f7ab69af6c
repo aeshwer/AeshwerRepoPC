@@ -1,0 +1,15 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
+public class UniqueCharacters {
+
+	public static void main(String[] args) {
+
+		BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter a string");
+		str
+		
+	}
+
+}

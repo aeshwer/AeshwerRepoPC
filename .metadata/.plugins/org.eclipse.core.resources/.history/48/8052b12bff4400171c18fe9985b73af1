@@ -1,0 +1,19 @@
+package ArraysProblems;
+
+import hashingTutorials.SumofArrayEqualToANumber;
+
+/*
+ * You are given an array of 0s and 1s in random order. Segregate 0s on left side and 1s on right side of the array. Traverse array only once.
+ */
+public class SeggreagetZerosAndOnes {
+	
+
+	public static void main(String[] args) {
+		Integer arr[] = {1, 4, 10, 6, 45, -8};
+		int x = 16; // the given sum ..we can also take this form console
+		SeggreagetZerosAndOnes test = new SeggreagetZerosAndOnes();
+		int pairs = sumofArrayEqualToANumber.findNumberOfPairs(arr,x);
+		System.out.println("Total pairs are" + " " +   pairs);
+	}
+
+}

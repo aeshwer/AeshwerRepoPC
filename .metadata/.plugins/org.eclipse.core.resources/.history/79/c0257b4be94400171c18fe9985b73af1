@@ -1,0 +1,19 @@
+import java.util.HashSet;
+
+/*Print common characters of two Strings in alphabetical order
+ * http://www.geeksforgeeks.org/print-common-characters-two-strings-alphabetical-order-2/
+ */
+public class CommonCharOfTwoStrings {
+	
+	void commonChar(String str1,String str2){
+		
+	}
+
+	public static void main(String[] args) {
+		 String str1 = "geeks";
+		 String str2 = "forgeeks";
+		 CommonCharOfTwoStrings test = new CommonCharOfTwoStrings();
+	     test.commonChar(str1,str2);
+	}
+	
+}

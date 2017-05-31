@@ -1,0 +1,39 @@
+import java.util.HashSet;
+
+/*Print common characters of two Strings in alphabetical order
+ * http://www.geeksforgeeks.org/print-common-characters-two-strings-alphabetical-order-2/
+ */
+public class CommonCharOfTwoStrings {
+	
+	void commonChar(String str1,String str2){
+		
+		int[] freq1 = new int[26];
+		int[] freq2 = new int[26];
+		for(int i = 0; i<26; i++)
+		{
+			freq1[i] = 'a'+i;
+			freq2[i] = 'a'+i; 
+		}
+		
+		for(int i = 0; i<str1.length(); i++)
+		{
+			if(str1.charAt(i) == freq)
+		}
+		
+		for(int i = 0; i<str2.length(); i++)
+		{
+			freq1[i] = 'a'+i;
+			freq2[i] = 'a'+i; 
+		}
+		
+		
+	}
+
+	public static void main(String[] args) {
+		 String str1 = "geeks";
+		 String str2 = "forgeeks";
+		 CommonCharOfTwoStrings test = new CommonCharOfTwoStrings();
+	     test.commonChar(str1,str2);
+	}
+	
+}

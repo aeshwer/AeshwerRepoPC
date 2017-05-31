@@ -1,0 +1,13 @@
+
+public class PermuationOfNonDistinctString {
+
+	public static void main(String[] args) {
+
+        String str = "ABA";  // here the string has dublicates
+        int n = str.length();
+        PermutationOfStrings permutation = new PermutationOfStrings();
+        permutation.permute(str, 0, n-1);
+        
+        
+	}
+}

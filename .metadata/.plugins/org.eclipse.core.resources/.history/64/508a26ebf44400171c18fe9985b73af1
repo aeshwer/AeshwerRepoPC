@@ -1,0 +1,30 @@
+package hashingTutorials;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class SliddingWindowMan {
+
+	static void printKMax(int[] arr ,int len, int k){
+
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		for (int i = 0 ; i < len ; i++)
+		{ 
+			list.add(arr[i]);
+			if(list.size() > k )
+			{ 
+				list.remove(i-k);
+				
+			}
+			
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		int arr[] = {12, 1, 78, 90, 57, 89, 56};
+	    int len = arr.length;
+	    int k = 3;
+	    printKMax(arr, len, k);
+	}
+}
