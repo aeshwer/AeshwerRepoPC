@@ -1,0 +1,25 @@
+package BinaryTrees;
+
+public class DiameterOfTressOptimized {
+	
+	Node root;
+	class Node
+	{
+	    int data;
+	    Node left, right;
+	 
+	    public Node(int item)
+	    {
+	        data = item;
+	        left = right = null;
+	    }
+	}
+	 
+	// A utility class to pass heigh object
+	class Height
+	{
+	    int h;
+	}
+	 
+
+}

@@ -7,6 +7,7 @@ import BinaryTrees.MirrorImageTree.Node;
 
 public class RootToLeafPath {
 	
+	
 	Node root;
 	public static class Node
 	{
@@ -52,8 +53,8 @@ public class RootToLeafPath {
     void printArray(int path[], int len) 
     {
         int i;
-        for (i = 0; i < len; i++) 
-            System.out.print(path[i] + " ");
+        for (i = 0; i < len; i++)
+            {System.out.print(path[i] + " ");}
         System.out.println("");
     }
   

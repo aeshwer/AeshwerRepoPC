@@ -1,0 +1,24 @@
+package ArraysProblems;
+
+/*
+ * Given an array of integers, write a function that returns true if there is a triplet (a, b, c) that satisfies a2 + b2 = c2.
+ */
+public class PythagorasTripletInArray {
+	
+    static boolean isTriplet(int arr[], int n)
+    {
+    	
+    	
+    }
+	
+	
+	public static void main(String[] args)
+    {
+        int arr[] = {3, 1, 4, 6, 5};
+        int arr_size = arr.length;
+        if (isTriplet(arr,arr_size)==true)
+           System.out.println("Yes");
+        else
+           System.out.println("No");        
+    }
+}

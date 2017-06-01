@@ -1,0 +1,46 @@
+package BinaryTrees;
+
+import BinaryTrees.RootToLeafPath.Node;
+
+public class RootToLeafPathSum {
+	
+
+	Node root;
+	public static class Node
+	{
+		int key;
+		Node left;
+		Node right;
+		Node(int key){
+			this.key = key;
+			left = right = null; 
+		}
+	}
+	
+	void rootToLeafPaths(Node root, int[] path,int pathlen)
+	{
+		if (root == null)
+ 		{
+ 			return null;
+ 		}
+	}
+	
+	void printPaths(Node root) 
+	{
+		int path[] = new int[1000];
+		rootToLeafPaths(root, path, 0);
+	}
+	
+	public static void main(String[] args) {
+		
+		RootToLeafPathSum tree = new RootToLeafPathSum();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        
+        /* Print all root-to-leaf paths of the input tree */
+        tree.printPaths(tree.root);
+	}
+}
