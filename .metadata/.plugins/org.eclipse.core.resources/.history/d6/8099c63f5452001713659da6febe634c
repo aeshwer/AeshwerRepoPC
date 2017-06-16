@@ -1,0 +1,12 @@
+package LearnGuiceCalculator;
+
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
+
+public class CalculatorClient {
+
+	public static void main(String[] args) {
+		Injector inject = Guice.createInjector(new CalculatorModule());
+	}
+}

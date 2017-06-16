@@ -1,0 +1,7 @@
+package LearnGuiceCalculator;
+
+import com.google.inject.AbstractModule;
+
+public class CalculatorModule extends AbstractModule{
+
+}

@@ -1,0 +1,8 @@
+package LearnGuiceExample;
+
+public class Displayer {
+	void display(String s)
+	{
+		System.out.println(s);
+	}
+}

@@ -1,0 +1,5 @@
+package LearnGuiceCalculatorModify2;
+
+public class FakeCalculator {
+
+}

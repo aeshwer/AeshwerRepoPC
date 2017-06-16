@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;com.iontrading.build.maven.simple&apos;" deleteContents="true" description="Delete resource &apos;com.iontrading.build.maven.simple&apos;" element1="/com.iontrading.build.maven.simple" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1497589597445"/>
+</session>

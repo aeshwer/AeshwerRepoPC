@@ -1,0 +1,7 @@
+package LearnGuiceCalculatorModifyWithProvider;
+
+import com.google.inject.Provider;
+
+public class CalciSelector implements Provider<ICalculator>{
+
+}

@@ -1,0 +1,12 @@
+
+
+import com.google.inject.Inject;
+
+public class Greater {
+
+	@Inject Displayer displayer;
+	void sayHello()
+	{
+		displayer.display("Hello World");
+	}
+}
