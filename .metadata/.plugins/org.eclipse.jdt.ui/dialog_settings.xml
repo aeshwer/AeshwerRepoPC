@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="C:\Users\Aeshwer\Desktop" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="C:\Users\Aeshwer\Desktop\hibernate-release-5.2.10.Final\lib\required" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
@@ -61,6 +61,9 @@
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="4" key="index"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>

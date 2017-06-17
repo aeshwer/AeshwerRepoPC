@@ -1,0 +1,8 @@
+package com.aeshwer.hibernate;
+
+public class Student_Info {
+
+	private String name;
+	
+	private int rollNo;
+}

@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;com.iontrading.build.maven.simple&apos;" deleteContents="true" description="Delete resource &apos;com.iontrading.build.maven.simple&apos;" element1="/com.iontrading.build.maven.simple" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1497589597445"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;com.iontrading.build.maven.simple&apos;" deleteContents="true" description="Delete resource &apos;com.iontrading.build.maven.simple&apos;" element1="/com.iontrading.build.maven.simple" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1497589597445"/>&#x0A;<refactoring comment="Rename resource &apos;First&apos;hibernate&apos; to &apos;FirstHibernateProject&apos;" description="Rename resource &apos;First&apos;hibernate&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/First&apos;hibernate" name="FirstHibernateProject" stamp="1497673341557" updateReferences="true"/>
 </session>
