@@ -1,0 +1,40 @@
+package com.aeshwer.hibernate;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		
+		Student_Info obj1 = new Student_Info();
+		obj1.setName("Aeshwer");
+		//obj1.setRollNo(7);
+		obj1.setBirthdate(new Date());
+		
+		Student_Info obj2 = new Student_Info();
+		obj2.setName("Kanika");
+		//obj2.setRollNo(2);
+		obj1.setBirthdate(new Date());
+
+		/*
+		  //creating configuration object  
+	    Configuration cfg=new Configuration();  
+	    cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file  
+	    //creating seession factory object  
+	    SessionFactory factory=cfg.buildSessionFactory();  */
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		
+		session.save(obj1);
+		session.save(obj2);
+		session.getTransaction().commit();
+		session.close();
+		sessionFactory.close();
+	}
+}

@@ -1,0 +1,12 @@
+package com.aeshwer.hibernate;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		
+		Student_Info obj = new Student_Info();
+		
+		obj.setName("Aeshwer");
+		obj.setRollNo(1);
+	}
+}

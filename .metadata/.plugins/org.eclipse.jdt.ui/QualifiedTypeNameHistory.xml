@@ -1,28 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="javax.xml.crypto.dsig.keyinfo.KeyInfo"/>
-<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
-<fullyQualifiedTypeName name="StackAndQueues.StackImplementationUsingLinkList.Node"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="java.lang.Character"/>
-<fullyQualifiedTypeName name="java.lang.CharSequence"/>
-<fullyQualifiedTypeName name="StackAndQueues.StackImplementationUsingArrays"/>
-<fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="BinaryTrees.BinaryTreeBasic.Node"/>
-<fullyQualifiedTypeName name="java.util.Queue"/>
-<fullyQualifiedTypeName name="java.lang.LinkageError"/>
-<fullyQualifiedTypeName name="LinkListProblems.LinkListInsertionsAndDeletions"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="java.util.Stack"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="LearnGuiceExample.Greater"/>
 <fullyQualifiedTypeName name="LearnGuiceExample.MyAppilcation"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
@@ -60,4 +37,27 @@
 <fullyQualifiedTypeName name="LearnGuiceCalculatorModifyWithProvider.FakeCalculator"/>
 <fullyQualifiedTypeName name="com.google.inject.Inject"/>
 <fullyQualifiedTypeName name="LearnGuiceCalculatorModifyWithProvider.Calculator"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+<fullyQualifiedTypeName name="java.text.Annotation"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="com.fasterxml.classmate.AnnotationConfiguration"/>
+<fullyQualifiedTypeName name="com.fasterxml.classmate.AnnotationConfiguration.StdConfiguration"/>
+<fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="javax.persistence.Transient"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javax.persistence.Temporal"/>
+<fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+<fullyQualifiedTypeName name="com.aeshwer.hibernate.Student_Info"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.GenericGenerator"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.Parameter"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
 </qualifiedTypeNameHistroy>

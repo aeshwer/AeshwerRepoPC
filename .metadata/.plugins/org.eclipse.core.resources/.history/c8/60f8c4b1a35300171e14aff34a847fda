@@ -1,0 +1,11 @@
+package com.aeshwer.hibernate;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name ="STUDENT_DETAIL")
+public class Student_Detail {
+
+}

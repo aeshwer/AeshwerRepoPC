@@ -1,0 +1,37 @@
+package com.aeshwer.hibernate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name ="STUDENT_INFORMATION")
+public class Student_Info {
+
+	@Id
+	private int rollNo;
+	
+	@Transient
+	@Column(name ="FullName" , nullable= false)
+	private String name;
+	
+	private Date birthdate;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getRollNo() {
+		return rollNo;
+	}
+
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
+	}
+}

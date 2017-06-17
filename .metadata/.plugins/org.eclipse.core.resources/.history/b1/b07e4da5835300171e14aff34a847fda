@@ -1,0 +1,18 @@
+package com.aeshwer.hibernate;
+
+import java.text.Annotation;
+
+import org.hibernate.SessionFactory;
+
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		
+		Student_Info obj = new Student_Info();
+		obj.setName("Aeshwer");
+		obj.setRollNo(1);
+		
+		SessionFactory sessionFactory = new AnnotationConfigu
+	}
+}

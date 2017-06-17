@@ -1,0 +1,32 @@
+package com.aeshwer.hibernate;
+
+import java.text.Annotation;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.fasterxml.classmate.AnnotationConfiguration;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		
+		Student_Info obj = new Student_Info();
+		obj.setName("Aeshwer");
+		obj.setRollNo(1);
+		
+		//creating configuration object  
+	    Configuration cfg=new Configuration();  
+	    cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file  
+		
+		SessionFactory sessionFactory = cfg.buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		
+		session.save(obj);
+		session.getTransaction().commit();
+		session.close();
+		sessionFactory.close();
+	}
+}

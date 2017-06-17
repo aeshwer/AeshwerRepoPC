@@ -1,0 +1,5 @@
+package com.aeshwer.hibernate;
+
+public class Student_Detail {
+
+}
