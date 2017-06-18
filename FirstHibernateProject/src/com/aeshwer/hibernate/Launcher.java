@@ -1,5 +1,7 @@
 package com.aeshwer.hibernate;
-
+/*
+ * https://www.gontu.org/downloads-tutorials/
+ */
 import java.util.Date;
 
 import org.hibernate.Session;

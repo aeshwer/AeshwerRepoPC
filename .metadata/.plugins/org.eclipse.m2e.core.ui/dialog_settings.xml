@@ -58,12 +58,16 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="Hibernate13@ManyToMany"/>
+			<item value="Hibernate08"/>
 			<item value="FirstHibernateProject"/>
 			<item value="LearnGuice"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Hibernate13@ManyToMany"/>
+			<item value="Hibernate08"/>
 			<item value="FirstHibernateProject"/>
 			<item value="LearnGuice"/>
 		</list>
