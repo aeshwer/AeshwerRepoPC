@@ -1,0 +1,5 @@
+package IteratorPattern;
+
+public interface Iterator {
+	  public Iterator getIterator();
+}

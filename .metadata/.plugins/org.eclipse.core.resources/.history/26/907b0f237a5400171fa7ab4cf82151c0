@@ -1,0 +1,8 @@
+package PrototypePattern;
+/*
+ * Create a class to get concrete classes from database and store them in a Hashtable.
+ */
+
+public class ShapeCache {
+
+}

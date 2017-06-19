@@ -1,6 +1,6 @@
 package Decorator.Pattern;
 
-public class RedShapeDecorator  extends ShapeDecorator{
+public class RedShapeDecorator extends ShapeDecorator{
 
 	public RedShapeDecorator(Shape decoratedShape) {
 		super(decoratedShape);

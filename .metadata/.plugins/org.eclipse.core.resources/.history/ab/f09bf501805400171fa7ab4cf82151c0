@@ -1,0 +1,11 @@
+package CommandPattern;
+
+public class BuyStock implements Order {
+
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,7 @@
+package CommandPattern;
+/*
+ * We have created a Stock class which acts as a request. 
+ */
+public class Stock {
+
+}

@@ -1,0 +1,11 @@
+package AbstractFactoryPattern;
+
+public class GreenColour implements Colour{
+
+	@Override
+	public void displayColour() {
+		System.out.println("Green COlour ");
+	}
+	
+
+}
