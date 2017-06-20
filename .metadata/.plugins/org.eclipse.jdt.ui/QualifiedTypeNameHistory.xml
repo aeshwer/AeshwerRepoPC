@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="LearnGuiceExample.MyAppilcation.Greater"/>
-<fullyQualifiedTypeName name="Greater"/>
-<fullyQualifiedTypeName name="com.google.inject.AbstractModule"/>
-<fullyQualifiedTypeName name="com.google.inject.Injector"/>
-<fullyQualifiedTypeName name="com.google.inject.Guice"/>
-<fullyQualifiedTypeName name="LearnGuiceCalculator.CalculatorModule"/>
-<fullyQualifiedTypeName name="LearnGuiceCalculator.Calculator"/>
-<fullyQualifiedTypeName name="javax.swing.Icon"/>
-<fullyQualifiedTypeName name="LearnGuiceCalculatorModify.ICalculator"/>
-<fullyQualifiedTypeName name="java.lang.Override"/>
-<fullyQualifiedTypeName name="com.google.inject.Scope"/>
-<fullyQualifiedTypeName name="com.google.inject.Scopes"/>
-<fullyQualifiedTypeName name="LearnGuiceCalculatorModify.Calculator"/>
-<fullyQualifiedTypeName name="com.google.inject.Singleton"/>
-<fullyQualifiedTypeName name="LearnGuiceCalculatorModify2.Calculator"/>
-<fullyQualifiedTypeName name="LearnGuiceCalculatorModify2.CalculatorService"/>
-<fullyQualifiedTypeName name="LearnGuiceCalculatorModify2.ICalculator"/>
-<fullyQualifiedTypeName name="LearnGuiceCalculatorModify2.FakeCalculator"/>
-<fullyQualifiedTypeName name="java.lang.annotation.Retention"/>
 <fullyQualifiedTypeName name="java.lang.annotation.Target"/>
 <fullyQualifiedTypeName name="com.google.inject.BindingAnnotation"/>
 <fullyQualifiedTypeName name="java.lang.Enum"/>
@@ -60,4 +40,24 @@
 <fullyQualifiedTypeName name="org.hibernate.Session"/>
 <fullyQualifiedTypeName name="com.gontuseries.hibernate.Student"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="AbstractFactoryPattern.GreenColour"/>
+<fullyQualifiedTypeName name="AbstractFactoryPattern.BlueColour"/>
+<fullyQualifiedTypeName name="AbstractFactoryPattern.RedColour"/>
+<fullyQualifiedTypeName name="AbstractFactoryPattern.Colour"/>
+<fullyQualifiedTypeName name="BuilderPattern.Bottle"/>
+<fullyQualifiedTypeName name="BuilderPattern.Burger"/>
+<fullyQualifiedTypeName name="BuilderPattern.ColdDrink"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="EscapingReferncesConceptSolotionByIterator.Customer"/>
+<fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.adapters.CollapsedStringAdapter"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="EscapingReferncesConceptSolotionByIterable.Customer"/>
+<fullyQualifiedTypeName name="java.lang.Readable"/>
+<fullyQualifiedTypeName name="EscapingReferncesConceptSolotionUsingInterface.ICustomerReadOnly"/>
 </qualifiedTypeNameHistroy>

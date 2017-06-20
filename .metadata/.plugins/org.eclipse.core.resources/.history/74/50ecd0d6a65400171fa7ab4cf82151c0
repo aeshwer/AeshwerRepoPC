@@ -1,0 +1,9 @@
+package EscapingReferncesConceptSolotionUsingInterface;
+
+public interface ICustomerReadOnly {
+
+	public abstract String getName();
+
+	public abstract String toString();
+
+}
