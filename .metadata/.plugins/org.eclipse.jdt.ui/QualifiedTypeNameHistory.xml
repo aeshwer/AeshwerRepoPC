@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.annotation.Target"/>
-<fullyQualifiedTypeName name="com.google.inject.BindingAnnotation"/>
-<fullyQualifiedTypeName name="java.lang.Enum"/>
-<fullyQualifiedTypeName name="com.google.inject.spi.Element"/>
-<fullyQualifiedTypeName name="java.lang.annotation.ElementType"/>
-<fullyQualifiedTypeName name="java.lang.annotation.RetentionPolicy"/>
 <fullyQualifiedTypeName name="javax.xml.ws.soap.Addressing"/>
 <fullyQualifiedTypeName name="LearnGuiceCalculatorModify2.Real"/>
 <fullyQualifiedTypeName name="com.google.inject.name.Names"/>
@@ -60,4 +54,10 @@
 <fullyQualifiedTypeName name="EscapingReferncesConceptSolotionByIterable.Customer"/>
 <fullyQualifiedTypeName name="java.lang.Readable"/>
 <fullyQualifiedTypeName name="EscapingReferncesConceptSolotionUsingInterface.ICustomerReadOnly"/>
+<fullyQualifiedTypeName name="softLeaks.Customer"/>
+<fullyQualifiedTypeName name="WhichMethodCalled.actor"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="WhichMethodCalled.hero"/>
+<fullyQualifiedTypeName name="CheckInheritanceMethodCall.Actor"/>
+<fullyQualifiedTypeName name="CheckInheritanceMethodCall.hero"/>
 </qualifiedTypeNameHistroy>

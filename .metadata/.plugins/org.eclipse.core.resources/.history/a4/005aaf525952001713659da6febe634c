@@ -1,7 +1,0 @@
-package LearnGuiceCalculatorModify2;
-
-public class CalculatorService {
-
-	private Calculator calculator;
-	
-}

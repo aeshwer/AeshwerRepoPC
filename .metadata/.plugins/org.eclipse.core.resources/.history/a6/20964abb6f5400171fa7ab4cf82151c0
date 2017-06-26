@@ -1,5 +1,0 @@
-package AbstractFactoryPattern;
-
-public abstract class AbstractFactory {
-
-}

@@ -1,5 +1,0 @@
-package LearnGuiceCalculatorModify2;
-
-public interface Real {
-
-}

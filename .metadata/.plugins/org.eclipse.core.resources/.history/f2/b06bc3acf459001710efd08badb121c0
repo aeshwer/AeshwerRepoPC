@@ -1,0 +1,18 @@
+package CheckInheritanceMethodCall;
+
+public class WhichMethodCalled {
+
+	public static void main(String[] args) {
+		
+		Actor act = new hero();
+		act.dance();
+		act.act();
+		//act.fuck();  can't call this
+		
+		Actor act2 = new Actor();
+		act.dance();
+		act.act();
+		act.fuck(); // still cant call 
+	}
+
+}

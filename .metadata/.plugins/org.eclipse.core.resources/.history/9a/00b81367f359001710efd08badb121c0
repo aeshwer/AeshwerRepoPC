@@ -1,0 +1,34 @@
+
+public class WhichMethodCalled {
+	
+	class actor
+	{
+		void act()
+		{
+			
+		}
+		void dance()
+		{
+			
+		}
+	}
+	
+	class hero extends actor
+	{
+		void fuck()
+		{
+			
+		}
+		void dance()
+		{
+			
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,5 +1,0 @@
-package PrototypePattern;
-
-public abstract class Shape implements Cloneable{
-
-}

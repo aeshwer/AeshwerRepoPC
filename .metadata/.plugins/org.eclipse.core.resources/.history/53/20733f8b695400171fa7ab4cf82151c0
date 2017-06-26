@@ -1,5 +1,0 @@
-package singletonPattern;
-
-public class SingleObject {
-
-}

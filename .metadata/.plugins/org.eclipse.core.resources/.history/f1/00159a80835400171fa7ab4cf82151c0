@@ -1,7 +1,0 @@
-package IteratorPattern;
-
-public interface Container {
-	  public boolean hasNext();
-	   public Object next();
-	   
-}

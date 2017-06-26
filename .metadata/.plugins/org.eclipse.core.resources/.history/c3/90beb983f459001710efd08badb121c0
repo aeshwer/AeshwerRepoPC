@@ -1,0 +1,13 @@
+package CheckInheritanceMethodCall;
+
+public class WhichMethodCalled {
+
+	public static void main(String[] args) {
+		
+		Actor act = new hero();
+		act.dance();
+		act.act();
+		act.fuck();
+	}
+
+}

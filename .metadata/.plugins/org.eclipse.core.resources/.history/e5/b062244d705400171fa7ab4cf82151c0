@@ -1,6 +1,0 @@
-package AbstractFactoryPattern;
-
-public interface Colour {
-	void displayColour();
-
-}
