@@ -1,0 +1,14 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
+public class Client {
+	
+	public static void main(String[] args) {
+		
+		InputStreamReader = new InputStreamReader(System.in);
+		BufferedReader read  = new BufferedReader(Stream);
+		
+	}
+
+}
