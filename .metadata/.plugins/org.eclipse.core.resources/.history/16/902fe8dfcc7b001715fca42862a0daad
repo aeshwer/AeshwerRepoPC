@@ -1,0 +1,47 @@
+package com.udemyConcurreny;
+
+// use of the volatile keyword(read from main memory) vs non volatile(read from cache)
+
+class worker implements Runnable
+{
+
+	//private boolean isTerminated = false;  //read from cache
+	private volatile boolean isTerminated = false;  //read from main memory
+	@Override
+	public void run() {
+
+		while(!isTerminated)
+		{
+			System.out.println("Hello from worker class");
+			try{
+				Thread.sleep(300);
+			}catch(InterruptedException e)
+			{e.printStackTrace();} 
+		}
+	}	
+	
+	public boolean isTerminated() {
+		return isTerminated;
+	}
+	public void setTerminated(boolean isTerminated) {
+		this.isTerminated = isTerminated;
+	}
+}
+
+public class App2 {
+
+	public static void main(String[] args) {
+		
+		worker wk = new worker();
+		Thread t1 = new Thread(wk);
+		t1.start();
+		try{
+			Thread.sleep(3000);
+		}catch(InterruptedException e)
+		{e.printStackTrace();}
+		
+		wk.setTerminated(true);
+		System.out.println("Finished");
+	}
+
+}

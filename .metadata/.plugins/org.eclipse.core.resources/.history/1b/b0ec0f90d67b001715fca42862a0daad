@@ -1,0 +1,21 @@
+package com.udemyConcurreny;
+
+public class SynBlockApp {
+	
+	private  static int counter2 =  0; 
+	private  static int counter1 =  0; 
+	
+	public static synchronized void add1()   // synchronized method
+	{
+		++counter;
+	}
+	
+	public static synchronized void add2()   // synchronized method
+	{
+		++counter;
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+package com.udemyConcurreny;
+
+
+class  Processor{
+	
+	public void produce()
+	{
+		
+	}
+	
+	public void consume()
+	{
+		
+	}
+	
+}
+
+public class WaitAndNotify {
+
+}

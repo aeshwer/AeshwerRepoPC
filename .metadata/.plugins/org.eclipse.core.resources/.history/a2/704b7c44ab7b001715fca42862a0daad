@@ -1,0 +1,29 @@
+package com.udemyConcurreny;
+
+
+class runner1
+{
+	public void startRun(){
+	for(int i=0;i<10;i++){System.out.println("Runner1");}
+		}
+}
+
+class runner2
+{
+	public void startRun(){
+	for(int i=0;i<10;i++){System.out.println("Runner2");}
+	}
+}
+
+
+
+public class App {	
+	public static void main(String[] args) {
+
+		runner1 r1 =new runner1();
+		runner1 r2 =new runner1();
+		r1.startRun();
+		r2.startRun();
+	}
+
+}

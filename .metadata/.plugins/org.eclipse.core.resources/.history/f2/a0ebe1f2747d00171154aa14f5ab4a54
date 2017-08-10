@@ -1,0 +1,29 @@
+package com.udemyConcurreny;
+
+
+class  Processor{
+	
+	public void produce() throws InterruptedException
+	{
+		synchronized (this) {    // Intrinsic class levellock 
+			System.out.println("Producer");
+			wait();
+		}
+	}
+	
+	public void consume() throws InterruptedException
+	{
+		synchronized (this){
+			
+			System.out.println("Consumer");
+		}
+		
+	}
+	
+}
+
+public class WaitAndNotify {
+	public static void main(String[] args) {
+	}
+
+}

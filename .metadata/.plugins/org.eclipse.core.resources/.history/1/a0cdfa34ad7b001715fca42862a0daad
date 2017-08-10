@@ -1,0 +1,31 @@
+package com.udemyConcurreny;
+
+
+class runner1 implements Runnable
+{
+	public void run(){
+	for(int i=0;i<10;i++){System.out.println("Runner1");}
+		}
+}
+
+class runner2 implements Runnable
+{
+	public void run(){
+	for(int i=0;i<10;i++){System.out.println("Runner2");}
+	}
+}
+
+
+
+public class App {	
+	public static void main(String[] args) {
+
+		Thread t1  =new Thread(new runner1);
+		Thread t2  =new Thread(new runner2);
+		runner1 r1 =new runner1();
+		runner2 r2 =new runner2();
+		r1.run();
+		r2.run();
+	}
+
+}
