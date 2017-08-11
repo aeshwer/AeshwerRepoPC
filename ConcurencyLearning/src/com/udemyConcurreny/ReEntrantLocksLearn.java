@@ -16,7 +16,7 @@ public class ReEntrantLocksLearn {
 		lock.lock();     // reentrant lock used 
 		
 		try{
-		for(int i=0;i<100;++i){             // of this logic throws exception then we never get to unlock the lock and so we use finally , try/catch block
+		for(int i=0;i<100;++i){          // of this logic throws exception then we never get to unlock the lock and so we use finally , try/catch block
 		counter++;
 		}
 		}finally{

@@ -1,0 +1,18 @@
+package com.udemyConcurreny;
+
+/*
+ * Simulate download data from the web and create a singleton pattern using enums
+ */
+
+
+enum downloader
+	{
+		 INSTANCE;
+	}
+public class SemaphoreLearn {
+
+	public static void main(String[] args) {
+
+	}
+
+}

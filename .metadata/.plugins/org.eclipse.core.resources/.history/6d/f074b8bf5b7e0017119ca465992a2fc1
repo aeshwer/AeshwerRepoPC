@@ -1,0 +1,16 @@
+package com.udemyConcurreny;
+
+import java.util.concurrent.Callable;
+
+
+class worker4 implements Callable<String>
+{
+	
+}
+
+public class CallableFutureLearn {
+
+	public static void main(String[] args) {
+		
+	}
+}

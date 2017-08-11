@@ -1,0 +1,30 @@
+package com.udemyConcurreny;
+
+import java.util.concurrent.ExecutorService;
+
+
+class worker2 implements Runnable
+{
+
+	@Override
+	public void run() {
+		for(int i=0;i<10;i++){
+			try {
+				System.out.println(i);
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}		
+	}
+
+}
+
+public class ExecuterServiceLearn {
+
+	public static void main(String[] args) {
+		
+		ExecutorService executerService = ExecuterServiceLearn.
+		
+	}
+}

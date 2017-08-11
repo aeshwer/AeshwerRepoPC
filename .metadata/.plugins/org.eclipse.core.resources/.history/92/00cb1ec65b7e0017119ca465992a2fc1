@@ -1,0 +1,22 @@
+package com.udemyConcurreny;
+
+import java.util.concurrent.Callable;
+
+
+class worker4 implements Callable<String>
+{
+
+	@Override
+	public String call() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+
+public class CallableFutureLearn {
+
+	public static void main(String[] args) {
+		
+	}
+}

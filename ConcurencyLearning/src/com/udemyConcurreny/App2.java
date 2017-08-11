@@ -2,7 +2,7 @@ package com.udemyConcurreny;
 
 // use of the volatile keyword(read from main memory) vs non volatile(read from cache)
 
-class worker implements Runnable
+class worker1 implements Runnable
 {
 
 	//private boolean isTerminated = false;  //read from cache .. it can happen that cpu may cache this  boolean and them setter of this wont affect this value and it becomes a infinte loop
@@ -32,7 +32,7 @@ public class App2 {
 
 	public static void main(String[] args) {
 		
-		worker wk = new worker();
+		worker1 wk = new worker1();
 		Thread t1 = new Thread(wk);
 		t1.start();
 		try{

@@ -1,0 +1,21 @@
+package com.udemyConcurreny;
+
+
+class worker2 implements Runnable
+{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}
+
+public class ExecuterServiceLearn {
+
+	public static void main(String[] args) {
+		
+	}
+}
