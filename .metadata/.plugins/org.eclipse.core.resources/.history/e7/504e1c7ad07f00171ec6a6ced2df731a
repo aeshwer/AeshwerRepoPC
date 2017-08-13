@@ -1,0 +1,16 @@
+package com.udemyCollectionConcurrency;
+
+import java.util.concurrent.Delayed;
+
+
+class DelayedWorker implements Delayed
+{
+	
+}
+
+public class DelayQueueLearn {
+
+	public static void main(String[] args) {
+		
+	}
+}

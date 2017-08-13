@@ -1,0 +1,24 @@
+package com.udemyCollectionConcurrency;
+
+import java.util.concurrent.CountDownLatch;
+
+
+class work implements Runnable
+{
+	
+	private int id;
+	private CountDownLatch CountDownLatch;
+
+	@Override
+	public void run() {
+		
+	}
+	
+}
+
+public class LatchLearn {
+
+	public static void main(String[] args) {
+		
+	}
+}

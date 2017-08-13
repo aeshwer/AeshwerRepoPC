@@ -1,0 +1,8 @@
+ package com.udemyCollectionConcurrency;
+
+public class BlockQueueLearn {
+
+	public static void main(String[] args) {
+		
+	}
+}

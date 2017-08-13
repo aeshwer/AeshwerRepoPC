@@ -1,0 +1,60 @@
+package com.udemyCollectionConcurrency;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.TimeUnit;
+
+	class DelayedWorker implements Delayed
+{
+	private long duration;
+	private String message; 
+	
+	public DelayedWorker(long duration, String message) {
+		this.duration = System.currentTimeMillis() + duration;
+		this.message = message;
+	}
+
+	@Override
+	public int compareTo(Delayed otherDelay) {
+		if(this.duration < ((DelayedWorker)otherDelay).getDuration())
+			return -1;
+		else if(this.duration > ((DelayedWorker)otherDelay).getDuration()) 
+			return 1;
+		else 
+			return 0;
+	}
+
+	@Override
+	public long getDelay(TimeUnit unit) {
+		return unit.convert(duration - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
+	}
+	
+	public long getDuration() {
+		return duration;
+	}
+
+	public void setDuration(long duration) {
+		this.duration = duration;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+}
+
+public class DelayQueueLearn {
+
+	public static void main(String[] args) {
+		BlockingQueue<DelayedWorker> queue = new DelayQueue();
+		
+		queue.put(new DelayedWorker(1000, "This is the first message"));
+		
+	}
+}

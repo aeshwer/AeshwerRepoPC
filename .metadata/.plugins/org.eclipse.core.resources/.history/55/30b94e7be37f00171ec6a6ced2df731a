@@ -1,0 +1,30 @@
+package com.udemyCollectionConcurrency;
+
+import java.util.concurrent.Exchanger;
+
+
+class firstThread implements Runnable{
+
+	private int counter;
+	private Exchanger<Integer> exchanger;
+	
+	public firstThread(int counter, Exchanger<Integer> exchanger) {
+		super();
+		this.counter = counter;
+		this.exchanger = exchanger;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
+
+public class ExchangerLearn {
+
+	public static void main(String[] args) {
+	}
+}

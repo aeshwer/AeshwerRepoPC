@@ -1,0 +1,63 @@
+package com.udemyCollectionConcurrency;
+
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.PriorityBlockingQueue;
+
+class FirstWorker implements Runnable{
+
+	private BlockingQueue<Integer> blockingQueue ;
+	
+	public  FirstWorker(BlockingQueue<Integer> blockingQueue) {
+		this.blockingQueue =  blockingQueue;
+	}
+	@Override
+	public void run() {
+		
+		int counter = 0;
+		while(true){
+			try {
+				System.out.println("Putting Item to Queue "+ counter);
+				blockingQueue.put(counter);
+				counter++;
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}
+
+
+class SecondWorker implements Runnable{
+
+	private BlockingQueue<Integer> blockingQueue ;
+	
+	public  SecondWorker(BlockingQueue<Integer> blockingQueue) {
+		this.blockingQueue =  blockingQueue;
+	}
+	@Override
+	public void run() {
+		while(true){
+			try {
+				int num = blockingQueue.take();
+				System.out.println("Taking Item from Queue "+ num);
+				Thread.sleep(300);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+} 
+
+
+ 
+public class PriorityQueueLearn {
+
+	public static void main(String[] args) {
+		BlockingQueue<DelayedWorker> queue = new PriorityBlockingQueue<DelayedWorker>();
+		
+	}
+}

@@ -1,0 +1,15 @@
+package com.udemyCollectionConcurrency;
+
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class CyclicBarrierLearn {
+
+	public static void main(String[] args) {
+		
+		ExecutorService executerService = Executors.newSingleThreadExecutor();
+		CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
+	}
+
+}

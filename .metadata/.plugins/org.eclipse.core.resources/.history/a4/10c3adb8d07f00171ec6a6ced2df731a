@@ -1,0 +1,30 @@
+package com.udemyCollectionConcurrency;
+
+import java.util.concurrent.Delayed;
+import java.util.concurrent.TimeUnit;
+
+	class DelayedWorker implements Delayed
+{
+	private long duration;
+	private String message; 
+		
+	@Override
+	public int compareTo(Delayed arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getDelay(TimeUnit arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}
+
+public class DelayQueueLearn {
+
+	public static void main(String[] args) {
+		
+	}
+}

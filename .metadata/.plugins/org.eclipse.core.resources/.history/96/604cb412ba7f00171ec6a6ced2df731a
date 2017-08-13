@@ -1,0 +1,27 @@
+ package com.udemyCollectionConcurrency;
+
+import java.util.concurrent.BlockingQueue;
+
+ 
+class ProducerConsumerClass implements Runnable{
+
+	private BlockingQueue<Integer> blockQueue ;
+	
+	public public ProducerConsumerClass(BlockingQueue<Integer> blockingQueue) {
+		this.blockingQueue =  blockingQueue;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+} 
+ 
+public class BlockQueueLearn {
+
+	public static void main(String[] args) {
+		
+	}
+}
