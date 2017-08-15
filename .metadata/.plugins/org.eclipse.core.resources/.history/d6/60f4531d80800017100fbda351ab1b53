@@ -1,0 +1,36 @@
+package com.udermy.DinnerPhilosopher;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Chopsitick {
+	
+	private int id;
+	
+	private Lock lock;
+
+	public Chopsitick(int id, Lock lock) {
+		this.id = id;
+		this.lock = new ReentrantLock();
+	}
+	
+	// checks if a philosopher is able to pick up the chopstick
+	public boolean pickUp(Philosopher philosopher , State state) throws InterruptedException
+	{
+		if(lock.tryLock(10,TimeUnit.MILLISECONDS))    //able to wait for a lock for a time interval
+		{
+			System.out.println("Philosopher picked up "+ state.getDisplayString(state)+ " " + id);
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public void putUp(Philosopher philosopher , State state) throws InterruptedException
+	{
+			lock.unlock();
+			System.out.println("Philosopher put down "+ id);
+	}
+
+}

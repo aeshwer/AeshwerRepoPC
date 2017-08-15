@@ -1,0 +1,37 @@
+package com.udemy.paralleAlgo;
+
+import java.util.Random;
+
+public class App {
+	
+	public static Random random = new Random();
+
+	public static void main(String[] args) {
+		
+		Random random = new Random();
+		int[] num = new int [30];
+		
+		for(int i=0;i<num.length;i++)
+		{
+			num[i]= random.nextInt(1000)-500;
+		}
+		
+		//O(NLogN)
+		/*MergeSort mergeSort = new MergeSort(num);
+		mergeSort.mergerSort(0, num.length-1);
+		mergeSort.showResult();*/
+		
+		ParalleMergeSort parallelMergeSort = new ParalleMergeSort(num);
+		parallelMergeSort.mergerSort(0, num.length-1);
+		parallelMergeSort.showResult();
+		
+	}
+	
+	public static int[] createRandomArray() {
+		int[] a = new int[10];
+		for (int i = 0; i < 10; i++) {
+			a[i] = random.nextInt(10000);			
+		}
+		return a;
+	}
+}

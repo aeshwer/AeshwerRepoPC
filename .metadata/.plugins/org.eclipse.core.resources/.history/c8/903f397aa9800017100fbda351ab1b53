@@ -1,0 +1,5 @@
+package com.miner.view;
+
+public class ButtonListener {
+
+}

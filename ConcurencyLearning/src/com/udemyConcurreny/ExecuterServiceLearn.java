@@ -7,7 +7,7 @@ public class ExecuterServiceLearn {
     public static void main(String[] args) {
        // ExecutorService executerService = Executors.newFixedThreadPool(4);
       // ExecutorService executerService = Executors.newSingleThreadExecutor();
-    	ExecutorService executerService = Executors.newCachedThreadPool(  );
+    	ExecutorService executerService = Executors.newCachedThreadPool();
 
         for (int i = 0; i < 10; i++) {
             executerService.submit(new worker2());

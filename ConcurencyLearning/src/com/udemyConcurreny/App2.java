@@ -5,7 +5,7 @@ package com.udemyConcurreny;
 class worker1 implements Runnable
 {
 
-	//private boolean isTerminated = false;  //read from cache .. it can happen that cpu may cache this  boolean and them setter of this wont affect this value and it becomes a infinte loop
+	//private boolean isTerminated = false;  //read from cache .. it can happen that cpu may cache this  boolean and them setter of this wont affect this value and it becomes a infinite loop
 	private volatile boolean isTerminated = false;  //read from main memory ... force java to read from main memory
 	@Override
 	public void run() {

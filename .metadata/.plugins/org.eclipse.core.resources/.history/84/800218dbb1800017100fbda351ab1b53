@@ -1,0 +1,23 @@
+package com.udemy.paralleAlgo;
+
+public class MergeSort {
+	
+	private int[] num;
+	private int[] tempArray;
+	
+	public MergeSort(int[] num, int[] tempArray) {
+		this.num = num;
+		this.tempArray = tempArray;
+	}
+	
+	public void mergerSort(int low, int high)
+	{
+		
+		if(low >= high)
+		{
+			return;
+		}
+		
+	}
+
+}

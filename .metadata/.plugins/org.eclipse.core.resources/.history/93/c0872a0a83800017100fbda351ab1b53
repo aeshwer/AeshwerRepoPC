@@ -1,0 +1,9 @@
+package com.udermy.DinnerPhilosopher;
+
+public class DinnerPhiloApp {
+
+	public static void main(String[] args) {
+
+	}
+
+}

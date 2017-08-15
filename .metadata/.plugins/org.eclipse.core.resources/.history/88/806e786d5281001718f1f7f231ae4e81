@@ -1,0 +1,13 @@
+package com.udemy.ForkJoin;
+
+import java.util.concurrent.RecursiveAction;
+
+public class SimpelRecursiveAction extends RecursiveAction{
+
+	@Override
+	protected void compute() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

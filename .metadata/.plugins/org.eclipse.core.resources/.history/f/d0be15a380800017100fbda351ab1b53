@@ -1,0 +1,11 @@
+package com.udermy.DinnerPhilosopher;
+
+public class Philosopher {
+	
+	private int id;
+	
+	private Chopsitick left;
+	
+	private Chopsitick right;
+
+}

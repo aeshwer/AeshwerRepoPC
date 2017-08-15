@@ -1,0 +1,7 @@
+package com.udermy.DinnerPhilosopher;
+
+public enum State {
+
+	LEFT(1,"Left"),
+	RIGHT(2,"Right");
+}	

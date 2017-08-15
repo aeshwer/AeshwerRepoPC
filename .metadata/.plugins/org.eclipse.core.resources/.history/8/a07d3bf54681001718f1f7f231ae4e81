@@ -1,0 +1,9 @@
+package com.udemy.parallelSum;
+
+public class AppSum {
+
+	int numOfThreads  = Runtime.getRuntime().availableProcessors();
+	int[] nums = {4,2,6,5,44,78,-4,0,1};
+	
+	System.out.println("Number of threads/cores: " + numOfThreads);
+}

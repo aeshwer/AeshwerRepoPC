@@ -1,0 +1,14 @@
+package com.udemy.ForkJoin2;
+
+import java.util.concurrent.RecursiveTask;
+
+public class SimpleRecursiveTask  extends RecursiveTask<Interger>{
+
+	private int simulateWork;
+	
+	@Override
+	protected Interger compute() {
+		return 0;
+	}
+
+}

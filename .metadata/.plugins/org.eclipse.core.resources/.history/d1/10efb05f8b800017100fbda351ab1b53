@@ -1,0 +1,9 @@
+package com.udemy.StudentLibrarySimulation;
+
+public class ConstantNumber {
+
+	private ConstantNumber() {
+	}
+
+	
+}

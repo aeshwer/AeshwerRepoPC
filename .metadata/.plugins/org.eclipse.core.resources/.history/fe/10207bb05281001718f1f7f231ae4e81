@@ -1,0 +1,24 @@
+package com.udemy.ForkJoin;
+
+import java.util.concurrent.RecursiveAction;
+
+public class SimpelRecursiveAction extends RecursiveAction{
+
+	private int simulatedWork;
+	
+	public SimpelRecursiveAction(int simulatedWork) {
+		super();
+		this.simulatedWork = simulatedWork;
+	}
+
+	@Override
+	protected void compute() {
+		if(simulatedWork >100)
+		{
+			System.out.println("Parllel execution and split task : "+simulatedWork);
+			SimpelRecursiveAction
+			
+		}
+	}
+
+}

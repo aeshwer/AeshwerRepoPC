@@ -1,0 +1,6 @@
+package com.udermy.DinnerPhilosopher;
+
+public enum State {
+
+	LEFT,RIGHT;
+}

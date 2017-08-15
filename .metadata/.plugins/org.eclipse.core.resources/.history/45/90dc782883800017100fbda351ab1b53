@@ -1,0 +1,13 @@
+package com.udermy.DinnerPhilosopher;
+
+import java.util.concurrent.ExecutorService;
+
+public class DinnerPhiloApp {
+
+	public static void main(String[] args) {
+
+		ExecutorService executerService = null;
+		Philosopher philosopher = null; 
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.udermy.DinnerPhilosopher;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class DinnerPhiloApp {
+
+	public static void main(String[] args) {
+
+		ExecutorService executerService = null;
+		Philosopher[] philosopher = null;
+		
+		try
+		{
+			philosopher= new Philosopher[Constants.NUMBER_OF_PHILOSOPHER];
+			Chopsitick[] Chopsiticks = new Chopsitick[Constants.NUMBER_OF_CHOPSTICKS];
+			
+			for(int i=0;i<Constants.SIMULATION_RUNTIME ; i++ )
+			{
+				Chopsiticks[i] =new Chopsitick(i);
+			}
+			
+			executerService = Executors.newFixedThreadPool(Constants.NUMBER_OF_PHILOSOPHER);
+			for(int i=0;i<Constants.NUMBER_OF_PHILOSOPHER ; i++ )
+			{
+				philosopher[i] = new Philosopher(i, Chopsiticks[i], (Chopsiticks[i+1] % Constants.NUMBER_OF_CHOPSTICKS) );
+			}
+		}
+		finally
+		{
+			
+		}
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.udemy.parallelSum;
+
+import java.util.Random;
+
+public class AppSum {
+
+	public static void main(String[] args) {
+		
+		Random random = new Random();
+	}
+}

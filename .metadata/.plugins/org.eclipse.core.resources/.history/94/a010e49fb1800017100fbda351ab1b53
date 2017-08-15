@@ -1,0 +1,8 @@
+package com.udemy.paralleAlgo;
+
+public class MergeSort {
+	
+	private int[] num;
+	private int[] tempArray;
+
+}

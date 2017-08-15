@@ -1,0 +1,14 @@
+package com.udemy.StudentLibrarySimulation;
+
+public class Student  implements Runnable{
+	
+	private int id;
+	
+	private Book[] book;
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+}

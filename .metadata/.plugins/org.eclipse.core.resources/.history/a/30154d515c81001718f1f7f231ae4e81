@@ -1,0 +1,20 @@
+package com.udemy.ForkJoinAlgo;
+
+public class SequentialMaxFind {
+	
+	private int nums[];
+	private int highIndex;
+	
+	public SequentialMaxFind(int[] nums, int highIndex) {
+		super();
+		this.nums = nums;
+		this.highIndex = highIndex;
+	}
+	
+	
+	public int SequentialMaxFind(int[] nums, int highIndex) {
+		int max = nums[0];
+		this.highIndex = highIndex;
+	}
+
+}

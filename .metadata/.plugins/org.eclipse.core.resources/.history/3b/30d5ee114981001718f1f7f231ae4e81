@@ -1,0 +1,23 @@
+package com.udemy.parallelSum;
+
+public class ParallelWorker extends Thread {
+	
+	private int[] nums;
+	private int low;
+	private int high;
+	
+	public ParallelWorker(int[] nums, int low, int high) {
+		this.nums = nums;
+		this.low = low;
+		this.high = high;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		super.run();
+	}
+	
+		
+
+}

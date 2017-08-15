@@ -1,0 +1,24 @@
+package com.udemy.StudentLibrarySimulation;
+
+public class Student  implements Runnable{
+	
+	private int id;
+	
+	private Book[] book;
+
+	public Student(int id, Book[] book) {
+		this.id = id;
+		this.book = book;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+}

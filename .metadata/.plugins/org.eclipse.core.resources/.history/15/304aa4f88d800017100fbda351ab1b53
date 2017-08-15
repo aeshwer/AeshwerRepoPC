@@ -1,0 +1,16 @@
+package com.udemy.StudentLibrarySimulation;
+
+import java.util.concurrent.locks.Lock;
+
+public class Book {
+
+	private int id;
+	
+	private Lock lock ;
+	
+	public Book(int id, Lock lock) {
+		super();
+		this.id = id;
+		this.lock = lock;
+	}
+}
