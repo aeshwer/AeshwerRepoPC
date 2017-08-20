@@ -1,12 +1,8 @@
 package Simulation_Duck_StratergyPattern;
-
-
-
 public abstract class Duck {
 
 	FlyBehaviour flyBehaviour;
 	QuackBehaviour quackBehaviour;
-	
 	
 	abstract void display();
 	

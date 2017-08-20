@@ -1,9 +1,6 @@
 package Simulation_Duck_StratergyPattern;
 
-
-
 public class ModelDuck extends Duck {
-
 	
 	ModelDuck()
 	{

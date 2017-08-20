@@ -1,9 +1,0 @@
-package com.udemyConcurreny;
-
-public class SynBlockApp {
-	
-	public static void main(String[] args) {
-		
-	}
-
-}

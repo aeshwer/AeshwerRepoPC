@@ -1,9 +1,0 @@
-package com.udemyConcurreny;
-
-public class SemaphoreLearn {
-
-	public static void main(String[] args) {
-
-	}
-
-}

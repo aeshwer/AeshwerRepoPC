@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.udemyConcurreny.SynchronizationApp"/>
-<fullyQualifiedTypeName name="java.lang.Process"/>
-<fullyQualifiedTypeName name="com.udemyConcurreny.Processor"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="javax.management.ReflectionException"/>
-<fullyQualifiedTypeName name="java.util.concurrent.locks.Condition"/>
-<fullyQualifiedTypeName name="com.udemyConcurreny.SemaphoreLearn"/>
-<fullyQualifiedTypeName name="java.util.concurrent.Semaphore"/>
-<fullyQualifiedTypeName name="java.lang.Double"/>
-<fullyQualifiedTypeName name="com.udemyConcurreny.downloader"/>
-<fullyQualifiedTypeName name="com.udemyConcurreny.ExecuterServiceLearn"/>
-<fullyQualifiedTypeName name="com.udemyConcurreny.worker2"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
 <fullyQualifiedTypeName name="java.lang.StrictMath"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -27,7 +15,6 @@
 <fullyQualifiedTypeName name="java.awt.geom.Area"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ArrayBlockingQueue"/>
 <fullyQualifiedTypeName name="com.udemyCollectionConcurrency.FirstWorker"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.concurrent.DelayQueue"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Delayed"/>
 <fullyQualifiedTypeName name="com.udemyCollectionConcurrency.DelayedWorker"/>
@@ -38,13 +25,11 @@
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Exchanger"/>
 <fullyQualifiedTypeName name="java.lang.StackOverflowError"/>
-<fullyQualifiedTypeName name="java.lang.Runnable"/>
 <fullyQualifiedTypeName name="com.udermy.DinnerPhilosopher.State"/>
 <fullyQualifiedTypeName name="com.udermy.DinnerPhilosopher.Chopsitick"/>
 <fullyQualifiedTypeName name="com.udermy.DinnerPhilosopher.Philosopher"/>
 <fullyQualifiedTypeName name="java.util.concurrent.locks.Lock"/>
 <fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
-<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
 <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ExecutorService"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
@@ -57,7 +42,22 @@
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="com.udemy.paralleAlgo.ParalleMergeSort"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="com.udemy.paralleAlgo.MergeSort"/>
 <fullyQualifiedTypeName name="com.udemy.paralleAlgo.ParallelMergeSort"/>
+<fullyQualifiedTypeName name="com.udemy.parallelSum.SequentialSum"/>
+<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+<fullyQualifiedTypeName name="com.udemy.parallelSum.ParallelWorker"/>
+<fullyQualifiedTypeName name="com.udemy.parallelSum.ParalleSum"/>
+<fullyQualifiedTypeName name="com.udemy.ForkJoin.RecursiveActionLearn"/>
+<fullyQualifiedTypeName name="java.util.concurrent.RecursiveAction"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ForkJoinPool"/>
+<fullyQualifiedTypeName name="com.udemy.ForkJoin.SimpelRecursiveAction"/>
+<fullyQualifiedTypeName name="java.util.concurrent.RecursiveTask"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.lang.Runtime"/>
+<fullyQualifiedTypeName name="com.udemy.ForkJoinAlgo.SequentialMaxFind"/>
+<fullyQualifiedTypeName name="com.udemy.ForkJoinAlgo.ParallelMaxFind"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
 </qualifiedTypeNameHistroy>
