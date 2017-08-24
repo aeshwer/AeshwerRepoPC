@@ -1,8 +1,0 @@
-package com.udemy.StudentLibrarySimulation;
-
-public class Book {
-
-	private int id;
-	
-	private Lock lock ;
-}

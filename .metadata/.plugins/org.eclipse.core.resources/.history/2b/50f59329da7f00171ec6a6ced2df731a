@@ -1,8 +1,0 @@
-package com.udemyCollectionConcurrency;
-
-public class PriorityQueueLearn {
-
-	public static void main(String[] args) {
-		
-	}
-}

@@ -1,8 +1,0 @@
-package com.udemy.parallelSum;
-
-public class AppSum {
-
-	public static void main(String[] args) {
-		
-	}
-}

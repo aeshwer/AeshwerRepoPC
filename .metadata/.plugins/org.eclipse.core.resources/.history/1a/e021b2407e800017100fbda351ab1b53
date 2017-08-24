@@ -1,9 +1,0 @@
-package com.udermy.DinnerPhilosopher;
-
-public class Chopsitick {
-	
-	private int id;
-	
-	private Lock lock;
-
-}

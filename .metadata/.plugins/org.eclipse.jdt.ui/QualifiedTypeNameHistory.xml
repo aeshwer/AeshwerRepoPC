@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
 <fullyQualifiedTypeName name="java.lang.StrictMath"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -41,7 +40,6 @@
 <fullyQualifiedTypeName name="com.udemy.StudentLibrarySimulation.Student"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="com.udemy.paralleAlgo.ParalleMergeSort"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="com.udemy.paralleAlgo.MergeSort"/>
 <fullyQualifiedTypeName name="com.udemy.paralleAlgo.ParallelMergeSort"/>
 <fullyQualifiedTypeName name="com.udemy.parallelSum.SequentialSum"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.udemy.ForkJoinAlgo.SequentialMaxFind"/>
 <fullyQualifiedTypeName name="com.udemy.ForkJoinAlgo.ParallelMaxFind"/>
 <fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.lang.invoke.MethodHandles.Lookup"/>
 </qualifiedTypeNameHistroy>

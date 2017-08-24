@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;DynamicProgrammingPractise.LongestCommonSequence&apos; to &apos;LongestCommonSubSequence&apos;&#x0D;&#x0A;- Original project: &apos;DynamicPrograming&apos;&#x0D;&#x0A;- Original element: &apos;DynamicProgrammingPractise.LongestCommonSequence&apos;&#x0D;&#x0A;- Renamed element: &apos;DynamicProgrammingPractise.LongestCommonSubSequence&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LongestCommonSequence&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;DynamicProgrammingPractise{LongestCommonSequence.java[LongestCommonSequence" matchStrategy="1" name="LongestCommonSubSequence" qualified="false" references="true" similarDeclarations="false" stamp="1503555668928" textual="false" version="1.0"/>
+</session>
