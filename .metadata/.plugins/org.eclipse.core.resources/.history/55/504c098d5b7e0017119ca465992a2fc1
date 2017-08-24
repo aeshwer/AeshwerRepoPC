@@ -1,8 +1,0 @@
-package com.udemyConcurreny;
-
-public class CallableFutureLearn {
-
-	public static void main(String[] args) {
-		
-	}
-}
