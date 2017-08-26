@@ -1,0 +1,43 @@
+/*
+ * Minimum number of coin to form total value
+ * 
+ * Total : 4 by 1,2,3 coins
+ * 
+ *  	//Time complexity of this function: O(mn)
+        //Space Complexity of this function: O(n)
+ */
+package DynamicProgrammingPractise;
+
+import java.util.Arrays;
+
+public class CoinChange {
+
+	private static int countWays(int[] arr, int len, int sum) {
+		 // table[i] will be storing the number of solutions  for value i. We need n+1 rows as the table is constructed in bottom up manner
+		//  using the base case (n = 0)
+        int[] table = new int[sum+1];
+ 
+        // Initialize all table values as 0
+        Arrays.fill(table, 0);   //O(n)
+ 
+        // Base case (If given value(sum) is 0)
+        table[0] = 1;
+        
+        // Pick all coins one by one and update the table[] values after the index greater than or equal to the value of the picked coin
+        for (int i=0; i<len; i++)
+            for (int j=arr[i]; j<=sum; j++)
+                table[j] += table[j-arr[i]];
+ 
+        return table[n];
+		
+	}
+	
+	public static void main(String[] args) {
+		 
+			int arr[] = {1, 2, 3};
+	        int len = arr.length;
+	        int sum = 4;
+	        System.out.println(countWays(arr, len, sum));
+	}
+
+}

@@ -1,0 +1,23 @@
+/*
+ * Minimum number of coin to form total value
+ * 
+ * Total : 5 by 1,2,3 coins
+ */
+package DynamicProgrammingPractise;
+
+public class CoinChange {
+
+	private static intcountWays(int[] arr, int len, int sum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		 
+			int arr[] = {1, 2, 3};
+	        int len = arr.length;
+	        int sum = 4;
+	        System.out.println(countWays(arr, len, sum));
+	}
+
+}

@@ -1,0 +1,19 @@
+/*
+ * Ugly numbers are numbers whose only prime factors are 2, 3 or 5. 
+ * The sequence 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, … shows the first 11 ugly numbers. By convention, 1 is included.
+ */
+package DynamicProgrammingPractise;
+
+public class UglyNumber {
+
+	public static void main(String[] args) {
+
+		 	UglyNumber ugly = new UglyNumber();
+	        int result = ugly.ugly(150);
+	        System.out.println(result);
+	        
+	        int[] primes = {2, 3, 7, 11};
+	        System.out.print(ugly.nthSuperUglyNumber1(17, primes));
+	}
+
+}
