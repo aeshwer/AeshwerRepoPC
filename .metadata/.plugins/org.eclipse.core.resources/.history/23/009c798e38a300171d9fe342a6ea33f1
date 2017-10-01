@@ -38,11 +38,11 @@ public class LatchLearn {
 
 	public static void main(String[] args) {
 		
-		ExecutorService executerService = Executors.newSingleThreadExecutor();
+		ExecutorService executerService = Executors.newCachedThreadPool();
 		CountDownLatch latch = new CountDownLatch(5);
 		
 		// create five tasks
-		for (int i = 0; i < 5; i++) 
+		for (int i = 0; i < 5; i++) {
 			executerService.submit(new work(i, latch));
 			try {
 				latch.await();   // wait for ever single worker to finish  and until countDown has been called five times
@@ -51,5 +51,7 @@ public class LatchLearn {
 			}
 			System.out.println("All the prerequisites is done");
 			executerService.shutdown();
+		}
+		
 	}
 }

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.StrictMath"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Future"/>
 <fullyQualifiedTypeName name="com.udemyConcurreny.worker4"/>
 <fullyQualifiedTypeName name="com.udemyCollectionConcurrency.work"/>
-<fullyQualifiedTypeName name="java.util.concurrent.CountDownLatch"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.util.concurrent.CyclicBarrier"/>
 <fullyQualifiedTypeName name="com.udemyCollectionConcurrency.BlockQueueLearn"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="java.lang.Long"/>
 <fullyQualifiedTypeName name="java.lang.invoke.MethodHandles.Lookup"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.concurrent.CountDownLatch"/>
 </qualifiedTypeNameHistroy>

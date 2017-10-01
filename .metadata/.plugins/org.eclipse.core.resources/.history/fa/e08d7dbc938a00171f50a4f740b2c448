@@ -1,8 +1,0 @@
-package DynamicProgrammingPractise;
-
-public class StringConvertion {
-
-	public static void main(String[] args) {
-		
-	}
-}
