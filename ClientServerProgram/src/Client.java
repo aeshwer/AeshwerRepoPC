@@ -10,7 +10,7 @@ import java.net.Socket;
 public class Client {
 	
 	public static void main(String[] args) throws IOException {
-		
+		//hi
 		//Open a client socket and accept the number 
 		Socket chatSocket = new Socket("127.0.0.1",1900);
 		BufferedReader read  = new BufferedReader(new InputStreamReader(System.in));
