@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.concurrent.Future"/>
-<fullyQualifiedTypeName name="com.udemyConcurreny.worker4"/>
-<fullyQualifiedTypeName name="com.udemyCollectionConcurrency.work"/>
-<fullyQualifiedTypeName name="java.lang.Override"/>
-<fullyQualifiedTypeName name="java.util.concurrent.CyclicBarrier"/>
 <fullyQualifiedTypeName name="com.udemyCollectionConcurrency.BlockQueueLearn"/>
 <fullyQualifiedTypeName name="java.util.concurrent.BlockingQueue"/>
 <fullyQualifiedTypeName name="java.awt.geom.Area"/>
@@ -18,7 +12,6 @@
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentMap"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Exchanger"/>
 <fullyQualifiedTypeName name="java.lang.StackOverflowError"/>
 <fullyQualifiedTypeName name="com.udermy.DinnerPhilosopher.State"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.concurrent.CountDownLatch"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.function.Predicate"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

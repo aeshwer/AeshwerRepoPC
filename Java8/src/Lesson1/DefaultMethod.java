@@ -1,3 +1,7 @@
+/*
+ * Java 8 introduces a new concept of default method implementation in interfaces. 
+ * This capability is added for backward compatibility so that old interfaces can be used to leverage the lambda expression capability of Java 8.
+ */
 package Lesson1;
 
 public class DefaultMethod {
