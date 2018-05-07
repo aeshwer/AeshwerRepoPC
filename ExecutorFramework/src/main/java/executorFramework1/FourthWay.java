@@ -22,7 +22,6 @@ class FourthTask implements Runnable
 {
 	private static int count= 0; 
 	private int id;
-	;
 	public void run() {
 		for(int i=10;i>0;i--) {System.out.println("<" + id+ ">"+ " TICK TICK "+i);
 		
