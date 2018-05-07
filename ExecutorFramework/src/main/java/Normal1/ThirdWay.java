@@ -1,31 +1,30 @@
 /*
- * Creating Threads normally using thread API
+ * useful where we want to fire and forget the thread since we cannot get the
+ * thread refernce in the calling class 
+ * 
  */
-		
-package executorFramework1;
+package Normal1;
 
 import java.util.concurrent.TimeUnit;
 
-import org.omg.CORBA.TIMEOUT;
-
-public class FirstWay {
+public class ThirdWay {
 
 	public static void main(String[] args) {
 		System.out.println("MAIN THREAD START");
-		FirstTask firstTask = new FirstTask();
-		FirstTask secondTask = new FirstTask();
+		new ThirdTask();
+		new ThirdTask();  
+		
 		System.out.println("MAIN THREAD ENDS");
 		
 	}
 
 }
-	
-class FirstTask extends Thread
+
+class ThirdTask implements Runnable
 {
 	private static int count= 0; 
 	private int id;
 	
-	@Override
 	public void run() {
 		for(int i=10;i>0;i--) {System.out.println("<" + id+ ">"+ " TICK TICK "+i);
 		
@@ -37,8 +36,8 @@ class FirstTask extends Thread
 		}
 	}
 	
-	FirstTask()
+	ThirdTask()
 	{	this.id = ++count;
-		this.start();
+		new Thread(this).start();
 	}
 }

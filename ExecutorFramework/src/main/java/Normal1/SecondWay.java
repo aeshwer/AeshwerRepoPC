@@ -2,7 +2,7 @@
  * thread started from calling code rather then task contructor : gives more control to 
  * calling code when to start and stop thread
  */
-package executorFramework1;
+package Normal1;
 
 
 import java.util.concurrent.TimeUnit;
