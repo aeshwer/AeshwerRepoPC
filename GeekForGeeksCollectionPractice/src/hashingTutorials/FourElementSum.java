@@ -1,12 +1,12 @@
 package hashingTutorials;
 
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 /* Given an array of distinct integers, find if there are two pairs (a, b) and (c, d)
  *  such that a+b = c+d, and a, b, c and d are distinct elements. 
@@ -27,7 +27,7 @@ public class FourElementSum {
 		}
 	}
 	
-	boolean findPairs(ArrayList<Integer> arr, int n)
+	boolean findPairs(List<Integer> arr, int n)
 	{
 		HashMap<Integer, pair> map =  new HashMap<Integer, pair>();
 		
@@ -63,7 +63,7 @@ public class FourElementSum {
 		int n = Integer.parseInt(read.readLine());
 		System.out.println("Enter the Array now");
 		int length =  n; 
-		ArrayList<Integer> list = new ArrayList<Integer>(); 
+		List<Integer> list = new ArrayList<Integer>(); 
 		while(n-- > 0)
 		{   int x =  Integer.parseInt(read.readLine()); 
 			list.add(x);
