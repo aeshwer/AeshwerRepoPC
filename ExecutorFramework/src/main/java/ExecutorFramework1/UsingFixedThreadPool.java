@@ -14,10 +14,6 @@ public class UsingFixedThreadPool {
 		executorService.submit(new LoopTaskA());
 		executorService.submit(new LoopTaskA());
 		
-		executorService.submit(new LoopTaskA());
-		executorService.submit(new LoopTaskA());
-		executorService.submit(new LoopTaskA());
-		
 		System.out.println("MAIN THREAD ENDS");
 		
 		executorService.shutdown();// avoid this cause memory leak
