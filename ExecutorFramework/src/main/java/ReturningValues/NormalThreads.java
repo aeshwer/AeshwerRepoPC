@@ -21,7 +21,7 @@ public class NormalThreads {
 	    t1.start();
 	    t2.start();
 	    t3.start();
-
+//
 	    System.out.println("Result-1 =" + task1.getSum());
 	    System.out.println("Result-2 =" + task2.getSum());
 	    System.out.println("Result-3 =" + task3.getSum());
