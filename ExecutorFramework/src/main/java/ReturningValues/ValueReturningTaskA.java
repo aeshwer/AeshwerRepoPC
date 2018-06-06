@@ -14,6 +14,8 @@ public class ValueReturningTaskA implements Runnable{
 	private int instanceNumber = 0;
 	private String taskId;
 	
+	private volatile boolean done;
+	
 
 
 	public ValueReturningTaskA(int a, int b,long sleepTime) {
@@ -39,10 +41,28 @@ public class ValueReturningTaskA implements Runnable{
 		}
 		sum =a+b; // how to return this sum
 		System.out.println(" ******  ["+ currentThread +"] <" + taskId + "> Done milies" );
+
+		done=true;
+		synchronized (this) {
+			System.out.println("["+ currentThread +"] <" + taskId + "> Notified ***" );
+			this.notifyAll();
+		}
+		
 	}
 	
 	public int getSum() 
 	{
+		if(!done) {
+			synchronized (this) {
+				try {
+					this.wait();
+					System.out.println("["+ Thread.currentThread().getName() +"] <" + taskId + "> WAITING" );
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
 		return (int) sum;
 	}
 	
