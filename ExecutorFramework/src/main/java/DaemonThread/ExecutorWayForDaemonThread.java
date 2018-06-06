@@ -17,7 +17,7 @@ public class ExecutorWayForDaemonThread {
 		executorService.execute(new LoopTaskD(200));//Daemon as per DeamonThradFactory login
 
 		executorService.shutdown();
-		
+		//
 		System.out.println(currentThread + "Main Thread ENDS Here");
 		}
 
