@@ -11,11 +11,11 @@ public class NormalThreads {
 		
 		System.out.println(currentThread + "Main Thread Starts Here");
 		
-		ValueReturningTask task1 =new ValueReturningTask(1, 4, 2000);
+		ValueReturningTaskA task1 =new ValueReturningTaskA(1, 4, 2000);
 		Thread t1 =new Thread(task1,"Thread--1");
-		ValueReturningTask task2 =new ValueReturningTask(1, 4, 2000);
+		ValueReturningTaskA task2 =new ValueReturningTaskA(1, 4, 2000);
 		Thread t2 =new Thread(task2,"Thread--2");
-	    ValueReturningTask task3 =new ValueReturningTask(1, 4, 2000);
+	    ValueReturningTaskA task3 =new ValueReturningTaskA(1, 4, 2000);
 	    Thread t3 =new Thread(task3,"Thread--3");
 		
 	    t1.start();

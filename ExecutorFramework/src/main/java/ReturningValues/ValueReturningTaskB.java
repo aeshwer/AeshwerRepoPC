@@ -3,7 +3,7 @@ package ReturningValues;
 import java.util.concurrent.TimeUnit;
 
 // emulate long running calculation
-public class ValueReturningTask implements Runnable{
+public class ValueReturningTaskB implements Runnable{
 
 	private int a;
 	private int b;
@@ -16,7 +16,7 @@ public class ValueReturningTask implements Runnable{
 	
 
 
-	public ValueReturningTask(int a, int b,long sleepTime) {
+	public ValueReturningTaskB(int a, int b,long sleepTime) {
 		this.a = a;
 		this.b = b;
 		this.sleepTime = sleepTime;
