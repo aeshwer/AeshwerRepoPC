@@ -21,7 +21,7 @@ public class LoopTaskA implements Runnable{
 		System.out.println("####### Task" + id+ "DONE #####");
 	}
 	
-	LoopTaskA()
+	public LoopTaskA()
 	{	this.id = ++count;
 	}
 }
