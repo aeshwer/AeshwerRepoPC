@@ -11,7 +11,7 @@ public class SumObserver implements ResultListner<Integer>{
 	 
 	public void notifyResult(Integer result) {
 		
-		System.out.println("Reult for " + taskId +" ="+ result);		
+		System.out.println("Result for " + taskId +" ="+ result);		
 	}
 
 }

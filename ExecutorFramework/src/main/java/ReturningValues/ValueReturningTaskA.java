@@ -24,7 +24,7 @@ public class ValueReturningTaskA implements Runnable{
 		this.sleepTime = sleepTime;
 		
 		this.instanceNumber = ++count;
-		this.taskId= "ValueReturningTask--" + instanceNumber;
+		this.taskId= "ValueReturningTaskA--" + instanceNumber;
 	}
 	
 	public void run() {
