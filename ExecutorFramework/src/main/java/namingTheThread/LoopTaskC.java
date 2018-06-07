@@ -25,7 +25,7 @@ public class LoopTaskC implements Runnable{
 		System.out.println("#######"+   currentThread + taskId+ "DONE #####");
 	}
 	
-	LoopTaskC()
+	public LoopTaskC()
 	{	this.instanceNumber = ++count;
 		this.taskId= "LoopTaskC" + instanceNumber; 
 	}
