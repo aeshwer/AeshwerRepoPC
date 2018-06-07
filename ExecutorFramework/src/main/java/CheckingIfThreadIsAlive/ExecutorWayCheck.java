@@ -25,12 +25,13 @@ public class ExecutorWayCheck {
 		FutureTask<?> f3 = new FutureTask<Void>(new LoopTaskC(),null);   // concrete implementation of Future 
 		// here me made the runnable loopTaskC return a null value
 		
-		FutureTask<Integer> f4 = new FutureTask<Integer>(new CalculationTaskA(3, 4, 700));   // concrete implementation of Future
+		FutureTask<?> f4 = new FutureTask<Integer>(new LoopTaskC(),999);   // concrete implementation of Future
+		FutureTask<Integer> f5 = new FutureTask<Integer>(new CalculationTaskA(3, 4, 500));   // concrete implementation of Future
 		// here me made use of callable interface
 
 		executorService.shutdown();
 
-		for(int i =1 ;i<5 ; i++ ) 
+		for(int i =1 ;i<=5 ; i++ ) 
 		{
 			try {
 				TimeUnit.MILLISECONDS.sleep(600);
@@ -40,12 +41,18 @@ public class ExecutorWayCheck {
 
 			System.out.println("#######  ["+ currentThread + "] ITR- "+ "i" + "'LooptaskC-1' done = "+f1.isDone());
 			System.out.println("#######  ["+ currentThread + "] ITR- "+ "i" + "'CalcTaskA-1' done = "+f2.isDone());
+			System.out.println("#######  ["+ currentThread + "] ITR- "+ "i" + "'LooptaskC-2' done = "+f3.isDone());
+			System.out.println("#######  ["+ currentThread + "] ITR- "+ "i" + "'CalcTaskA-2' done = "+f4.isDone());
+			System.out.println("#######  ["+ currentThread + "] ITR- "+ "i" + "'CalcTaskA-2' done = "+f5.isDone());
 		}
 
 		System.out.println("\n$$$$$["+ currentThread +"] Retriving Result now $$$$$");
 		
 		System.out.println("["+ currentThread + "] 'LooptaskC-1' done = "+f1.get());
 		System.out.println("["+ currentThread + "] 'CalcTaskA-1' done = "+f2.get());
+		System.out.println("["+ currentThread + "] 'LooptaskC-2' done = "+f3.get());
+		System.out.println("["+ currentThread + "] 'CalcTaskA-2' done = "+f4.get());
+		System.out.println("["+ currentThread + "] 'CalcTaskA-2' done = "+f5.get());
 		
 		System.out.println(currentThread + "Main Thread ENDS Here");
 	}
