@@ -29,6 +29,10 @@ public class ExecutorWayCheck {
 		FutureTask<Integer> f5 = new FutureTask<Integer>(new CalculationTaskA(3, 4, 500));   // concrete implementation of Future
 		// here me made use of callable interface
 
+		executorService.execute(f3);
+		executorService.execute(f4);
+		executorService.execute(f5);
+		
 		executorService.shutdown();
 
 		for(int i =1 ;i<=5 ; i++ ) 
@@ -48,11 +52,11 @@ public class ExecutorWayCheck {
 
 		System.out.println("\n$$$$$["+ currentThread +"] Retriving Result now $$$$$");
 		
-		System.out.println("["+ currentThread + "] 'LooptaskC-1' done = "+f1.get());
-		System.out.println("["+ currentThread + "] 'CalcTaskA-1' done = "+f2.get());
-		System.out.println("["+ currentThread + "] 'LooptaskC-2' done = "+f3.get());
-		System.out.println("["+ currentThread + "] 'CalcTaskA-2' done = "+f4.get());
-		System.out.println("["+ currentThread + "] 'CalcTaskA-2' done = "+f5.get());
+		System.out.println("["+ currentThread + "] 'LooptaskC-1' done Result  = "+f1.get());
+		System.out.println("["+ currentThread + "] 'CalcTaskA-1' done Result  = "+f2.get());
+		System.out.println("["+ currentThread + "] 'LooptaskC-2' done Result  = "+f3.get());
+		System.out.println("["+ currentThread + "] 'CalcTaskA-2' done Result  = "+f4.get());
+		System.out.println("["+ currentThread + "] 'CalcTaskA-2' done  Result = "+f5.get());
 		
 		System.out.println(currentThread + "Main Thread ENDS Here");
 	}
