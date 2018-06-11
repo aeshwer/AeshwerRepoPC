@@ -32,6 +32,7 @@ public class LoopTaskH implements Runnable{
 			} catch (InterruptedException e) {
 				System.out.println("####### [ "+   currentThread + "] <"+ taskId+ "> SLEEP INTERRUPTED ........ Setting FLAG ");
 				sleepIterupt = true;
+				//break;   don't break and terminate the thread here... do some work then terminate
 			}
 			
 			doSomeWork(); // we do some work and after that we check the flag and terminate thread
