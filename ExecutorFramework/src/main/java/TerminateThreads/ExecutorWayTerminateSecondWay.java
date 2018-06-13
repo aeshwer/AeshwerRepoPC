@@ -2,13 +2,14 @@ package TerminateThreads;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import namingTheThread.NamedThreadFactory;
 
 // Terminate at non blocking Point
 
-public class ExecutorWayTerminateFirstWay {
+public class ExecutorWayTerminateSecondWay {
 
 	public static void main(String[] args) throws InterruptedException {
 		String currentThread = Thread.currentThread().getName(); 
@@ -16,18 +17,22 @@ public class ExecutorWayTerminateFirstWay {
 		
 		ExecutorService executorService = Executors.newCachedThreadPool(new NamedThreadFactory());
 		
-		LoopTaskE t1 = new LoopTaskE();
-		FactorialTaskA t2 = new FactorialTaskA(30, 1000);
+		CalculationTaskC t1 = new CalculationTaskC();
+		LoopTaskF t2 = new LoopTaskF();
 		
-		executorService.execute(t1);
-		executorService.submit(t2);
+		Future<Long> f1 =executorService.submit(t1);
+		Future<?>  f2= executorService.submit(t2);
 		
 		executorService.shutdown();
 		
 		TimeUnit.MILLISECONDS.sleep(3000);
+
+		System.out.println(currentThread + "INteruption CalculationTaskC ...");
 		
-		t1.cancle();
-		t2.cancle();
+		f1.cancel(true); // observe this
+		
+		System.out.println(currentThread + "INteruption LoopTaskF ...");
+		f2.cancel(true);// observe this
 		
 		System.out.println(currentThread + "Main Thread ENDS Here");
 		}
