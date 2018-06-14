@@ -63,6 +63,11 @@ public class CyclicBarrierLearn {
 			executerService.submit(new working(i, cyclicBarrier));
 			}
 		
+		// see here it can be re-used
+		for (int i = 0; i < 5; i++) {
+			executerService.submit(new working(i, cyclicBarrier));
+			}
+		
 			executerService.shutdown();
 	}
 
