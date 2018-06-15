@@ -1,6 +1,6 @@
 //Note : http://javainuse.com/java/javaConcurrentHashMap
 
-package ExtraOnMultiThreadingfWorld;
+package ConcurentHashMap;
 
 public class ConcurrentHashMapLearn {
 
