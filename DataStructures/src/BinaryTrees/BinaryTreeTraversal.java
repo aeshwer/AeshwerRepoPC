@@ -18,6 +18,7 @@ public class BinaryTreeTraversal {
 	        left = right = null;
 	    }
 	}
+	
 	/* Given a binary tree, print its nodes according to the
     "bottom-up" postorder traversal. */
   void printPostorder(Node node)
