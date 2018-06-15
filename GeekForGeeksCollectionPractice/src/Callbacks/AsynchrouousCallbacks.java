@@ -52,7 +52,6 @@ public class AsynchrouousCallbacks {
 	        OnGeekEventListener1 mListener = new B();
 	        obj.registerOnGeekEventListener1(mListener);
 	        obj.doGeekStuff();
-		
 	}
 }
 
