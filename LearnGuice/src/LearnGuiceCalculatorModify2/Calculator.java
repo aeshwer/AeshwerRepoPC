@@ -1,8 +1,5 @@
 package LearnGuiceCalculatorModify2;
 
-import javax.xml.ws.soap.Addressing;
-
-
 public class Calculator implements ICalculator{
 	
 	@Override
