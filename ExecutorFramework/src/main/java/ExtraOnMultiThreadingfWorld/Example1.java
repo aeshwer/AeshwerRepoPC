@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 //ATOMIC VARIABLES 
 public class Example1 {
 
+	// making total volatile wont work as it only guaranty visibility and is not sufficient  when more than 1 thread do write operation
 	private static int total = 0;
 	private static int countT1 = 0;
 	private static int countT2 = 0;
