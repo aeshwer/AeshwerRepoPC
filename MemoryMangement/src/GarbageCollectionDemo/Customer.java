@@ -3,10 +3,6 @@ package GarbageCollectionDemo;
 public class Customer  {
 	private String name;
 
-	public String getName() {
-		return name;
-	}
-	
 	public Customer(String name) {
 		this.name = name;
 	}
@@ -15,8 +11,7 @@ public class Customer  {
 		this.name = oldCustomer.name; 
 	}
 	
-	
-	public String toString() {
+	public String getName() {
 		return name;
 	}
 	
@@ -24,7 +19,11 @@ public class Customer  {
 		this.name = name;
 	}
 	
+	public String toString() {
+		return name;
+	}
 	// useless...its called by Garbage collector when it runs(which is unpredictable) ..so don't put clean up code here...
+	
 	public void finalize()
 	{
 		System.out.println("This object is been garbage collected");
