@@ -1,11 +1,14 @@
 package Business;
 
+import com.google.inject.Inject;
+
 import Domain.ITrade;
 
 public class TradePricingCalculation {
 	
 	private ITrade trade;
 
+	@Inject
 	public TradePricingCalculation(ITrade trade) {
 		this.trade = trade;
 	}

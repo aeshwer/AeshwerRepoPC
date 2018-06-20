@@ -2,10 +2,13 @@ package Domain;
 
 import java.util.Date;
 
+import com.google.inject.Inject;
+
 public class DummyTradeCreator implements ITrade,IEntity{
 
 	private Trade trade;
 
+	@Inject
 	public DummyTradeCreator(Trade trade) {
 		this.trade = trade;
 	}
