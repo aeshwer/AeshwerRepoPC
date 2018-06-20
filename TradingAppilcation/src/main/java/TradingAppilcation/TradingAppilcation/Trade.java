@@ -1,7 +1,14 @@
 package TradingAppilcation.TradingAppilcation;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="TRADE_DATA")
 public class Trade {
 
+	@Id
 	private String id;
 	
 	private String BuySellIndicator;
