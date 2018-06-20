@@ -13,6 +13,7 @@ import Domain.Trade;
 import Domain.TradeDomainToPersistableMapper;
 import PersistableEntity.TradeDAO;
 import PersistableEntity.TradePersistable;
+import Util.TradeGateway;
 
 /**
  * @author Aeshwer.Tyagi
@@ -29,11 +30,11 @@ public class App
 		TradeDomainToPersistableMapper mapper = new TradeDomainToPersistableMapper(dummyTrade.CreatedummyTrade(), tradePricingCalculation);
 
 		//Persisting
-		TradeDAO dao = new TradeDAO(mapper.DomainToPersistableMapper());
-		dao.persist();
+		TradeGateway dao = new TradeDAO();
+		dao.persist(mapper.DomainToPersistableMapper());
 		
-		//TradeGateway fetch = new TradeFetcher();
-		//System.out.println("Trade is:" + fetch.findTradeById("1"));
+		TradeGateway fetch = new TradeDAO();
+		System.out.println("Trade is:" + fetch.findTradeById("1"));
 	}
 	
 }

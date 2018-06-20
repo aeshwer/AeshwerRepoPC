@@ -2,10 +2,8 @@ package PersistableEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 import Domain.Trade;
-import PersistenceUtil.GenericEntityManagerFactory;
 import Util.TradeGateway;
 
 public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGateway{
@@ -18,13 +16,12 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 	
 	private	EntityManager entityManager; 
 
-	public TradeDAO(TradePersistable persistable) {
-		this.persistable = persistable;
+	public TradeDAO() {
 		//this.genericEntityManagerFactory = genericEntityManagerFactory;	
 		this.entityManagerFactory = HibernateEntityManageUtil.getEntityManager();
 		}
 
-	public void persist() {
+	public void persist(TradePersistable persistable) {
 		//super.Perist(persistable); 
 		entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
