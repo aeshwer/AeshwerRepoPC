@@ -4,22 +4,27 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.google.inject.Inject;
+
 import Domain.IEntity;
 
 public class GenericDAOManagerEntity {
 
-	private SessionFactory sessionFactory; 
+	private static SessionFactory sessionFactory; 
 	
-	private Session session;
-
+	private static Session session;
+	
 	public GenericDAOManagerEntity() {
-		
+		this(sessionFactory);
+	}
+
+	public GenericDAOManagerEntity(SessionFactory sessionFactory) {
+		this.sessionFactory = HibernateSessionFactoryUtility.getSessionFactory();
 	}
 
 	void Perist(IEntity entity) 
 	{
 		try {
-			SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			session.save(entity);
