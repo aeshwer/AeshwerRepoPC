@@ -1,21 +1,33 @@
-package TradingAppilcation.TradingAppilcation;
+package PersistableEntity;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import Domain.IEntity;
+import Domain.ITrade;
 
 @Entity
-@Table(name ="TRADE_DATA")
-public class Trade {
+@Table(name ="XTP_TRADE")
+public class TradePersistable implements IEntity{
 
 	@Id
 	private String id;
-	
+
 	private String BuySellIndicator;
-	
+
 	private int price1;
-	
+
 	private int price2;
+	
+	private int averagePrice;
+
+	@Temporal(TemporalType.DATE)
+	private Date tradeDate;
 
 	public String getId() {
 		return id;
@@ -48,6 +60,23 @@ public class Trade {
 	public void setPrice2(int price2) {
 		this.price2 = price2;
 	}
+
+	public Date getTradeDate() {
+		return tradeDate;
+	}
+
+	public void setTradeDate(Date tradeDate) {
+		this.tradeDate = tradeDate;
+	}
 	
-	
+	public int getAveragePrice() {
+		return averagePrice;
+	}
+
+	public void setAveragePrice(int averagePrice) {
+		this.averagePrice = averagePrice;
+	}
+
+
+
 }

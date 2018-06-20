@@ -32,7 +32,7 @@
 		<property name="hbm2ddl.auto">create</property>
 		
 		<!--Mention here all the models class along with there packages name-->
-		<mapping class="TradingAppilcation.TradingAppilcation.Trade"/>	
+		<mapping class="PersistableEntity.TradePersistable"/>	
       
     </session-factory>
 </hibernate-configuration>
