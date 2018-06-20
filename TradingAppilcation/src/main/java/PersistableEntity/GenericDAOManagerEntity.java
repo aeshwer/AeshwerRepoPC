@@ -1,4 +1,6 @@
-package PersistableEntity;
+// UNSED NOW....using JPA
+
+/*package PersistableEntity;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -40,3 +42,4 @@ public class GenericDAOManagerEntity {
 		}
 	}
 }
+*/

@@ -1,5 +1,9 @@
 package TradingAppilcation.TradingAppilcation;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -8,10 +12,10 @@ import Domain.DummyTradeCreator;
 import Domain.Trade;
 import Domain.TradeDomainToPersistableMapper;
 import PersistableEntity.TradeDAO;
-import SearchTrade.TradeFetcher;
-import Util.TradeGateway;
+import PersistableEntity.TradePersistable;
+
 /**
- * Hello world!
+ * @author Aeshwer.Tyagi
  *
  */
 public class App
@@ -24,10 +28,12 @@ public class App
 		TradePricingCalculation tradePricingCalculation = new TradePricingCalculation(dummyTrade.CreatedummyTrade());
 		TradeDomainToPersistableMapper mapper = new TradeDomainToPersistableMapper(dummyTrade.CreatedummyTrade(), tradePricingCalculation);
 
-		TradeGateway dao = new TradeDAO(mapper.DomainToPersistableMapper());
+		//Persisting
+		TradeDAO dao = new TradeDAO(mapper.DomainToPersistableMapper());
 		dao.persist();
 		
-		TradeGateway fetch = new TradeFetcher();
-		System.out.println("Trade is:" + fetch.findTradeById("1"));
+		//TradeGateway fetch = new TradeFetcher();
+		//System.out.println("Trade is:" + fetch.findTradeById("1"));
 	}
+	
 }
