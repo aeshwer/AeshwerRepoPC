@@ -33,8 +33,9 @@ public class App
 		TradeGateway dao = new TradeDAO();
 		dao.persist(mapper.DomainToPersistableMapper());
 		
-		TradeGateway fetch = new TradeDAO();
-		System.out.println("Trade is:" + fetch.findTradeById("1"));
+		//Fetching
+		TradeGateway fetchedTrade = new TradeDAO();
+		System.out.println("Trade is:" + fetchedTrade.findTradeById("1"));
 	}
 	
 }

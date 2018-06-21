@@ -4,7 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 // Useless now
-public class HibernateSessionFactoryUtility {
+/*public class HibernateSessionFactoryUtility {
 
 	public static SessionFactory factory;
 	
@@ -20,3 +20,4 @@ public class HibernateSessionFactoryUtility {
 	        return factory;
 	    }
 }
+*/
