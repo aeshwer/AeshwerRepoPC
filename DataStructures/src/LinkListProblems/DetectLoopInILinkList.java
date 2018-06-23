@@ -7,7 +7,7 @@ package LinkListProblems;
  */
 
 public class DetectLoopInILinkList {
-	
+
 	Node head;
 	class Node
 	{
@@ -18,66 +18,64 @@ public class DetectLoopInILinkList {
 			this.data= data;
 			this.next =null;
 		}
-		
+
 	}
-	
+
 	/* Inserts a new Node at front of the list. */
-    public void push(int new_data)
-    {
-    	Node new_node = new Node(new_data);
-    	if(head==null)
-    	{
-    		head= new_node;
-    		return;
-    	}
-    	
-    	new_node.next = head;
-    	head = new_node;
-    }
-	
-    public void printList()
-    {
-    	Node tnode= head;
-    	while(tnode!=null)
-    	{
-    		System.out.print(tnode.data + " ");
-    		tnode=tnode.next;
-    	}
-    }
-    
-    
-    boolean detectLoop()
-    {
-    
-    	Node slow =head, fast = head;
-    	while (slow != null && fast != null && fast.next != null) {
-    		slow = slow.next;
-    		fast = fast.next.next;
-            if (slow == fast) {
-                System.out.println("Found loop");
-                return true;
-            }
-    	}
-        
-        return false;
-    }
-    	
-	public static void main(String[] args) {
-		
-		DetectLoopInILinkList llist = new DetectLoopInILinkList();
-		
-        llist.push(20);
-        llist.push(4);
-        llist.push(15);
-        llist.push(10);
-        
-        System.out.println("\nLinked list created is: ");
-	    llist.printList(); 	
-	    
-	    /*Create loop for testing */
-        llist.head.next.next.next.next = llist.head;
-        boolean  res = llist.detectLoop();
-        System.out.println("Is there a Loop :: " + res);
+	public void push(int new_data)
+	{
+		Node new_node = new Node(new_data);
+		new_node.next = head;
+		head = new_node;
 	}
-		
+
+	public void printList()
+	{
+		Node tnode= head;
+		while(tnode!=null)
+		{
+			System.out.print(tnode.data + " ");
+			tnode=tnode.next;
+		}
+	}
+
+
+	void detectAndFixLoop()
+	{
+
+		Node slow =head, fast = head;
+		while (slow != null && fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+			if (slow == fast) {
+				System.out.println("Found loop");
+				//Removed Loops
+				slow.next= null;
+				return ;
+			}
+		}
+		return;
+	}
+
+	public static void main(String[] args) {
+
+		DetectLoopInILinkList llist = new DetectLoopInILinkList();
+
+		llist.push(1);
+		llist.push(2);
+		llist.push(3);
+		llist.push(4);
+		llist.push(5);
+
+		System.out.println("\nLinked list created is: ");
+		llist.printList();
+		System.out.println();
+
+		/*Create loop for testing */
+		llist.head.next.next.next.next.next = llist.head.next;
+		//llist.printList();
+		llist.detectAndFixLoop();
+		llist.printList();
+
+	}
 }
