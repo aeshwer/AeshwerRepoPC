@@ -10,5 +10,5 @@ public interface TradeGateway {
 
 	void persist(final TradePersistable persistable);
 
-	Trade findTradeById(final String tradeId);
+	Trade findTradeById(final int tradeId);
 }

@@ -32,7 +32,7 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 		//entityManagerFactory.close();
 	}
 
-	public Trade findTradeById(String tradeId) {
+	public Trade findTradeById(int tradeId) {
 		// get an object using primary key.
 		try{
 		entityManager = entityManagerFactory.createEntityManager();
@@ -42,7 +42,8 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 		return mapedTrade.PersistableToDomainMapper();}
 		finally {
 		entityManager.close();
-		entityManagerFactory.close();}
+		//entityManagerFactory.close();
+		}
 	}
 
 

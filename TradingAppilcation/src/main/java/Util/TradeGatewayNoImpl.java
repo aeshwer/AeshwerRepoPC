@@ -9,7 +9,7 @@ import PersistableEntity.TradePersistable;
 public class TradeGatewayNoImpl implements TradeGateway  {
 	private static final Logger LOG = LoggerFactory.logger(TradeGatewayNoImpl.class);
 
-		public Trade findTradeById(String tradeId) {
+		public Trade findTradeById(int tradeId) {
 		 LOG.info("This implementation does nothing.");
 		return new Trade();
 	}

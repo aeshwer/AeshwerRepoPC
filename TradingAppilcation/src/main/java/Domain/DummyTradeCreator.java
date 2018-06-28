@@ -1,6 +1,8 @@
 package Domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.google.inject.Inject;
 
@@ -13,20 +15,27 @@ public class DummyTradeCreator implements ITrade,IEntity{
 		this.trade = trade;
 	}
 
-	public Trade CreatedummyTrade() 
+	public List<Trade> CreatedummyTrade() 
 	{
+		List<Trade> listOfTrade = new ArrayList<>();
 		// assuming these are obtained from USer
-		Trade trade = new Trade();
-		trade.setId("1");
-		trade.setBuySellIndicator("Buy");
-		trade.setPrice1(100);
-		trade.setPrice2(200);
-		trade.setTradeDate(new Date());
-		return trade;
+		int loop = 5;
+		int id = 1;
+		while(loop-->0)
+		{
+			Trade trade = new Trade();
+			trade.setId(id++);
+			trade.setBuySellIndicator("Buy");
+			trade.setPrice1(100);
+			trade.setPrice2(200);
+			trade.setTradeDate(new Date());
+			listOfTrade.add(trade);
+		}
+		return listOfTrade;
 	}
 
-	public String getId() {
-		return null;
+	public int getId() {
+		return 0;
 	}
 
 	public String getBuySellIndicator() {

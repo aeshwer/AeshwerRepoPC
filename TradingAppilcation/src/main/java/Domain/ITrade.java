@@ -4,7 +4,7 @@ import java.util.Date;
 
 public interface ITrade {
 
-	String getId();
+	int getId();
 
 	String getBuySellIndicator();
 
