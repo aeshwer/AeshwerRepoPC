@@ -11,4 +11,6 @@ public interface TradeGateway {
 	void persist(final TradePersistable persistable);
 
 	Trade findTradeById(final int tradeId);
+	
+	int updateTrade(final int tradeId);
 }

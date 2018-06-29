@@ -61,5 +61,11 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 		return mapedTrade.PersistableToDomainMapper();
 	}
 
+	@Override
+	public int updateTrade(int tradeId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 }

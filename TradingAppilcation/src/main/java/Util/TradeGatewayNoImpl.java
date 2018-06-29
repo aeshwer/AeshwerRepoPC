@@ -20,4 +20,10 @@ public class TradeGatewayNoImpl implements TradeGateway  {
 		
 	}
 
+	@Override
+	public int updateTrade(int tradeId) {
+		 LOG.info("This implementation does nothing.");
+		return 0;
+	}
+
 }
