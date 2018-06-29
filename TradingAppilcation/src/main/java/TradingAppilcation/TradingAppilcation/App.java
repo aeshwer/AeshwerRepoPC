@@ -40,7 +40,7 @@ public class App
 		}
 
 		//Persisting
-		TradeGateway dao = new TradeDAO();
+ 		TradeGateway dao = new TradeDAO();
 		for(TradePersistable itr2 : tradePersistableList)
 		{
 			dao.persist(itr2);
@@ -53,7 +53,7 @@ public class App
 		System.out.println("Trade is:" + fetchedTrade.findTradeById(3));
 		System.out.println("Trade is:" + fetchedTrade.findTradeById(4));
 		System.out.println("Trade is:" + fetchedTrade.findTradeById(5));
-		
+	
 	}
 	
 }

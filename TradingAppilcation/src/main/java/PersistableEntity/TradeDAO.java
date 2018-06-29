@@ -1,7 +1,10 @@
 package PersistableEntity;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 
 import Domain.Trade;
 import Domain.TradePersistableToDomainMapper;
@@ -23,27 +26,39 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 	}
 
 	public void persist(TradePersistable persistable) {
-		//super.Perist(persistable); 
-		entityManager = entityManagerFactory.createEntityManager();
+		//super.Perist(persistable);
+		TransactionUtil.doInJPA(entityManagerFactory, entityManager -> {
+			final EntityTransaction transaction = entityManager.getTransaction();
+			transaction.begin();
+			entityManager.persist(persistable);
+			transaction.commit();
+		});
+		/*entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
 		entityManager.persist(persistable);
 		entityManager.getTransaction().commit();
-		entityManager.close();
-		//entityManagerFactory.close();
+		entityManager.close();*/
 	}
 
 	public Trade findTradeById(int tradeId) {
 		// get an object using primary key.
-		try{
+		
+		/*try{
 		entityManager = entityManagerFactory.createEntityManager();
-		entityManager.getTransaction().begin();
+		//entityManager.getTransaction().begin();
 		TradePersistable temp = entityManager.find(TradePersistable.class, tradeId);
 		TradePersistableToDomainMapper mapedTrade = new TradePersistableToDomainMapper(temp);
 		return mapedTrade.PersistableToDomainMapper();}
 		finally {
 		entityManager.close();
-		//entityManagerFactory.close();
-		}
+		}*/
+
+		final AtomicReference<TradePersistable> temp = new AtomicReference<>();
+		TransactionUtil.doInJPA(entityManagerFactory, entityManager -> {
+			temp.set(entityManager.find(TradePersistable.class, tradeId));
+		});
+		TradePersistableToDomainMapper mapedTrade = new TradePersistableToDomainMapper(temp.get());
+		return mapedTrade.PersistableToDomainMapper();
 	}
 
 
