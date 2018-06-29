@@ -2,16 +2,16 @@ package Domain;
 
 import com.google.inject.Inject;
 
-import Business.TradePricingCalculation;
+import Business.AbstractPriceGenerator;
 import PersistableEntity.TradePersistable;
 
 public class TradeDomainToPersistableMapper {
 
 	private ITrade trade;
-	private TradePricingCalculation tradePricingCalculation;
+	private AbstractPriceGenerator tradePricingCalculation;
 
 	@Inject
-	public TradeDomainToPersistableMapper(ITrade trade,TradePricingCalculation tradePricingCalculation) {
+	public TradeDomainToPersistableMapper(ITrade trade,AbstractPriceGenerator tradePricingCalculation) {
 		this.trade = trade;
 		this.tradePricingCalculation = tradePricingCalculation;
 	}

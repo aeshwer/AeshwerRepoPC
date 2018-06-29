@@ -1,15 +1,16 @@
 package Business;
 
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 import Domain.ITrade;
 
-public class TradePricingCalculation {
+public class TradePricingCalculation implements AbstractPriceGenerator{
 	
 	private ITrade trade;
 
 	@Inject
-	public TradePricingCalculation(ITrade trade) {
+	public TradePricingCalculation(@Named("Real") ITrade trade) {
 		this.trade = trade;
 	}
 	
@@ -17,4 +18,5 @@ public class TradePricingCalculation {
 	{
 		return (price1 + price2)/2;
 	}
+	
 }

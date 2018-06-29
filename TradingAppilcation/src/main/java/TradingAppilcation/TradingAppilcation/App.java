@@ -53,7 +53,10 @@ public class App
 		System.out.println("Trade is:" + fetchedTrade.findTradeById(3));
 		System.out.println("Trade is:" + fetchedTrade.findTradeById(4));
 		System.out.println("Trade is:" + fetchedTrade.findTradeById(5));
-	
+		
+		//UpdateTrade
+		System.out.println("Trade with Original Values:" + fetchedTrade.findTradeById(1));
+		
 	}
 	
 }
