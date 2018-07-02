@@ -2,23 +2,21 @@ package PersistableEntity;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
 import Domain.Trade;
 import Domain.TradePersistableToDomainMapper;
+import PersistenceUtil.TransactionUtil;
 import Util.TradeGateway;
 
 public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGateway{
 
-	private TradePersistable persistable;
-
 	//private GenericEntityManagerFactory genericEntityManagerFactory;
 
+	//private	EntityManager entityManager;
+	
 	private EntityManagerFactory entityManagerFactory;
-
-	private	EntityManager entityManager; 
 
 	public TradeDAO() {
 		//this.genericEntityManagerFactory = genericEntityManagerFactory;	
@@ -62,9 +60,8 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 	}
 
 	@Override
-	public int updateTrade(int tradeId) {
-		// TODO Auto-generated method stub
-		return 0;
+	public boolean updateTrade(int tradeId) {
+		return false;
 	}
 
 
