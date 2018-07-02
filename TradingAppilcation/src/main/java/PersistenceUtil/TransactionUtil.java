@@ -1,4 +1,4 @@
-package PersistableEntity;
+package PersistenceUtil;
 
 import java.util.function.Consumer;
 
