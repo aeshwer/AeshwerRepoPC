@@ -55,6 +55,6 @@ public class Trade implements ITrade, IEntity{
 
 	@Override
 	public String toString() {
-		return "Id : "+this.getId() + "Buy/Sell :  " + this.getBuySellIndicator()+ "Trade Date: " + this.getTradeDate();
+		return "Id: "+this.getId() + " Buy/Sell : " + this.getBuySellIndicator()+ " Trade Date: " + this.getTradeDate();
 	}
 }

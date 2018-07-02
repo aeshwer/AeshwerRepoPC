@@ -62,17 +62,17 @@ public class App
 		
 		//Fetching
 		TradeRequest fetchRequest = new TradeRequest(TradeRequestType.FETCH,null);
-		System.out.println("Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,1)).get());
-		System.out.println("Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,2)).get());
-		System.out.println("Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,3)).get());
-		System.out.println("Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,4)).get());
-		System.out.println("Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,5)).get());
+		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,1)).get()+ "*******");
+		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,2)).get()+ "*******");
+		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,3)).get()+ "*******");
+		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,4)).get()+ "*******");
+		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,5)).get()+ "*******");
 		
 		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are fetched before we do some more operations
 		
 		//CopyTrade
 		TradeRequest copyRequest = new TradeRequest(TradeRequestType.COPY,null);
 		Future<Trade> copyTrade = completionService.submit(new TradeRequestHandler(dao, copyRequest, 1));
-		System.out.println("Copy Trade :" + copyTrade.get());
+		System.out.println("*********Copy Trade :" + copyTrade.get()+"*******");
 	}
 }
