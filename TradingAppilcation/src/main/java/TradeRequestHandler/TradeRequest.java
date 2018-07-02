@@ -1,4 +1,4 @@
-package Util;
+package TradeRequestHandler;
 
 import PersistableEntity.TradePersistable;
 

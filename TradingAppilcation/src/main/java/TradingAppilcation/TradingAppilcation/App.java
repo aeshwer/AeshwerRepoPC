@@ -19,10 +19,10 @@ import Domain.Trade;
 import Domain.TradeDomainToPersistableMapper;
 import PersistableEntity.TradeDAO;
 import PersistableEntity.TradePersistable;
+import TradeRequestHandler.TradeRequest;
+import TradeRequestHandler.TradeRequestHandler;
+import TradeRequestHandler.TradeRequestType;
 import Util.NamedThreadFactory;
-import Util.TradeRequest;
-import Util.TradeRequestHandler;
-import Util.TradeRequestType;
 
 /**
  * @author Aeshwer.Tyagi

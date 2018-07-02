@@ -1,4 +1,4 @@
-package Util;
+package TradeRequestHandler;
 
 public enum TradeRequestType {
 	CREATE(1,"Create"),

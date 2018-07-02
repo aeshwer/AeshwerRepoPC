@@ -1,10 +1,11 @@
-package Util;
+package TradeRequestHandler;
 
 import java.util.concurrent.Callable;
 
 import com.google.inject.Inject;
 
 import Domain.Trade;
+import Util.TradeGateway;
 
 public class TradeRequestHandler implements Callable<Trade>{
 
