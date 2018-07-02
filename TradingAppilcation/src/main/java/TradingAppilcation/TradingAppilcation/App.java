@@ -23,6 +23,7 @@ public class App
 	public static void main( String[] args )
 	{
 		Injector injector = Guice.createInjector(new ApplicationModule());
+		
 		DummyTradeCreator dummyTrade = new DummyTradeCreator(injector.getInstance(Trade.class));
 		List<Trade> listOfTrade = dummyTrade.CreatedummyTrade();
 		List<TradePersistable> tradePersistableList =  new ArrayList<>();
@@ -37,23 +38,22 @@ public class App
 		}
 
 		//Persisting
- 		TradeGateway dao = new TradeDAO();
+ 		TradeGateway dao = injector.getInstance(TradeGateway.class);
 		for(TradePersistable itr2 : tradePersistableList)
 		{
 			dao.persist(itr2);
 		}
 		
 		//Fetching
-		TradeGateway fetchedTrade = new TradeDAO();
-		System.out.println("Trade is:" + fetchedTrade.findTradeById(1));
-		System.out.println("Trade is:" + fetchedTrade.findTradeById(2));
-		System.out.println("Trade is:" + fetchedTrade.findTradeById(3));
-		System.out.println("Trade is:" + fetchedTrade.findTradeById(4));
-		System.out.println("Trade is:" + fetchedTrade.findTradeById(5));
+		System.out.println("Trade is:" + dao.findTradeById(1));
+		System.out.println("Trade is:" + dao.findTradeById(2));
+		System.out.println("Trade is:" + dao.findTradeById(3));
+		System.out.println("Trade is:" + dao.findTradeById(4));
+		System.out.println("Trade is:" + dao.findTradeById(5));
 		
 		//UpdateTrade
-		System.out.println("Trade with Original Values:" + fetchedTrade.findTradeById(1));
-		System.out.println("Updated Trade with New Values:" + fetchedTrade.findTradeById(1));
+		System.out.println("Trade with Original Values:" + dao.findTradeById(1));
+		System.out.println("Updated Trade with New Values:" + dao.findTradeById(1));
 		
 	}
 	
