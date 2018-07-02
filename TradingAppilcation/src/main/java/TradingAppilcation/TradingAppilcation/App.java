@@ -1,12 +1,7 @@
 package TradingAppilcation.TradingAppilcation;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -29,12 +24,14 @@ public class App
 	{
 		Injector injector = Guice.createInjector(new ApplicationModule());
 		DummyTradeCreator dummyTrade = new DummyTradeCreator(injector.getInstance(Trade.class));
-		List<TradePersistable> tradePersistableList =  new ArrayList<>();
 		List<Trade> listOfTrade = dummyTrade.CreatedummyTrade();
+		List<TradePersistable> tradePersistableList =  new ArrayList<>();
+		
+		//Making guice object of this entity
+		TradePricingCalculation tradePricingCalculation = injector.getInstance(TradePricingCalculation.class);
 		
 		for(Trade itr1 : listOfTrade)
 		{
-			TradePricingCalculation tradePricingCalculation = new TradePricingCalculation(itr1);
 			TradeDomainToPersistableMapper mapper = new TradeDomainToPersistableMapper(itr1,tradePricingCalculation);
 			tradePersistableList.add(mapper.DomainToPersistableMapper());
 		}
@@ -56,6 +53,7 @@ public class App
 		
 		//UpdateTrade
 		System.out.println("Trade with Original Values:" + fetchedTrade.findTradeById(1));
+		System.out.println("Updated Trade with New Values:" + fetchedTrade.findTradeById(1));
 		
 	}
 	
