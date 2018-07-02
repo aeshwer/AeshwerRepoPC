@@ -12,5 +12,5 @@ public interface TradeGateway {
 
 	Trade findTradeById(final int tradeId);
 	
-	boolean updateTrade(final int tradeId);
+	Trade copyTrade(final int tradeId);
 }

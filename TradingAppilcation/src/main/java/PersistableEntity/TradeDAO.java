@@ -4,8 +4,10 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import Domain.Trade;
+import Domain.TradeDomainToPersistableMapper;
 import Domain.TradePersistableToDomainMapper;
 import PersistenceUtil.TransactionUtil;
 import Util.TradeGateway;
@@ -60,9 +62,23 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 	}
 
 	@Override
-	public boolean updateTrade(int tradeId) {
-		return false;
+	public Trade copyTrade(int tradeId) {
+		final AtomicReference<TradePersistable> temp = new AtomicReference<>();
+		final AtomicReference<TradePersistable> copyTrade = new AtomicReference<>();
+		
+		TransactionUtil.doInJPA(entityManagerFactory, entityManager -> {
+			temp.set(entityManager.find(TradePersistable.class, tradeId));
+			final EntityTransaction transaction = entityManager.getTransaction();
+			transaction.begin();
+			Query query = entityManager.createQuery("SELECT MAX(id) FROM xtp_trade");
+			int maxId = (Integer)query.getSingleResult();
+			copyTrade.set(temp.get()); 
+			copyTrade.get().setId(maxId+1);
+			entityManager.persist(copyTrade);
+			transaction.commit();
+		});
+		TradePersistableToDomainMapper mapedTrade = new TradePersistableToDomainMapper(copyTrade.get());
+		return mapedTrade.PersistableToDomainMapper();
 	}
-
-
+	
 }

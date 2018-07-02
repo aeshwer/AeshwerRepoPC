@@ -2,7 +2,7 @@ package Util;
 
 public enum TradeRequestType {
 	CREATE(1,"Create"),
-	UPDATE(2,"Update"),
+	COPY(2,"Copy"),
 	FETCH(3,"Fetch");
 
 	private final int value;

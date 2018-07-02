@@ -21,9 +21,9 @@ public class TradeGatewayNoImpl implements TradeGateway  {
 	}
 
 	@Override
-	public boolean updateTrade(int tradeId) {
+	public Trade copyTrade(int tradeId) {
 		 LOG.info("This implementation does nothing.");
-		return false;
+		 return new Trade();
 	}
 
 }

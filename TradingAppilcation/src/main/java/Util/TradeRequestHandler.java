@@ -1,13 +1,17 @@
 package Util;
 
+import java.util.concurrent.Callable;
+
 import com.google.inject.Inject;
 
-public class TradeRequestHandler implements Runnable{
+import Domain.Trade;
+
+public class TradeRequestHandler implements Callable<Trade>{
 
 	private TradeGateway tradeGateway;
-	
+
 	private TradeRequest request;
-	
+
 	private int tradeId;
 
 	@Inject
@@ -17,27 +21,23 @@ public class TradeRequestHandler implements Runnable{
 		this.tradeId = tradeId;
 	}
 
-	public void run() {
-		this.handelRequest();
-	}
-
-	private void handelRequest()
-	{
+	public Trade call() {
+		Trade trade = null;
 		switch(request.getRequestType()) 
 		{
-		case CREATE: 
+			case CREATE: 
 			{
-			tradeGateway.persist(request.getPersistable());break;
+				tradeGateway.persist(request.getPersistable());break;
 			}
-		case UPDATE:
+			case FETCH:
 			{
-			tradeGateway.updateTrade(tradeId);break;
+				trade = tradeGateway.findTradeById(tradeId);break;
 			}
-		case FETCH:
+			case COPY:
 			{
-			tradeGateway.findTradeById(tradeId);break;
+				trade = tradeGateway.copyTrade(tradeId);break;
 			}
-		default:
 		}
+		return trade;
 	}
 }

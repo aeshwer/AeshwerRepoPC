@@ -15,5 +15,4 @@ public class ApplicationModule extends AbstractModule{
 		bind(ITrade.class).annotatedWith(Names.named("Real")).to(Trade.class);
 		bind(AbstractPriceGenerator.class).to(TradePricingCalculation.class);
 	}
-
 }
