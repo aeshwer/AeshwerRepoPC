@@ -12,6 +12,7 @@ import javax.persistence.criteria.Root;
 import org.apache.log4j.Logger;
 import org.jboss.logging.Logger.Level;
 
+import Domain.IPersistableEntity;
 import Domain.Trade;
 import Domain.TradePersistableToDomainMapper;
 import PersistenceUtil.TransactionUtil;
@@ -34,14 +35,14 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 		this.logger =  LogManagerUtil.getLogger(TradeDAO.class);
 	}
 
-	public void persist(TradePersistable persistable) {
+	public void persist(IPersistableEntity persistable) {
 		//super.Perist(persistable);
 		TransactionUtil.doInJPA(logger, entityManagerFactory, entityManager -> {
 			final EntityTransaction transaction = entityManager.getTransaction();
 			transaction.begin();
-			entityManager.persist(persistable);
+			entityManager.persist((TradePersistable)persistable);
 			transaction.commit();
-			logger.info("Persist Success: TradeId: "+ persistable.getId());
+			logger.info("Persist Success: TradeId: "+ ((TradePersistable) persistable).getId());
 		});
 		/*entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();

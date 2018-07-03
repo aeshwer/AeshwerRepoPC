@@ -1,12 +1,13 @@
 package TradeRequestHandler;
 
+import Domain.IPersistableEntity;
 import PersistableEntity.TradePersistable;
 
 public class TradeRequest {
 
 	private TradeRequestType requestType;
 
-	private TradePersistable persistable;
+	private IPersistableEntity persistable;
 	
 	public TradeRequest() {
 	}
@@ -19,15 +20,15 @@ public class TradeRequest {
 		this.requestType = requestType;
 	}
 
-	public TradePersistable getPersistable() {
+	public IPersistableEntity getPersistable() {
 		return persistable;
 	}
 
-	public void setPersistable(TradePersistable persistable) {
+	public void setPersistable(IPersistableEntity persistable) {
 		this.persistable = persistable;
 	}
 
-	public TradeRequest(TradeRequestType requestType , TradePersistable persistable) {
+	public TradeRequest(TradeRequestType requestType , IPersistableEntity persistable) {
 		this.requestType = requestType;
 		this.persistable = persistable;
 	}

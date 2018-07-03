@@ -20,6 +20,7 @@ import Domain.DummyTradeCreator;
 import Domain.Trade;
 import Domain.TradeDomainToPersistableMapper;
 import PersistableEntity.TradeDAO;
+import PersistableEntity.TradeDetailDAO;
 import PersistableEntity.TradeDetailsPersistable;
 import PersistableEntity.TradePersistable;
 import TradeRequestHandler.TradeRequest;
@@ -44,7 +45,10 @@ public class App
 
 	private static TradePricingCalculation tradePricingCalculation; 
 
-	private static TradeDAO dao;
+	private static TradeDAO tradeDao;
+	
+	private static TradeDetailDAO tradeDetailDao;
+	
 
 	public static void main( String[] args ) throws InterruptedException, ExecutionException
 	{
@@ -52,32 +56,37 @@ public class App
 		executorService = Executors.newCachedThreadPool(new NamedThreadFactory());
 		completionService = new ExecutorCompletionService<Trade>(executorService);
 
-		//Retrieving DummyTrades to persist
-		List<TradePersistable> tradePersistableList = retriveDummyTrades();
-
-		//Persisting
-		dao = injector.getInstance(TradeDAO.class);
-		for(TradePersistable itr2 : tradePersistableList)
+		//Persisting Trade
+		tradeDao = injector.getInstance(TradeDAO.class);
+		for(TradePersistable itr2 : retriveDummyTrades())
 		{	
-			TradeRequestHandler handler = new TradeRequestHandler(dao, new TradeRequest(TradeRequestType.CREATE	, itr2),0);
+			TradeRequestHandler handler = new TradeRequestHandler(tradeDao, new TradeRequest(TradeRequestType.CREATE, itr2),0);
+			completionService.submit(handler);
+		}
+		
+		//Persisting Trade Detail
+		tradeDetailDao = injector.getInstance(TradeDetailDAO.class);
+		for( TradeDetailsPersistable itr3 : retriveDummyTradesDetailsFeeder())
+		{	
+			TradeRequestHandler handler = new TradeRequestHandler(tradeDetailDao, new TradeRequest(TradeRequestType.CREATE, itr3),0);
 			completionService.submit(handler);
 		}
 
-		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are persisted before we fetch them
 
+		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are persisted before we fetch them
 		//Fetching
 		TradeRequest fetchRequest = new TradeRequest(TradeRequestType.FETCH,null);
-		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,1)).get()+ "*******");
-		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,2)).get()+ "*******");
-		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,3)).get()+ "*******");
-		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,4)).get()+ "*******");
-		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,5)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(tradeDao, fetchRequest,1)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(tradeDao, fetchRequest,2)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(tradeDao, fetchRequest,3)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(tradeDao, fetchRequest,4)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(tradeDao, fetchRequest,5)).get()+ "*******");
 
 		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are fetched before we do some more operations
 
 		//CopyTrade
 		TradeRequest copyRequest = new TradeRequest(TradeRequestType.COPY,null);
-		Future<Trade> copyTrade = completionService.submit(new TradeRequestHandler(dao, copyRequest, 1));
+		Future<Trade> copyTrade = completionService.submit(new TradeRequestHandler(tradeDao, copyRequest, 1));
 		logger.info("***********Copy Trade: " + copyTrade.get() +" ***************");
 	}
 
