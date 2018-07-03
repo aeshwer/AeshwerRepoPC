@@ -20,6 +20,7 @@ import Domain.DummyTradeCreator;
 import Domain.Trade;
 import Domain.TradeDomainToPersistableMapper;
 import PersistableEntity.TradeDAO;
+import PersistableEntity.TradeDetailsPersistable;
 import PersistableEntity.TradePersistable;
 import TradeRequestHandler.TradeRequest;
 import TradeRequestHandler.TradeRequestHandler;
@@ -42,9 +43,9 @@ public class App
 	private static CompletionService<Trade> completionService ;
 
 	private static TradePricingCalculation tradePricingCalculation; 
-	
+
 	private static TradeDAO dao;
-	
+
 	public static void main( String[] args ) throws InterruptedException, ExecutionException
 	{
 		injector = Guice.createInjector(new ApplicationModule());
@@ -66,20 +67,18 @@ public class App
 
 		//Fetching
 		TradeRequest fetchRequest = new TradeRequest(TradeRequestType.FETCH,null);
-		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,1)).get()+ "*******");
-		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,2)).get()+ "*******");
-		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,3)).get()+ "*******");
-		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,4)).get()+ "*******");
-		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,5)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,1)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,2)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,3)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,4)).get()+ "*******");
+		logger.info("*********Fetched Trade is:" +  completionService.submit(new TradeRequestHandler(dao, fetchRequest,5)).get()+ "*******");
 
 		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are fetched before we do some more operations
 
 		//CopyTrade
 		TradeRequest copyRequest = new TradeRequest(TradeRequestType.COPY,null);
 		Future<Trade> copyTrade = completionService.submit(new TradeRequestHandler(dao, copyRequest, 1));
-		System.out.println("*********Copy Trade :" + copyTrade.get()+"*******");
-
-		 logger.info("***********FINISHED***************");
+		logger.info("***********Copy Trade: " + copyTrade.get() +" ***************");
 	}
 
 	private static List<TradePersistable> retriveDummyTrades() 
@@ -98,6 +97,16 @@ public class App
 		}
 
 		return tradePersistableList;
+	}
+
+	private static List<TradeDetailsPersistable> retriveDummyTradesDetailsFeeder() 
+	{
+		List<TradeDetailsPersistable> tradeDetailsPersistableList = new ArrayList<>();
+		tradeDetailsPersistableList.add(new TradeDetailsPersistable(1,"Active","USD","Aeshwer"));
+		tradeDetailsPersistableList.add(new TradeDetailsPersistable(2,"Active","EUR","Rohit"));
+		tradeDetailsPersistableList.add(new TradeDetailsPersistable(3,"Active","JYP","Ved"));
+		tradeDetailsPersistableList.add(new TradeDetailsPersistable(4,"Active","USD","Sam"));
+		return tradeDetailsPersistableList;
 	}
 
 }
