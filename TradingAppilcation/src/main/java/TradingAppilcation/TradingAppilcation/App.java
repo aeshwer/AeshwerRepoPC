@@ -10,6 +10,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -22,6 +24,7 @@ import PersistableEntity.TradePersistable;
 import TradeRequestHandler.TradeRequest;
 import TradeRequestHandler.TradeRequestHandler;
 import TradeRequestHandler.TradeRequestType;
+import Util.LogManagerUtil;
 import Util.NamedThreadFactory;
 
 /**
@@ -30,36 +33,37 @@ import Util.NamedThreadFactory;
  */
 public class App
 {
+	final static Logger logger = LogManagerUtil.getLogger(App.class);
+
+	private static Injector injector;
+
+	private static ExecutorService executorService;
+
+	private static CompletionService<Trade> completionService ;
+
+	private static TradePricingCalculation tradePricingCalculation; 
+	
+	private static TradeDAO dao;
+	
 	public static void main( String[] args ) throws InterruptedException, ExecutionException
 	{
-		Injector injector = Guice.createInjector(new ApplicationModule());
-		ExecutorService executorService = Executors.newCachedThreadPool(new NamedThreadFactory());
-		CompletionService<Trade> completionService = new ExecutorCompletionService<Trade>(executorService);
- 		
-		DummyTradeCreator dummyTrade = new DummyTradeCreator(injector.getInstance(Trade.class));
-		List<Trade> listOfTrade = dummyTrade.CreatedummyTrade();
-		List<TradePersistable> tradePersistableList =  new ArrayList<>();
-		
-		//Making guice object of this entity
-		TradePricingCalculation tradePricingCalculation = injector.getInstance(TradePricingCalculation.class);
-		
-		for(Trade itr1 : listOfTrade)
-		{
-			TradeDomainToPersistableMapper mapper = new TradeDomainToPersistableMapper(itr1,tradePricingCalculation);
-			tradePersistableList.add(mapper.DomainToPersistableMapper());
-		}
+		injector = Guice.createInjector(new ApplicationModule());
+		executorService = Executors.newCachedThreadPool(new NamedThreadFactory());
+		completionService = new ExecutorCompletionService<Trade>(executorService);
+
+		//Retrieving DummyTrades to persist
+		List<TradePersistable> tradePersistableList = retriveDummyTrades();
 
 		//Persisting
- 		TradeDAO dao = injector.getInstance(TradeDAO.class);
+		dao = injector.getInstance(TradeDAO.class);
 		for(TradePersistable itr2 : tradePersistableList)
 		{	
 			TradeRequestHandler handler = new TradeRequestHandler(dao, new TradeRequest(TradeRequestType.CREATE	, itr2),0);
 			completionService.submit(handler);
-			//dao.persist(itr2);
 		}
-		
+
 		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are persisted before we fetch them
-		
+
 		//Fetching
 		TradeRequest fetchRequest = new TradeRequest(TradeRequestType.FETCH,null);
 		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,1)).get()+ "*******");
@@ -67,12 +71,33 @@ public class App
 		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,3)).get()+ "*******");
 		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,4)).get()+ "*******");
 		System.out.println("*********Trade is:" + completionService.submit(new TradeRequestHandler(dao, fetchRequest,5)).get()+ "*******");
-		
+
 		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are fetched before we do some more operations
-		
+
 		//CopyTrade
 		TradeRequest copyRequest = new TradeRequest(TradeRequestType.COPY,null);
 		Future<Trade> copyTrade = completionService.submit(new TradeRequestHandler(dao, copyRequest, 1));
 		System.out.println("*********Copy Trade :" + copyTrade.get()+"*******");
+
+		 logger.info("***********FINISHED***************");
 	}
+
+	private static List<TradePersistable> retriveDummyTrades() 
+	{
+		DummyTradeCreator dummyTrade = new DummyTradeCreator(injector.getInstance(Trade.class));
+		List<Trade> listOfTrade = dummyTrade.CreatedummyTrade();
+		List<TradePersistable> tradePersistableList =  new ArrayList<>();
+
+		//Making Guice object of this entity
+		tradePricingCalculation = injector.getInstance(TradePricingCalculation.class);
+
+		for(Trade itr1 : listOfTrade)
+		{
+			TradeDomainToPersistableMapper mapper = new TradeDomainToPersistableMapper(itr1,tradePricingCalculation);
+			tradePersistableList.add(mapper.DomainToPersistableMapper());
+		}
+
+		return tradePersistableList;
+	}
+
 }
