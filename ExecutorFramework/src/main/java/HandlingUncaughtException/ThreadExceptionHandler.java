@@ -15,7 +15,7 @@ public class ThreadExceptionHandler implements UncaughtExceptionHandler{
 	}
 
 	public void uncaughtException(Thread t, Throwable e) {
-		System.out.println(this+ "caught exception in thread - \""+t.getName()+"\" => "+e);
+		System.out.println(this+ " caught exception in thread - \""+t.getName()+"\" => "+e);
 	}
 
 	@Override
