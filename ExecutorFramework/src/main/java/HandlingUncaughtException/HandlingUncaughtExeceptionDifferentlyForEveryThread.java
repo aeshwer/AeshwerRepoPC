@@ -2,17 +2,17 @@
 
 package HandlingUncaughtException;
 
-public class HandlingUncaughtExeceptionForEveryThreadSolution {
+public class HandlingUncaughtExeceptionDifferentlyForEveryThread {
 
 	public static void main(String[] args) throws Exception {
 		String currentThread = Thread.currentThread().getName(); 
 		System.out.println(currentThread + "Main Thread Starts Here");
-
-		Thread.setDefaultUncaughtExceptionHandler(new ThreadExceptionHandler("Default_Handler"));
-		new Thread(new ExceptionLeakingTask(),"MyThread-1").start();
-		new Thread(new ExceptionLeakingTask(),"MyThread-2").start();
-		new Thread(new ExceptionLeakingTask(),"MyThread-3").start();
-		new Thread(new ExceptionLeakingTask(),"MyThread-4").start();
+		
+		Thread t1 = new Thread(new ExceptionLeakingTask(),"MyThread-1");
+		Thread t2 = new Thread(new ExceptionLeakingTask(),"MyThread-2");
+		Thread t3 = new Thread(new ExceptionLeakingTask(),"MyThread-3");
+		Thread t4 = new Thread(new ExceptionLeakingTask(),"MyThread-4");
+		
 		System.out.println(currentThread + "Main Thread ENDS Here");
 	}
 }
