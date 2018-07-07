@@ -2,15 +2,15 @@ package Util;
 
 import com.google.inject.ImplementedBy;
 
+import Domain.IPersistableEntity;
 import Domain.Trade;
-import PersistableEntity.TradePersistable;
 
 @ImplementedBy(TradeGatewayNoImpl.class)
 public interface TradeGateway {
 
-	void persist(final TradePersistable persistable);
+	void persist(final IPersistableEntity iPersistableEntity);
 
 	Trade findTradeById(final int tradeId);
 	
-	int updateTrade(final int tradeId);
+	Trade copyTrade(final int tradeId);
 }

@@ -1,21 +1,24 @@
-package PersistableEntity;
+package PersistenceUtil;
 
 import java.util.function.Consumer;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-public class TransactionUtil {
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
+public class TransactionUtil {
+	
 	private TransactionUtil() {
 		// Do Nothing
 	}
-	public static void doInJPA(
+	public static void doInJPA(Logger logger,
 			EntityManagerFactory entityManagerFactory, Consumer<EntityManager> work) {
-		TransactionUtil.doInJPA(entityManagerFactory, work, null);
+		TransactionUtil.doInJPA(logger,entityManagerFactory, work, null);
 	}
 
-	public static void doInJPA(
+	public static void doInJPA(Logger logger,
 			EntityManagerFactory entityManagerFactory,
 			Consumer<EntityManager> work,
 			Consumer<Exception> failure) {
@@ -28,6 +31,7 @@ public class TransactionUtil {
 			if (failure != null) {
 				failure.accept(e);
 			} else {
+				logger.log(Level.DEBUG, e.getMessage(), e);
 				throw e;
 			}
 		} finally {

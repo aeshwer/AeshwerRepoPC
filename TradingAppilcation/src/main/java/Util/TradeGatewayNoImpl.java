@@ -3,6 +3,7 @@ package Util;
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.jboss.logging.Logger;
 
+import Domain.IPersistableEntity;
 import Domain.Trade;
 import PersistableEntity.TradePersistable;
 
@@ -15,15 +16,15 @@ public class TradeGatewayNoImpl implements TradeGateway  {
 	}
 
 	@Override
-	public void persist(TradePersistable persistable) {
+	public void persist(IPersistableEntity persistable) {
 		 LOG.info("This implementation does nothing.");
 		
 	}
 
 	@Override
-	public int updateTrade(int tradeId) {
+	public Trade copyTrade(int tradeId) {
 		 LOG.info("This implementation does nothing.");
-		return 0;
+		 return new Trade();
 	}
 
 }

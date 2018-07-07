@@ -9,11 +9,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import Domain.IEntity;
+import Domain.IPersistableEntity;
 import Domain.ITrade;
 
 @Entity
 @Table(name ="XTP_TRADE")
-public class TradePersistable implements IEntity{
+public class TradePersistable implements IPersistableEntity{
 
 	@Id
 	private int id;
