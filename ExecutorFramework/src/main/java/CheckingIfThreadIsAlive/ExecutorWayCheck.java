@@ -11,7 +11,7 @@ import ReturningValues.CalculationTaskA;
 import namingTheThread.LoopTaskC;
 import namingTheThread.NamedThreadFactory;
 
-// executor thread go in wait state after completion of task
+// executor thread go in wait state after completion of task....
 public class ExecutorWayCheck {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
