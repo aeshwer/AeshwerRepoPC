@@ -31,7 +31,7 @@ public class TradeDAO /*extends GenericDAOManagerEntity*/ implements TradeGatewa
 
 	public TradeDAO() {
 		//this.genericEntityManagerFactory = genericEntityManagerFactory;	
-		this.entityManagerFactory = HibernateEntityManageUtil.getEntityManager();
+		this.entityManagerFactory = HibernateEntityManageUtil.getEntityManagerFactory();
 		this.logger =  LogManagerUtil.getLogger(TradeDAO.class);
 	}
 

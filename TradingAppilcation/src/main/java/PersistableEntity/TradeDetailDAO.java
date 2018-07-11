@@ -19,7 +19,7 @@ public class TradeDetailDAO implements TradeGateway {
 	private Logger logger ;
 
 	public TradeDetailDAO() {
-		this.entityManagerFactory = HibernateEntityManageUtil.getEntityManager();
+		this.entityManagerFactory = HibernateEntityManageUtil.getEntityManagerFactory();
 		this.logger =  LogManagerUtil.getLogger(TradeDAO.class);
 	}
 

@@ -10,7 +10,7 @@ public class HibernateEntityManageUtil {
 	public HibernateEntityManageUtil() {
 
 	}
-	public static synchronized EntityManagerFactory getEntityManager() {
+	public static synchronized EntityManagerFactory getEntityManagerFactory() {
 		if (factory == null) {
 			factory =  Persistence.createEntityManagerFactory("persistence");
 		}
