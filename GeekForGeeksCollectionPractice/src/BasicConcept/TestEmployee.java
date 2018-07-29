@@ -35,8 +35,13 @@ public class TestEmployee {
 			System.out.println(st.location+" "+st.name+" "+st.age);  
 			} 
 		
+		System.out.println();
+		System.out.println("sorting by age...Using Comparable");  
+		Collections.sort(list);
+		for(Employee st: list){  
+			System.out.println(st.location+" "+st.name+" "+st.age);  
+			} 
+		
 		
 	}
-	
-
 }

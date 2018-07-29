@@ -1,6 +1,6 @@
 package BasicConcept;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
 	
 	String name ;
 	String location ;
@@ -12,6 +12,16 @@ public class Employee {
 		this.location = location;
 		this.age = age;
 				
+	}
+
+	@Override
+	public int compareTo(Employee o) {
+		if(this.age==o.age)  
+			return 0;  
+		else if(this.age>o.age)  
+			return 1;  
+		else  
+		return -1;
 	}
 	
 	
