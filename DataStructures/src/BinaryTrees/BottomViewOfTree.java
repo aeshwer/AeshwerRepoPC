@@ -81,7 +81,7 @@ public class BottomViewOfTree {
             }
         }
  
-        // Extract the entries of map into a set to traverse
+        /*// Extract the entries of map into a set to traverse
         // an iterator over that.
         Set<Entry<Integer, Integer>> set = map.entrySet();
  
@@ -93,7 +93,10 @@ public class BottomViewOfTree {
         {
             Map.Entry<Integer, Integer> me = iterator.next();
             System.out.print(me.getValue()+" ");
-        }
+        }*/
+        
+        for(Map.Entry<Integer, Integer> m:map.entrySet()){  
+        	   System.out.print(m.getValue()+" ");  }
     }
 
 	public static void main(String[] args) {
