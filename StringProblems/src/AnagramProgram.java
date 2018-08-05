@@ -49,7 +49,6 @@ public class AnagramProgram {
                 //Putting char and it's count to map with pre-decrementing char count
                 map.put(charAsKey, --charCountAsValue);
             }
- 
             //Checking each character and it's count
             for (int value : map.values())
             {

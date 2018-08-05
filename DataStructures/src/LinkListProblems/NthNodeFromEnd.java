@@ -66,7 +66,7 @@ public class NthNodeFromEnd {
 		llist.push(5);
 
 		llist.PrintLinkList();
-		llist.findNthNodeFromEnd(3);
+		llist.findNthNodeFromEnd(2);
 	}
 
 

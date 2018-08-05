@@ -49,7 +49,7 @@ public class ArrayInZigZagFaction {
 	public static void main(String[] args) {
 		int arr[] = new int[]{4, 3, 7, 8, 6, 2, 1};
 		System.out.println("Input Array : " + Arrays.toString(arr));
-		System.out.println("Input Array : " + Arrays.toString(zigZag(arr)));
+		System.out.println("Output Array : " + Arrays.toString(zigZag(arr)));
 	}
 
 }
