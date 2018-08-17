@@ -1,0 +1,55 @@
+DOCKER
+
+Introduction:
+1.	MainFrame -> PC  -> Baremetal  -> Virtual -> Datacenter -> Cloud -> Host -> Containers
+2.	Why	Docker ? Matrix of Hell solved, Speed
+3.	Docker on windows: Linux(Default) and Windows Containers
+4.  For windows 7 : use Docker ToolBox , it runs a tiny Linux VM in virtualBox via docker-machine. Here it don't support windows containers	
+	
+Working:
+1.  Docker-machine creates a VMs on cloud or local machine which run docker. 
+	Do : docker-machine ls
+	First one is named 'default' 
+	Do : docker-machine start
+	Do : docker verison
+2.  Code paths enabled for Bind Mounts works in C:Users only
+
+Creating Containers
+1.  Containers are processes limited to resources they can access. Exits when process stops
+2.  docker version : retuns the version of client and also of server(called engine)
+3.  docker info : more information
+4.  Image vs Containers: Image is the app we want to run while a container is an instance of that image running as a process. We can have many containers running of the same image.Dockers defaut image "registry" is call ed Docker Hub
+5.  Start a new container:
+	Do : docker container run --publish 80:80 nginx  and visit localhost on browser(or http://192.168.99.100 on windows)
+	Working : In backgroud , docker engine looked for a nginx image called 'nginx' from Docker Hub. Then started a new container from that image.Publish syntax then opened port 80 on hostIP
+	Do : docker container run --publish 80:80 --detach nginx  :: tells docker to run in background and return the unique "containerId"   
+	Do : docker conatiner ls :  list our containers
+	Do : docker container stop "containerId"
+	Do : docker container ls -a : each time u do run command , a new conatiner is made from that image.See results from this commands
+	Do : docker container run --publish 80:80 --detach --name aeshwer nginx  :  can give name also
+	Do : docker container logs aeshwer :  Get logs of this container
+	Do : docker container rm "containerId1" "containerId2" "containerId3"  : To stop multiple conatainers by 1 command. Use "-f" to force stop running ones
+	Do : docker top "containerName" : list the process running inside this conatainer
+6.  What happens in docker conatainer run ???	 Firstly looks for image in cacahe else download latest it and start a new conatainer 	  based on it and give a virtual Ip on  private network inside docker engine and opens port 80 on host and forwards to port 80 in conatainer.
+7.  Other ways to start  : docker run --name aeshwer -d nginx  : Now do docker stop/start aeshwer  ..(-d or --detach are same)
+8.  NOTE: to test if ports resond for a service: curl localhosty or curl http://192.168.99.100
+9.  Do: docker image ls  : Command to list images
+
+More on Containers
+1.  Do : docker container top  :  process list in one command
+2.  Do : docker container inspect  : details of one conatainer config
+3.  Do : docker container stats : performance stats for all conatainers
+
+Creating a Shell Inside a Container
+1.  Do : docker container run -it : start new conatainer interactively
+		Note: docker container run -it --name proxy nginx bash : you can open a SSH bash shell by this with root on container.Write "exit" to come out of shell               		
+2.  Do : docker container exec -it : run additional command/process in existing runnning container
+		Note : docker container exec -it mysql bash : it runs the bash program 
+3.  No need of SSH , docker client is a great substitute for that
+4.  Do: docker container start -ai nginx : start a existing container
+
+Docker Networks:
+1.  When we start a container , we are really in backgroud connecting to a particular docker network (bridge newtwork) and each of these virtual network rouites through NAT firewall on hostIP. Acutuall the docker deamon configures thes host IP on its default interface, so that the container  can get out on internet.
+2.  Best Practice : Create a new virtual network for each app
+3.  
+	
