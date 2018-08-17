@@ -28,28 +28,46 @@ Creating Containers
 	Do : docker container ls -a : each time u do run command , a new conatiner is made from that image.See results from this commands
 	Do : docker container run --publish 80:80 --detach --name aeshwer nginx  :  can give name also
 	Do : docker container logs aeshwer :  Get logs of this container
-	Do : docker container rm "containerId1" "containerId2" "containerId3"  : To stop multiple conatainers by 1 command. Use "-f" to force stop running ones
-	Do : docker top "containerName" : list the process running inside this conatainer
-6.  What happens in docker conatainer run ???	 Firstly looks for image in cacahe else download latest it and start a new conatainer 	  based on it and give a virtual Ip on  private network inside docker engine and opens port 80 on host and forwards to port 80 in conatainer.
+	Do : docker container rm "containerId1" "containerId2" "containerId3"  : To stop multiple containers by 1 command. Use "-f" to force stop running ones
+	Do : docker top "containerName" : list the process running inside this container
+6.  What happens in docker container run ???	 Firstly looks for image in cacahe else download latest it and start a new container 	  based on it and give a virtual Ip on  private network inside docker engine and opens port 80 on host and forwards to port 80 in container.
 7.  Other ways to start  : docker run --name aeshwer -d nginx  : Now do docker stop/start aeshwer  ..(-d or --detach are same)
 8.  NOTE: to test if ports resond for a service: curl localhosty or curl http://192.168.99.100
 9.  Do: docker image ls  : Command to list images
 
 More on Containers
 1.  Do : docker container top  :  process list in one command
-2.  Do : docker container inspect  : details of one conatainer config
-3.  Do : docker container stats : performance stats for all conatainers
+2.  Do : docker container inspect  : details of one container config
+3.  Do : docker container stats : performance stats for all containers
 
 Creating a Shell Inside a Container
-1.  Do : docker container run -it : start new conatainer interactively
+1.  Do : docker container run -it : start new container interactively
 		Note: docker container run -it --name proxy nginx bash : you can open a SSH bash shell by this with root on container.Write "exit" to come out of shell               		
 2.  Do : docker container exec -it : run additional command/process in existing runnning container
 		Note : docker container exec -it mysql bash : it runs the bash program 
 3.  No need of SSH , docker client is a great substitute for that
-4.  Do: docker container start -ai nginx : start a existing container
+4.  Do : docker container start -ai nginx : start a existing container
 
 Docker Networks:
 1.  When we start a container , we are really in backgroud connecting to a particular docker network (bridge newtwork) and each of these virtual network rouites through NAT firewall on hostIP. Acutuall the docker deamon configures thes host IP on its default interface, so that the container  can get out on internet.
 2.  Best Practice : Create a new virtual network for each app
-3.  
+3.  -p attribute : -p Host: Container  ,eg. -p 80:80
+4.  Do : docker container port containerName : gives the port for this container
+5.  Do : docker network ls : list network
+5.  Do : docker network inspect networkName : details of network
+6.  DO : docker network create --driver : crete a new network
+		Note :  start/stop network : 
+		> docker network connect   : eg. docker network connect newNetworkId oldContainerId
+		> docker network disconnect  eg. docker network disconnect newNetworkId oldContainerId
+7.  There is also a network by default called "host" : gains performance by skiping virtual network but sacrifices secruity
+
+Docker Networks: DNS(Domain Name System)
+1.  Docker daemon has a build-in  DNS server that container use by default
+2.  Docker defaults the hostName to continerName but we can change that
+3.  DNS round Robin : we can have multiple continers on a created network respond to same DNS address	
+
+Docker Images
+1.  What?  App binaries and dependencies and metadate about the image data and how to run the image. There is no complete OS or kernal, the host provide the kernal 
+2.  Image Layers concept:  images are made up of file system changes and metadata. A container is just a single read/write  layer on top of image 
+ 
 	
