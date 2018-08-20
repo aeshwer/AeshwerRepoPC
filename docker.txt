@@ -69,5 +69,11 @@ Docker Networks: DNS(Domain Name System)
 Docker Images
 1.  What?  App binaries and dependencies and metadate about the image data and how to run the image. There is no complete OS or kernal, the host provide the kernal 
 2.  Image Layers concept:  images are made up of file system changes and metadata. A container is just a single read/write  layer on top of image 
- 
+3.  How to rename tag of existing image : 
+	Do : docker image tag originalImageTag newImageTag:Tag
+4.	How to rename tag of existing image to repository before push:
+	Do : docker tag imageId RepositoryName
+5.  How to push a images
+	Do : docker image push imageName
+	Note : Use "docker login" command to login before using pushing
 	
