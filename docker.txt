@@ -77,3 +77,25 @@ Docker Images
 	Do : docker image push imageName
 	Note : Use "docker login" command to login before using pushing
 	
+Building Images	
+1.	Using Vim command:
+	Do : vim dockerFile : opens the file
+	Do : For exit , type :q -> enter
+	Do : For edit and save , type i -> edit -> escape to come out of insert mode -> :x! to save and exit
+	Do : For edit and discard , type i -> edit -> escape to come out of insert mode -> :wq to discard and exit
+	
+2.  Do : docker image build -t TagName . : the dot in last tells in build this image in this directory with this tag name
+
+Container LifeTime And Persistent Data
+1.  By default all files created inside a container are stored on a writable container layer(UFS).Its implications are: 
+	(#)The data doesn’t persist when that container is no longer running, and it can be difficult to get the data out of the container if another process needs it.
+	(#)A container’s writable layer is tightly coupled to the host machine where the container is running. You can’t easily move the data somewhere else.
+2.  Docker has two options for containers to store files in the host machine, so that the files are persisted even after the container stops: 
+	Volumes and Bind Mounts.	
+3.  Volumes are stored in a part of the host filesystem which is managed by Docker 
+	Do : use the 'VOLUME' keywork in dockerFile to tell a location for persistence data to store and outlive when container is exited.These need Manual deletion after contained is deleted,if you want to remove this.
+4. 	Do : docker volume inspect volumeName : this gives info about used volumne. You can also do "docker image inspect imageName and see under 'volumne' attribute the info"
+5.  Friendly way to assign volumes to conatiner is "Named Volumes"
+	Do:  docker container run -d --name mysql2 -e MYSQL_ALLOW_EMPTY=True -v mysql-db:/var/lib/mysql imageName -> observe named volume syntax using -v attribute
+6.  Binding Mounts maps a host file or directory to a container file or directory, basically 2 location pointing to same files.One limitation is that its is on runtime and Os path dependent
+7.  Example of mounts : docker container run -d --name nginxNew -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
