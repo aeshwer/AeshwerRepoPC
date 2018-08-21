@@ -34,6 +34,7 @@ Creating Containers
 7.  Other ways to start  : docker run --name aeshwer -d nginx  : Now do docker stop/start aeshwer  ..(-d or --detach are same)
 8.  NOTE: to test if ports resond for a service: curl localhosty or curl http://192.168.99.100
 9.  Do: docker image ls  : Command to list images
+10. Logs following: docker container logs -f containerName
 
 More on Containers
 1.  Do : docker container top  :  process list in one command
