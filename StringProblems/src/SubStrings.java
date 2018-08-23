@@ -1,10 +1,25 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 // https://www.geeksforgeeks.org/java-lang-string-substring-java/
 //O(n^2)
 public class SubStrings {
+	
+	public static class StringComparator implements Comparator<String>
+	{
+		@Override
+		public int compare(String o1, String o2) {
+			if(o1.length()==o2.length())  
+				return 0;  
+			else if(o1.length()>o2.length())  
+				return 1;  
+			else  
+			return -1;  
+			}
+	}
 
 	// Function to print all substring
 	public static void SubString(String str, int n)
@@ -19,7 +34,8 @@ public class SubStrings {
 				//System.out.println(str.substring(i, j)); simple solution
 			}
 		}
-		sortedList.sort(Comparator.comparingInt(String::length));
+		Collections.sort(sortedList,new StringComparator());
+		//sortedList.sort(Comparator.comparingInt(String::length));  use above implementation or use JAVA8 
         System.out.println(sortedList);
 	}
 
