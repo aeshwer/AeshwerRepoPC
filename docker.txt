@@ -30,7 +30,7 @@ Creating Containers
 	Do : docker container logs aeshwer :  Get logs of this container
 	Do : docker container rm "containerId1" "containerId2" "containerId3"  : To stop multiple containers by 1 command. Use "-f" to force stop running ones
 	Do : docker top "containerName" : list the process running inside this container
-6.  What happens in docker container run ???	 Firstly looks for image in cacahe else download latest it and start a new container 	  based on it and give a virtual Ip on  private network inside docker engine and opens port 80 on host and forwards to port 80 in container.
+6.  What happens in docker container run ???	 Firstly looks for image in cache else download latest it and start a new container 	  based on it and give a virtual Ip on  private network inside docker engine and opens port 80 on host and forwards to port 80 in container.
 7.  Other ways to start  : docker run --name aeshwer -d nginx  : Now do docker stop/start aeshwer  ..(-d or --detach are same)
 8.  NOTE: to test if ports resond for a service: curl localhosty or curl http://192.168.99.100
 9.  Do: docker image ls  : Command to list images
@@ -100,3 +100,11 @@ Container LifeTime And Persistent Data
 	Do:  docker container run -d --name mysql2 -e MYSQL_ALLOW_EMPTY=True -v mysql-db:/var/lib/mysql imageName -> observe named volume syntax using -v attribute
 6.  Binding Mounts maps a host file or directory to a container file or directory, basically 2 location pointing to same files.One limitation is that its is on runtime and Os path dependent
 7.  Example of mounts : docker container run -d --name nginxNew -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
+9.  Do :  docker volume prune : this removes the all volumes 
+
+Docker Compose
+1.  These are YAML files in which you can define the operations you want to do.
+2.  docker-compose CLI: Not a production grade tool. Two common commands are:
+	Do: docker-compose up : setup volume/network and start all container
+	Do: docker-compose down : remove volume/network and stop all container 
+	Do: docker-compose logs : get the logs 
