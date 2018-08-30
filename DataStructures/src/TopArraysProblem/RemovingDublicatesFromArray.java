@@ -28,7 +28,7 @@ public class RemovingDublicatesFromArray {
     }  
        
     public static void main (String[] args) {  
-        int arr[] = {10,70,30,90,20,20,30,40,70,50};//unsorted array  
+        int arr[] = {10,70,30,90,20,20,30,40,70,50};//unsorted array  but duplicates  are together
         Arrays.sort(arr);//sorting array  
         int length = arr.length;  
         length = removeDuplicateElements(arr, length);  
