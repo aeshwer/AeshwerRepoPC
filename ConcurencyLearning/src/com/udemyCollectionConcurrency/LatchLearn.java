@@ -38,7 +38,7 @@ public class LatchLearn {
 
 	public static void main(String[] args) {
 		
-		ExecutorService executerService = Executors.newSingleThreadExecutor();
+		ExecutorService executerService = Executors.newCachedThreadPool();
 		CountDownLatch latch = new CountDownLatch(5);
 		
 		// create five tasks
