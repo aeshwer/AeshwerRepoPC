@@ -1,8 +1,6 @@
 //https://www.geeksforgeeks.org/transform-bst-sum-tree/
 package BinarySearchTree;
 
-import BinaryTrees.BinaryTreeTraversal.Node;
-
 public class BSTToGreaterSumTree {
 	public static int sum = 0;
 
@@ -33,13 +31,6 @@ public class BSTToGreaterSumTree {
 	      printPreorder(root.right);
 	  }
 	  
-	/*  public void transformTree(Node root) 
-	  {
-		  int sum = 0; // Initialize sum
-		  this.convertToGreaterSumTree(root, sum);
-	  }*/
-	    
-	    
 	  // Use reverse IN-order, i.e (R Root L) 
 	  public void convertToGreaterSumTree(Node root)
 	  {
@@ -58,8 +49,6 @@ public class BSTToGreaterSumTree {
 			
 		   // Recur for left subtree
 		   convertToGreaterSumTree(root.left);
-		  
-		  
 	  }
 
 	public static void main(String[] args) {
