@@ -25,7 +25,8 @@
 		<property name="hbm2ddl.auto">create</property>
  
         <!-- Mention here all the model classes along with their package name -->
-		<mapping class="Basics.Message"/>		
+		<mapping class="Basics.Message"/>
+		<mapping class="ComponentMapping.Person"/>		
 
     </session-factory>
 </hibernate-configuration>
