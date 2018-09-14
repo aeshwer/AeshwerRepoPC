@@ -1,0 +1,4 @@
+15:57:19,781 DEBUG SQL:92 - drop table if exists message
+15:57:19,794 DEBUG SQL:92 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID)) engine=MyISAM
+15:57:19,866 DEBUG SQL:92 - insert into message (TEXT) values (?)
+15:57:19,876 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hello World With JPA annotations]
