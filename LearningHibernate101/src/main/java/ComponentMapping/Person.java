@@ -26,8 +26,19 @@ public class Person {
 		@AttributeOverride(name="city", column=@Column(name="address_city"))
 	})
 	private Address address;
+	
+	// we can compose n number of times
+	
+	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride(name="street", column=@Column(name="HomeAaddress_street")),
+		@AttributeOverride(name="city", column=@Column(name="HomeAddress_city")),
+		@AttributeOverride(name="zipcode", column=@Column(name="HomeAddress_zipcode"))
+	})
+	private Address homeAddress;
 
 	public Person() {}	
+	
 	public Person(String name, Address address) {
 		this.name = name;
 		this.address = address;
