@@ -8,7 +8,7 @@ public class App {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		
-		Message message = new Message("Hello World");
+		Message message = new Message("Hello World With JPA annotations");
 		session.save(message);
 		
 		session.getTransaction().commit();
