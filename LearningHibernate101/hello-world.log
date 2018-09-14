@@ -2,3 +2,21 @@
 15:57:19,794 DEBUG SQL:92 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID)) engine=MyISAM
 15:57:19,866 DEBUG SQL:92 - insert into message (TEXT) values (?)
 15:57:19,876 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hello World With JPA annotations]
+16:55:08,334 DEBUG SQL:92 - drop table if exists message
+16:55:08,346 DEBUG SQL:92 - drop table if exists Person
+16:55:08,351 DEBUG SQL:92 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID)) engine=MyISAM
+16:55:08,363 DEBUG SQL:92 - create table Person (id bigint not null auto_increment, city varchar(255), street varchar(255), zipcode varchar(255), name varchar(255) not null, primary key (id)) engine=MyISAM
+16:55:08,449 DEBUG SQL:92 - insert into Person (city, street, zipcode, name) values (?, ?, ?, ?)
+16:55:08,460 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Seattle]
+16:55:08,460 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [200 E Main St]
+16:55:08,461 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [85123]
+16:55:08,461 TRACE BasicBinder:65 - binding parameter [4] as [VARCHAR] - [Ruby]
+17:08:47,640 DEBUG SQL:92 - drop table if exists message
+17:08:47,650 DEBUG SQL:92 - drop table if exists Person
+17:08:47,655 DEBUG SQL:92 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID)) engine=MyISAM
+17:08:47,664 DEBUG SQL:92 - create table Person (id bigint not null auto_increment, address_city varchar(255), address_street varchar(255), address_zipcode varchar(255), name varchar(255) not null, primary key (id)) engine=MyISAM
+17:08:47,732 DEBUG SQL:92 - insert into Person (address_city, address_street, address_zipcode, name) values (?, ?, ?, ?)
+17:08:47,742 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Seattle]
+17:08:47,742 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [200 E Main St]
+17:08:47,742 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [85123]
+17:08:47,742 TRACE BasicBinder:65 - binding parameter [4] as [VARCHAR] - [Ruby]
