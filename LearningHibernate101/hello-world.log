@@ -32,3 +32,79 @@
 17:11:27,051 TRACE BasicBinder:53 - binding parameter [5] as [VARCHAR] - [null]
 17:11:27,051 TRACE BasicBinder:53 - binding parameter [6] as [VARCHAR] - [null]
 17:11:27,051 TRACE BasicBinder:65 - binding parameter [7] as [VARCHAR] - [Ruby]
+17:29:31,507 DEBUG SQL:92 - drop table if exists Guide
+17:29:31,523 DEBUG SQL:92 - drop table if exists hibernate_sequence
+17:29:31,525 DEBUG SQL:92 - drop table if exists message
+17:29:31,530 DEBUG SQL:92 - drop table if exists Person
+17:29:31,533 DEBUG SQL:92 - drop table if exists Student
+17:29:31,541 DEBUG SQL:92 - create table Guide (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+17:29:31,554 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+17:29:31,561 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+17:29:31,562 DEBUG SQL:92 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID)) engine=MyISAM
+17:29:31,569 DEBUG SQL:92 - create table Person (id bigint not null auto_increment, address_city varchar(255), address_street varchar(255), address_zipcode varchar(255), HomeAddress_city varchar(255), HomeAaddress_street varchar(255), HomeAddress_zipcode varchar(255), name varchar(255) not null, primary key (id)) engine=MyISAM
+17:29:31,577 DEBUG SQL:92 - create table Student (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+17:29:31,583 DEBUG SQL:92 - alter table Student add constraint FKb4ny3l3cnsxbbn601ev8mhlj5 foreign key (guide_id) references Guide (id)
+17:29:31,665 DEBUG SQL:92 - insert into Guide (name, salary, staff_id) values (?, ?, ?)
+17:29:31,676 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+17:29:31,677 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+17:29:31,677 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+17:29:31,689 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+17:29:31,690 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+17:29:31,696 DEBUG SQL:92 - insert into Student (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+17:29:31,697 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+17:29:31,697 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+17:29:31,697 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+17:29:31,698 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [1]
+17:29:59,671 DEBUG SQL:92 - drop table if exists Guide
+17:29:59,682 DEBUG SQL:92 - drop table if exists hibernate_sequence
+17:29:59,684 DEBUG SQL:92 - drop table if exists message
+17:29:59,687 DEBUG SQL:92 - drop table if exists Person
+17:29:59,688 DEBUG SQL:92 - drop table if exists Student
+17:29:59,693 DEBUG SQL:92 - create table Guide (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+17:29:59,700 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+17:29:59,706 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+17:29:59,707 DEBUG SQL:92 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID)) engine=MyISAM
+17:29:59,712 DEBUG SQL:92 - create table Person (id bigint not null auto_increment, address_city varchar(255), address_street varchar(255), address_zipcode varchar(255), HomeAddress_city varchar(255), HomeAaddress_street varchar(255), HomeAddress_zipcode varchar(255), name varchar(255) not null, primary key (id)) engine=MyISAM
+17:29:59,718 DEBUG SQL:92 - create table Student (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+17:29:59,724 DEBUG SQL:92 - alter table Student add constraint FKb4ny3l3cnsxbbn601ev8mhlj5 foreign key (guide_id) references Guide (id)
+17:29:59,801 DEBUG SQL:92 - insert into Guide (name, salary, staff_id) values (?, ?, ?)
+17:29:59,809 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+17:29:59,810 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+17:29:59,810 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+17:29:59,821 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+17:29:59,822 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+17:29:59,827 DEBUG SQL:92 - insert into Student (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+17:29:59,828 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+17:29:59,828 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+17:29:59,829 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+17:29:59,829 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [1]
+17:31:37,587 DEBUG SQL:92 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID)) engine=MyISAM
+17:31:37,601 DEBUG SQL:92 - create table Person (id bigint not null auto_increment, address_city varchar(255), address_street varchar(255), address_zipcode varchar(255), HomeAddress_city varchar(255), HomeAaddress_street varchar(255), HomeAddress_zipcode varchar(255), name varchar(255) not null, primary key (id)) engine=MyISAM
+17:31:37,617 DEBUG SQL:92 - alter table Student add constraint FKb4ny3l3cnsxbbn601ev8mhlj5 foreign key (guide_id) references Guide (id)
+17:31:37,693 DEBUG SQL:92 - insert into Guide (name, salary, staff_id) values (?, ?, ?)
+17:31:37,702 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+17:31:37,702 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+17:31:37,702 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+17:31:37,714 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+17:31:37,715 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+17:31:37,720 DEBUG SQL:92 - insert into Student (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+17:31:37,721 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+17:31:37,721 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+17:31:37,721 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+17:31:37,722 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [2]
+17:36:27,651 DEBUG SQL:92 - create table Guide (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+17:36:27,667 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+17:36:27,674 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+17:36:27,676 DEBUG SQL:92 - create table Student (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+17:36:27,683 DEBUG SQL:92 - alter table Student add constraint FKb4ny3l3cnsxbbn601ev8mhlj5 foreign key (guide_id) references Guide (id)
+17:36:27,757 DEBUG SQL:92 - insert into Guide (name, salary, staff_id) values (?, ?, ?)
+17:36:27,765 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+17:36:27,766 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+17:36:27,766 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+17:36:27,776 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+17:36:27,776 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+17:36:27,781 DEBUG SQL:92 - insert into Student (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+17:36:27,782 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+17:36:27,782 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+17:36:27,783 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+17:36:27,783 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [1]
