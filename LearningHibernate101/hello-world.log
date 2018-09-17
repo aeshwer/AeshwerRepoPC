@@ -108,3 +108,69 @@
 17:36:27,782 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
 17:36:27,783 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
 17:36:27,783 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [1]
+11:18:04,000 DEBUG SQL:92 - create table Guide (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+11:18:04,024 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+11:18:04,034 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+11:18:04,036 DEBUG SQL:92 - create table Student (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+11:18:04,045 DEBUG SQL:92 - alter table Student add constraint FKb4ny3l3cnsxbbn601ev8mhlj5 foreign key (guide_id) references Guide (id)
+11:19:24,537 DEBUG SQL:92 - create table Guide2 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+11:19:24,557 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+11:19:24,567 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+11:19:24,569 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+11:19:24,570 DEBUG SQL:92 - create table Student2 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+11:19:24,579 DEBUG SQL:92 - alter table Student2 add constraint FK3ilr24ehb7yk1ittfd7lwio28 foreign key (guide_id) references Guide2 (id)
+11:19:24,659 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+11:19:24,666 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+11:19:24,672 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+11:19:24,673 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+11:19:24,682 DEBUG SQL:92 - insert into Guide2 (name, salary, staff_id, id) values (?, ?, ?, ?)
+11:19:24,683 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+11:19:24,684 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+11:19:24,684 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+11:19:24,684 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [2]
+11:19:24,686 DEBUG SQL:92 - insert into Student2 (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+11:19:24,687 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+11:19:24,687 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+11:19:24,687 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+11:19:24,687 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [1]
+11:21:40,449 DEBUG SQL:92 - create table Guide2 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+11:21:40,469 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+11:21:40,481 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+11:21:40,482 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+11:21:40,483 DEBUG SQL:92 - create table Student2 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+11:21:40,493 DEBUG SQL:92 - alter table Student2 add constraint FK3ilr24ehb7yk1ittfd7lwio28 foreign key (guide_id) references Guide2 (id)
+11:21:40,570 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+11:21:40,577 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+11:21:40,583 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+11:21:40,583 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+11:21:40,588 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+11:21:40,588 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+11:21:40,592 DEBUG SQL:92 - insert into Guide2 (name, salary, staff_id, id) values (?, ?, ?, ?)
+11:21:40,594 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+11:21:40,594 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+11:21:40,594 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+11:21:40,595 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [2]
+11:21:40,598 DEBUG SQL:92 - insert into Student2 (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+11:21:40,598 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+11:21:40,598 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+11:21:40,598 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+11:21:40,598 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [1]
+11:21:40,600 DEBUG SQL:92 - insert into Student2 (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+11:21:40,600 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50457]
+11:21:40,600 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+11:21:40,600 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Finding Exception]
+11:21:40,600 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [3]
+11:22:35,276 DEBUG SQL:92 - create table Guide2 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+11:22:35,302 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+11:22:35,315 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+11:22:35,318 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+11:22:35,319 DEBUG SQL:92 - create table Student2 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+11:22:35,334 DEBUG SQL:92 - alter table Student2 add constraint FK3ilr24ehb7yk1ittfd7lwio28 foreign key (guide_id) references Guide2 (id)
+11:22:35,419 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+11:22:35,427 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+11:22:35,433 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+11:22:35,434 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+11:22:35,439 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+11:22:35,440 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+11:22:35,448 DEBUG SQL:92 - select student2x0_.id as id1_1_0_, student2x0_.enrollment_id as enrollme2_1_0_, student2x0_.guide_id as guide_id4_1_0_, student2x0_.name as name3_1_0_, guide2x1_.id as id1_0_1_, guide2x1_.name as name2_0_1_, guide2x1_.salary as salary3_0_1_, guide2x1_.staff_id as staff_id4_0_1_ from Student2 student2x0_ left outer join Guide2 guide2x1_ on student2x0_.guide_id=guide2x1_.id where student2x0_.id=?
+11:22:35,450 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]

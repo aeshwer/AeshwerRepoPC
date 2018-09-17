@@ -27,8 +27,10 @@
         <!-- Mention here all the model classes along with their package name -->
 		<!-- <mapping class="Basics.Message"/>
 		<mapping class="ComponentMapping.Person"/> -->
-		<mapping class="ManyToOne.Student"/>		
-		<mapping class="ManyToOne.Guide"/>				
+		<!-- <mapping class="ManyToOne.Student"/> -->		
+		<!-- <mapping class="ManyToOne.Guide"/> -->
+		<mapping class="Cascade.Guide2"/>
+		<mapping class="Cascade.Student2"/>				
 
     </session-factory>
 </hibernate-configuration>
