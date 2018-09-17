@@ -22,15 +22,17 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
  
         <!-- Mention here all the model classes along with their package name -->
 		<!-- <mapping class="Basics.Message"/>
 		<mapping class="ComponentMapping.Person"/> -->
 		<!-- <mapping class="ManyToOne.Student"/> -->		
 		<!-- <mapping class="ManyToOne.Guide"/> -->
-		<mapping class="Cascade.Guide2"/>
-		<mapping class="Cascade.Student2"/>				
+		<!-- <mapping class="Cascade.Guide2"/>
+		<mapping class="Cascade.Student2"/> -->
+		<mapping class="OneToMany.Guide3"/>
+		<mapping class="OneToMany.Student3"/>				
 
     </session-factory>
 </hibernate-configuration>
