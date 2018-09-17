@@ -174,3 +174,370 @@
 11:22:35,440 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
 11:22:35,448 DEBUG SQL:92 - select student2x0_.id as id1_1_0_, student2x0_.enrollment_id as enrollme2_1_0_, student2x0_.guide_id as guide_id4_1_0_, student2x0_.name as name3_1_0_, guide2x1_.id as id1_0_1_, guide2x1_.name as name2_0_1_, guide2x1_.salary as salary3_0_1_, guide2x1_.staff_id as staff_id4_0_1_ from Student2 student2x0_ left outer join Guide2 guide2x1_ on student2x0_.guide_id=guide2x1_.id where student2x0_.id=?
 11:22:35,450 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+16:00:57,821 DEBUG SQL:92 - create table Guide2 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:00:57,835 DEBUG SQL:92 - create table Guide3 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:00:57,841 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+16:00:57,846 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:00:57,848 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:00:57,849 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:00:57,849 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:00:57,850 DEBUG SQL:92 - create table Student2 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:00:57,856 DEBUG SQL:92 - create table Student3 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:00:57,862 DEBUG SQL:92 - alter table Student2 add constraint FK3ilr24ehb7yk1ittfd7lwio28 foreign key (guide_id) references Guide2 (id)
+16:00:57,879 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:00:57,949 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:00:57,956 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:00:57,961 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:00:57,961 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:00:57,970 DEBUG SQL:92 - select student2x0_.id as id1_2_0_, student2x0_.enrollment_id as enrollme2_2_0_, student2x0_.guide_id as guide_id4_2_0_, student2x0_.name as name3_2_0_, guide2x1_.id as id1_0_1_, guide2x1_.name as name2_0_1_, guide2x1_.salary as salary3_0_1_, guide2x1_.staff_id as staff_id4_0_1_ from Student2 student2x0_ left outer join Guide2 guide2x1_ on student2x0_.guide_id=guide2x1_.id where student2x0_.id=?
+16:00:57,972 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+16:01:19,256 DEBUG SQL:92 - create table Guide2 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:01:19,273 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+16:01:19,280 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:01:19,282 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:01:19,283 DEBUG SQL:92 - create table Student2 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:01:19,290 DEBUG SQL:92 - alter table Student2 add constraint FK3ilr24ehb7yk1ittfd7lwio28 foreign key (guide_id) references Guide2 (id)
+16:01:19,367 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:01:19,374 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:01:19,379 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:01:19,379 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:01:19,387 DEBUG SQL:92 - select student2x0_.id as id1_1_0_, student2x0_.enrollment_id as enrollme2_1_0_, student2x0_.guide_id as guide_id4_1_0_, student2x0_.name as name3_1_0_, guide2x1_.id as id1_0_1_, guide2x1_.name as name2_0_1_, guide2x1_.salary as salary3_0_1_, guide2x1_.staff_id as staff_id4_0_1_ from Student2 student2x0_ left outer join Guide2 guide2x1_ on student2x0_.guide_id=guide2x1_.id where student2x0_.id=?
+16:01:19,389 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+16:01:48,328 DEBUG SQL:92 - create table Guide2 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:01:48,345 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+16:01:48,352 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:01:48,354 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:01:48,355 DEBUG SQL:92 - create table Student2 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:01:48,365 DEBUG SQL:92 - alter table Student2 add constraint FK3ilr24ehb7yk1ittfd7lwio28 foreign key (guide_id) references Guide2 (id)
+16:01:48,438 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:01:48,447 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:01:48,452 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:01:48,452 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:01:48,461 DEBUG SQL:92 - insert into Guide2 (name, salary, staff_id, id) values (?, ?, ?, ?)
+16:01:48,463 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:01:48,463 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:01:48,464 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:01:48,464 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [2]
+16:01:48,466 DEBUG SQL:92 - insert into Student2 (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+16:01:48,467 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:01:48,467 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+16:01:48,467 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:01:48,467 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [1]
+16:08:54,253 DEBUG SQL:92 - create table Guide2 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:08:54,273 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+16:08:54,283 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:08:54,284 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:08:54,285 DEBUG SQL:92 - create table Student2 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:08:54,291 DEBUG SQL:92 - alter table Student2 add constraint FK3ilr24ehb7yk1ittfd7lwio28 foreign key (guide_id) references Guide2 (id)
+16:08:54,362 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:08:54,369 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:08:54,373 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:08:54,374 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:08:54,382 DEBUG SQL:92 - select student2x0_.id as id1_1_0_, student2x0_.enrollment_id as enrollme2_1_0_, student2x0_.guide_id as guide_id4_1_0_, student2x0_.name as name3_1_0_, guide2x1_.id as id1_0_1_, guide2x1_.name as name2_0_1_, guide2x1_.salary as salary3_0_1_, guide2x1_.staff_id as staff_id4_0_1_ from Student2 student2x0_ left outer join Guide2 guide2x1_ on student2x0_.guide_id=guide2x1_.id where student2x0_.id=?
+16:08:54,383 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+16:18:18,700 DEBUG SQL:92 - create table Guide3 (id bigint not null, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:18:18,717 DEBUG SQL:92 - create table hibernate_sequence (next_val bigint) engine=MyISAM
+16:18:18,723 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:18:18,725 DEBUG SQL:92 - insert into hibernate_sequence values ( 1 )
+16:18:18,726 DEBUG SQL:92 - create table Student3 (id bigint not null, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:18:18,732 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:18:18,808 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:18:18,816 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:18:18,834 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:18:18,835 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:18:18,837 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:18:18,837 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:18:18,839 DEBUG SQL:92 - select next_val as id_val from hibernate_sequence for update
+16:18:18,840 DEBUG SQL:92 - update hibernate_sequence set next_val= ? where next_val=?
+16:18:18,846 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id, id) values (?, ?, ?, ?)
+16:18:18,848 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:18:18,849 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:18:18,850 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:18:18,850 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [1]
+16:18:18,852 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+16:18:18,852 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:18:18,852 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:18:18,852 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:18:18,853 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [2]
+16:18:18,854 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name, id) values (?, ?, ?, ?)
+16:18:18,855 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:18:18,855 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:18:18,855 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:18:18,855 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [3]
+16:18:18,856 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id, id) values (?, ?, ?, ?)
+16:18:18,856 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:18:18,856 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:18:18,856 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:18:18,857 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [4]
+16:29:06,105 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:29:06,127 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:29:06,137 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:29:06,217 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:29:06,226 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:29:06,226 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:29:06,226 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:29:06,231 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:29:06,232 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:29:06,233 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:29:06,233 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:29:06,235 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:29:06,236 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:29:06,236 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:29:06,236 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:29:06,237 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:29:06,238 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:29:06,239 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:29:06,239 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:35:07,623 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:35:07,643 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:35:07,650 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:35:07,727 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:35:07,737 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:35:07,738 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:35:07,738 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:35:07,743 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:35:07,743 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:35:07,744 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:35:07,744 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:35:07,746 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:35:07,747 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:35:07,747 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:35:07,747 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:35:07,748 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:35:07,749 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:35:07,749 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+16:35:07,749 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:36:45,012 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:36:45,028 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:36:45,035 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:36:45,118 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:36:45,128 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:36:45,128 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:36:45,128 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:36:45,133 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:36:45,134 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:36:45,135 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:36:45,135 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:36:45,138 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:36:45,138 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:36:45,139 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:36:45,139 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:36:45,140 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:36:45,141 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:36:45,142 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+16:36:45,142 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:37:09,851 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:37:35,635 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:38:57,393 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:38:57,410 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:38:57,417 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:38:57,494 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:38:57,502 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:38:57,503 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:38:57,503 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:38:57,508 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:38:57,508 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:38:57,508 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:38:57,508 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:42:30,061 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:42:30,076 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:42:30,084 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:42:30,159 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:42:30,169 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:42:30,169 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:42:30,170 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:42:30,174 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:42:30,175 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:42:30,175 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:42:30,175 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:42:30,178 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:42:30,178 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:42:30,178 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:42:30,178 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:42:30,179 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:42:30,180 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:42:30,181 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:42:30,181 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:42:44,604 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:42:44,693 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:42:44,702 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:42:44,702 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:42:44,703 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:42:44,706 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:42:44,707 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:42:44,707 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [3]
+16:42:44,708 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:42:44,710 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:42:44,711 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:42:44,711 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [3]
+16:42:44,711 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:42:44,712 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:42:44,713 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:42:44,713 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:42:44,714 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:42:44,718 DEBUG SQL:92 - select guide3x0_.id as id1_0_0_, guide3x0_.name as name2_0_0_, guide3x0_.salary as salary3_0_0_, guide3x0_.staff_id as staff_id4_0_0_ from Guide3 guide3x0_ where guide3x0_.id=?
+16:42:44,718 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+16:42:44,728 DEBUG SQL:92 - select student3x0_.id as id1_1_0_, student3x0_.enrollment_id as enrollme2_1_0_, student3x0_.guide_id as guide_id4_1_0_, student3x0_.name as name3_1_0_, guide3x1_.id as id1_0_1_, guide3x1_.name as name2_0_1_, guide3x1_.salary as salary3_0_1_, guide3x1_.staff_id as staff_id4_0_1_ from Student3 student3x0_ left outer join Guide3 guide3x1_ on student3x0_.guide_id=guide3x1_.id where student3x0_.id=?
+16:42:44,729 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+16:42:44,732 DEBUG SQL:92 - select students0_.guide_id as guide_id4_1_0_, students0_.id as id1_1_0_, students0_.id as id1_1_1_, students0_.enrollment_id as enrollme2_1_1_, students0_.guide_id as guide_id4_1_1_, students0_.name as name3_1_1_ from Student3 students0_ where students0_.guide_id=?
+16:42:44,732 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+16:43:32,844 DEBUG SQL:92 - drop table if exists Guide3
+16:43:32,855 DEBUG SQL:92 - drop table if exists Student3
+16:43:32,861 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:43:32,871 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:43:32,877 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:43:32,953 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:43:32,962 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:43:32,962 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:43:32,962 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:43:32,966 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:43:32,967 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:43:32,967 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:43:32,967 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:43:32,969 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:43:32,970 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:43:32,970 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:43:32,971 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:43:32,972 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:43:32,973 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:43:32,973 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:43:32,973 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:46:52,608 DEBUG SQL:92 - drop table if exists Guide3
+16:46:52,620 DEBUG SQL:92 - drop table if exists Student3
+16:46:52,625 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+16:46:52,638 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+16:46:52,644 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+16:46:52,723 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:46:52,732 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Mike Lawson]
+16:46:52,733 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1000]
+16:46:52,734 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000MO10789]
+16:46:52,737 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:46:52,738 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AL50456]
+16:46:52,738 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:46:52,739 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Amy Gill]
+16:46:52,741 DEBUG SQL:92 - insert into Student3 (enrollment_id, guide_id, name) values (?, ?, ?)
+16:46:52,741 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:46:52,741 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+16:46:52,742 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:46:52,743 DEBUG SQL:92 - insert into Guide3 (name, salary, staff_id) values (?, ?, ?)
+16:46:52,744 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ian Lamb]
+16:46:52,744 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2000]
+16:46:52,744 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [2000IM10901]
+16:46:52,752 DEBUG SQL:92 - update Student3 set enrollment_id=?, guide_id=?, name=? where id=?
+16:46:52,752 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JT50123]
+16:46:52,752 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+16:46:52,752 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [John Smith]
+16:46:52,752 TRACE BasicBinder:65 - binding parameter [4] as [BIGINT] - [2]
+17:36:01,743 DEBUG SQL:92 - drop table if exists Guide3
+17:36:01,756 DEBUG SQL:92 - drop table if exists Student3
+17:36:01,762 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+17:36:01,773 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+17:36:01,779 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+17:41:14,725 DEBUG SQL:92 - drop table if exists Guide3
+17:41:14,736 DEBUG SQL:92 - drop table if exists Student3
+17:41:14,740 DEBUG SQL:92 - create table Guide3 (id bigint not null auto_increment, name varchar(255), salary integer, staff_id varchar(255) not null, primary key (id)) engine=MyISAM
+17:41:14,759 DEBUG SQL:92 - create table Student3 (id bigint not null auto_increment, enrollment_id varchar(255) not null, name varchar(255), guide_id bigint, primary key (id)) engine=MyISAM
+17:41:14,769 DEBUG SQL:92 - alter table Student3 add constraint FKqpdr8bctivltqsi6lxvqebyho foreign key (guide_id) references Guide3 (id)
+18:01:45,203 DEBUG SQL:92 - drop table if exists Actor
+18:01:45,213 DEBUG SQL:92 - drop table if exists Movie
+18:01:45,214 DEBUG SQL:92 - drop table if exists movie_actor
+18:01:45,218 DEBUG SQL:92 - create table Actor (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+18:01:45,229 DEBUG SQL:92 - create table Movie (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+18:01:45,235 DEBUG SQL:92 - create table movie_actor (movie_id bigint not null, actor_id bigint not null, primary key (movie_id, actor_id)) engine=MyISAM
+18:01:45,240 DEBUG SQL:92 - alter table movie_actor add constraint FK2anlx6ycvy2nlm1o0ga9glpmu foreign key (actor_id) references Actor (id)
+18:01:45,250 DEBUG SQL:92 - alter table movie_actor add constraint FKi17y5929b8lhmtay3g1wo76e2 foreign key (movie_id) references Movie (id)
+18:01:45,331 DEBUG SQL:92 - insert into Movie (name) values (?)
+18:01:45,341 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [American Hustle]
+18:01:45,345 DEBUG SQL:92 - insert into Actor (name) values (?)
+18:01:45,345 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Christian Bale]
+18:01:45,347 DEBUG SQL:92 - insert into Movie (name) values (?)
+18:01:45,348 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [The Prestige]
+18:01:45,348 DEBUG SQL:92 - insert into Actor (name) values (?)
+18:01:45,349 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hugh Jackman]
+18:01:45,358 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:01:45,359 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+18:01:45,359 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+18:01:45,361 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:01:45,361 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+18:01:45,362 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+18:01:45,362 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:01:45,363 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+18:01:45,363 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+18:06:42,566 DEBUG SQL:92 - drop table if exists Actor
+18:06:42,577 DEBUG SQL:92 - drop table if exists Movie
+18:06:42,579 DEBUG SQL:92 - drop table if exists movie_actor
+18:06:42,585 DEBUG SQL:92 - create table Actor (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+18:06:42,596 DEBUG SQL:92 - create table Movie (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+18:06:42,603 DEBUG SQL:92 - create table movie_actor (movie_id bigint not null, actor_id bigint not null, primary key (movie_id, actor_id)) engine=MyISAM
+18:06:42,608 DEBUG SQL:92 - alter table movie_actor add constraint FK2anlx6ycvy2nlm1o0ga9glpmu foreign key (actor_id) references Actor (id)
+18:06:42,619 DEBUG SQL:92 - alter table movie_actor add constraint FKi17y5929b8lhmtay3g1wo76e2 foreign key (movie_id) references Movie (id)
+18:06:42,707 DEBUG SQL:92 - insert into Movie (name) values (?)
+18:06:42,716 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [American Hustle]
+18:06:42,721 DEBUG SQL:92 - insert into Actor (name) values (?)
+18:06:42,721 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Christian Bale]
+18:06:42,723 DEBUG SQL:92 - insert into Movie (name) values (?)
+18:06:42,724 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [The Prestige]
+18:06:42,725 DEBUG SQL:92 - insert into Actor (name) values (?)
+18:06:42,725 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hugh Jackman]
+18:06:42,737 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:06:42,738 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+18:06:42,738 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+18:06:42,740 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:06:42,741 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+18:06:42,741 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+18:06:42,742 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:06:42,742 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+18:06:42,743 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+18:08:54,126 DEBUG SQL:92 - drop table if exists Actor
+18:08:54,136 DEBUG SQL:92 - drop table if exists Movie
+18:08:54,138 DEBUG SQL:92 - drop table if exists movie_actor
+18:08:54,142 DEBUG SQL:92 - create table Actor (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+18:08:54,152 DEBUG SQL:92 - create table Movie (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+18:08:54,157 DEBUG SQL:92 - create table movie_actor (movie_id bigint not null, actor_id bigint not null, primary key (movie_id, actor_id)) engine=MyISAM
+18:08:54,162 DEBUG SQL:92 - alter table movie_actor add constraint FK2anlx6ycvy2nlm1o0ga9glpmu foreign key (actor_id) references Actor (id)
+18:08:54,177 DEBUG SQL:92 - alter table movie_actor add constraint FKi17y5929b8lhmtay3g1wo76e2 foreign key (movie_id) references Movie (id)
+18:08:54,253 DEBUG SQL:92 - insert into Movie (name) values (?)
+18:08:54,262 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [American Hustle]
+18:08:54,266 DEBUG SQL:92 - insert into Actor (name) values (?)
+18:08:54,266 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Christian Bale]
+18:08:54,268 DEBUG SQL:92 - insert into Movie (name) values (?)
+18:08:54,268 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [The Prestige]
+18:08:54,269 DEBUG SQL:92 - insert into Actor (name) values (?)
+18:08:54,269 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hugh Jackman]
+18:08:54,279 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:08:54,280 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+18:08:54,280 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+18:08:54,282 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:08:54,282 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+18:08:54,282 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+18:08:54,283 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:08:54,283 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+18:08:54,283 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+18:08:54,283 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:08:54,284 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+18:08:54,284 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+18:21:33,594 DEBUG SQL:92 - drop table if exists Actor
+18:21:33,603 DEBUG SQL:92 - drop table if exists Movie
+18:21:33,604 DEBUG SQL:92 - drop table if exists movie_actor
+18:21:33,608 DEBUG SQL:92 - create table Actor (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+18:21:33,618 DEBUG SQL:92 - create table Movie (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+18:21:33,625 DEBUG SQL:92 - create table movie_actor (movie_id bigint not null, actor_id bigint not null, primary key (movie_id, actor_id)) engine=MyISAM
+18:21:33,630 DEBUG SQL:92 - alter table movie_actor add constraint FK2anlx6ycvy2nlm1o0ga9glpmu foreign key (actor_id) references Actor (id)
+18:21:33,646 DEBUG SQL:92 - alter table movie_actor add constraint FKi17y5929b8lhmtay3g1wo76e2 foreign key (movie_id) references Movie (id)
+18:21:33,728 DEBUG SQL:92 - insert into Movie (name) values (?)
+18:21:33,736 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [American Hustle]
+18:21:33,740 DEBUG SQL:92 - insert into Actor (name) values (?)
+18:21:33,740 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Christian Bale]
+18:21:33,742 DEBUG SQL:92 - insert into Movie (name) values (?)
+18:21:33,742 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [The Prestige]
+18:21:33,743 DEBUG SQL:92 - insert into Actor (name) values (?)
+18:21:33,743 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hugh Jackman]
+18:21:33,754 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:21:33,754 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+18:21:33,755 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+18:21:33,756 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:21:33,757 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+18:21:33,757 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+18:21:33,758 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+18:21:33,758 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+18:21:33,758 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]

@@ -31,8 +31,12 @@
 		<!-- <mapping class="ManyToOne.Guide"/> -->
 		<!-- <mapping class="Cascade.Guide2"/>
 		<mapping class="Cascade.Student2"/> -->
-		<mapping class="OneToMany.Guide3"/>
-		<mapping class="OneToMany.Student3"/>				
+		<!-- <mapping class="OneToMany.Guide3"/>
+		<mapping class="OneToMany.Student3"/>	 -->			
+		<!-- <mapping class="OneToOne.Customer"/>
+		<mapping class="OneToOne.Passport"/> -->				
+		<mapping class="ManyToMany.Actor"/>
+		<mapping class="ManyToMany.Movie"/>
 
     </session-factory>
 </hibernate-configuration>
