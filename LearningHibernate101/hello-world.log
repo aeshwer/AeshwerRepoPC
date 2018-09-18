@@ -541,3 +541,47 @@
 18:21:33,758 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
 18:21:33,758 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
 18:21:33,758 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+10:56:18,550 DEBUG SQL:92 - drop table if exists Actor
+10:56:18,561 DEBUG SQL:92 - drop table if exists Movie
+10:56:18,562 DEBUG SQL:92 - drop table if exists movie_actor
+10:56:18,566 DEBUG SQL:92 - create table Actor (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+10:56:18,579 DEBUG SQL:92 - create table Movie (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+10:56:18,588 DEBUG SQL:92 - create table movie_actor (movie_id bigint not null, actor_id bigint not null, primary key (movie_id, actor_id)) engine=MyISAM
+10:56:18,598 DEBUG SQL:92 - alter table movie_actor add constraint FK2anlx6ycvy2nlm1o0ga9glpmu foreign key (actor_id) references Actor (id)
+10:56:18,613 DEBUG SQL:92 - alter table movie_actor add constraint FKi17y5929b8lhmtay3g1wo76e2 foreign key (movie_id) references Movie (id)
+10:56:18,697 DEBUG SQL:92 - insert into Movie (name) values (?)
+10:56:18,705 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [American Hustle]
+10:56:18,709 DEBUG SQL:92 - insert into Actor (name) values (?)
+10:56:18,710 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Christian Bale]
+10:56:18,712 DEBUG SQL:92 - insert into Movie (name) values (?)
+10:56:18,712 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [The Prestige]
+10:56:18,713 DEBUG SQL:92 - insert into Actor (name) values (?)
+10:56:18,713 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hugh Jackman]
+10:57:03,769 DEBUG SQL:92 - drop table if exists Actor
+10:57:03,780 DEBUG SQL:92 - drop table if exists Movie
+10:57:03,781 DEBUG SQL:92 - drop table if exists movie_actor
+10:57:03,786 DEBUG SQL:92 - create table Actor (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+10:57:03,803 DEBUG SQL:92 - create table Movie (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=MyISAM
+10:57:03,816 DEBUG SQL:92 - create table movie_actor (movie_id bigint not null, actor_id bigint not null, primary key (movie_id, actor_id)) engine=MyISAM
+10:57:03,831 DEBUG SQL:92 - alter table movie_actor add constraint FK2anlx6ycvy2nlm1o0ga9glpmu foreign key (actor_id) references Actor (id)
+10:57:03,846 DEBUG SQL:92 - alter table movie_actor add constraint FKi17y5929b8lhmtay3g1wo76e2 foreign key (movie_id) references Movie (id)
+10:57:03,926 DEBUG SQL:92 - insert into Movie (name) values (?)
+10:57:03,935 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [American Hustle]
+10:57:03,939 DEBUG SQL:92 - insert into Actor (name) values (?)
+10:57:03,940 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Christian Bale]
+10:57:03,941 DEBUG SQL:92 - insert into Movie (name) values (?)
+10:57:03,942 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [The Prestige]
+10:57:03,942 DEBUG SQL:92 - insert into Actor (name) values (?)
+10:57:03,943 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Hugh Jackman]
+10:57:03,953 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+10:57:03,954 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+10:57:03,954 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+10:57:03,956 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+10:57:03,956 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+10:57:03,956 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+10:57:03,957 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+10:57:03,957 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+10:57:03,957 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [2]
+10:57:03,958 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
+10:57:03,958 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+10:57:03,958 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]

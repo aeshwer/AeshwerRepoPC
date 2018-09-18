@@ -35,9 +35,11 @@ public class App {
 	        	Actor actor = (Actor) session.get(Actor.class, 2L);
 	        	actor.getMovies().add(movie);*/
 	        	
-    			
+    			//updating the inverse end using the helper function so update is possible
     			// this a helper function call in an attempt to get update while updating the inverse end
-	        	/*HashSet<Movie> set = new HashSet<Movie>();
+	        	/*Movie movie = (Movie) session.get(Movie.class, 1L);
+	        	Actor actor = (Actor) session.get(Actor.class, 2L);
+	        	HashSet<Movie> set = new HashSet<Movie>();
 	        	set.add(movie);
 	        	actor.addMovies(set);*/
 	  			       	

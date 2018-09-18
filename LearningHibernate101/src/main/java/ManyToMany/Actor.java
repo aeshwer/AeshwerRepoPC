@@ -36,14 +36,14 @@ public class Actor {
 	}
 
 	// trying to add helper function but did not achieve results
-	/*public void addMovies(Set<Movie> movie) {
+	public void addMovies(Set<Movie> movie) {
 		
 		for(Movie m : movie) 
 		{
 			movies.add(m);
-			HashSet<Actor> set = new HashSet<Actor>();
+			Set<Actor> set = m.getActors();
         	set.add(this);
 			m.setActors(set);
 		} 
-	}*/
+	}
 }
