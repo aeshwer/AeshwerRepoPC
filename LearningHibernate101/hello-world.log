@@ -585,3 +585,153 @@
 10:57:03,958 DEBUG SQL:92 - insert into movie_actor (movie_id, actor_id) values (?, ?)
 10:57:03,958 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
 10:57:03,958 TRACE BasicBinder:65 - binding parameter [2] as [BIGINT] - [1]
+14:12:48,969 DEBUG SQL:92 - drop table if exists Employee
+14:12:48,984 DEBUG SQL:92 - create table Employee (id bigint not null auto_increment, employee_id varchar(255), employee_status integer, name varchar(255), primary key (id)) engine=MyISAM
+14:12:49,002 DEBUG SQL:92 - alter table Employee add constraint UK_cf4wn3bk1oilnqja9pbd7eufk unique (employee_id)
+14:12:49,086 DEBUG SQL:92 - insert into Employee (employee_id, employee_status, name) values (?, ?, ?)
+14:12:49,095 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014JA11001]
+14:12:49,096 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Josh Stockham]
+14:12:49,100 DEBUG SQL:92 - insert into Employee (employee_id, employee_status, name) values (?, ?, ?)
+14:12:49,101 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014AI21543]
+14:12:49,101 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Ammie Corrio]
+14:12:49,102 DEBUG SQL:92 - insert into Employee (employee_id, employee_status, name) values (?, ?, ?)
+14:12:49,102 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [2014ET25100]
+14:12:49,102 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Ernie Stenseth]
+15:41:32,575 DEBUG SQL:92 - drop table if exists Friend
+15:41:32,585 DEBUG SQL:92 - drop table if exists friend_nickname
+15:41:32,590 DEBUG SQL:92 - create table Friend (id bigint not null auto_increment, email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+15:41:32,599 DEBUG SQL:92 - create table friend_nickname (friend_id bigint not null, nickname varchar(255)) engine=MyISAM
+15:41:32,605 DEBUG SQL:92 - alter table friend_nickname add constraint FKpixoluhljcijjlk9ystlg1l7h foreign key (friend_id) references Friend (id)
+15:41:32,684 DEBUG SQL:92 - insert into Friend (email, name) values (?, ?)
+15:41:32,693 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [markanderson@pluswhere.com]
+15:41:32,693 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Mark Anderson]
+15:41:32,703 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:41:32,704 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:41:32,704 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marky]
+15:41:32,706 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:41:32,707 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:41:32,707 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marco]
+15:41:32,707 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:41:32,707 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:41:32,708 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Markster]
+15:46:09,976 DEBUG SQL:92 - drop table if exists Friend
+15:46:09,988 DEBUG SQL:92 - drop table if exists friend_nickname
+15:46:09,993 DEBUG SQL:92 - create table Friend (id bigint not null auto_increment, email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+15:46:10,006 DEBUG SQL:92 - create table friend_nickname (friend_id bigint not null, nickname varchar(255)) engine=MyISAM
+15:46:10,011 DEBUG SQL:92 - alter table friend_nickname add constraint FKpixoluhljcijjlk9ystlg1l7h foreign key (friend_id) references Friend (id)
+15:46:10,087 DEBUG SQL:92 - insert into Friend (email, name) values (?, ?)
+15:46:10,095 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [markanderson@pluswhere.com]
+15:46:10,095 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Mark Anderson]
+15:46:10,107 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:46:10,108 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:46:10,108 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marky]
+15:46:10,110 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:46:10,110 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:46:10,110 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marco]
+15:46:10,111 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:46:10,111 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:46:10,112 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Markster]
+15:46:57,726 DEBUG SQL:92 - drop table if exists Friend
+15:46:57,738 DEBUG SQL:92 - drop table if exists friend_nickname
+15:46:57,743 DEBUG SQL:92 - create table Friend (id bigint not null auto_increment, email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+15:46:57,756 DEBUG SQL:92 - create table friend_nickname (friend_id bigint not null, nickname varchar(255)) engine=MyISAM
+15:46:57,762 DEBUG SQL:92 - alter table friend_nickname add constraint FKpixoluhljcijjlk9ystlg1l7h foreign key (friend_id) references Friend (id)
+15:46:57,836 DEBUG SQL:92 - insert into Friend (email, name) values (?, ?)
+15:46:57,844 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [markanderson@pluswhere.com]
+15:46:57,845 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Mark Anderson]
+15:46:57,857 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:46:57,858 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:46:57,858 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marky]
+15:46:57,859 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:46:57,860 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:46:57,860 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marco]
+15:46:57,860 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:46:57,861 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:46:57,861 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Markster]
+15:47:04,967 DEBUG SQL:92 - drop table if exists Friend
+15:47:04,979 DEBUG SQL:92 - drop table if exists friend_nickname
+15:47:04,985 DEBUG SQL:92 - create table Friend (id bigint not null auto_increment, email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+15:47:04,994 DEBUG SQL:92 - create table friend_nickname (friend_id bigint not null, nickname varchar(255)) engine=MyISAM
+15:47:05,000 DEBUG SQL:92 - alter table friend_nickname add constraint FKpixoluhljcijjlk9ystlg1l7h foreign key (friend_id) references Friend (id)
+15:47:05,091 DEBUG SQL:92 - insert into Friend (email, name) values (?, ?)
+15:47:05,100 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [markanderson@pluswhere.com]
+15:47:05,100 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Mark Anderson]
+15:47:30,728 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:47:30,730 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:47:30,730 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marky]
+15:47:30,733 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:47:30,734 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:47:30,735 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marco]
+15:47:30,736 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:47:30,737 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:47:30,739 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Markster]
+15:53:42,877 DEBUG SQL:92 - drop table if exists Friend
+15:53:42,887 DEBUG SQL:92 - drop table if exists friend_address
+15:53:42,888 DEBUG SQL:92 - drop table if exists friend_nickname
+15:53:42,892 DEBUG SQL:92 - create table Friend (id bigint not null auto_increment, email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+15:53:42,898 DEBUG SQL:92 - create table friend_address (friend_id bigint not null, address_city varchar(255), address_street varchar(255), address_zipcode varchar(255)) engine=MyISAM
+15:53:42,904 DEBUG SQL:92 - create table friend_nickname (friend_id bigint not null, nickname varchar(255)) engine=MyISAM
+15:53:42,913 DEBUG SQL:92 - alter table friend_address add constraint FK5gvb8qxmul8tlhoboxv7sj8xu foreign key (friend_id) references Friend (id)
+15:53:42,923 DEBUG SQL:92 - alter table friend_nickname add constraint FKpixoluhljcijjlk9ystlg1l7h foreign key (friend_id) references Friend (id)
+15:53:42,997 DEBUG SQL:92 - insert into Friend (email, name) values (?, ?)
+15:53:43,006 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [markanderson@pluswhere.com]
+15:53:43,006 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Mark Anderson]
+15:53:43,018 DEBUG SQL:92 - insert into friend_address (friend_id, address_city, address_street, address_zipcode) values (?, ?, ?, ?)
+15:53:43,019 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:53:43,019 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [city1]
+15:53:43,019 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [street1]
+15:53:43,019 TRACE BasicBinder:65 - binding parameter [4] as [VARCHAR] - [zipcode1]
+15:53:43,021 DEBUG SQL:92 - insert into friend_address (friend_id, address_city, address_street, address_zipcode) values (?, ?, ?, ?)
+15:53:43,022 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:53:43,022 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [city2]
+15:53:43,022 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [street2]
+15:53:43,022 TRACE BasicBinder:65 - binding parameter [4] as [VARCHAR] - [zipcode2]
+15:53:43,023 DEBUG SQL:92 - insert into friend_address (friend_id, address_city, address_street, address_zipcode) values (?, ?, ?, ?)
+15:53:43,024 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:53:43,025 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [city3]
+15:53:43,025 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [street3]
+15:53:43,025 TRACE BasicBinder:65 - binding parameter [4] as [VARCHAR] - [zipcode3]
+15:53:43,025 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:53:43,026 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:53:43,026 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marky]
+15:53:43,027 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:53:43,028 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:53:43,028 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marco]
+15:53:43,028 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:53:43,028 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:53:43,029 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Markster]
+15:56:18,005 DEBUG SQL:92 - drop table if exists Friend
+15:56:18,015 DEBUG SQL:92 - drop table if exists friend_address
+15:56:18,016 DEBUG SQL:92 - drop table if exists friend_nickname
+15:56:18,020 DEBUG SQL:92 - create table Friend (id bigint not null auto_increment, email varchar(255), name varchar(255), primary key (id)) engine=MyISAM
+15:56:18,029 DEBUG SQL:92 - create table friend_address (friend_id bigint not null, address_city varchar(255), address_street varchar(255), address_zipcode varchar(255)) engine=MyISAM
+15:56:18,034 DEBUG SQL:92 - create table friend_nickname (friend_id bigint not null, nickname varchar(255)) engine=MyISAM
+15:56:18,040 DEBUG SQL:92 - alter table friend_address add constraint FK5gvb8qxmul8tlhoboxv7sj8xu foreign key (friend_id) references Friend (id)
+15:56:18,050 DEBUG SQL:92 - alter table friend_nickname add constraint FKpixoluhljcijjlk9ystlg1l7h foreign key (friend_id) references Friend (id)
+15:56:18,126 DEBUG SQL:92 - insert into Friend (email, name) values (?, ?)
+15:56:18,134 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [markanderson@pluswhere.com]
+15:56:18,135 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Mark Anderson]
+15:56:18,147 DEBUG SQL:92 - insert into friend_address (friend_id, address_city, address_street, address_zipcode) values (?, ?, ?, ?)
+15:56:18,148 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:56:18,148 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [city1]
+15:56:18,148 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [street1]
+15:56:18,149 TRACE BasicBinder:65 - binding parameter [4] as [VARCHAR] - [zipcode1]
+15:56:18,152 DEBUG SQL:92 - insert into friend_address (friend_id, address_city, address_street, address_zipcode) values (?, ?, ?, ?)
+15:56:18,152 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:56:18,152 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [city2]
+15:56:18,153 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [street2]
+15:56:18,153 TRACE BasicBinder:65 - binding parameter [4] as [VARCHAR] - [zipcode2]
+15:56:18,153 DEBUG SQL:92 - insert into friend_address (friend_id, address_city, address_street, address_zipcode) values (?, ?, ?, ?)
+15:56:18,154 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:56:18,154 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [city3]
+15:56:18,154 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [street3]
+15:56:18,154 TRACE BasicBinder:65 - binding parameter [4] as [VARCHAR] - [zipcode3]
+15:56:18,155 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:56:18,156 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:56:18,157 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marky]
+15:56:18,158 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:56:18,159 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:56:18,159 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Marco]
+15:56:18,160 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
+15:56:18,160 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
+15:56:18,160 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Markster]

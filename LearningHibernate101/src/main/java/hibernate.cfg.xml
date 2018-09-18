@@ -35,8 +35,10 @@
 		<mapping class="OneToMany.Student3"/>	 -->			
 		<!-- <mapping class="OneToOne.Customer"/>
 		<mapping class="OneToOne.Passport"/> -->				
-		<mapping class="ManyToMany.Actor"/>
-		<mapping class="ManyToMany.Movie"/>
+		<!-- <mapping class="ManyToMany.Actor"/>
+		<mapping class="ManyToMany.Movie"/> -->
+		<!-- <mapping class="MappingEnumns.Employee"/> -->
+		<mapping class="MappingCollectionsOfValueType.Friend"/>
 
     </session-factory>
 </hibernate-configuration>
