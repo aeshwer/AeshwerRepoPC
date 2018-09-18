@@ -735,3 +735,13 @@
 15:56:18,160 DEBUG SQL:92 - insert into friend_nickname (friend_id, nickname) values (?, ?)
 15:56:18,160 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [1]
 15:56:18,160 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Markster]
+16:53:06,833 DEBUG SQL:92 - drop table if exists Parent
+16:53:06,844 DEBUG SQL:92 - create table Parent (firstName varchar(255) not null, lastName varchar(255) not null, primary key (firstName, lastName)) engine=MyISAM
+16:53:06,921 DEBUG SQL:92 - insert into Parent (firstName, lastName) values (?, ?)
+16:53:06,930 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Gavin]
+16:53:06,930 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [King]
+16:56:39,715 DEBUG SQL:92 - drop table if exists Parent
+16:56:39,727 DEBUG SQL:92 - create table Parent (firstName varchar(255) not null, lastName varchar(255) not null, primary key (firstName, lastName)) engine=MyISAM
+16:56:39,809 DEBUG SQL:92 - insert into Parent (firstName, lastName) values (?, ?)
+16:56:39,818 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Gavin]
+16:56:39,819 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [King]
