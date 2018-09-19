@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="ExecutorFramework"/>
 			<item value="google-guice"/>
 			<item value="com.iontrading.build.maven.simple"/>
 		</list>
@@ -9,6 +10,7 @@
 			<item value="GuiceLearn"/>
 		</list>
 		<list key="artifactId">
+			<item value="ExecutorFramework"/>
 			<item value="google-guice"/>
 			<item value="com.iontrading.build.maven.simple"/>
 		</list>
@@ -35,6 +37,19 @@
 		<list key="issueManagementUrl">
 		</list>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Aeshwer_SAML"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<item value="All Catalogs" key="catalog"/>
 		<list key="projectNameTemplate">
@@ -43,10 +58,12 @@
 			<item value="[artifactId]-[version]"/>
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
 	</section>
 	<section name="MavenCheckoutLocationPage">
 		<list key="scmUrl">
+			<item value="scm:null:https://github.com/aeshwer/java-saml.git"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -58,6 +75,7 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="JavaMessagingService"/>
 			<item value="Hibernate13@ManyToMany"/>
 			<item value="Hibernate08"/>
 			<item value="FirstHibernateProject"/>
@@ -66,6 +84,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="JavaMessagingService"/>
 			<item value="Hibernate13@ManyToMany"/>
 			<item value="Hibernate08"/>
 			<item value="FirstHibernateProject"/>
@@ -77,7 +96,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
-			<item value="E:\GitRepository\LearnGuice\src\LearnGuiceCalculator\CalculatorClient.java"/>
+			<item value="D:\AeshwerRepoPC\Servers"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -85,6 +104,7 @@
 			<item value="[artifactId]-[version]"/>
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
@@ -100,6 +120,7 @@
 			<item value="[artifactId]-[version]"/>
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>

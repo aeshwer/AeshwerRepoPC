@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=Java8/C:\/Program Files\/Java\/jdk1.8.0_162\/jre\/lib\/rt.jar&lt;java.lang(Comparable.class[Comparable" modifiers="1537" timestamp="1520233311081"/>
-<typeInfo handle="=Java8/C:\/Program Files\/Java\/jdk1.8.0_162\/jre\/lib\/rt.jar&lt;java.util(List.class[List" modifiers="1537" timestamp="1520233311081"/>
-<typeInfo handle="=Java8/C:\/Program Files\/Java\/jdk1.8.0_162\/jre\/lib\/rt.jar&lt;java.util(Collection.class[Collection" modifiers="1537" timestamp="1520233311081"/>
+<typeInfo handle="=ConcurencyLearning/C:\/Program Files\/Java\/jdk1.8.0_162\/jre\/lib\/rt.jar&lt;java.util(Comparator.class[Comparator" modifiers="1537" timestamp="1520233311081"/>
+<typeInfo handle="=GeekForGeeksCollectionPractice/src&lt;BasicConcept{NameComparator.java[NameComparator" modifiers="1" timestamp="1524471659650"/>
+<typeInfo handle="=ConcurencyLearning/C:\/Program Files\/Java\/jdk1.8.0_162\/jre\/lib\/rt.jar&lt;java.lang(Object.class[Object" modifiers="33" timestamp="1520233311081"/>
 </typeInfoHistroy>

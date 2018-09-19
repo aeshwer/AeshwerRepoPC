@@ -745,3 +745,32 @@
 16:56:39,809 DEBUG SQL:92 - insert into Parent (firstName, lastName) values (?, ?)
 16:56:39,818 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Gavin]
 16:56:39,819 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [King]
+11:33:01,223 DEBUG SQL:92 - drop table if exists Child
+11:33:01,233 DEBUG SQL:92 - drop table if exists Parent
+11:33:01,238 DEBUG SQL:92 - create table Child (id bigint not null auto_increment, name varchar(255), firstname_fk varchar(255), lastname_fk varchar(255), primary key (id)) engine=MyISAM
+11:33:01,251 DEBUG SQL:92 - create table Parent (firstName varchar(255) not null, lastName varchar(255) not null, primary key (firstName, lastName)) engine=MyISAM
+11:33:01,260 DEBUG SQL:92 - alter table Child add constraint FK30gejy1uwly6b5xu73ul5i5jt foreign key (firstname_fk, lastname_fk) references Parent (firstName, lastName)
+11:33:01,348 DEBUG SQL:92 - insert into Parent (firstName, lastName) values (?, ?)
+11:33:01,357 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Gavin]
+11:33:01,357 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [King]
+11:39:23,422 DEBUG SQL:92 - drop table if exists Child
+11:39:23,434 DEBUG SQL:92 - drop table if exists Parent
+11:39:23,438 DEBUG SQL:92 - create table Child (id bigint not null auto_increment, name varchar(255), firstname_fk varchar(255), lastname_fk varchar(255), primary key (id)) engine=MyISAM
+11:39:23,454 DEBUG SQL:92 - create table Parent (firstName varchar(255) not null, lastName varchar(255) not null, primary key (firstName, lastName)) engine=MyISAM
+11:39:23,464 DEBUG SQL:92 - alter table Child add constraint FK30gejy1uwly6b5xu73ul5i5jt foreign key (firstname_fk, lastname_fk) references Parent (firstName, lastName)
+11:40:04,591 DEBUG SQL:92 - drop table if exists Child
+11:40:04,602 DEBUG SQL:92 - drop table if exists Parent
+11:40:04,607 DEBUG SQL:92 - create table Child (id bigint not null auto_increment, name varchar(255), firstname_fk varchar(255), lastname_fk varchar(255), primary key (id)) engine=MyISAM
+11:40:04,622 DEBUG SQL:92 - create table Parent (firstName varchar(255) not null, lastName varchar(255) not null, primary key (firstName, lastName)) engine=MyISAM
+11:40:04,631 DEBUG SQL:92 - alter table Child add constraint FK30gejy1uwly6b5xu73ul5i5jt foreign key (firstname_fk, lastname_fk) references Parent (firstName, lastName)
+11:40:04,717 DEBUG SQL:92 - insert into Parent (firstName, lastName) values (?, ?)
+11:40:04,726 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Charlotte]
+11:40:04,726 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Crawford]
+11:40:04,728 DEBUG SQL:92 - insert into Child (name, firstname_fk, lastname_fk) values (?, ?, ?)
+11:40:04,729 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Groovy]
+11:40:04,729 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Charlotte]
+11:40:04,729 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Crawford]
+11:40:04,732 DEBUG SQL:92 - insert into Child (name, firstname_fk, lastname_fk) values (?, ?, ?)
+11:40:04,732 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Ruby]
+11:40:04,732 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Charlotte]
+11:40:04,733 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Crawford]

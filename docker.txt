@@ -5,6 +5,7 @@ Introduction:
 2.	Why	Docker ? Matrix of Hell solved, Speed
 3.	Docker on windows: Linux(Default) and Windows Containers
 4.  For windows 7 : use Docker ToolBox , it runs a tiny Linux VM in virtualBox via docker-machine. Here it don't support windows containers	
+	Do: Just Run the docker quick start .. it sets up VM and does the job
 	
 Working:
 1.  Docker-machine creates a VMs on cloud or local machine which run docker. 
@@ -32,7 +33,7 @@ Creating Containers
 	Do : docker top "containerName" : list the process running inside this container
 6.  What happens in docker container run ???	 Firstly looks for image in cache else download latest it and start a new container 	  based on it and give a virtual Ip on  private network inside docker engine and opens port 80 on host and forwards to port 80 in container.
 7.  Other ways to start  : docker run --name aeshwer -d nginx  : Now do docker stop/start aeshwer  ..(-d or --detach are same)
-8.  NOTE: to test if ports resond for a service: curl localhosty or curl http://192.168.99.100
+8.  NOTE: to test if ports resond for a service: curl localhosty or curl 
 9.  Do: docker image ls  : Command to list images
 10. Logs following: docker container logs -f containerName
 
