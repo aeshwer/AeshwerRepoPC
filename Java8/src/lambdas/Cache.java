@@ -1,4 +1,4 @@
-package lambdas;
+/*package lambdas;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -111,3 +111,4 @@ public class Cache {
 		test.apply();
 	}
 }
+*/
