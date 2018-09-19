@@ -11,7 +11,7 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 
 //Parent(One) -> Child(Many)
-// child is the ownwer of this relation
+// child is the ownwer of this relation. observe the join done here, we need to provide a reference column
 @Entity
 public class Child {
 

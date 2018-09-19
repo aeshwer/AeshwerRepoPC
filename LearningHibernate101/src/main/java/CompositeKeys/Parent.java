@@ -1,5 +1,6 @@
 package CompositeKeys;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,7 +15,7 @@ public class Parent {
 	private ParentPrimaryKey parentPrimaryKey;
 
 	@OneToMany(mappedBy="parent",cascade = CascadeType.PERSIST)
-	private Set<Child> children;
+	private Set<Child> children =  new HashSet<>();
 	
 	
 	public Parent() {
