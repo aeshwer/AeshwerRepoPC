@@ -39,8 +39,8 @@
 		<mapping class="ManyToMany.Movie"/> -->
 		<!-- <mapping class="MappingEnumns.Employee"/> -->
 		<!-- <mapping class="MappingCollectionsOfValueType.Friend"/> -->
-		<mapping class="CompositeKeys.Parent"/>
-		<mapping class="CompositeKeys.Child"/>
+		<!-- <mapping class="CompositeKeys.Parent"/>
+		<mapping class="CompositeKeys.Child"/> -->
 
     </session-factory>
 </hibernate-configuration>
