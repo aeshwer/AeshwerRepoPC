@@ -46,6 +46,11 @@ public class Guide3 {
 		student.setGuide(this);
 	}
 	
+	@Override
+	public String toString() {
+		return " Id:"+this.id + " Name: "+ this.name;
+	}
+	
 }	
 
 
