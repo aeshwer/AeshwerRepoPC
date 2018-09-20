@@ -62,11 +62,11 @@ public class App {
 	
 			//Dynamic Queries
 			String name = "Ian Lamb"; //simulating dynamic query
-			Query query4 = em.createQuery("select guide from Guide3 as guide where guide.name = '" + name + "'");
+			Query query4 = em.createQuery("select guide from Guide3 as guide where guide.name = '" + name + "'"); // this syntax is vulnerable to SQL injection attack? How to solve
 			Guide3 guide = (Guide3) query4.getSingleResult();
 			System.out.println("##########--------Result Fetched"+ guide);			
 	
-			Query query5 = em.createQuery("select guide from Guide3 as guide where guide.name = :name");
+			Query query5 = em.createQuery("select guide from Guide3 as guide where guide.name = :name"); // solve by using named parameter
 			query5.setParameter("name", "Ian Lamb");
 			Guide3 guide5 = (Guide3) query5.getSingleResult();
 			System.out.println("##########--------Result Fetched"+guide);      
