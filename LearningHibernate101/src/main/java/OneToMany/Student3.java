@@ -26,11 +26,19 @@ public class Student3 {
 	@JoinColumn(name="guide_id")
 	private Guide3 guide;
 	
-	public Student3() {}
+	public Student3() {
+		
+	}
+	
 	public Student3(String enrollmentId, String name, Guide3 guide) {
 		this.enrollmentId = enrollmentId;
 		this.name = name;
 		this.guide = guide;
+	}
+	
+	public Student3(String enrollmentId, String name) {
+		this.enrollmentId = enrollmentId;
+		this.name = name;
 	}
 	
 	public Guide3 getGuide() {
@@ -40,6 +48,10 @@ public class Student3 {
 		this.guide = guide;
 	}
 	
+	@Override
+	public String toString() {
+		return " Id:"+this.id + " Name: "+ this.name;
+	}
 }
 
 

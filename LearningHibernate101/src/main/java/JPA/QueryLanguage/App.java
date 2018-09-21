@@ -38,13 +38,13 @@ public class App {
 			List<Guide3> guides = query.getResultList();
 			for (Guide3 guide : guides) {
 				int i=0;
-				System.out.println("##########--------Result :"+guide);
+				System.out.println("##########--------Result 1 :"+guide);
 			}
 			
 			Query query2 = em.createQuery("select guide.name from Guide3 guide");
 			List<String> names = query2.getResultList();
 			for (String name : names) {
-				System.out.println("##########--------Result Name :"+name);
+				System.out.println("##########--------Result 2 Name :"+name);
 			}
 	
 			//############################
@@ -54,7 +54,7 @@ public class App {
 			Query query3 = em.createQuery("select guide.name, guide.salary from Guide3 as guide");
 			List<Object[]> resultList = (List<Object[]>)query3.getResultList();
 			for (Object[] objects : resultList) {
-				System.out.println("##########--------Result"+"Object[] {objects[0]: " + objects[0] + ", objects[1]: " + objects[1] + "}");				
+				System.out.println("##########--------Result 3 "+"Object[] {objects[0]: " + objects[0] + ", objects[1]: " + objects[1] + "}");				
 			}
 	
 			//############################
@@ -64,52 +64,46 @@ public class App {
 			String name = "Ian Lamb"; //simulating dynamic query
 			Query query4 = em.createQuery("select guide from Guide3 as guide where guide.name = '" + name + "'"); // this syntax is vulnerable to SQL injection attack? How to solve
 			Guide3 guide = (Guide3) query4.getSingleResult();
-			System.out.println("##########--------Result Fetched"+ guide);			
+			System.out.println("##########--------Result 4 Fetched"+ guide);			
 	
 			Query query5 = em.createQuery("select guide from Guide3 as guide where guide.name = :name"); // solve by using named parameter
 			query5.setParameter("name", "Ian Lamb");
 			Guide3 guide5 = (Guide3) query5.getSingleResult();
-			System.out.println("##########--------Result Fetched"+guide);      
+			System.out.println("##########--------Result 5 Fetched"+guide5);      
 	
 			//############################
 	
 	
 			//Chaining Method Calls
-			/*
-			Guide guide = (Guide) em.createQuery("select guide from Guide guide where guide.name = :name").
+			Guide3 guide6 = (Guide3) em.createQuery("select guide from Guide3 as guide where guide.name = :name")
 					        .setParameter("name", "Ian Lamb")
 					        .getSingleResult();
-			System.out.println(guide);
-			*/
+			System.out.println("##########--------Result 6 Fetched"+guide6);      
 	
 			//############################
 	
 	
 			//Wildcards
-			/*
-			Query query = em.createQuery("select guide from Guide guide where guide.name like 'm%'");
-			List<Guide> guides = query.getResultList();
-			for (Guide guide : guides) {
-				System.out.println(guide);
+			Query query7 = em.createQuery("select guide from Guide3 as guide where guide.name like 'Mike%'");
+			List<Guide3> guides7 = query7.getResultList();
+			for (Guide3 guide7 : guides7) {
+				System.out.println("##########--------Result 7 Fetched"+guide7);      
 			}
-			*/
 	
 			//############################
 	
 
 			//Native SQL Queries
-			/*
-			Query query = em.createNativeQuery("select * from Guide", Guide.class);
-			List<Guide> guides = query.getResultList();
-			for (Guide guide : guides) {
-				System.out.println(guide);
+			Query query8 = em.createNativeQuery("select * from Guide", Guide.class);
+			List<Guide3> guides8 = query.getResultList();
+			for (Guide3 guide8 : guides8) {
+				System.out.println("##########--------Result 8 Fetched"+guide8);      
 			}
-			*/
 	
 			//############################	
 
 			//Named Queries
-			/*
+			/*for this you have to put the named query in a orm.xml file kept in the META-INF folder
 			List<Guide> guides = em.createNamedQuery("findByGuide")
 					       						.setParameter("name", "Mike Lawson")
 					       						.getResultList();
@@ -118,78 +112,68 @@ public class App {
 			}
 			*/
 
-			/*
-			int numOfGuides = em.createQuery("select guide from Guide guide").getResultList().size();
-			System.out.println("[numOfGuides: " + numOfGuides + "]");
-			*/
+			// Observe: There is a issue with the below mentioned statements: There is a overload of converting the Result Set to Guide object.
+			// To solve this we use a aggregate function count to do our job
+			int numOfGuides = em.createQuery("select guide from Guide3 as guide").getResultList().size();
+			System.out.println("##########--------Result 9--[numOfGuides: " + numOfGuides + "]");
 	
 			//############################
 	
 
 			//Aggregate Functions
-			/*
-			Query query = em.createQuery("select count(guide) from Guide guide");
-			long numOfGuides = (long) query.getSingleResult();
-			System.out.println("[numOfGuides: " + numOfGuides + "]");
-			*/
+			Query query10 = em.createQuery("select count(guide) from Guide3 as guide");
+			long numOfGuides2 = (long) query10.getSingleResult();
+			System.out.println("##########--------Result 10--[numOfGuides: " + numOfGuides2 + "]");
 
-			/*
-			Query query = em.createQuery("select max(guide.salary) from Guide guide");
-			Integer maximumSalary = (Integer) query.getSingleResult();
-			System.out.println("[maximumSalary: " + maximumSalary + "]");        	
-			*/
+			Query query11 = em.createQuery("select max(guide.salary) from Guide3 as guide");
+			Integer maximumSalary = (Integer) query11.getSingleResult();
+			System.out.println("##########--------Result 11--[maximumSalary: " + maximumSalary + "]");        	
 	
-			/*
-			Query query = em.createQuery("select guide from Guide guide where guide.salary = 1000");
-			List<Guide> guides = query.getResultList();
-			for (Guide guide : guides) {
-				System.out.println(guide);
+			Query query12 = em.createQuery("select guide from Guide3 as guide where guide.salary = 1000");
+			List<Guide3> guides12 = query12.getResultList();
+			for (Guide3 guide12 : guides12) {
+				System.out.println("##########--------Result 12" + guide12);
 			}     	
-			*/
 	
 			//############################	
 	
-			//Persisting a Student object
-			/*
-			Student student = new Student("2014BE50789", "Bruce Lee");
+			//Persisting a Student object which has no guide1
+			Student3 student = new Student3("2014BE50789", "Bruce Lee");
 			em.persist(student);
-			*/
+			Guide3 gui = new Guide3("1992JUL1607", "Aeshwer Tyagi", 3000);
+			em.persist(gui);
 	
 			//############################	
 	
 			//Joining Associations
-			/*
-			Query query = em.createQuery("select student from Student student join student.guide guide");
-			List<Student> students = query.getResultList();
-			for (Student student : students) {
-				System.out.println(student);
+			Query query13 = em.createQuery("select student from Student3 as student join student.guide guide");
+			List<Student3> students13 = query13.getResultList();
+			for (Student3 student13 : students13) {
+				System.out.println("##########--------Result 13 "+ student13);
 			}
-			*/
 	
-			/*
-			Query query = em.createQuery("select student from Student student left join student.guide guide");
-			List<Student> students = query.getResultList();
-			for (Student student : students) {
-				System.out.println(student);
+			Query query14 = em.createQuery("select student from Student3 as student left join student.guide guide");
+			List<Student3> students14 = query14.getResultList();
+			for (Student3 student14 : students14) {
+				System.out.println("##########--------Result 14 "+student14);
 			}
-			*/
 	
-			/*
-			Query query = em.createQuery("select student from Student student right join student.guide guide");
-			List<Student> students = query.getResultList();
-			for (Student student : students) {
-				System.out.println(student);
+			Query query15 = em.createQuery("select student from Student3 as student right join student.guide guide");
+			List<Student3> students15 = query15.getResultList();
+			for (Student3 student15 : students15) {
+				System.out.println("##########--------Result 15 "+ student15);
 			}
-			*/
 	
 			//############################
 
 	
 			//Fetching Associations
-			/*
-			Query query = em.createQuery("select guide from Guide guide join guide.students student");
-			List<Guide> guides = query.getResultList();
-			*/
+			//Using the FetchType.EAGER or LAZY
+			/*Query query16 = em.createQuery("select guide from Guide3 as guide join guide.students student");
+			List<Guide3> guides16 = query16.getResultList();
+				for (Guide3 guide16 : guides16) {
+				System.out.println("##########--------Result 16 "+ guide16);
+			}*/
 	
 			/*
 			Query query = em.createQuery("select guide from Guide guide join fetch guide.students student");
