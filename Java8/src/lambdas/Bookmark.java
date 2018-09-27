@@ -4,6 +4,7 @@ public class Bookmark {
 
 	private long id;
 	private String title;
+	private double rating;
 
 	public long getId() {
 		return id;
@@ -23,6 +24,4 @@ public class Bookmark {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
-	private double rating;
-
 }
