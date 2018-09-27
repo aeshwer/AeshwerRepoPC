@@ -38,7 +38,6 @@ public class Cache {
 	public static void main(String[] args) {
 		
 	Cache recommendedItems = PopulateCache();
-	
 	CacheIterator iterator = recommendedItems.iterator();
 	//CacheIterator iterator = recommendedItems.new MyCacheIterator();
 	
@@ -107,7 +106,4 @@ public class Cache {
 		return recommendedItems;
 	}
 
-	public void go(Test test) {
-		test.apply();
-	}
 }

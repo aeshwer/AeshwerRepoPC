@@ -1,4 +1,4 @@
-package Lesson1;
+package TutorialPoint;
 
 public class LambdaExpression {
 
@@ -23,12 +23,10 @@ public class LambdaExpression {
 	      System.out.println("10 / 5 = " + tester.operate(10, 5, division));
 			
 	      //without parenthesis
-	      GreetingService greetService1 = message ->
-	      System.out.println("Hello " + message);
+	      GreetingService greetService1 = message -> System.out.println("Hello " + message);
 			
 	      //with parenthesis
-	      GreetingService greetService2 = (message) ->
-	      System.out.println("Hello " + message);
+	      GreetingService greetService2 = (message) -> System.out.println("Hello " + message);
 			
 	      greetService1.sayMessage("Mahesh");
 	      greetService2.sayMessage("Suresh");

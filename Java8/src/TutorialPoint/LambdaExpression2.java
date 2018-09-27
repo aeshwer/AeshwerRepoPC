@@ -2,7 +2,7 @@
  * Lambda expression throws a compilation error, if a variable is assigned a value the second time.
  */
 
-package Lesson1;
+package TutorialPoint;
 
 public class LambdaExpression2 {
 	

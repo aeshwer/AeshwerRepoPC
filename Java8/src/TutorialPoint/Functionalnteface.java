@@ -1,7 +1,7 @@
 /*Functional interfaces have a single functionality to exhibit. 
  * For example, a Comparable interface with a single method ‘compareTo’ is used for comparison purpose. 
  */
-package Lesson1;
+package TutorialPoint;
 
 import java.util.Arrays;
 import java.util.List;

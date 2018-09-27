@@ -3,7 +3,7 @@
  *
  * Here we have passed System.out::println method as a static method reference.
  */
-package Lesson1;
+package TutorialPoint;
 
 import java.util.ArrayList;
 import java.util.List;

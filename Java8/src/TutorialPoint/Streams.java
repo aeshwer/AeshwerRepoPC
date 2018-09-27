@@ -11,7 +11,7 @@
  * 
  * Automatic Iterations: Stream operations do the iterations internally over the source elements provided, in contrast to Collections where explicit iteration is required.
  */
-package Lesson1;
+package TutorialPoint;
 
 import java.util.ArrayList;
 import java.util.Arrays;
