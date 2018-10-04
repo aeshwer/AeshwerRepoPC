@@ -68,6 +68,7 @@ public class StreamsDemo {
 
 	private static void print(Stream<String> stream) {
 		stream.forEach(System.out::println);
+		//stream.forEach(System.out::println); cannot do the terminal operation again as stream is ended
 	}
 
 	public static void main(String[] args) {
@@ -75,3 +76,4 @@ public class StreamsDemo {
 		declarative();
 	}		
 }
+
