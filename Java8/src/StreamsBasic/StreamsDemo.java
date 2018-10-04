@@ -1,4 +1,7 @@
-package Streams;
+//Intermediate Operation : Filter, Map ,slicing
+//Terminal Operation : Matching and finding, reduction, collect
+
+package StreamsBasic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
