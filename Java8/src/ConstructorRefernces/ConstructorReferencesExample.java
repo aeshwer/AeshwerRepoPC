@@ -96,10 +96,11 @@ public class ConstructorReferencesExample {
 		// Constructor References
 
 		// Typical scenario
+		System.out.println("###############-------------Constructor References------------################");
 		Supplier<String> supplier = String::new; //() -> new String();
 		System.out.println("\nsupplier.get: " + supplier.get());
 
-		Function<String, String> function = String::new; //s -> new String(s);
+		Function<String, String> function = String::new; //s -> new String(s); // observe here the syntax for parametarized constructor is same.. the desecion to call which depends in the context "Function<Sting ,String>"
 		System.out.println("\nfunction.apply: " + function.apply("Java"));
 
 		BiFunction<Integer, Float, HashMap> biFunction = HashMap::new; //(c, lf) -> new HashMap(c, lf);
@@ -107,7 +108,7 @@ public class ConstructorReferencesExample {
 
 		Consumer<String> consumer = String::new;		
 		consumer.accept("Java");		
-		// Create own interface if existing functional interfaces are not useful!
+		// Create own interface if existing functional interfaces are not useful! Eg : we made TriFunction Interface in this package
 	}	
 
 	private static String resize(String doc, int start, int end, TriFunction<String, Integer, Integer, String> operator) {
