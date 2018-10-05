@@ -54,7 +54,5 @@ public class StreamOperations1 {
 		//mutableReduction();
 
 		collectToCollection(books);
-
 	}	
-
 }
