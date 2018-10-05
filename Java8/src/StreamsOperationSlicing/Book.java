@@ -1,6 +1,6 @@
 package StreamsOperationSlicing;
 
-public class Book {
+public class Book implements Comparable{
 
 	private long isbn;
 	private String title;	
@@ -62,6 +62,11 @@ public class Book {
 	public String toString() {
 		return "Book [isbn=" + isbn + ", title=" + title + ", rating=" + rating + ", price=" + price + ", source="
 				+ source + "]";
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		return Long.valueOf(isbn).compareTo(((Book)o).getIsbn());
 	}
 
 }	

@@ -1,3 +1,4 @@
+//Reduce Operation is a immutable reduction
 //Reduce Operation Reduces the stream into a Single Value. 
 //The Reduce operator returns a Optional and takes a binary operator since it works on 2 element at a time.
 // we can also use a different version of method and return a value instead of optional : GOTO LINE 51
@@ -47,6 +48,7 @@ public class StreamOperations {
 		System.out.println("(Imperative) Lowest priced book with rating >= 4.5: " + result);
 
 	}		
+
 
 	static void overloadedReductions() {
 		System.out.println("\noverloadedReductions ... ");
