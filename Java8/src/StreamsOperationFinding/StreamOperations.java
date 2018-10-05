@@ -20,9 +20,12 @@ public class StreamOperations {
 		/*Optional<Book> result = */ books.stream()
 		.filter(d -> d.getRating() >= 4.8 && d.getPrice() <= 50.0)
 		.findAny().orElseGet(StreamOperations::getDefault);
+		//.findAny().orElse(StreamOperations.getDefault());
+		//.findAny().ifPresent(StreamOperations::print);
 
 		Optional<Book> opt = Optional.ofNullable(books.get(0));
 		System.out.println(opt.isPresent());
+		System.out.println(opt.get());
 
 		/*if (result.isPresent()) {
 				System.out.println(result.get());
@@ -31,7 +34,7 @@ public class StreamOperations {
 			}*/
 
 	}
-
+	
 	private static void print(Book b) {
 		System.out.println(b);			 
 	}
