@@ -23,6 +23,7 @@ public class StreamOperations {
 						(sb1, sb2) -> sb1.append(sb2));
 		System.out.println("concat2: " + concat2);
 
+		//predefined reductions ... Collector is a helper class
 		String concatWithJoining = Arrays.stream(grades).parallel()
 				.collect(Collectors.joining());
 		System.out.println("concatWithJoining: " + concatWithJoining);
@@ -37,7 +38,7 @@ public class StreamOperations {
 				.reduce("", (s1, s2) -> s1 + s2);
 		System.out.println("concat1: " + concat1);
 
-		StringBuilder concat2 = Arrays.stream(grades)
+		StringBuilder concat2 = Arrays.stream(grades)/*.parallel()*/ // will give wrong output
 				.reduce(new StringBuilder(), 
 						(sb, s) -> sb.append(s),
 						(sb1, sb2) -> sb1.append(sb2));
