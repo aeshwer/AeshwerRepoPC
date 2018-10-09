@@ -11,7 +11,7 @@ public class HighFrequencyTradingMain {
 	
 	private static Injector injector;
 	
-	final static Logger logger = LogManagerUtil.getLogger(HighFrequencyTradingMain.class);
+	private final static Logger logger = LogManagerUtil.getLogger(HighFrequencyTradingMain.class);
 
 	public static void main(String[] args) {
 		injector = Guice.createInjector(new ApplicationModule());

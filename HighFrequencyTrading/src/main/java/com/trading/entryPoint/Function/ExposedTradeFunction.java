@@ -1,0 +1,47 @@
+package com.trading.entryPoint.Function;
+
+import java.util.concurrent.ExecutorService;
+
+import javax.inject.Inject;
+
+import org.apache.log4j.Logger;
+
+import com.trading.DummyDataSetGenerator.TradeDataSetGenerator;
+import com.trading.domain.trade.Trade;
+import com.trading.util.LogManagerUtil;
+
+public class ExposedTradeFunction {
+
+	private static final String UPDATE_TRADE = "UpdateTrade";
+	private static final String VALIDATE_TRADE = "PhysicalTrade";	
+	private static final String FETCH_TRADES = "FetchTrades";
+	private static final String FIND_TRADE = "FindTrade";
+	private static final String COPY_TRADE = "CopyTrade";
+	private static final String USER = "User";
+	private static final String CALLER = "Caller";
+
+	private TradeCaptureService tradeCaptureService;
+	private ExecutorService executorService;
+	private static Logger logger;
+
+	@Inject
+	public ExposedTradeFunction(final TradeCaptureService tradeCaptureService,final ExecutorService executorService) {
+		this.tradeCaptureService = tradeCaptureService;
+		this.executorService = executorService;
+		this.logger = LogManagerUtil.getLogger(ExposedTradeFunction.class);
+	}
+
+	public void updatePhysicalTrade(){
+		//Will need to add UI support Later,using dummy data set as for now
+		for(Trade trade : TradeDataSetGenerator.retriveDummyTradesFeeder()) {
+		this.executorService.submit(
+				() -> this.TradeDelegate(trade));
+		}
+	}
+
+	private void TradeDelegate(Trade trade) {
+		this.tradeCaptureService.updateTrade(trade);
+	}
+
+
+}

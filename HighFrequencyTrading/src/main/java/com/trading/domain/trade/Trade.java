@@ -4,8 +4,6 @@ import java.time.LocalDate;
 
 public class Trade {
 	
-	private int tradeId;
-	
 	private LocalDate tradeDate;
 	
 	private String BuySellIndicator;
@@ -19,13 +17,13 @@ public class Trade {
 	public Trade() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public int getTradeId() {
-		return tradeId;
-	}
-
-	public void setTradeId(int tradeId) {
-		this.tradeId = tradeId;
+	
+	public Trade(LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
+		this.tradeDate= tradeDate;
+		this.BuySellIndicator= BuySellIndicator;
+		this.price= price;
+		this.offset= offset;
+		this.delivery=delivery;
 	}
 
 	public LocalDate getTradeDate() {
