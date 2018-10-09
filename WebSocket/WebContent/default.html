@@ -7,7 +7,10 @@
 <body>
 	<form>
 		<input id ="textMessage" type="text">
-		<input onclick="sendMessage();" value="Send Message" type="button">	
+		<input onclick="sendMessage();" value="Send Message" type="button">
+		
+		<input id ="textMessage2" type="text">
+		<input onclick="sendMessage2();" value="Send Message 2" type="button">	
 	</form>
 	<br><textarea id ="messagesTextArea" rows="10" cols="50"></textarea>
 		<script type="text/javascript">
@@ -30,7 +33,18 @@
 			function sendMessage()
 			{	if(textMessage.value!="close"){
 				websocket.send(textMessage.value);
-				messagesTextArea.value += "Send to Server..."+ textMessage.value +"\n";
+				messagesTextArea.value += "Send to Server via buttom 1..."+ textMessage.value +"\n";
+				textMessage.value="";
+				}
+				else{
+					websocket.close();
+				}
+			}
+			
+			function sendMessage2()
+			{	if(textMessage.value!="close"){
+				websocket.send(textMessage.value);
+				messagesTextArea.value += "Send to Server via buttom 2..."+ textMessage.value +"\n";
 				textMessage.value="";
 				}
 				else{
