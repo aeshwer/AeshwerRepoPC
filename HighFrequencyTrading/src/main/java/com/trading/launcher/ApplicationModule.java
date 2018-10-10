@@ -28,17 +28,19 @@ public class ApplicationModule extends AbstractModule{
 
 	@Override
 	protected void configure() {
-		this.bind(TradeService.class).to(TradeServiceImpl.class);
 		this.bind(EntityManagerFactoryWrapper.class).annotatedWith(HighFrequencyTradingPersistence.class).to(HighFrequencyEntityManagerFactory.class);
-		this.bind(TradeCaptureService.class).to(TradeCaptureServiceImpl.class);
+		this.bind(TradePersistableTransformer.class).to(TradePersistableTransformerImpl.class);
 		this.bind(TradeRepository.class).to(TradeRepositoryImpl.class).in(Singleton.class);
-	    this.bind(TradeGateway.class).to(HighFrequencyTradeGatewayImpl.class);
-	    this.bind(TradeValidationService.class).to(TradeValidationServiceImpl.class);
-	    this.bind(TradePersistService.class).to(TradePersistServiceImpl.class);
-	    this.bind(TradeFetchService.class).to(TradeFetchServiceImpl.class);
-	    this.bind(TradePersistableTransformer.class).to(TradePersistableTransformerImpl.class);
+		this.bind(PrePersistProcessingManager.class);
+		this.bind(TradeFetchService.class).to(TradeFetchServiceImpl.class);
 	    
-	    this.bind(PrePersistProcessingManager.class);
-	    //this.bind(ExposedTradeFunction.class);//Temporary until we wire up the UI Code
+		this.bind(TradePersistService.class).to(TradePersistServiceImpl.class);
+		this.bind(TradeGateway.class).to(HighFrequencyTradeGatewayImpl.class);
+		this.bind(TradeValidationService.class).to(TradeValidationServiceImpl.class);
+		this.bind(TradeService.class).to(TradeServiceImpl.class);
+		this.bind(TradeCaptureService.class).to(TradeCaptureServiceImpl.class);
+		
+		this.bind(ExposedTradeFunction.class);//Temporary until we wire up the UI Code
+		this.bind(HighFrequencyTradingMain.class);
 	}
 }
