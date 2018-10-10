@@ -39,6 +39,6 @@ public class ApplicationModule extends AbstractModule{
 	    this.bind(TradePersistableTransformer.class).to(TradePersistableTransformerImpl.class);
 	    
 	    this.bind(PrePersistProcessingManager.class);
-	    this.bind(ExposedTradeFunction.class);//Temporary until we wire up the UI Code
+	    //this.bind(ExposedTradeFunction.class);//Temporary until we wire up the UI Code
 	}
 }

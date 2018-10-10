@@ -19,11 +19,6 @@ public class Trade {
 
 	private Double offset;
 
-	@Embedded
-	@AttributeOverrides({
-		@AttributeOverride(name="startDate", column=@Column(name="Delivery_Start_Date")),
-		@AttributeOverride(name="endDate", column=@Column(name="Delivery_End_Date"))
-	})
 	private Delivery delivery;
 
 	public Trade() {

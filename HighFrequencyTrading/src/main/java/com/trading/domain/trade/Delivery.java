@@ -2,12 +2,17 @@ package com.trading.domain.trade;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Delivery {
 
 	LocalDate startDate;
 
 	LocalDate endDate;
 
+	@Column(name="Delivery_Terms", nullable=false)
 	String deliveryTerms;
 
 	public Delivery() {

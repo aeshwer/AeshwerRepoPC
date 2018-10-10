@@ -2,6 +2,10 @@ package com.trading.gateway.jpa.persistable;
 
 import java.time.LocalDate;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,14 +19,23 @@ public class TradePersistable {
 	@Id
 	private Long id;
 
+	@Column(name="Trade_Date", nullable=false)
 	private LocalDate tradeDate;
 
+	@Column(name="Buy/Sell", nullable=false)
 	private String BuySellIndicator;
 
+	@Column(name="Trade_Price", nullable=false)
 	private Double price;
 
+	@Column(name="Offset_Price", nullable=true)
 	private Double offset;
 
+	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride(name="startDate", column=@Column(name="Delivery_Start_Date")),
+		@AttributeOverride(name="endDate", column=@Column(name="Delivery_End_Date"))
+	})
 	private Delivery delivery;
 
 	public Long getId() {
