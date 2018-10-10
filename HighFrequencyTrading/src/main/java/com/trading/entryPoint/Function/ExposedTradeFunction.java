@@ -1,6 +1,7 @@
 package com.trading.entryPoint.Function;
 
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.inject.Inject;
 
@@ -8,9 +9,9 @@ import org.apache.log4j.Logger;
 
 import com.trading.DummyDataSetGenerator.TradeDataSetGenerator;
 import com.trading.commons.util.LogManagerUtil;
+import com.trading.commons.util.NamedThreadFactory;
 import com.trading.domain.response.TradeResponse;
 import com.trading.domain.trade.Trade;
-import com.trading.services.TradeServiceImpl;
 
 public class ExposedTradeFunction {
 
@@ -28,10 +29,10 @@ public class ExposedTradeFunction {
 	private static Logger logger;
 
 	@Inject
-	public ExposedTradeFunction(final TradeCaptureService tradeCaptureService,final ExecutorService executorService) {
+	public ExposedTradeFunction(final TradeCaptureService tradeCaptureService) {
 		this.tradeCaptureService = tradeCaptureService;
-		this.executorService = executorService;
-		this.logger = LogManagerUtil.getLogger(ExposedTradeFunction.class);
+		this.executorService = Executors.newCachedThreadPool(new NamedThreadFactory());
+		logger = LogManagerUtil.getLogger(ExposedTradeFunction.class);
 	}
 
 	public void updatePhysicalTrade(){

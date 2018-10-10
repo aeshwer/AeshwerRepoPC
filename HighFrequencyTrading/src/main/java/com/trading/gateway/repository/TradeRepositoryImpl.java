@@ -21,13 +21,13 @@ public class TradeRepositoryImpl implements TradeRepository{
 
 	private final EntityManagerFactoryWrapper entityManagerFactory;
 	private final TradePersistableTransformer persistableTransformer;
-	private final Logger logger;
+	private static Logger logger;
 	
 	@Inject
-	public TradeRepositoryImpl(@HighFrequencyTradingPersistence final EntityManagerFactoryWrapper entityManagerFactory,final TradePersistableTransformer persistableTransformer,final Logger logger) {
+	public TradeRepositoryImpl(@HighFrequencyTradingPersistence final EntityManagerFactoryWrapper entityManagerFactory,final TradePersistableTransformer persistableTransformer) {
 		this.entityManagerFactory = entityManagerFactory;
 		this.persistableTransformer = persistableTransformer;
-		this.logger = LogManagerUtil.getLogger(TradeRepositoryImpl.class);
+		logger = LogManagerUtil.getLogger(TradeRepositoryImpl.class);
 		
 	}
 

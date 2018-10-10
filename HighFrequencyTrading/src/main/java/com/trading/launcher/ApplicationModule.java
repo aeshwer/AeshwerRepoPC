@@ -6,6 +6,8 @@ import com.trading.commons.util.EntityManagerFactoryWrapper;
 import com.trading.commons.util.HighFrequencyEntityManagerFactory;
 import com.trading.commons.util.HighFrequencyTradingPersistence;
 import com.trading.entryPoint.Function.ExposedTradeFunction;
+import com.trading.entryPoint.Function.TradeCaptureService;
+import com.trading.entryPoint.Function.TradeCaptureServiceImpl;
 import com.trading.gateway.HighFrequencyTradeGatewayImpl;
 import com.trading.gateway.PrePersistProcessingManager;
 import com.trading.gateway.TradeFetchService;
@@ -28,6 +30,7 @@ public class ApplicationModule extends AbstractModule{
 	protected void configure() {
 		this.bind(TradeService.class).to(TradeServiceImpl.class);
 		this.bind(EntityManagerFactoryWrapper.class).annotatedWith(HighFrequencyTradingPersistence.class).to(HighFrequencyEntityManagerFactory.class);
+		this.bind(TradeCaptureService.class).to(TradeCaptureServiceImpl.class);
 		this.bind(TradeRepository.class).to(TradeRepositoryImpl.class).in(Singleton.class);
 	    this.bind(TradeGateway.class).to(HighFrequencyTradeGatewayImpl.class);
 	    this.bind(TradeValidationService.class).to(TradeValidationServiceImpl.class);
