@@ -15,8 +15,10 @@ public class HighFrequencyTradingMain {
 	private final static Logger logger = LogManagerUtil.getLogger(HighFrequencyTradingMain.class);
 
 	public static void main(String[] args) {
+		logger.info("***********High Frequency Trading App Starts: "+" ***************");
 		injector = Guice.createInjector(new ApplicationModule());
 		ExposedTradeFunction exposedTradeFunction = injector.getInstance(ExposedTradeFunction.class);
+		logger.info("***********Saving some Trades : "+" ***************");
 		exposedTradeFunction.updatePhysicalTrade();
 	}
 }
