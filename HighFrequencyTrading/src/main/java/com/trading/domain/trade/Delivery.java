@@ -3,15 +3,20 @@ package com.trading.domain.trade;
 import java.time.LocalDate;
 
 public class Delivery {
-	
+
 	LocalDate startDate;
-	
+
 	LocalDate endDate;
-	
+
 	String deliveryTerms;
-	
+
 	public Delivery() {
-		// TODO Auto-generated constructor stub
+	}
+
+	public Delivery(LocalDate startDate,LocalDate endDate,String deliveryTerms) {
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.deliveryTerms = deliveryTerms;
 	}
 
 	public LocalDate getStartDate() {

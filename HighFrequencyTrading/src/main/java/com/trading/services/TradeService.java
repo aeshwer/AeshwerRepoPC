@@ -1,10 +1,11 @@
 package com.trading.services;
 
+import com.trading.domain.response.TradeResponse;
 import com.trading.domain.trade.Trade;
 
 public interface TradeService {
 
-	void updateTrade(Trade trade);
+	TradeResponse updateTrade(Trade trade);
 /*
 	  TradeResponse updatePhysicalTrade();
 

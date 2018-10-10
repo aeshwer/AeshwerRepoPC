@@ -7,8 +7,8 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import com.trading.DummyDataSetGenerator.TradeDataSetGenerator;
+import com.trading.commons.util.LogManagerUtil;
 import com.trading.domain.trade.Trade;
-import com.trading.util.LogManagerUtil;
 
 public class ExposedTradeFunction {
 
@@ -35,11 +35,11 @@ public class ExposedTradeFunction {
 		//Will need to add UI support Later,using dummy data set as for now
 		for(Trade trade : TradeDataSetGenerator.retriveDummyTradesFeeder()) {
 		this.executorService.submit(
-				() -> this.TradeDelegate(trade));
+				() -> this.UpdateTradeDelegate(trade));
 		}
 	}
 
-	private void TradeDelegate(Trade trade) {
+	private void UpdateTradeDelegate(Trade trade) {
 		this.tradeCaptureService.updateTrade(trade);
 	}
 

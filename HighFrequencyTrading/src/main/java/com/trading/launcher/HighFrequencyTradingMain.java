@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.trading.util.LogManagerUtil;
+import com.trading.commons.util.LogManagerUtil;
 
 
 public class HighFrequencyTradingMain {

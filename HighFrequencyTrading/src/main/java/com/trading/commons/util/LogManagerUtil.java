@@ -1,4 +1,4 @@
-package com.trading.util;
+package com.trading.commons.util;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

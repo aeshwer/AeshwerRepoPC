@@ -1,9 +1,8 @@
 package com.trading.gateway.repository;
 
+import com.trading.domain.trade.Trade;
+
 public interface TradeRepository {
-	/*Term persist(Term term);
+	Trade persist(Trade term);
 
-	  Term findByTradeId(Long tradeId);
-
-	  List<String> findTradeIdsByCriteria(SearchCriteria searchCriteria);*/
 }
