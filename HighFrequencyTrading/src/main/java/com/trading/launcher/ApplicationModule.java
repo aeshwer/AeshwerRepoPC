@@ -5,6 +5,7 @@ import com.google.inject.Singleton;
 import com.trading.commons.util.EntityManagerFactoryWrapper;
 import com.trading.commons.util.HighFrequencyEntityManagerFactory;
 import com.trading.commons.util.HighFrequencyTradingPersistence;
+import com.trading.entryPoint.Function.ExposedTradeFunction;
 import com.trading.gateway.HighFrequencyTradeGatewayImpl;
 import com.trading.gateway.PrePersistProcessingManager;
 import com.trading.gateway.TradeFetchService;
@@ -35,5 +36,6 @@ public class ApplicationModule extends AbstractModule{
 	    this.bind(TradePersistableTransformer.class).to(TradePersistableTransformerImpl.class);
 	    
 	    this.bind(PrePersistProcessingManager.class);
+	    this.bind(ExposedTradeFunction.class);//Temporary until we wire up the UI Code
 	}
 }
