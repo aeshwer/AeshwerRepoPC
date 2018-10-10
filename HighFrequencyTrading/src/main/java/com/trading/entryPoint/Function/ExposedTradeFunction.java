@@ -8,7 +8,9 @@ import org.apache.log4j.Logger;
 
 import com.trading.DummyDataSetGenerator.TradeDataSetGenerator;
 import com.trading.commons.util.LogManagerUtil;
+import com.trading.domain.response.TradeResponse;
 import com.trading.domain.trade.Trade;
+import com.trading.services.TradeServiceImpl;
 
 public class ExposedTradeFunction {
 
@@ -22,6 +24,7 @@ public class ExposedTradeFunction {
 
 	private TradeCaptureService tradeCaptureService;
 	private ExecutorService executorService;
+	private TradeResponse response;
 	private static Logger logger;
 
 	@Inject
@@ -40,8 +43,7 @@ public class ExposedTradeFunction {
 	}
 
 	private void UpdateTradeDelegate(Trade trade) {
-		this.tradeCaptureService.updateTrade(trade);
+		logger.info("Initiate Trade Save"+ ExposedTradeFunction.class);
+		response = this.tradeCaptureService.updateTrade(trade);
 	}
-
-
 }

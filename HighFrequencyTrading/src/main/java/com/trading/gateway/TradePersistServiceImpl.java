@@ -23,7 +23,6 @@ public class TradePersistServiceImpl implements TradePersistService{
 
 	@Override
 	public void persist(Trade trade) {
-		
 	    final Trade tradeObject;
 	    if (trade.getTradeId() != null) {
 	    	tradeObject = trade;

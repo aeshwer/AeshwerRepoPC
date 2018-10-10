@@ -15,6 +15,5 @@ public class HighFrequencyTradingMain {
 
 	public static void main(String[] args) {
 		injector = Guice.createInjector(new ApplicationModule());
-			
 	}
 }
