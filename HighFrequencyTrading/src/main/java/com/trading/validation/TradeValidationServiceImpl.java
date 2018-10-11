@@ -12,11 +12,6 @@ public class TradeValidationServiceImpl implements TradeValidationService{
 	
 	private TradeResponse response; 
 	
-	@Inject
-	public TradeValidationServiceImpl() {
-	}
-	
-
 	@Override
 	public TradeResponse validateTrade(Trade trade) {
 		List<TradeValidationError> validationErrors = new ArrayList<>();

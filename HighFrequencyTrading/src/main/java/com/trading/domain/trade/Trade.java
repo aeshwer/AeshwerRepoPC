@@ -26,6 +26,7 @@ public class Trade {
 	}
 
 	public Trade(Long tradeId,LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
+		this.tradeId = tradeId;
 		this.tradeDate= tradeDate;
 		this.BuySellIndicator= BuySellIndicator;
 		this.price= price;
