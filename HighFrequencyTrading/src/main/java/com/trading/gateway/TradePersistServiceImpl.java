@@ -1,12 +1,9 @@
 package com.trading.gateway;
 
-import java.util.Optional;
 
-import javax.inject.Inject;
-
+import com.google.inject.Inject;
 import com.trading.domain.trade.Trade;
 import com.trading.gateway.repository.TradeRepository;
-import org.apache.commons.lang3.StringUtils;
 
 public class TradePersistServiceImpl implements TradePersistService{
 	

@@ -25,7 +25,7 @@ public class Trade {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Trade(LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
+	public Trade(Long tradeId,LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
 		this.tradeDate= tradeDate;
 		this.BuySellIndicator= BuySellIndicator;
 		this.price= price;

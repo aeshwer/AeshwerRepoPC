@@ -1,7 +1,7 @@
 package com.trading.gateway;
 
-import javax.inject.Inject;
 
+import com.google.inject.Inject;
 import com.trading.domain.trade.Trade;
 
 public class HighFrequencyTradeGatewayImpl  implements TradeGateway{
@@ -15,7 +15,6 @@ public class HighFrequencyTradeGatewayImpl  implements TradeGateway{
 		this.tradeFetchService = tradeFetchService;
 	}
 
-	@Inject
 	public void persist(Trade trade) {
 		this.tradePersistService.persist(trade);
 	}

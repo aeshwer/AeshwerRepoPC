@@ -3,18 +3,15 @@ package com.trading.entryPoint.Function;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
+import com.google.inject.Inject;
 import com.trading.DummyDataSetGenerator.TradeDataSetGenerator;
 import com.trading.commons.util.LogManagerUtil;
 import com.trading.commons.util.NamedThreadFactory;
 import com.trading.domain.response.TradeResponse;
 import com.trading.domain.trade.Trade;
-import com.trading.launcher.ApplicationModule;
 
 public class ExposedTradeFunction {
 	

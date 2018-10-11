@@ -1,7 +1,6 @@
 package com.trading.entryPoint.Function;
 
-import javax.inject.Inject;
-
+import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.trading.domain.response.TradeResponse;
 import com.trading.domain.trade.Trade;

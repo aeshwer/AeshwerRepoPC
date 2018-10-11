@@ -22,7 +22,7 @@ public class TradePersistable {
 	@Column(name="Trade_Date", nullable=false)
 	private LocalDate tradeDate;
 
-	@Column(name="Buy/Sell", nullable=false)
+	@Column(name="Buy_Sell", nullable=false)
 	private String BuySellIndicator;
 
 	@Column(name="Trade_Price", nullable=false)

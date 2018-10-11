@@ -2,17 +2,13 @@ package com.trading.services;
 
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.swing.text.html.Option;
-
 import org.apache.commons.lang3.Validate;
 import org.apache.log4j.Logger;
 
+import com.google.inject.Inject;
 import com.trading.commons.util.LogManagerUtil;
 import com.trading.domain.response.TradeResponse;
 import com.trading.domain.trade.Trade;
-import com.trading.entryPoint.Function.ExposedTradeFunction;
-import com.trading.entryPoint.Function.TradeCaptureServiceImpl;
 import com.trading.gateway.TradeGateway;
 import com.trading.validation.TradeValidationError;
 import com.trading.validation.TradeValidationService;
@@ -47,7 +43,7 @@ public class TradeServiceImpl implements TradeService{
 			}
 		}  
 		logger.info("Trade Validated ,Sending for Persisting in Database"+ TradeServiceImpl.class);
-		reponse.setResponseMessage("Trade Validated");
+		//reponse.setResponseMessage("Trade Validated");
 		this.tradeGateway.persist(trade);
 		return reponse;
 	}

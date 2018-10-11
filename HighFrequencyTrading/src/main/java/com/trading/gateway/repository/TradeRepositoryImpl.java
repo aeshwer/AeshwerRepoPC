@@ -3,12 +3,12 @@ package com.trading.gateway.repository;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import org.apache.log4j.Logger;
 
+import com.google.inject.Inject;
 import com.trading.commons.util.EntityManagerFactoryWrapper;
 import com.trading.commons.util.HighFrequencyTradingPersistence;
 import com.trading.commons.util.LogManagerUtil;
@@ -40,7 +40,7 @@ public class TradeRepositoryImpl implements TradeRepository{
 		        entityManager -> {
 		          final EntityTransaction transaction = entityManager.getTransaction();
 		          transaction.begin();
-		          if (tradeIdOptional.isPresent()) {
+		          if (!tradeIdOptional.isPresent()) {
 		            updatedTrade.set(this.updateTerm(entityManager, trade));
 		          } else {
 		            updatedTrade.set(this.createTerm(entityManager, trade));

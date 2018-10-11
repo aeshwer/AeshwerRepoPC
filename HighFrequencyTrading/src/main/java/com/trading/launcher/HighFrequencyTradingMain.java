@@ -1,7 +1,5 @@
 package com.trading.launcher;
 
-import javax.inject.Inject;
-
 import org.apache.log4j.Logger;
 
 import com.google.inject.Guice;
