@@ -7,17 +7,24 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.trading.domain.trade.Delivery;
+import com.trading.domain.trade.TradeStatus;
 
 @Entity
 @Table(name ="HFT_TRADE")
 public class TradePersistable {
 	
 	@Id
-	private Long id;
+	private String id;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name="Trade_Status")
+	private TradeStatus tradeStatus;
 
 	@Column(name="Trade_Date", nullable=false)
 	private LocalDate tradeDate;
@@ -38,11 +45,11 @@ public class TradePersistable {
 	})
 	private Delivery delivery;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

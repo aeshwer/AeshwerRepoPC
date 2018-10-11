@@ -18,6 +18,4 @@ public class HighFrequencyTradeGatewayImpl  implements TradeGateway{
 	public void persist(Trade trade) {
 		this.tradePersistService.persist(trade);
 	}
-
-
 }

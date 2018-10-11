@@ -15,8 +15,10 @@ import com.trading.gateway.TradeFetchServiceImpl;
 import com.trading.gateway.TradeGateway;
 import com.trading.gateway.TradePersistService;
 import com.trading.gateway.TradePersistServiceImpl;
+import com.trading.gateway.downstream.HighFrequencyTradeCapturePostOperation;
 import com.trading.gateway.repository.TradeRepository;
 import com.trading.gateway.repository.TradeRepositoryImpl;
+import com.trading.gateway.repository.transformer.SequenceNumberGenerator;
 import com.trading.gateway.repository.transformer.TradePersistableTransformer;
 import com.trading.gateway.repository.transformer.TradePersistableTransformerImpl;
 import com.trading.services.TradeService;
@@ -32,6 +34,8 @@ public class ApplicationModule extends AbstractModule{
 		this.bind(TradePersistableTransformer.class).to(TradePersistableTransformerImpl.class);
 		this.bind(TradeRepository.class).to(TradeRepositoryImpl.class).in(Singleton.class);
 		this.bind(PrePersistProcessingManager.class);
+		this.bind(SequenceNumberGenerator.class);
+		this.bind(HighFrequencyTradeCapturePostOperation.class);
 		this.bind(TradeFetchService.class).to(TradeFetchServiceImpl.class);
 	    
 		this.bind(TradePersistService.class).to(TradePersistServiceImpl.class);

@@ -34,19 +34,19 @@ public class TradeRepositoryImpl implements TradeRepository{
 	@Override
 	public Trade persist(Trade trade) {
 		final AtomicReference<Trade> updatedTrade = new AtomicReference<>();
-		final Optional<Long> tradeIdOptional = Optional.ofNullable(trade.getTradeId());
+		final Optional<String> tradeIdOptional = Optional.ofNullable(trade.getTradeId());
 		TransactionUtil.doInJPA(logger,
 		        this.entityManagerFactory.getEntityManagerFactory(),
 		        entityManager -> {
 		          final EntityTransaction transaction = entityManager.getTransaction();
 		          transaction.begin();
-		          if (!tradeIdOptional.isPresent()) {
+		          if (tradeIdOptional.isPresent()) {
 		            updatedTrade.set(this.updateTerm(entityManager, trade));
 		          } else {
 		            updatedTrade.set(this.createTerm(entityManager, trade));
 		          }
 		          transaction.commit();
-		          logger.info("Persist Success: TradeId: "+ trade.getTradeId());
+		          logger.info("Persist Success:"+ trade.getTradeId());
 		        });
 		    return updatedTrade.get();
 	}
@@ -66,6 +66,7 @@ public class TradeRepositoryImpl implements TradeRepository{
 	  
 	  private Trade createTerm(final EntityManager entityManager, final Trade trade) {
 		    final TradePersistable tradePersistable = this.persistableTransformer.createPersistable(trade);
+		    this.persistableTransformer.generateIds(tradePersistable,entityManager);
 		    entityManager.persist(tradePersistable);
 		    return trade;
 		  }

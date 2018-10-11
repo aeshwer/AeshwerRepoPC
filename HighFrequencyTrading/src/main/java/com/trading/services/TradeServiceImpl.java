@@ -25,7 +25,7 @@ public class TradeServiceImpl implements TradeService{
 	public TradeServiceImpl(TradeGateway tradeGateway,TradeValidationService validationService) {
 		this.tradeGateway = tradeGateway;
 		this.validationService = validationService;
-		this.logger = LogManagerUtil.getLogger(TradeServiceImpl.class);
+		logger = LogManagerUtil.getLogger(TradeServiceImpl.class);
 	}
 
 	@Override

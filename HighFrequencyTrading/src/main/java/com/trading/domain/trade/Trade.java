@@ -9,7 +9,9 @@ import javax.persistence.Embedded;
 
 public class Trade {
 
-	private Long tradeId;
+	private String tradeId;
+
+	private TradeStatus tradeStatus;
 
 	private LocalDate tradeDate;
 
@@ -25,23 +27,43 @@ public class Trade {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Trade(Long tradeId,LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
-		this.tradeId = tradeId;
+	//used for saving new trade
+	public Trade(TradeStatus tradeStatus,LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
+		this.tradeStatus = tradeStatus;
 		this.tradeDate= tradeDate;
 		this.BuySellIndicator= BuySellIndicator;
 		this.price= price;
 		this.offset= offset;
 		this.delivery=delivery;
 	}
-	
-	  public final Long getTradeId() {
-	    return this.tradeId;
-	  }
 
-	  public final void setTradeId(final Long tradeId) {
-	    this.tradeId = tradeId;
-	  }
+	//used for update
+	public Trade(String tradeId,TradeStatus tradeStatus,LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
+		this.tradeId = tradeId;
+		this.tradeStatus = tradeStatus;
+		this.tradeDate= tradeDate;
+		this.BuySellIndicator= BuySellIndicator;
+		this.price= price;
+		this.offset= offset;
+		this.delivery=delivery;
+	}
 
+	public final String getTradeId() {
+		return this.tradeId;
+	}
+
+	public final void setTradeId(final String tradeId) {
+		this.tradeId = tradeId;
+	}
+
+
+	public TradeStatus getTradeStatus() {
+		return tradeStatus;
+	}
+
+	public void setTradeStatus(TradeStatus tradeStatus) {
+		this.tradeStatus = tradeStatus;
+	}
 
 	public LocalDate getTradeDate() {
 		return tradeDate;
