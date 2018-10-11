@@ -9,6 +9,8 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -20,7 +22,8 @@ import com.trading.domain.trade.TradeStatus;
 public class TradePersistable {
 	
 	@Id
-	private String id;
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	private Long id;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name="Trade_Status")
@@ -45,11 +48,11 @@ public class TradePersistable {
 	})
 	private Delivery delivery;
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

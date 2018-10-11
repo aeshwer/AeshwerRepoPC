@@ -20,7 +20,6 @@ public class TradePersistableTransformerImpl implements TradePersistableTransfor
 	@Override
 	public TradePersistable createPersistable(Trade trade) {
 		TradePersistable tradePersistable = new TradePersistable();
-		tradePersistable.setId(trade.getTradeId());
 		tradePersistable.setBuySellIndicator(trade.getBuySellIndicator());
 		tradePersistable.setDelivery(trade.getDelivery());
 		tradePersistable.setOffset(trade.getOffset());

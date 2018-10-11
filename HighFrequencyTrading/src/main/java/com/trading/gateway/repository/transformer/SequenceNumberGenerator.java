@@ -14,6 +14,6 @@ public class SequenceNumberGenerator {
 	}
 
 	public void generate(EntityManager entityManager, TradePersistable tradePersistable) {
-		tradePersistable.setId(UUID.randomUUID().toString());
+		//tradePersistable.setId(UUID.randomUUID().toString());
 	}
 }

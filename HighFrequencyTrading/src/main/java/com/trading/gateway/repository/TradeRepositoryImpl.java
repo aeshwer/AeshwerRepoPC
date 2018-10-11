@@ -46,7 +46,7 @@ public class TradeRepositoryImpl implements TradeRepository{
 		            updatedTrade.set(this.createTerm(entityManager, trade));
 		          }
 		          transaction.commit();
-		          logger.info("Persist Success:"+ trade.getTradeId());
+		          logger.info("Persist Request Success "+ TradeRepositoryImpl.class);
 		        });
 		    return updatedTrade.get();
 	}
@@ -66,7 +66,7 @@ public class TradeRepositoryImpl implements TradeRepository{
 	  
 	  private Trade createTerm(final EntityManager entityManager, final Trade trade) {
 		    final TradePersistable tradePersistable = this.persistableTransformer.createPersistable(trade);
-		    this.persistableTransformer.generateIds(tradePersistable,entityManager);
+		    ///this.persistableTransformer.generateIds(tradePersistable,entityManager);
 		    entityManager.persist(tradePersistable);
 		    return trade;
 		  }
