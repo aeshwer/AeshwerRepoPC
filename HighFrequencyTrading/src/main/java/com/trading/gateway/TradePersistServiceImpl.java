@@ -38,9 +38,12 @@ public class TradePersistServiceImpl implements TradePersistService{
 	      //term = this.tradeToTermMapper.mapForUpdateOperation(trade, savedTerm);
 	    }
 	    prePersistProcessingManager.process(tradeObject);
-		final Trade persistTerm = this.tradeRepository.persist(tradeObject);
-		trade.setTradeId(persistTerm.getTradeId());
-		trade.setTradeStatus(TradeStatus.PENDING);
-		highFrequencyTradeCapturePostOperation.perform(trade);
+		final Trade persistTrade = this.tradeRepository.persist(tradeObject);
+		trade.setTradeId(persistTrade.getTradeId());
+		trade.setTradeStatus(persistTrade.getTradeStatus());
+		if(trade.getTradeStatus()== TradeStatus.ACCECPTED) 
+		{
+			highFrequencyTradeCapturePostOperation.perform(trade);
+		}
 	}
 }

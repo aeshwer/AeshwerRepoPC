@@ -14,6 +14,7 @@ import com.trading.commons.util.HighFrequencyTradingPersistence;
 import com.trading.commons.util.LogManagerUtil;
 import com.trading.commons.util.TransactionUtil;
 import com.trading.domain.trade.Trade;
+import com.trading.domain.trade.TradeStatus;
 import com.trading.gateway.jpa.persistable.TradePersistable;
 import com.trading.gateway.repository.transformer.TradePersistableTransformer;
 
@@ -35,6 +36,7 @@ public class TradeRepositoryImpl implements TradeRepository{
 	public Trade persist(Trade trade) {
 		final AtomicReference<Trade> updatedTrade = new AtomicReference<>();
 		final Optional<String> tradeIdOptional = Optional.ofNullable(trade.getTradeId());
+		try{
 		TransactionUtil.doInJPA(logger,
 		        this.entityManagerFactory.getEntityManagerFactory(),
 		        entityManager -> {
@@ -46,8 +48,14 @@ public class TradeRepositoryImpl implements TradeRepository{
 		            updatedTrade.set(this.createTerm(entityManager, trade));
 		          }
 		          transaction.commit();
-		          logger.info("Persist Request Success "+ TradeRepositoryImpl.class);
+		          logger.info(TradeRepositoryImpl.class +":  Persist Request Success ");
 		        });
+		}catch(Exception e)
+		{
+			updatedTrade.get().setTradeStatus(TradeStatus.INVALID);
+			logger.info(TradeRepositoryImpl.class + ":  Persist Failed");
+		}
+			updatedTrade.get().setTradeStatus(TradeStatus.ACCECPTED);
 		    return updatedTrade.get();
 	}
 	
@@ -66,7 +74,7 @@ public class TradeRepositoryImpl implements TradeRepository{
 	  
 	  private Trade createTerm(final EntityManager entityManager, final Trade trade) {
 		    final TradePersistable tradePersistable = this.persistableTransformer.createPersistable(trade);
-		    ///this.persistableTransformer.generateIds(tradePersistable,entityManager);
+		    this.persistableTransformer.generateIds(tradePersistable,trade);
 		    entityManager.persist(tradePersistable);
 		    return trade;
 		  }

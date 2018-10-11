@@ -42,8 +42,8 @@ public class TradeServiceImpl implements TradeService{
 				return reponse;
 			}
 		}  
-		logger.info("Trade Validated ,Sending for Persisting in Database"+ TradeServiceImpl.class);
-		//reponse.setResponseMessage("Trade Validated");
+		logger.info(TradeServiceImpl.class+ ":  Trade Validated ,Sending for Persisting in Database");
+		reponse.setResponseMessage("Trade Validated");
 		this.tradeGateway.persist(trade);
 		return reponse;
 	}

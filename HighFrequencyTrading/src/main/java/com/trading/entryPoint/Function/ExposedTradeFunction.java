@@ -36,7 +36,7 @@ public class ExposedTradeFunction {
 	}
 
 	private void UpdateTradeDelegate(Trade trade) {
-		logger.info("Initiate Trade Save"+ ExposedTradeFunction.class);
+		logger.info(ExposedTradeFunction.class +  ":  Initiate Trade Save");
 		response = this.tradeCaptureService.updateTrade(trade);
 	}
 }

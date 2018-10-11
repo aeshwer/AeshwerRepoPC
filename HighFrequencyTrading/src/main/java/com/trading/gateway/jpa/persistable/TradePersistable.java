@@ -22,8 +22,7 @@ import com.trading.domain.trade.TradeStatus;
 public class TradePersistable {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	private Long id;
+	private String id;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name="Trade_Status")
@@ -48,12 +47,20 @@ public class TradePersistable {
 	})
 	private Delivery delivery;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
+	}
+
+	public TradeStatus getTradeStatus() {
+		return tradeStatus;
+	}
+
+	public void setTradeStatus(TradeStatus tradeStatus) {
+		this.tradeStatus = tradeStatus;
 	}
 
 	public LocalDate getTradeDate() {

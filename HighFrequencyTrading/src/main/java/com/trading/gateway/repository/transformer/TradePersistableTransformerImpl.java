@@ -6,6 +6,7 @@ import org.apache.commons.lang3.Validate;
 
 import com.google.inject.Inject;
 import com.trading.domain.trade.Trade;
+import com.trading.domain.trade.TradeStatus;
 import com.trading.gateway.jpa.persistable.TradePersistable;
 
 public class TradePersistableTransformerImpl implements TradePersistableTransformer{
@@ -25,12 +26,13 @@ public class TradePersistableTransformerImpl implements TradePersistableTransfor
 		tradePersistable.setOffset(trade.getOffset());
 		tradePersistable.setPrice(trade.getPrice());
 		tradePersistable.setTradeDate(trade.getTradeDate());
+		tradePersistable.setTradeStatus(TradeStatus.ACCECPTED);
 		return tradePersistable;
 	}
 	
 	@Override
-	public void generateIds(TradePersistable tradePersistable, EntityManager entityManager) {
+	public void generateIds(TradePersistable tradePersistable, Trade trade) {
 		Validate.notNull(tradePersistable, "TradePersistable cannot be null.");
-		this.sequenceNumberGenerator.generate(entityManager, tradePersistable);
+		this.sequenceNumberGenerator.generate(trade, tradePersistable);
 	}
 }
