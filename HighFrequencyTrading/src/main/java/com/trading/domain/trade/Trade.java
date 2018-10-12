@@ -9,7 +9,7 @@ import javax.persistence.Embedded;
 
 public class Trade {
 
-	private String tradeId;
+	private Long tradeId;
 
 	private TradeStatus tradeStatus;
 
@@ -38,7 +38,7 @@ public class Trade {
 	}
 
 	//used for update
-	public Trade(String tradeId,TradeStatus tradeStatus,LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
+	public Trade(Long tradeId,TradeStatus tradeStatus,LocalDate tradeDate,String BuySellIndicator,Double price,Double offset,Delivery delivery) {
 		this.tradeId = tradeId;
 		this.tradeStatus = tradeStatus;
 		this.tradeDate= tradeDate;
@@ -48,11 +48,11 @@ public class Trade {
 		this.delivery=delivery;
 	}
 
-	public final String getTradeId() {
+	public final Long getTradeId() {
 		return this.tradeId;
 	}
 
-	public final void setTradeId(final String tradeId) {
+	public final void setTradeId(final Long tradeId) {
 		this.tradeId = tradeId;
 	}
 

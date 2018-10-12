@@ -13,7 +13,7 @@ public class SequenceNumberGenerator {
 	}
 
 	public void generate(Trade trade, TradePersistable tradePersistable) {
-		tradePersistable.setId(UUID.randomUUID().toString());
-		trade.setTradeId(tradePersistable.getId());
+		//tradePersistable.setId(UUID.randomUUID().toString());
+		//trade.setTradeId(tradePersistable.getId());
 	}
 }
