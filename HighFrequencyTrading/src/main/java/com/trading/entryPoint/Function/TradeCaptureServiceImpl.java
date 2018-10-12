@@ -20,4 +20,9 @@ public class TradeCaptureServiceImpl implements TradeCaptureService{
 		//Extract Trade from Trade JSON
 		 return tradeService.updateTrade(trade);
 	}
+
+	@Override
+	public Trade findTrade(Long tradeId) {
+		return tradeService.findTrade(tradeId);
+	}
 }

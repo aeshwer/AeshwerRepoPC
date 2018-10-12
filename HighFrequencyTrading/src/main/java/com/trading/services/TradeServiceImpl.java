@@ -14,11 +14,11 @@ import com.trading.validation.TradeValidationError;
 import com.trading.validation.TradeValidationService;
 
 public class TradeServiceImpl implements TradeService{
-	
+
 	private final TradeGateway tradeGateway;
-	
+
 	private final TradeValidationService validationService; 
-	
+
 	private static Logger logger;
 
 	@Inject
@@ -46,5 +46,13 @@ public class TradeServiceImpl implements TradeService{
 		reponse.setResponseMessage("Trade Validated");
 		this.tradeGateway.persist(trade);
 		return reponse;
+	}
+
+	@Override
+	public Trade findTrade(Long tradeId) {
+		Validate.notNull(tradeId, "Trade Id should not be null");
+		final Trade trade = this.tradeGateway.findTrade(tradeId);
+		Validate.notNull(trade, "Trade with Trade Id " + tradeId + "not found.");
+		return trade;
 	}
 }

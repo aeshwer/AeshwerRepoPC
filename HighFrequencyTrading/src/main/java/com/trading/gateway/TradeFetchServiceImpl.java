@@ -1,19 +1,26 @@
 package com.trading.gateway;
 
+import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import com.google.inject.Inject;
+import com.trading.domain.trade.Trade;
 import com.trading.gateway.repository.TradeRepository;
 
 public class TradeFetchServiceImpl implements TradeFetchService {
 
 	private final TradeRepository tradeRepository;
 
-	private final PrePersistProcessingManager prePersistProcessingManager;
-
 	@Inject
-	public TradeFetchServiceImpl(final TradeRepository tradeRepository,final PrePersistProcessingManager prePersistProcessingManager) {
+	public TradeFetchServiceImpl(final TradeRepository tradeRepository) {
 		this.tradeRepository = tradeRepository;
-		this.prePersistProcessingManager = prePersistProcessingManager;
 	}
 
+	@Override
+	public Trade findTrade(Long tradeId) {
+		Validate.notNull(tradeId, "Trade Id cannot be null.");
+		Validate.isTrue(NumberUtils.isNumber(tradeId.toString()), "Trade id is not a number.");
+		final Trade trade = this.tradeRepository.findByTradeId(tradeId);
+		return trade;
+	}
 }

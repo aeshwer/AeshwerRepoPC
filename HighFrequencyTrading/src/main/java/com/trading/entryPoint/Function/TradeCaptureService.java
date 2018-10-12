@@ -6,5 +6,7 @@ import com.trading.domain.trade.Trade;
 public interface TradeCaptureService {
 
 	TradeResponse updateTrade(Trade trade);
+	
+	Trade findTrade(final Long tradeId);
 
 }

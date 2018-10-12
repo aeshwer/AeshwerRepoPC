@@ -29,7 +29,7 @@ public class TradePersistServiceImpl implements TradePersistService{
 	public void persist(Trade trade) {
 	    final Trade tradeObject;
 	    
-	    if (trade.getTradeId()!=null) {
+	    if (null == trade.getTradeId()) {
 	    	tradeObject = trade;
 	      //term = this.tradeToTermMapper.mapForCreateOperation(trade);
 	    } else {

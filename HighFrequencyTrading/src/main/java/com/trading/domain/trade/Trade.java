@@ -104,5 +104,10 @@ public class Trade {
 	public void setDelivery(Delivery delivery) {
 		this.delivery = delivery;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+"[ tradeId: "+tradeId+ "  TradeStatus:"+tradeStatus+ "  BuySellIndicator:"+ BuySellIndicator +" ]" ;
+	}
 
 }

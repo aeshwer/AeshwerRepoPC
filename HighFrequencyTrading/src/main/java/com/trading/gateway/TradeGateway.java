@@ -7,10 +7,7 @@ import com.trading.domain.trade.Trade;
 public interface TradeGateway {
 
 	void persist(Trade trade);
+
+	Trade findTrade(Long tradeId);
 	
-/*	void persist(final Trade trade);
-
-	  Trade findTradeById(final String tradeId);
-
-	  List<String> findTradeIdsByCriteria(final SearchCriteria searchCriteria);*/
 }

@@ -20,6 +20,8 @@ public class HighFrequencyTradingMain {
 		System.out.println();
 		ExposedTradeFunction exposedTradeFunction = injector.getInstance(ExposedTradeFunction.class);
 		logger.info("***********Saving some Trades : "+" ***************");
-		exposedTradeFunction.updatePhysicalTrade();
+		exposedTradeFunction.updateTrade();
+		logger.info("***********Fetching some Trades : "+" ***************");
+		exposedTradeFunction.findTrade();
 	}
 }

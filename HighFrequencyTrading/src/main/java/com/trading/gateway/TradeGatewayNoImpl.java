@@ -12,4 +12,10 @@ public class TradeGatewayNoImpl implements TradeGateway {
 	public void persist(Trade trade) {
 		 LOG.info("This implementation does nothing.");
 	}
+
+	@Override
+	public Trade findTrade(Long tradeId) {
+		LOG.info("This implementation does nothing.");
+		return new Trade();
+	}
 }

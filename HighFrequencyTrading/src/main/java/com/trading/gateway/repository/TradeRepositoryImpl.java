@@ -61,6 +61,17 @@ public class TradeRepositoryImpl implements TradeRepository{
 		return updatedEntityModel.get().getTrade();
 	}
 
+	@Override
+	public Trade findByTradeId(Long tradeId) {
+		final AtomicReference<TradePersistable> fetchedTradePersistable = new AtomicReference<>();
+		TransactionUtil.doInJPA(logger,this.entityManagerFactory.getEntityManagerFactory(), entityManager -> {
+			fetchedTradePersistable.set(entityManager.find(TradePersistable.class, tradeId));
+		});
+		
+		final Trade trade = this.persistableTransformer.createDomainFromPersistable(fetchedTradePersistable.get());
+		return trade;
+	}
+
 	private PersistableTradeEntityModel updateTerm(final EntityManager entityManager, final Trade trade) {
 		/*final TradePersistable tradePersistable = entityManager.find(TradePersistable.class, trade.getId());
 		   this.persistableTransformer.updatePersistable(trade, tradePersistable );
@@ -84,4 +95,6 @@ public class TradeRepositoryImpl implements TradeRepository{
 		entityModel.setTrade(trade);
 		return entityModel;
 	}
+
+
 }

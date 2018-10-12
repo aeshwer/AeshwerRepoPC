@@ -27,16 +27,31 @@ public class ExposedTradeFunction {
 		logger = LogManagerUtil.getLogger(ExposedTradeFunction.class);
 	}
 
-	public void updatePhysicalTrade(){
+	public void updateTrade(){
 		//Will need to add UI support Later,using dummy data set as for now
 		for(Trade trade : TradeDataSetGenerator.retriveDummyTradesFeeder()) {
 		this.executorService.submit(
-				() -> this.UpdateTradeDelegate(trade));
+				() -> this.updateDelegate(trade));
 		}
 	}
 
-	private void UpdateTradeDelegate(Trade trade) {
+	private void updateDelegate(Trade trade) {
 		logger.info(ExposedTradeFunction.class +  ":  Initiate Trade Save");
 		response = this.tradeCaptureService.updateTrade(trade);
+	}
+	
+
+	public void findTrade(){
+		//Will need to add UI support Later,using dummy data set as for now
+		for(Long tradeId : TradeDataSetGenerator.retriveTradesWithIds()) {
+		this.executorService.submit(
+				() -> this.findTradeDelegate(tradeId));
+		}
+	}
+	
+	private void findTradeDelegate(Long tradeId) {
+		logger.info(ExposedTradeFunction.class +  ":  Initiate Trade Save");
+		Trade fetchedTrade= this.tradeCaptureService.findTrade(tradeId);
+		logger.info(ExposedTradeFunction.class +"####--Fetched Trade with id: "+ fetchedTrade.getTradeId() +" is : ["  +fetchedTrade.toString()+" ]---####");
 	}
 }

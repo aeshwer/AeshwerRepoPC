@@ -18,4 +18,9 @@ public class HighFrequencyTradeGatewayImpl  implements TradeGateway{
 	public void persist(Trade trade) {
 		this.tradePersistService.persist(trade);
 	}
+
+	@Override
+	public Trade findTrade(Long tradeId) {
+		return tradeFetchService.findTrade(tradeId);
+	}
 }

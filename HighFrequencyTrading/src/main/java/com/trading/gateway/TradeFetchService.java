@@ -1,5 +1,8 @@
 package com.trading.gateway;
 
+import com.trading.domain.trade.Trade;
+
 public interface TradeFetchService {
-	  /*void persist(final Trade trade);*/
+	
+	  Trade findTrade(final Long tradeId);
 }

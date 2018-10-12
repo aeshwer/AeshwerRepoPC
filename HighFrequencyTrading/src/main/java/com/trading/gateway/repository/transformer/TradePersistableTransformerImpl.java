@@ -31,8 +31,22 @@ public class TradePersistableTransformerImpl implements TradePersistableTransfor
 	}
 	
 	@Override
+	public Trade createDomainFromPersistable(TradePersistable tradePersistable) {
+		Trade trade= new Trade();
+		trade.setTradeId(tradePersistable.getId());
+		trade.setBuySellIndicator(tradePersistable.getBuySellIndicator());
+		trade.setDelivery(tradePersistable.getDelivery());
+		trade.setOffset(tradePersistable.getOffset());
+		trade.setPrice(tradePersistable.getPrice());
+		trade.setTradeDate(tradePersistable.getTradeDate());
+		trade.setTradeStatus(tradePersistable.getTradeStatus());
+		return trade;
+	}
+	
+	@Override
 	public void generateIds(TradePersistable tradePersistable, Trade trade) {
 		Validate.notNull(tradePersistable, "TradePersistable cannot be null.");
 		this.sequenceNumberGenerator.generate(trade, tradePersistable);
 	}
+
 }
