@@ -1,8 +1,5 @@
 package com.trading.gateway;
 
-
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.inject.Inject;
 import com.trading.domain.trade.Trade;
 import com.trading.domain.trade.TradeStatus;
@@ -27,17 +24,15 @@ public class TradePersistServiceImpl implements TradePersistService{
 
 	@Override
 	public void persist(Trade trade) {
-	    final Trade tradeObject;
-	    
+	    Trade tradeObject = null;
 	    if (null == trade.getTradeId()) {
 	    	tradeObject = trade;
-	      //term = this.tradeToTermMapper.mapForCreateOperation(trade);
+	    	prePersistProcessingManager.mapForCreateOperation(tradeObject);
 	    } else {
-	    	tradeObject = trade;
-	      //final Trade savedTerm = this.tradeRepository.findByTradeId(Long.valueOf(trade.getTradeId()));
-	      //term = this.tradeToTermMapper.mapForUpdateOperation(trade, savedTerm);
+	    	// XXX Update case
+	    	final Trade savedOldTrade = this.tradeRepository.findByTradeId(Long.valueOf(trade.getTradeId()));
+	    	tradeObject = prePersistProcessingManager.mapForUpdateOperation(tradeObject,savedOldTrade);
 	    }
-	    prePersistProcessingManager.process(tradeObject);
 		final Trade persistTrade = this.tradeRepository.persist(tradeObject);
 		trade.setTradeId(persistTrade.getTradeId());
 		trade.setTradeStatus(persistTrade.getTradeStatus());

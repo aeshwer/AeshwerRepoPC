@@ -2,7 +2,7 @@ package com.trading.entryPoint.Function;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 
@@ -27,12 +27,18 @@ public class ExposedTradeFunction {
 		logger = LogManagerUtil.getLogger(ExposedTradeFunction.class);
 	}
 
-	public void updateTrade(){
+	public void updateTrade() throws InterruptedException{
 		//Will need to add UI support Later,using dummy data set as for now
 		for(Trade trade : TradeDataSetGenerator.retriveDummyTradesFeeder()) {
 		this.executorService.submit(
 				() -> this.updateDelegate(trade));
 		}
+		//CheckingUpdate
+		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are persisted before we update them
+		for(Trade trade : TradeDataSetGenerator.retriveDummyTradesForUpdateOperation()) {
+			this.executorService.submit(
+					() -> this.updateDelegate(trade));
+			}
 	}
 
 	private void updateDelegate(Trade trade) {
