@@ -7,4 +7,6 @@ public interface TradeRepository {
 
 	Trade findByTradeId(Long tradeId);
 
+	Trade findTradeByCriteria(String fieldId, String filterText);
+
 }

@@ -9,5 +9,7 @@ public interface TradeGateway {
 	void persist(Trade trade);
 
 	Trade findTrade(Long tradeId);
+
+	Trade fetchTrade(String fieldId, String filterText);
 	
 }

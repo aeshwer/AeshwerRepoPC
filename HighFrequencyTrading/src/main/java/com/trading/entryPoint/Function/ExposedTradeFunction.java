@@ -1,5 +1,6 @@
 package com.trading.entryPoint.Function;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -60,4 +61,19 @@ public class ExposedTradeFunction {
 		Trade fetchedTrade= this.tradeCaptureService.findTrade(tradeId);
 		logger.info(ExposedTradeFunction.class +"####--Fetched Trade with id: "+ fetchedTrade.getTradeId() +" is : ["  +fetchedTrade.toString()+" ]---####");
 	}
+	
+	public void fetchTrade(){
+		//Will need to add UI support Later,using dummy data set as for now
+		for(List<String> fetchCondition : TradeDataSetGenerator.retriveSearchCondition()) {
+		this.executorService.submit(
+				() -> this.fetchTradesDelegate(fetchCondition.get(0), fetchCondition.get(0)));
+		}
+	}
+	
+	private void fetchTradesDelegate(String fieldId , String filterText) {
+			logger.info(ExposedTradeFunction.class +  ":  Initiate Trade Save");
+			Trade fetchedTrade= this.tradeCaptureService.fetchTrade(fieldId,filterText);
+			logger.info(ExposedTradeFunction.class +"####--Fetched Trade with id: "+ fetchedTrade.getTradeId() +" is : ["  +fetchedTrade.toString()+" ]---####");
+		  }
+
 }

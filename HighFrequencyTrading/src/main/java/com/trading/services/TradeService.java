@@ -8,4 +8,6 @@ public interface TradeService {
 	TradeResponse updateTrade(Trade trade);
 
 	Trade findTrade(Long tradeId);
+
+	Trade fetchTrade(String fieldId, String filterText);
 }

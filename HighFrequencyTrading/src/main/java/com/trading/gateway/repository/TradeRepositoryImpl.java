@@ -1,11 +1,17 @@
 package com.trading.gateway.repository;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
@@ -67,9 +73,21 @@ public class TradeRepositoryImpl implements TradeRepository{
 		TransactionUtil.doInJPA(logger,this.entityManagerFactory.getEntityManagerFactory(), entityManager -> {
 			fetchedTradePersistable.set(entityManager.find(TradePersistable.class, tradeId));
 		});
-		
+
 		final Trade trade = this.persistableTransformer.createDomainFromPersistable(fetchedTradePersistable.get());
 		return trade;
+	}
+
+	@Override
+	public Trade findTradeByCriteria(String fieldId, String filterText) {
+		final List<Trade> trades = new ArrayList<>();
+		TransactionUtil.doInJPA(logger,this.entityManagerFactory.getEntityManagerFactory(), entityManager -> {
+			/*final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+			final CriteriaQuery<Trade> query = criteriaBuilder.createQuery(Trade.class);
+			final Root<TradePersistable> from = query.from(TradePersistable.class);
+			query.select(from.get("HFT_TRADE").get("id"));*/
+		});
+		return trades.get(0);
 	}
 
 	private PersistableTradeEntityModel updateTerm(final EntityManager entityManager, final Trade trade) {
@@ -95,6 +113,4 @@ public class TradeRepositoryImpl implements TradeRepository{
 		entityModel.setTrade(trade);
 		return entityModel;
 	}
-
-
 }

@@ -18,4 +18,10 @@ public class TradeGatewayNoImpl implements TradeGateway {
 		LOG.info("This implementation does nothing.");
 		return new Trade();
 	}
+
+	@Override
+	public Trade fetchTrade(String fieldId, String filterText) {
+		LOG.info("This implementation does nothing.");
+		return null;
+	}
 }

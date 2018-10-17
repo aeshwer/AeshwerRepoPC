@@ -9,4 +9,6 @@ public interface TradeCaptureService {
 	
 	Trade findTrade(final Long tradeId);
 
+	Trade fetchTrade(String fieldId, String filterText);
+
 }

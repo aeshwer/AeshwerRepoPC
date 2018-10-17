@@ -4,9 +4,11 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.trading.domain.trade.Delivery;
 import com.trading.domain.trade.Trade;
+import com.trading.domain.trade.TradeConstant;
 import com.trading.domain.trade.TradeStatus;
 
 public class TradeDataSetGenerator {
@@ -36,4 +38,15 @@ public class TradeDataSetGenerator {
 		dummyTradeId.add(2L);
 		return dummyTradeId;
 	} 
+	
+	public static List<List<String>> retriveSearchCondition()
+	{
+		List<List<String>> dummySearchList = new ArrayList<>();
+		List<String> seacrhCriteria1 = new ArrayList<>();
+		seacrhCriteria1.add(TradeConstant.BUY_SELL);
+		seacrhCriteria1.add("Buy");
+		dummySearchList.add(seacrhCriteria1);
+		return dummySearchList;
+	}
 }
+

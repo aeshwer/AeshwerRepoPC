@@ -55,4 +55,12 @@ public class TradeServiceImpl implements TradeService{
 		Validate.notNull(trade, "Trade with Trade Id " + tradeId + "not found.");
 		return trade;
 	}
+
+	@Override
+	public Trade fetchTrade(String fieldId, String filterText) {
+		Validate.notNull(fieldId, fieldId + " fieldId should not be null");
+		final Trade trade = this.tradeGateway.fetchTrade(fieldId,filterText);
+		Validate.notNull(trade, "Trade with field  Id " + fieldId + "not found.");
+		return null;
+	}
 }

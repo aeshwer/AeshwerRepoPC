@@ -23,4 +23,9 @@ public class HighFrequencyTradeGatewayImpl  implements TradeGateway{
 	public Trade findTrade(Long tradeId) {
 		return tradeFetchService.findTrade(tradeId);
 	}
+
+	@Override
+	public Trade fetchTrade(String fieldId, String filterText) {
+		return tradeFetchService.fetchTrade(fieldId,filterText);
+	}
 }

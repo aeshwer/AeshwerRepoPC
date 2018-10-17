@@ -25,4 +25,9 @@ public class TradeCaptureServiceImpl implements TradeCaptureService{
 	public Trade findTrade(Long tradeId) {
 		return tradeService.findTrade(tradeId);
 	}
+
+	@Override
+	public Trade fetchTrade(String fieldId, String filterText) {
+		return tradeService.fetchTrade(fieldId,filterText);
+	}
 }

@@ -23,4 +23,11 @@ public class TradeFetchServiceImpl implements TradeFetchService {
 		final Trade trade = this.tradeRepository.findByTradeId(tradeId);
 		return trade;
 	}
+
+	@Override
+	public Trade fetchTrade(String fieldId, String filterText) {
+		Validate.notNull(fieldId, " fieldId cannot be null.");
+		final Trade trade = this.tradeRepository.findTradeByCriteria(fieldId,filterText);
+		return null;
+	}
 }
