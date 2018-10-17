@@ -12,7 +12,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+
 import org.apache.log4j.Logger;
+import org.hibernate.query.Query;
 
 import com.google.inject.Inject;
 import com.trading.commons.util.EntityManagerFactoryWrapper;
@@ -27,6 +29,7 @@ import com.trading.gateway.repository.transformer.TradePersistableTransformer;
 
 public class TradeRepositoryImpl implements TradeRepository{
 
+	private static final Integer MAX_RESULT_SIZE = 100;
 	private final EntityManagerFactoryWrapper entityManagerFactory;
 	private final TradePersistableTransformer persistableTransformer;
 	private static Logger logger;
@@ -81,11 +84,21 @@ public class TradeRepositoryImpl implements TradeRepository{
 	@Override
 	public Trade findTradeByCriteria(String fieldId, String filterText) {
 		final List<Trade> trades = new ArrayList<>();
+		final AtomicReference<List<TradePersistable>> fetchedTradePersistable = new AtomicReference<>();
 		TransactionUtil.doInJPA(logger,this.entityManagerFactory.getEntityManagerFactory(), entityManager -> {
-			/*final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-			final CriteriaQuery<Trade> query = criteriaBuilder.createQuery(Trade.class);
-			final Root<TradePersistable> from = query.from(TradePersistable.class);
-			query.select(from.get("HFT_TRADE").get("id"));*/
+			
+			final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		    final CriteriaQuery<TradePersistable> query = criteriaBuilder.createQuery(TradePersistable.class);
+		    final Root<TradePersistable> from = query.from(TradePersistable.class);
+		    query.select(from);
+		    query.where();
+		    final TypedQuery<TradePersistable> selectQuery = entityManager.createQuery(query);
+		    selectQuery.setMaxResults(MAX_RESULT_SIZE);
+		    fetchedTradePersistable.set(selectQuery.getResultList());
+		    for(TradePersistable  l: fetchedTradePersistable.get())
+		    {
+		    	System.out.println(l.getId()+ l.getBuySellIndicator());
+		    }
 		});
 		return trades.get(0);
 	}
