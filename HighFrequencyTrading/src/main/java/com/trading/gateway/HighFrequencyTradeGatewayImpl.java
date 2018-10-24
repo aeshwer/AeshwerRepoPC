@@ -30,4 +30,9 @@ public class HighFrequencyTradeGatewayImpl  implements TradeGateway{
 	public List<Trade> fetchTrade(String fieldId, String filterText) {
 		return tradeFetchService.fetchTrade(fieldId,filterText);
 	}
+
+	@Override
+	public void copyTrade(Long tradeId) {
+		this.tradePersistService.copyTrade(tradeId);
+	}
 }

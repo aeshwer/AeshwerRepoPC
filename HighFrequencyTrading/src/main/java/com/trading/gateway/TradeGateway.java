@@ -13,4 +13,6 @@ public interface TradeGateway {
 	Trade findTrade(Long tradeId);
 
 	List<Trade> fetchTrade(String fieldId, String filterText);
+
+	void copyTrade(Long tradeId);
 }

@@ -47,5 +47,13 @@ public class TradeDataSetGenerator {
 		dummySearchList.add(seacrhCriteria1);
 		return dummySearchList;
 	}
+	
+	public static List<Long> retriveTradesIdsForCopyOperation()
+	{
+		List<Long> dummyTradeIdForCopy = new ArrayList<>();
+		dummyTradeIdForCopy.add(1L);
+		dummyTradeIdForCopy.add(2L);
+		return dummyTradeIdForCopy;
+	} 
 }
 

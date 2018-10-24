@@ -30,5 +30,7 @@ public class HighFrequencyTradingMain {
 		exposedTradeFunction.findTrade();
 		logger.info("***********Fetching some Trades by Search Condition: "+" ***************");
 		exposedTradeFunction.fetchTrade();
+		logger.info("***********Copy some Trades by using TradeId: "+" ***************");
+		exposedTradeFunction.copyTrade();
 	}
 }

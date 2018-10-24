@@ -42,4 +42,14 @@ public class TradePersistServiceImpl implements TradePersistService{
 			highFrequencyTradeCapturePostOperation.perform(trade);
 		}
 	}
+
+	@Override
+	public void copyTrade(Long tradeId) {
+		final Trade copyTradeFromDb = this.tradeRepository.findByTradeId(Long.valueOf(tradeId));
+		final Trade persistTrade = this.tradeRepository.copy(copyTradeFromDb);
+		if(persistTrade.getTradeStatus()== TradeStatus.ACCECPTED) 
+		{
+			highFrequencyTradeCapturePostOperation.perform(persistTrade);
+		}
+	}
 }

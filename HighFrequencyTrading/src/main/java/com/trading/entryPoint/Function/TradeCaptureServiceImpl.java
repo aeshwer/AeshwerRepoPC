@@ -32,4 +32,9 @@ public class TradeCaptureServiceImpl implements TradeCaptureService{
 	public List<Trade> fetchTrade(String fieldId, String filterText) {
 		return tradeService.fetchTrade(fieldId,filterText);
 	}
+
+	@Override
+	public TradeResponse copyTrade(Long tradeId) {
+		return tradeService.updateTrade(tradeId);
+	}
 }

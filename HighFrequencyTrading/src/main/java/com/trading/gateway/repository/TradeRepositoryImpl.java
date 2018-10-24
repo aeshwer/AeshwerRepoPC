@@ -101,6 +101,27 @@ public class TradeRepositoryImpl implements TradeRepository{
 		}
 		return tradeFetched;
 	}
+	
+	@Override
+	public Trade copy(Trade copyTradeFromDb) {
+		final TradePersistable tradePersistable = this.persistableTransformer.createPersistable(copyTradeFromDb);
+		try{
+			TransactionUtil.doInJPA(logger,
+					this.entityManagerFactory.getEntityManagerFactory(),
+					entityManager -> {
+						final EntityTransaction transaction = entityManager.getTransaction();
+						transaction.begin();
+						entityManager.persist(tradePersistable);
+						transaction.commit();
+						logger.info(TradeRepositoryImpl.class +":  Copy Request Success and Persisted ");
+					});
+		}catch(Exception e)
+		{
+			logger.info(TradeRepositoryImpl.class + ":  Copy Trade Failed to Persist");
+		}
+		copyTradeFromDb.setTradeId(tradePersistable.getId());
+		return copyTradeFromDb;
+	}
 
 	private Predicate[] preparePredicates(String fieldId, String filterText, CriteriaBuilder criteriaBuilder, Root<TradePersistable> root) {
 		final List<Predicate> predicates = new ArrayList<>();

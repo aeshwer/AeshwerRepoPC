@@ -13,4 +13,6 @@ public interface TradeCaptureService {
 
 	List<Trade> fetchTrade(String fieldId, String filterText);
 
+	TradeResponse copyTrade(Long tradeId);
+
 }

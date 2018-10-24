@@ -11,4 +11,6 @@ public interface TradeRepository {
 
 	List<Trade> findTradeByCriteria(String fieldId, String filterText);
 
+	Trade copy(Trade copyTradeFromDb);
+
 }

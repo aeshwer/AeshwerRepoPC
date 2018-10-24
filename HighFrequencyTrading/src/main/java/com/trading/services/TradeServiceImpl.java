@@ -62,4 +62,13 @@ public class TradeServiceImpl implements TradeService{
 		final List<Trade> tradeFetched = this.tradeGateway.fetchTrade(fieldId,filterText);
 		return tradeFetched;
 	}
+
+	@Override
+	public TradeResponse updateTrade(Long tradeId) {
+		TradeResponse reponse = new TradeResponse();
+		Validate.notNull(tradeId, "Trade Id should not be null");
+		this.tradeGateway.copyTrade(tradeId);
+		reponse.setResponseMessage("Copying Trade");
+		return reponse;
+	}
 }

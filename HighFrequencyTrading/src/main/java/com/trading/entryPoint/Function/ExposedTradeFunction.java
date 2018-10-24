@@ -82,5 +82,16 @@ public class ExposedTradeFunction {
 			logger.info(ExposedTradeFunction.class +"####--Fetched Trade with Filter Text : [ "+ fieldId + " : "+ filterText + " --Trade is " + " : ["  +trades.toString()+" ]---####");
 		}
 	}
+	
+	public void copyTrade() {
+		for(Long id: TradeDataSetGenerator.retriveTradesIdsForCopyOperation()) {
+			this.executorService.submit(
+					() -> this.copyTradeDeletgate(id));
+		}
+	}
 
+	public void copyTradeDeletgate(Long tradeId) {
+		logger.info(ExposedTradeFunction.class +  ":  Copying Trade with id : " + tradeId);
+		response = this.tradeCaptureService.copyTrade(tradeId);
+	}
 }
