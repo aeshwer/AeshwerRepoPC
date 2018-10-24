@@ -1,5 +1,7 @@
 package com.trading.entryPoint.Function;
 
+import java.util.List;
+
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.trading.domain.response.TradeResponse;
@@ -27,7 +29,7 @@ public class TradeCaptureServiceImpl implements TradeCaptureService{
 	}
 
 	@Override
-	public Trade fetchTrade(String fieldId, String filterText) {
+	public List<Trade> fetchTrade(String fieldId, String filterText) {
 		return tradeService.fetchTrade(fieldId,filterText);
 	}
 }

@@ -36,10 +36,10 @@ public class TradePersistable {
 	private String BuySellIndicator;
 
 	@Column(name="Trade_Price", nullable=false)
-	private Double price;
+	private Double tradePrice;
 
 	@Column(name="Offset_Price", nullable=true)
-	private Double offset;
+	private Double offsetPrice;
 
 	@Embedded
 	@AttributeOverrides({
@@ -81,19 +81,19 @@ public class TradePersistable {
 	}
 
 	public Double getPrice() {
-		return price;
+		return tradePrice;
 	}
 
 	public void setPrice(Double price) {
-		this.price = price;
+		this.tradePrice = price;
 	}
 
 	public Double getOffset() {
-		return offset;
+		return offsetPrice;
 	}
 
-	public void setOffset(Double offset) {
-		this.offset = offset;
+	public void setOffset(Double offsetPrice) {
+		this.offsetPrice = offsetPrice;
 	}
 
 	public Delivery getDelivery() {

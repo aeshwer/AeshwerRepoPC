@@ -57,10 +57,9 @@ public class TradeServiceImpl implements TradeService{
 	}
 
 	@Override
-	public Trade fetchTrade(String fieldId, String filterText) {
+	public List<Trade> fetchTrade(String fieldId, String filterText) {
 		Validate.notNull(fieldId, fieldId + " fieldId should not be null");
-		final Trade trade = this.tradeGateway.fetchTrade(fieldId,filterText);
-		Validate.notNull(trade, "Trade with field  Id " + fieldId + "not found.");
-		return null;
+		final List<Trade> tradeFetched = this.tradeGateway.fetchTrade(fieldId,filterText);
+		return tradeFetched;
 	}
 }

@@ -1,5 +1,7 @@
 package com.trading.gateway;
 
+import java.util.List;
+
 import com.google.inject.ImplementedBy;
 import com.trading.domain.trade.Trade;
 
@@ -10,6 +12,5 @@ public interface TradeGateway {
 
 	Trade findTrade(Long tradeId);
 
-	Trade fetchTrade(String fieldId, String filterText);
-	
+	List<Trade> fetchTrade(String fieldId, String filterText);
 }

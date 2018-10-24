@@ -1,5 +1,7 @@
 package com.trading.gateway.repository;
 
+import java.util.List;
+
 import com.trading.domain.trade.Trade;
 
 public interface TradeRepository {
@@ -7,6 +9,6 @@ public interface TradeRepository {
 
 	Trade findByTradeId(Long tradeId);
 
-	Trade findTradeByCriteria(String fieldId, String filterText);
+	List<Trade> findTradeByCriteria(String fieldId, String filterText);
 
 }

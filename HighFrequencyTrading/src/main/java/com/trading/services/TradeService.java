@@ -1,5 +1,7 @@
 package com.trading.services;
 
+import java.util.List;
+
 import com.trading.domain.response.TradeResponse;
 import com.trading.domain.trade.Trade;
 
@@ -9,5 +11,5 @@ public interface TradeService {
 
 	Trade findTrade(Long tradeId);
 
-	Trade fetchTrade(String fieldId, String filterText);
+	List<Trade> fetchTrade(String fieldId, String filterText);
 }

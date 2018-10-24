@@ -1,6 +1,9 @@
 package com.trading.gateway;
 
 import com.trading.domain.trade.Trade;
+
+import java.util.List;
+
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.jboss.logging.Logger;
 
@@ -20,7 +23,7 @@ public class TradeGatewayNoImpl implements TradeGateway {
 	}
 
 	@Override
-	public Trade fetchTrade(String fieldId, String filterText) {
+	public List<Trade> fetchTrade(String fieldId, String filterText) {
 		LOG.info("This implementation does nothing.");
 		return null;
 	}

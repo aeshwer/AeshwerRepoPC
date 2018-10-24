@@ -1,5 +1,7 @@
 package com.trading.gateway;
 
+import java.util.List;
+
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -25,9 +27,9 @@ public class TradeFetchServiceImpl implements TradeFetchService {
 	}
 
 	@Override
-	public Trade fetchTrade(String fieldId, String filterText) {
+	public List<Trade> fetchTrade(String fieldId, String filterText) {
 		Validate.notNull(fieldId, " fieldId cannot be null.");
-		final Trade trade = this.tradeRepository.findTradeByCriteria(fieldId,filterText);
-		return null;
+		final List<Trade> tradeFetched = this.tradeRepository.findTradeByCriteria(fieldId,filterText);
+		return tradeFetched;
 	}
 }

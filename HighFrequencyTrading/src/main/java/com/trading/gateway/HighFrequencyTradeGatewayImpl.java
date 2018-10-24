@@ -1,6 +1,8 @@
 package com.trading.gateway;
 
 
+import java.util.List;
+
 import com.google.inject.Inject;
 import com.trading.domain.trade.Trade;
 
@@ -25,7 +27,7 @@ public class HighFrequencyTradeGatewayImpl  implements TradeGateway{
 	}
 
 	@Override
-	public Trade fetchTrade(String fieldId, String filterText) {
+	public List<Trade> fetchTrade(String fieldId, String filterText) {
 		return tradeFetchService.fetchTrade(fieldId,filterText);
 	}
 }

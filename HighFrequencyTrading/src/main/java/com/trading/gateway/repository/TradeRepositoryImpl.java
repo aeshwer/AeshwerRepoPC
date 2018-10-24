@@ -14,7 +14,6 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.apache.log4j.Logger;
-import org.hibernate.query.Query;
 
 import com.google.inject.Inject;
 import com.trading.commons.util.EntityManagerFactoryWrapper;
@@ -82,25 +81,31 @@ public class TradeRepositoryImpl implements TradeRepository{
 	}
 
 	@Override
-	public Trade findTradeByCriteria(String fieldId, String filterText) {
-		final List<Trade> trades = new ArrayList<>();
+	public List<Trade> findTradeByCriteria(String fieldId, String filterText) {
+		final List<Trade> tradeFetched = new ArrayList<>();
 		final AtomicReference<List<TradePersistable>> fetchedTradePersistable = new AtomicReference<>();
 		TransactionUtil.doInJPA(logger,this.entityManagerFactory.getEntityManagerFactory(), entityManager -> {
-			
+
 			final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		    final CriteriaQuery<TradePersistable> query = criteriaBuilder.createQuery(TradePersistable.class);
-		    final Root<TradePersistable> from = query.from(TradePersistable.class);
-		    query.select(from);
-		    query.where();
-		    final TypedQuery<TradePersistable> selectQuery = entityManager.createQuery(query);
-		    selectQuery.setMaxResults(MAX_RESULT_SIZE);
-		    fetchedTradePersistable.set(selectQuery.getResultList());
-		    for(TradePersistable  l: fetchedTradePersistable.get())
-		    {
-		    	System.out.println(l.getId()+ l.getBuySellIndicator());
-		    }
+			final CriteriaQuery<TradePersistable> query = criteriaBuilder.createQuery(TradePersistable.class);
+			final Root<TradePersistable> from = query.from(TradePersistable.class);
+			query.select(from);
+			query.where(this.preparePredicates(fieldId,filterText,criteriaBuilder,from));
+			final TypedQuery<TradePersistable> selectQuery = entityManager.createQuery(query);
+			selectQuery.setMaxResults(MAX_RESULT_SIZE);
+			fetchedTradePersistable.set(selectQuery.getResultList());
 		});
-		return trades.get(0);
+		for(TradePersistable  fetched: fetchedTradePersistable.get())
+		{
+			tradeFetched.add(this.persistableTransformer.createDomainFromPersistable(fetched));
+		}
+		return tradeFetched;
+	}
+
+	private Predicate[] preparePredicates(String fieldId, String filterText, CriteriaBuilder criteriaBuilder, Root<TradePersistable> root) {
+		final List<Predicate> predicates = new ArrayList<>();
+		predicates.add(criteriaBuilder.like(root.get(fieldId),filterText));
+		return predicates.toArray(new Predicate[predicates.size()]);
 	}
 
 	private PersistableTradeEntityModel updateTerm(final EntityManager entityManager, final Trade trade) {

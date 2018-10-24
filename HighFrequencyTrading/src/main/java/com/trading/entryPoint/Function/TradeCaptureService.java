@@ -1,5 +1,7 @@
 package com.trading.entryPoint.Function;
 
+import java.util.List;
+
 import com.trading.domain.response.TradeResponse;
 import com.trading.domain.trade.Trade;
 
@@ -9,6 +11,6 @@ public interface TradeCaptureService {
 	
 	Trade findTrade(final Long tradeId);
 
-	Trade fetchTrade(String fieldId, String filterText);
+	List<Trade> fetchTrade(String fieldId, String filterText);
 
 }
