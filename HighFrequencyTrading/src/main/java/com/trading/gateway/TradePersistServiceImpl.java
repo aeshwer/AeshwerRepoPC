@@ -3,7 +3,7 @@ package com.trading.gateway;
 import com.google.inject.Inject;
 import com.trading.domain.trade.Trade;
 import com.trading.domain.trade.TradeStatus;
-import com.trading.gateway.downstream.HighFrequencyTradeCapturePostOperation;
+import com.trading.gateway.downstream.HighFrequencyTradeCapturePostOperationNotifier;
 import com.trading.gateway.repository.TradeRepository;
 
 public class TradePersistServiceImpl implements TradePersistService{
@@ -12,13 +12,13 @@ public class TradePersistServiceImpl implements TradePersistService{
 	
 	private final PrePersistProcessingManager prePersistProcessingManager;
 	
-	  private final HighFrequencyTradeCapturePostOperation highFrequencyTradeCapturePostOperation;
+	  private final HighFrequencyTradeCapturePostOperationNotifier highFrequencyTradeCapturePostOperationNotifier;
 
 	@Inject
-	public TradePersistServiceImpl(final TradeRepository tradeRepository,final PrePersistProcessingManager prePersistProcessingManager,HighFrequencyTradeCapturePostOperation highFrequencyTradeCapturePostOperation) {
+	public TradePersistServiceImpl(final TradeRepository tradeRepository,final PrePersistProcessingManager prePersistProcessingManager,HighFrequencyTradeCapturePostOperationNotifier highFrequencyTradeCapturePostOperationNotifier) {
 		this.tradeRepository = tradeRepository;
 		this.prePersistProcessingManager = prePersistProcessingManager;
-		this.highFrequencyTradeCapturePostOperation = highFrequencyTradeCapturePostOperation;
+		this.highFrequencyTradeCapturePostOperationNotifier = highFrequencyTradeCapturePostOperationNotifier;
 	}
 	
 
@@ -39,7 +39,7 @@ public class TradePersistServiceImpl implements TradePersistService{
 		trade.setTradeStatus(persistTrade.getTradeStatus());
 		if(trade.getTradeStatus()== TradeStatus.ACCECPTED) 
 		{
-			highFrequencyTradeCapturePostOperation.perform(trade);
+			highFrequencyTradeCapturePostOperationNotifier.perform(trade);
 		}
 	}
 
@@ -49,7 +49,7 @@ public class TradePersistServiceImpl implements TradePersistService{
 		final Trade persistTrade = this.tradeRepository.copy(copyTradeFromDb);
 		if(persistTrade.getTradeStatus()== TradeStatus.ACCECPTED) 
 		{
-			highFrequencyTradeCapturePostOperation.perform(persistTrade);
+			highFrequencyTradeCapturePostOperationNotifier.perform(persistTrade);
 		}
 	}
 }
