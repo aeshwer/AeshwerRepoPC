@@ -49,4 +49,13 @@ public class TradePersistableTransformerImpl implements TradePersistableTransfor
 		this.sequenceNumberGenerator.generate(trade, tradePersistable);
 	}
 
+	@Override
+	public void updatePersistable(Trade trade, TradePersistable tradePersistable) {
+		tradePersistable.setBuySellIndicator(trade.getBuySellIndicator());
+		tradePersistable.setDelivery(trade.getDelivery());
+		tradePersistable.setOffset(trade.getOffset());
+		tradePersistable.setPrice(trade.getPrice());
+		tradePersistable.setTradeDate(trade.getTradeDate());
+		tradePersistable.setTradeStatus(trade.getTradeStatus());
+	}
 }

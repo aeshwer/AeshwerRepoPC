@@ -29,9 +29,10 @@ public class TradePersistServiceImpl implements TradePersistService{
 	    	tradeObject = trade;
 	    	prePersistProcessingManager.mapForCreateOperation(tradeObject);
 	    } else {
-	    	// XXX Update case
+	    	// XXX Update case , will add custom logic here later, now it maps nothing
 	    	final Trade savedOldTrade = this.tradeRepository.findByTradeId(Long.valueOf(trade.getTradeId()));
 	    	tradeObject = prePersistProcessingManager.mapForUpdateOperation(tradeObject,savedOldTrade);
+	    	tradeObject=trade;
 	    }
 		final Trade persistTrade = this.tradeRepository.persist(tradeObject);
 		trade.setTradeId(persistTrade.getTradeId());

@@ -109,16 +109,13 @@ public class TradeRepositoryImpl implements TradeRepository{
 	}
 
 	private PersistableTradeEntityModel updateTerm(final EntityManager entityManager, final Trade trade) {
-		/*final TradePersistable tradePersistable = entityManager.find(TradePersistable.class, trade.getId());
-		   this.persistableTransformer.updatePersistable(trade, tradePersistable );
-
-		    final TradeHeaderPersistable tradeHeaderPersistable = tradePersistable.getTradeHeader();
-		    tradePersistable.setData(trade);
-		    tradeHeaderPersistable.setData(trade.getTradeHeader());
-
-		    this.persistTerm(entityManager, tradePersistable, tradeHeaderPersistable);
-		    return trade;*/
-		return new PersistableTradeEntityModel();
+		PersistableTradeEntityModel entityModel = new PersistableTradeEntityModel();
+		final TradePersistable tradePersistable = entityManager.find(TradePersistable.class, trade.getTradeId());
+		this.persistableTransformer.updatePersistable(trade, tradePersistable );
+		entityManager.persist(tradePersistable);
+		entityModel.setPersistable(tradePersistable);
+		entityModel.setTrade(trade);
+		return entityModel;
 	}
 
 	private PersistableTradeEntityModel createTerm(final EntityManager entityManager, final Trade trade) {

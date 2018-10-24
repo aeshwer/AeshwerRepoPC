@@ -22,6 +22,8 @@ public class HighFrequencyTradingMain {
 		System.out.println();
 		ExposedTradeFunction exposedTradeFunction = injector.getInstance(ExposedTradeFunction.class);
 		logger.info("***********Saving some Trades : "+" ***************");
+		exposedTradeFunction.saveTrade();
+		logger.info("***********Updating some Trades : "+" ***************");
 		exposedTradeFunction.updateTrade();
 		logger.info("***********Fetching some Trades by id: "+" ***************");
 		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are persisted before we fetch them

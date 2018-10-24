@@ -27,15 +27,20 @@ public class ExposedTradeFunction {
 		this.executorService = Executors.newCachedThreadPool(new NamedThreadFactory());
 		logger = LogManagerUtil.getLogger(ExposedTradeFunction.class);
 	}
+	
+	public void saveTrade() throws InterruptedException{
+		//Will need to add UI support Later,using dummy data set as for now
+				for(Trade trade : TradeDataSetGenerator.retriveDummyTradesFeeder()) {
+					this.executorService.submit(
+							() -> this.updateDelegate(trade));
+				}
+				//CheckingUpdate
+				TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are persisted before we update them
+		
+	}
 
 	public void updateTrade() throws InterruptedException{
-		//Will need to add UI support Later,using dummy data set as for now
-		for(Trade trade : TradeDataSetGenerator.retriveDummyTradesFeeder()) {
-			this.executorService.submit(
-					() -> this.updateDelegate(trade));
-		}
-		//CheckingUpdate
-		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are persisted before we update them
+		
 		for(Trade trade : TradeDataSetGenerator.retriveDummyTradesForUpdateOperation()) {
 			this.executorService.submit(
 					() -> this.updateDelegate(trade));
@@ -43,7 +48,7 @@ public class ExposedTradeFunction {
 	}
 
 	private void updateDelegate(Trade trade) {
-		logger.info(ExposedTradeFunction.class +  ":  Initiate Trade Save");
+		logger.info(ExposedTradeFunction.class +  ":  Initiate Trade Save/Update");
 		response = this.tradeCaptureService.updateTrade(trade);
 	}
 

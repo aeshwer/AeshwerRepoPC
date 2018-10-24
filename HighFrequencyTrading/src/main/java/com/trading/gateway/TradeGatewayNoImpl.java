@@ -1,11 +1,11 @@
 package com.trading.gateway;
 
-import com.trading.domain.trade.Trade;
-
 import java.util.List;
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.jboss.logging.Logger;
+
+import com.trading.domain.trade.Trade;
 
 
 public class TradeGatewayNoImpl implements TradeGateway {
