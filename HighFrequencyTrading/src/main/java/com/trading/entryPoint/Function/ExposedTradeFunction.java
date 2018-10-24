@@ -74,7 +74,7 @@ public class ExposedTradeFunction {
 		logger.info(ExposedTradeFunction.class +  ":  Initiate Trade Save");
 		List<Trade> fetchedTrade= this.tradeCaptureService.fetchTrade(fieldId,filterText);
 		for(Trade trades : fetchedTrade) {
-			logger.info(ExposedTradeFunction.class +"####--Fetched Trade with id: "+ trades.getTradeId() +" is : ["  +trades.toString()+" ]---####");
+			logger.info(ExposedTradeFunction.class +"####--Fetched Trade with Filter Text : [ "+ fieldId + " : "+ filterText + " --Trade is " + " : ["  +trades.toString()+" ]---####");
 		}
 	}
 
