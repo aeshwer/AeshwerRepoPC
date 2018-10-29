@@ -29,7 +29,7 @@ public class TopicProducer implements Runnable {
 		try {
 			// First create a connection
 			Connection connection = connectionFactory.createConnection();
-			connection.start();
+			//connection.start();
 
 			// Now create a Session
 			Session session = connection.createSession(false,Session.AUTO_ACKNOWLEDGE);
@@ -41,11 +41,11 @@ public class TopicProducer implements Runnable {
 			MessageProducer producer = session.createProducer(destination);
 			producer.setDeliveryMode(DeliveryMode.PERSISTENT);
 
-			// Create a messages for the current climate
+			// Create a messages for the HighFreqTradeTopic Queue
 			String text = trade.toString();
 			TextMessage message = session.createTextMessage(text);
 
-			// Send the message to topic
+			// Send the message to Queue
 			producer.send(message);
 
 			// Do the cleanup
