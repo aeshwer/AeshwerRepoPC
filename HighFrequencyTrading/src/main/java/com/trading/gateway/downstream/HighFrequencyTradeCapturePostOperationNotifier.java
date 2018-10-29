@@ -7,7 +7,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import com.google.inject.Inject;
 import com.trading.domain.trade.Trade;
-import com.trading.jms.producer.TopicProducer;
+import com.trading.jms.producer.HFTDownStreamNotifierPublisher;
 
 public class HighFrequencyTradeCapturePostOperationNotifier {
 
@@ -21,7 +21,7 @@ public class HighFrequencyTradeCapturePostOperationNotifier {
 
 	public void perform(final Trade trade) {
 		//Create a message. As soon as the message is published on the Queue, it will be consumed by the consumer
-		executorService.submit(new TopicProducer(connectionFactory,trade));
+		executorService.submit(new HFTDownStreamNotifierPublisher(connectionFactory,trade));
 	}
 
 }
