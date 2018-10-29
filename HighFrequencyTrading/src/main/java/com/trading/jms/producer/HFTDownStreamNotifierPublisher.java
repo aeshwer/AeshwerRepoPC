@@ -12,14 +12,16 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import com.trading.domain.trade.Trade;
 
-public class TopicProducer implements Runnable { 
+public class HFTDownStreamNotifierPublisher implements Runnable { 
 
 	//Connection Factory which will help in connecting to ActiveMQ serer
 	private  ActiveMQConnectionFactory connectionFactory = null;
 
 	private Trade trade;
+	
+	private static final String HFT_QUEUE = "HighFreqTradeQueue";
 
-	public TopicProducer(ActiveMQConnectionFactory connectionFactory,Trade trade) {
+	public HFTDownStreamNotifierPublisher(ActiveMQConnectionFactory connectionFactory,Trade trade) {
 		this.connectionFactory = connectionFactory;
 		this.trade = trade;
 	}
@@ -34,10 +36,10 @@ public class TopicProducer implements Runnable {
 			// Now create a Session
 			Session session = connection.createSession(false,Session.AUTO_ACKNOWLEDGE);
 
-			// Let's create a topic. If the topic exist, it will return that
-			Destination destination = session.createQueue("HighFreqTradeTopic");
+			// Let's create a Queue. If the queue exist, it will return that
+			Destination destination = session.createQueue(HFT_QUEUE);
 
-			// Create a MessageProducer from the Session to the Topic or Queue
+			// Create a MessageProducer from the Session to the topic or Queue
 			MessageProducer producer = session.createProducer(destination);
 			producer.setDeliveryMode(DeliveryMode.PERSISTENT);
 
