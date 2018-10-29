@@ -2,7 +2,7 @@ package com.trading.domain.trade;
 
 public class TradeConstant {
 
-	public static final String 	TRADE_ID = "id";
+	public static final String TRADE_ID = "id";
 	public static final String TRADE_STATUS = "tradeStatus";
 	public static final String TRADE_DATE = "tradeDate";
 	public static final String BUY_SELL = "BuySellIndicator";

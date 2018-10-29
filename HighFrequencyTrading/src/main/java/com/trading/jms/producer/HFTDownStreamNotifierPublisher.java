@@ -4,6 +4,7 @@ import javax.jms.Connection;
 import javax.jms.DeliveryMode;
 import javax.jms.Destination;
 import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
@@ -11,6 +12,7 @@ import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import com.trading.domain.trade.Trade;
+import com.trading.domain.trade.TradeConstant;
 
 public class HFTDownStreamNotifierPublisher implements Runnable { 
 
@@ -44,8 +46,13 @@ public class HFTDownStreamNotifierPublisher implements Runnable {
 			producer.setDeliveryMode(DeliveryMode.PERSISTENT);
 
 			// Create a messages for the HighFreqTradeTopic Queue
-			String text = trade.toString();
-			TextMessage message = session.createTextMessage(text);
+			/*String text = trade.toString();
+			TextMessage message = session.createTextMessage(text);*/
+			
+			Message message = session.createMessage();
+			message.setLongProperty(TradeConstant.TRADE_ID, trade.getTradeId());
+			message.setStringProperty(TradeConstant.TRADE_STATUS, trade.getTradeStatus().toString());
+			message.setStringProperty(TradeConstant.TRADE_DATE, trade.getTradeDate().toString());
 
 			// Send the message to Queue
 			producer.send(message);
