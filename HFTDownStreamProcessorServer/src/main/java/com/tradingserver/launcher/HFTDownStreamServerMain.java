@@ -1,22 +1,34 @@
 package com.tradingserver.launcher;
 
+import java.net.URISyntaxException;
+
+import javax.jms.Connection;
+import javax.jms.Destination;
+import javax.jms.MessageConsumer;
+import javax.jms.Session;
+
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class HFTDownStreamServerMain {
 
-
-	public static void main(String[] args) {
-		//Create the connection factory
-		ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
-
-		//Create the consumer. It will wait to listen to the Topic
-		Thread topicConsumerThread = new Thread(new TopicConsumer(connectionFactory));
-		topicConsumerThread.start();
-
+	private static Connection connection = null;
+	
+	public static void main(String[] args) throws URISyntaxException,  Exception /*throws URISyntaxException, Exception */{
 		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+
+			ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
+			Connection connection = connectionFactory.createConnection();
+			connection.start();
+			Session session = connection.createSession(false,Session.AUTO_ACKNOWLEDGE);
+			Destination queue = session.createQueue("HighFreqTradeTopic");
+			MessageConsumer consumer = session.createConsumer(queue);
+			consumer.setMessageListener(new HFTQueueMessageListener	("Consumer"));
+		}finally
+		{
+			if (connection != null) {
+				connection.close();
+			}
+			//broker.stop();
 		}
 	}
 }
