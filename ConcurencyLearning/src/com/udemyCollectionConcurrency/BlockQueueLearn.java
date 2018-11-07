@@ -42,7 +42,7 @@ class SecondWorker implements Runnable{
 			try {
 				int num = blockingQueue.take();
 				System.out.println("Taking Item from Queue "+ num);
-				Thread.sleep(300);
+				Thread.sleep(4300);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

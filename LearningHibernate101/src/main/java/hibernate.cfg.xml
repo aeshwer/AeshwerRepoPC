@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/test2</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">password</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">10</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">create</property>
+ 
+        <!-- Mention here all the model classes along with their package name -->
+		<!-- <mapping class="Basics.Message"/>
+		<mapping class="ComponentMapping.Person"/> -->
+		<!-- <mapping class="ManyToOne.Student"/> -->		
+		<!-- <mapping class="ManyToOne.Guide"/> -->
+		<!-- <mapping class="Cascade.Guide2"/>
+		<mapping class="Cascade.Student2"/> -->
+		<!-- <mapping class="OneToMany.Guide3"/>
+		<mapping class="OneToMany.Student3"/>	 -->			
+		<!-- <mapping class="OneToOne.Customer"/>
+		<mapping class="OneToOne.Passport"/> -->				
+		<!-- <mapping class="ManyToMany.Actor"/>
+		<mapping class="ManyToMany.Movie"/> -->
+		<!-- <mapping class="MappingEnumns.Employee"/> -->
+		<!-- <mapping class="MappingCollectionsOfValueType.Friend"/> -->
+		<!-- <mapping class="CompositeKeys.Parent"/>
+		<mapping class="CompositeKeys.Child"/> -->
+
+    </session-factory>
+</hibernate-configuration>
+
