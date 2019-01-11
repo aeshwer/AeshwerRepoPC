@@ -11,8 +11,7 @@ public class InorderTraversalWithoutRecursion {
 		int key;
 		Node(int key)
 		{
-			this.left= left;
-			this.right= right;
+			left = right = null;
 			this.key =key;
 		}
 	}

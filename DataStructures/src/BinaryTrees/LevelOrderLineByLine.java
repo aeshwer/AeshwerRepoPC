@@ -3,19 +3,16 @@ package BinaryTrees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 public class LevelOrderLineByLine {
 
 	Node root;
 	static class Node
 	{
-		Node left;
-		Node right;
+		Node left,right;
 		int key;
 		Node(int key)
 		{
-			this.left= left;
-			this.right= right;
+			left= right= null;
 			this.key =key;
 		}
 	}

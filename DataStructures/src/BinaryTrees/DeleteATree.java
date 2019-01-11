@@ -1,6 +1,5 @@
 package BinaryTrees;
 
-import BinaryTrees.BinaryTreeTraversal.Node;
 /*
  * Use Postorder for this, because before deleting the parent node we should delete its children nodes first
  */

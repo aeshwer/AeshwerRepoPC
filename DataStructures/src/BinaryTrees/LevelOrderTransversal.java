@@ -1,12 +1,11 @@
 package BinaryTrees;
 import java.util.LinkedList;
-
+import java.util.NoSuchElementException;
 import java.util.Queue;
 
 /*
  * For each node, first the node is visited and then it’s child nodes are put in a FIFO queue
  */
-import BinaryTrees.BinaryTreeTraversal.Node;
 
 public class LevelOrderTransversal {
 
@@ -26,16 +25,16 @@ public class LevelOrderTransversal {
 	
 	/* Given a binary tree. Print its nodes in level order
     using array for implementing queue  */
-	void printLevelOrder()
+	void printLevelOrder() throws NoSuchElementException 
 	{
 		Queue<Node> queue = new LinkedList<Node>();
         queue.add(root);
-        while (queue.isEmpty() == false) 
+        while (!queue.isEmpty()) 
         {
         	/* poll() removes the present head.
             For more information on poll() visit 
             http://www.tutorialspoint.com/java/util/linkedlist_poll.htm */
-            Node tempNode = queue.poll();
+            Node tempNode = queue.remove(); // learn difference between poll and remove
             System.out.print(tempNode.key + " ");
             
             /*Enqueue left child */
@@ -51,7 +50,7 @@ public class LevelOrderTransversal {
 	} 
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NoSuchElementException  {
 
 		LevelOrderTransversal tree = new LevelOrderTransversal();
         tree.root = new Node(1);

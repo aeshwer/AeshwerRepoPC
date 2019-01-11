@@ -1,6 +1,5 @@
 package BinaryTrees;
 
-import BinaryTrees.IdenticalTrees.Node;
 
 public class CountLeafNodes {
 	Node root;
@@ -11,8 +10,7 @@ public class CountLeafNodes {
 		int key;
 		Node(int key)
 		{
-			this.left= left;
-			this.right= right;
+			left = right= null;
 			this.key = key;
 		}
 	}
