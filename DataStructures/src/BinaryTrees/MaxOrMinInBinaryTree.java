@@ -1,7 +1,5 @@
 package BinaryTrees;
 
-import BinaryTrees.ChildrenSumProperty.Node;
-
 public class MaxOrMinInBinaryTree {
 
 	Node root;

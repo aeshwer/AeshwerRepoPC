@@ -3,8 +3,6 @@ package BinaryTrees;
  * Given a binary tree, print out all of its root-to-leaf paths one per line. Note here that in each recursive call the array is filled 
  * till a different index . HARD LEVEL PROGRAM 
  */
-import BinaryTrees.MirrorImageTree.Node;
-
 public class RootToLeafPath {
 	
 	
