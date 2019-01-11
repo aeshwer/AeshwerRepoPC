@@ -2,7 +2,6 @@ package BinaryTrees;
 /*
  * HARD LEVEL ::: http://www.geeksforgeeks.org/convert-an-arbitrary-binary-tree-to-a-tree-that-holds-children-sum-property/
  */
-import BinaryTrees.ChildrenSumProperty.Node;
 
 public class ConvertTreeToChildSumPropertyTress {
 	

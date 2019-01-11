@@ -3,15 +3,9 @@ For the above tree the output should be 5 10 4 14 25.*/
 
 package BinaryTrees;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Map.Entry;
-
-import BinaryTrees.CountLeafNodes.Node;
-
 import java.util.Queue;
-import java.util.Set;
 import java.util.TreeMap;
 
 public class BottomViewOfTree {

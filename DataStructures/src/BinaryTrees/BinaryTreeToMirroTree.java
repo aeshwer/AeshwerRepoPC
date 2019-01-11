@@ -1,7 +1,5 @@
 package BinaryTrees;
 
-import BinaryTrees.DeleteATree.Node;
-
 public class BinaryTreeToMirroTree {
 
 	Node root;

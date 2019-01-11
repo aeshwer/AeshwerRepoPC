@@ -1,6 +1,5 @@
 package BinaryTrees;
 
-import BinaryTrees.LevelOrderTransversal.Node;
 /*
  * For every node, data value must be equal to sum of data values in left and right children. 
  * Consider data value as 0 for NULL children. Below tree is an example
@@ -16,8 +15,8 @@ public class ChildrenSumProperty {
 	 
 	    public Node(int key)
 	    {
-	        this.key = key;
-	        left = right = null;
+	    	this.key = key;
+	    	left = right = null;
 	    }
 	}
 	

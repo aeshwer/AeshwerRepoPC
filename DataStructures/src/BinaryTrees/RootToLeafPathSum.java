@@ -1,7 +1,5 @@
 package BinaryTrees;
 
-import BinaryTrees.RootToLeafPath.Node;
-
 public class RootToLeafPathSum {
 	
 	final int sum = 21;
