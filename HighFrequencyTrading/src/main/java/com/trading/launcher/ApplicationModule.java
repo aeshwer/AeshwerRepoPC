@@ -30,6 +30,7 @@ public class ApplicationModule extends AbstractModule{
 
 	@Override
 	protected void configure() {
+		this.install(new JMSConnectionModule());
 		this.bind(EntityManagerFactoryWrapper.class).annotatedWith(HighFrequencyTradingPersistence.class).to(HighFrequencyEntityManagerFactory.class);
 		this.bind(TradePersistableTransformer.class).to(TradePersistableTransformerImpl.class);
 		this.bind(TradeRepository.class).to(TradeRepositoryImpl.class).in(Singleton.class);
