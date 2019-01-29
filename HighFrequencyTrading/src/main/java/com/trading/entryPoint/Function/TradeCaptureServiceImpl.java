@@ -37,4 +37,9 @@ public class TradeCaptureServiceImpl implements TradeCaptureService{
 	public TradeResponse copyTrade(Long tradeId) {
 		return tradeService.updateTrade(tradeId);
 	}
+
+	@Override
+	public TradeResponse deleteTrade(Long tradeId) {
+		return tradeService.deleteTrade(tradeId);
+	}
 }

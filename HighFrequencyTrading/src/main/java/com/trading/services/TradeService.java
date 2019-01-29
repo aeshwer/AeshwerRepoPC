@@ -14,4 +14,6 @@ public interface TradeService {
 	List<Trade> fetchTrade(String fieldId, String filterText);
 
 	TradeResponse updateTrade(Long tradeId);
+
+	TradeResponse deleteTrade(Long tradeId);
 }

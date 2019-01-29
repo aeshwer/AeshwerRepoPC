@@ -4,5 +4,6 @@ public enum TradeStatus {
 	DRAFT, 
 	ACCECPTED,
 	PENDING,
-	INVALID;
+	INVALID,
+	DELETED;
 }

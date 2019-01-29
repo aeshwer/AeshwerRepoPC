@@ -35,4 +35,9 @@ public class HighFrequencyTradeGatewayImpl  implements TradeGateway{
 	public void copyTrade(Long tradeId) {
 		this.tradePersistService.copyTrade(tradeId);
 	}
+
+	@Override
+	public void deleteTrade(Long tradeId) {
+		this.tradePersistService.deleteTrade(tradeId);
+	}
 }

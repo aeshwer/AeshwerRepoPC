@@ -32,5 +32,8 @@ public class HighFrequencyTradingMain {
 		exposedTradeFunction.fetchTrade();
 		logger.info("***********Copy some Trades by using TradeId: "+" ***************");
 		exposedTradeFunction.copyTrade();
+		TimeUnit.MILLISECONDS.sleep(3000);// ensuring all trades are persisted before we delete them
+		logger.info("***********Delet some Trades by using TradeId: "+" ***************");
+		exposedTradeFunction.deleteTrade();
 	}
 }

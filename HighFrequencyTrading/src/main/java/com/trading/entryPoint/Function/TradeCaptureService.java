@@ -15,4 +15,6 @@ public interface TradeCaptureService {
 
 	TradeResponse copyTrade(Long tradeId);
 
+	TradeResponse deleteTrade(Long tradeId);
+
 }

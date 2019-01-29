@@ -71,4 +71,13 @@ public class TradeServiceImpl implements TradeService{
 		reponse.setResponseMessage("Copying Trade");
 		return reponse;
 	}
+
+	@Override
+	public TradeResponse deleteTrade(Long tradeId) {
+		TradeResponse reponse = new TradeResponse();
+		Validate.notNull(tradeId, "Trade Id should not be null");
+		this.tradeGateway.deleteTrade(tradeId);
+		reponse.setResponseMessage("Deleting Trade");
+		return reponse;
+	}
 }

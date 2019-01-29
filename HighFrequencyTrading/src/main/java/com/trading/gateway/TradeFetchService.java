@@ -9,4 +9,5 @@ public interface TradeFetchService {
 	Trade findTrade(final Long tradeId);
 
 	List<Trade> fetchTrade(String fieldId, String filterText);
+
 }

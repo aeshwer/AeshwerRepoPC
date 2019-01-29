@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaDelete;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
@@ -148,5 +149,34 @@ public class TradeRepositoryImpl implements TradeRepository{
 		entityModel.setPersistable(tradePersistable);
 		entityModel.setTrade(trade);
 		return entityModel;
+	}
+
+	@Override
+	public Boolean deleteTrade(Long tradeId) {
+		final AtomicReference<Boolean> isDeleted = new AtomicReference<>(false);
+		try{
+			TransactionUtil.doInJPA(logger,
+					this.entityManagerFactory.getEntityManagerFactory(),
+					entityManager -> {
+						final EntityTransaction transaction = entityManager.getTransaction();
+						transaction.begin();
+						
+						 final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+				            final CriteriaDelete<TradePersistable> criteriaDelete =
+				                criteriaBuilder.createCriteriaDelete(TradePersistable.class);
+				            final Root<TradePersistable> root =
+				                criteriaDelete.from(TradePersistable.class);
+				            criteriaDelete.where(
+				                criteriaBuilder.equal(root.get("id"), tradeId));
+				            isDeleted.set(
+				                entityManager.createQuery(criteriaDelete).executeUpdate() == 1 ? true : false);
+				            transaction.commit();
+						logger.info(TradeRepositoryImpl.class +":  Delete Successful for tradeId" + tradeId);
+					});
+		}catch(Exception e)
+		{
+			logger.info(TradeRepositoryImpl.class + ":  Delete Operation Failed for tradeId" +tradeId);
+		}
+		return isDeleted.get();
 	}
 }
