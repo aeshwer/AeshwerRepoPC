@@ -11,7 +11,6 @@ import com.trading.commons.persistence.util.DummyConfigObject;
 import com.trading.commons.persistence.util.EntityManagerFactoryWrapper;
 import com.trading.commons.persistence.util.HighFrequencyEntityManager;
 import com.trading.commons.persistence.util.HighFrequencyEntityManagerFactory;
-import com.trading.commons.util.HighFrequencyTradingPersistence;
 import com.trading.entryPoint.Function.ExposedTradeFunction;
 import com.trading.entryPoint.Function.TradeCaptureService;
 import com.trading.entryPoint.Function.TradeCaptureServiceImpl;
@@ -38,8 +37,6 @@ public class ApplicationModule extends AbstractModule {
 	@Override
 	protected void configure() {
 		this.install(new JMSConnectionModule());
-	/*	this.bind(EntityManagerFactoryWrapper.class).annotatedWith(HighFrequencyTradingPersistence.class)
-				.to(HighFrequencyEntityManagerFactory.class);*/
 		this.bind(TradePersistableTransformer.class).to(TradePersistableTransformerImpl.class);
 		this.bind(TradeRepository.class).to(TradeRepositoryImpl.class).in(Singleton.class);
 		this.bind(PrePersistProcessingManager.class);

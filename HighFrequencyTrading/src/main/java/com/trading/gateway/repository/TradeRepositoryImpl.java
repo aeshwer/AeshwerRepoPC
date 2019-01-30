@@ -20,7 +20,6 @@ import com.google.inject.Inject;
 import com.trading.commons.persistence.util.EntityManagerFactoryWrapper;
 import com.trading.commons.persistence.util.HighFrequencyEntityManager;
 import com.trading.commons.persistence.util.TransactionUtil;
-import com.trading.commons.util.HighFrequencyTradingPersistence;
 import com.trading.commons.util.LogManagerUtil;
 import com.trading.domain.trade.Trade;
 import com.trading.domain.trade.TradeStatus;
