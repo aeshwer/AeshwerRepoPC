@@ -4,13 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Inject;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.trading.commons.persistence.util.DatabaseConfigUtil;
-import com.trading.commons.persistence.util.DummyConfigObject;
+import com.trading.commons.persistence.util.Config;
 import com.trading.commons.persistence.util.EntityManagerFactoryWrapper;
 import com.trading.commons.persistence.util.HighFrequencyEntityManager;
 import com.trading.commons.persistence.util.HighFrequencyEntityManagerFactory;
+import com.trading.commons.util.ReadDatabseConfigXMLFile;
 import com.trading.entryPoint.Function.ExposedTradeFunction;
 import com.trading.entryPoint.Function.TradeCaptureService;
 import com.trading.entryPoint.Function.TradeCaptureServiceImpl;
@@ -53,13 +55,17 @@ public class ApplicationModule extends AbstractModule {
 		this.bind(ExposedTradeFunction.class);// Temporary until we wire up the UI Code
 		this.bind(HighFrequencyTradingMain.class);
 		this.bind(DatabaseConfigUtil.class);
+		this.bind(ReadDatabseConfigXMLFile.class);
 	}
 
 	@Provides
 	@Singleton
 	@HighFrequencyEntityManager
-	public EntityManagerFactoryWrapper getEntityManagerFactory(final DummyConfigObject config,
+	@Inject
+	public EntityManagerFactoryWrapper getEntityManagerFactory(final ReadDatabseConfigXMLFile configXMLFile,
 			final DatabaseConfigUtil databaseConfigUtil) {
+
+		Config config = configXMLFile.parseConfigXMLToConfigObject();
 
 		final Map<String, String> properties = new HashMap<>();
 		properties.put("javax.persistence.jdbc.driver", databaseConfigUtil.getDriver(config.getDBType()));
@@ -68,7 +74,7 @@ public class ApplicationModule extends AbstractModule {
 		properties.put("hibernate.connection.username", config.getDBUser());
 		properties.put("hibernate.connection.password", config.getDBPassword());
 		properties.put("hibernate.dialect", databaseConfigUtil.getDialect(config.getDBType()));
-		
+
 		return new HighFrequencyEntityManagerFactory("HighFrequencyTradeUnit", properties);
 	}
 }

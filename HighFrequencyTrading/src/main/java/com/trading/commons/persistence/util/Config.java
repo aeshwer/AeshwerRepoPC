@@ -1,6 +1,6 @@
 package com.trading.commons.persistence.util;
 
-public class DummyConfigObject {
+public class Config {
 	
 	private String DBType;
 	
@@ -17,7 +17,7 @@ public class DummyConfigObject {
     private String InstanceName;
 
 	public String getDBType() {
-		return "mysql";
+		return DBType;
 	}
 
 	public void setDBType(String dBType) {
@@ -25,7 +25,7 @@ public class DummyConfigObject {
 	}
 
 	public String getDBHost() {
-		return "localhost";
+		return DBHost;
 	}
 
 	public void setDBHost(String dBHost) {
@@ -33,7 +33,7 @@ public class DummyConfigObject {
 	}
 
 	public String getDBPort() {
-		return "3306";
+		return DBPort;
 	}
 
 	public void setDBPort(String dBPort) {
@@ -41,7 +41,7 @@ public class DummyConfigObject {
 	}
 
 	public String getDBUser() {
-		return "root";
+		return DBUser;
 	}
 
 	public void setDBUser(String dBUser) {
@@ -49,7 +49,7 @@ public class DummyConfigObject {
 	}
 
 	public String getDBPassword() {
-		return "password";
+		return DBPassword;
 	}
 
 	public void setDBPassword(String dBPassword) {
@@ -57,7 +57,7 @@ public class DummyConfigObject {
 	}
 
 	public String getServiceName() {
-		return "hftdb";
+		return ServiceName;
 	}
 
 	public void setServiceName(String serviceName) {
@@ -65,11 +65,10 @@ public class DummyConfigObject {
 	}
 
 	public String getInstanceName() {
-		return "hftdb";
+		return InstanceName;
 	}
 
 	public void setInstanceName(String instanceName) {
 		InstanceName = instanceName;
 	}
-
 }
