@@ -1,9 +1,16 @@
 package com.trading.launcher;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import com.trading.commons.util.EntityManagerFactoryWrapper;
-import com.trading.commons.util.HighFrequencyEntityManagerFactory;
+import com.trading.commons.persistence.util.DatabaseConfigUtil;
+import com.trading.commons.persistence.util.DummyConfigObject;
+import com.trading.commons.persistence.util.EntityManagerFactoryWrapper;
+import com.trading.commons.persistence.util.HighFrequencyEntityManager;
+import com.trading.commons.persistence.util.HighFrequencyEntityManagerFactory;
 import com.trading.commons.util.HighFrequencyTradingPersistence;
 import com.trading.entryPoint.Function.ExposedTradeFunction;
 import com.trading.entryPoint.Function.TradeCaptureService;
@@ -26,26 +33,49 @@ import com.trading.services.TradeServiceImpl;
 import com.trading.validation.TradeValidationService;
 import com.trading.validation.TradeValidationServiceImpl;
 
-public class ApplicationModule extends AbstractModule{
+public class ApplicationModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
 		this.install(new JMSConnectionModule());
-		this.bind(EntityManagerFactoryWrapper.class).annotatedWith(HighFrequencyTradingPersistence.class).to(HighFrequencyEntityManagerFactory.class);
+	/*	this.bind(EntityManagerFactoryWrapper.class).annotatedWith(HighFrequencyTradingPersistence.class)
+				.to(HighFrequencyEntityManagerFactory.class);*/
 		this.bind(TradePersistableTransformer.class).to(TradePersistableTransformerImpl.class);
 		this.bind(TradeRepository.class).to(TradeRepositoryImpl.class).in(Singleton.class);
 		this.bind(PrePersistProcessingManager.class);
 		this.bind(SequenceNumberGenerator.class);
 		this.bind(HighFrequencyTradeCapturePostOperationNotifier.class);
 		this.bind(TradeFetchService.class).to(TradeFetchServiceImpl.class);
-	    
+
 		this.bind(TradePersistService.class).to(TradePersistServiceImpl.class);
 		this.bind(TradeGateway.class).to(HighFrequencyTradeGatewayImpl.class);
 		this.bind(TradeValidationService.class).to(TradeValidationServiceImpl.class);
 		this.bind(TradeService.class).to(TradeServiceImpl.class);
 		this.bind(TradeCaptureService.class).to(TradeCaptureServiceImpl.class);
-		
-		this.bind(ExposedTradeFunction.class);//Temporary until we wire up the UI Code
+
+		this.bind(ExposedTradeFunction.class);// Temporary until we wire up the UI Code
 		this.bind(HighFrequencyTradingMain.class);
+		this.bind(DatabaseConfigUtil.class);
+	}
+
+	@Provides
+	@Singleton
+	@HighFrequencyEntityManager
+	public EntityManagerFactoryWrapper getEntityManagerFactory(final DummyConfigObject config,
+			final DatabaseConfigUtil databaseConfigUtil) {
+
+		final Map<String, String> properties = new HashMap<>();
+		properties.put("javax.persistence.jdbc.driver", databaseConfigUtil.getDriver(config.getDBType()));
+		properties.put("javax.persistence.jdbc.url", databaseConfigUtil.getDatabaseUrl(config.getDBType(),
+				config.getDBHost(), config.getDBPort(), config.getServiceName(), config.getInstanceName()));
+		properties.put("hibernate.connection.username", config.getDBUser());
+		properties.put("hibernate.connection.password", config.getDBPassword());
+
+		properties.put("hibernate.dialect", databaseConfigUtil.getDialect(config.getDBType()));
+		HighFrequencyEntityManagerFactory entityManagerFactory = new HighFrequencyEntityManagerFactory("HighFrequencyTradeUnit", properties);
+		return entityManagerFactory;
+		
+
+		
 	}
 }

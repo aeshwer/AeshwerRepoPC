@@ -17,10 +17,11 @@ import javax.persistence.criteria.Root;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
-import com.trading.commons.util.EntityManagerFactoryWrapper;
+import com.trading.commons.persistence.util.EntityManagerFactoryWrapper;
+import com.trading.commons.persistence.util.HighFrequencyEntityManager;
+import com.trading.commons.persistence.util.TransactionUtil;
 import com.trading.commons.util.HighFrequencyTradingPersistence;
 import com.trading.commons.util.LogManagerUtil;
-import com.trading.commons.util.TransactionUtil;
 import com.trading.domain.trade.Trade;
 import com.trading.domain.trade.TradeStatus;
 import com.trading.gateway.jpa.persistable.PersistableTradeEntityModel;
@@ -35,7 +36,7 @@ public class TradeRepositoryImpl implements TradeRepository{
 	private static Logger logger;
 
 	@Inject
-	public TradeRepositoryImpl(@HighFrequencyTradingPersistence final EntityManagerFactoryWrapper entityManagerFactory,final TradePersistableTransformer persistableTransformer) {
+	public TradeRepositoryImpl(@HighFrequencyEntityManager final EntityManagerFactoryWrapper entityManagerFactory,final TradePersistableTransformer persistableTransformer) {
 		this.entityManagerFactory = entityManagerFactory;
 		this.persistableTransformer = persistableTransformer;
 		logger = LogManagerUtil.getLogger(TradeRepositoryImpl.class);
