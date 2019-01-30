@@ -9,7 +9,8 @@ import javax.persistence.Persistence;
 public class HighFrequencyEntityManagerFactory  implements EntityManagerFactoryWrapper {
 
 	private EntityManagerFactory entityManagerFactory;
-/*	
+	
+	/* Compatible with Old method	
 	public HighFrequencyEntityManagerFactory() {
 		this.entityManagerFactory =
 		        Persistence.createEntityManagerFactory("persistence");

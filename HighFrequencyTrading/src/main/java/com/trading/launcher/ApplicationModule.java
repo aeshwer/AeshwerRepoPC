@@ -70,12 +70,8 @@ public class ApplicationModule extends AbstractModule {
 				config.getDBHost(), config.getDBPort(), config.getServiceName(), config.getInstanceName()));
 		properties.put("hibernate.connection.username", config.getDBUser());
 		properties.put("hibernate.connection.password", config.getDBPassword());
-
 		properties.put("hibernate.dialect", databaseConfigUtil.getDialect(config.getDBType()));
-		HighFrequencyEntityManagerFactory entityManagerFactory = new HighFrequencyEntityManagerFactory("HighFrequencyTradeUnit", properties);
-		return entityManagerFactory;
 		
-
-		
+		return new HighFrequencyEntityManagerFactory("HighFrequencyTradeUnit", properties);
 	}
 }
