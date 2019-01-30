@@ -1,4 +1,4 @@
-package com.trading.commons.util;
+package com.trading.commons.persistence.util;
 
 import javax.persistence.EntityManagerFactory;
 
