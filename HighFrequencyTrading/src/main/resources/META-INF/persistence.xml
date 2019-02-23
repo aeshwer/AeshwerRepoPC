@@ -4,11 +4,31 @@
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
 
-	<persistence-unit name="persistence">
+	<persistence-unit name="HighFrequencyTradeUnit">
 		<description>Entity Manager Example</description>
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<properties>
+		
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+			<!-- Disable the second-level cache -->
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
+			<property name="hibernate.connection.provider_class"
+				value="org.hibernate.connection.C3P0ConnectionProvider" />
+
+			<property name="hibernate.c3p0.testConnectionOnCheckin"
+				value="true" />
+			<property name="hibernate.c3p0.idleConnectionTestPeriod"
+				value="300" />
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="50" />
+			<property name="hibernate.c3p0.timeout" value="1800" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			
+		<!--  I used this earlier .. now moving the hard codeing from here and generating details internally 	
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hftdb" />
 			<property name="javax.persistence.jdbc.user" value="root" />
@@ -18,8 +38,7 @@
 			<property name="hibernate.format_sql" value="true" />
 			
 			<property name="hibernate.dialect" value = "org.hibernate.dialect.MySQL5Dialect"/>
-			<property name="hibernate.hbm2ddl.auto" value="update"/>
-			
+			<property name="hibernate.hbm2ddl.auto" value="update"/> -->
 		</properties>
 
 	</persistence-unit>

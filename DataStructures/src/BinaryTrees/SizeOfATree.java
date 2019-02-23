@@ -1,6 +1,4 @@
 package BinaryTrees;
-
-import BinaryTrees.HeightOfBinaryTreeIterative.Node;
 /*
  * Size of a tree is the number of elements present in the tree. Size of the below tree is 5
  * NOTE::  Size of a tree = Size of left subtree + 1 + Size of right subtree ,ie number of nodes
@@ -15,9 +13,8 @@ public class SizeOfATree {
 		int key;
 		Node(int key)
 		{
-			this.left= left;
-			this.right= right;
 			this.key =key;
+			left= right= null;
 		}
 	}
 	

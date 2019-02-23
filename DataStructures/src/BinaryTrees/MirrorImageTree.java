@@ -1,6 +1,5 @@
 package BinaryTrees;
 
-import BinaryTrees.DeleteATree.Node;
 /*
  * http://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/
  */
@@ -17,7 +16,7 @@ public class MirrorImageTree {
 			left = right = null; 
 		}
 	}
-	boolean MirrorImageTree(Node root1,Node root2){
+	boolean CheckMirrorImageTree(Node root1,Node root2){
 		if( root1 == null && root2 == null)
 			{return true;}
 		 // For two trees to be mirror images, the following three conditions must be true
@@ -27,7 +26,7 @@ public class MirrorImageTree {
         // 3 - right subtree of left tree and left subtree
         //      of right tree have to be mirror images
 		if(root1.key == root2.key &&  root1 != null && root2 != null )
-		{	return MirrorImageTree(root1.left,root2.right) && MirrorImageTree(root1.right,root2.left) ;
+		{	return CheckMirrorImageTree(root1.left,root2.right) && CheckMirrorImageTree(root1.right,root2.left) ;
 		}
 		return false;
 	}
@@ -43,7 +42,7 @@ public class MirrorImageTree {
         tree.root.right.left = new Node(4);
         tree.root.right.right = new Node(3);
         
-        boolean  check = tree.MirrorImageTree(tree.root,tree.root);
+        boolean  check = tree.CheckMirrorImageTree(tree.root,tree.root);
         System.out.println("They are Symmetric ::  " + check);
 	}
 }

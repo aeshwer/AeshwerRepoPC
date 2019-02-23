@@ -94,4 +94,16 @@ public class ExposedTradeFunction {
 		logger.info(ExposedTradeFunction.class +  ":  Copying Trade with id : " + tradeId);
 		response = this.tradeCaptureService.copyTrade(tradeId);
 	}
+
+	public void deleteTrade() {
+		for(Long id: TradeDataSetGenerator.retriveTradesIdsForDeleteOperation()) {
+			this.executorService.submit(
+					() -> this.deleteTradeDeletgate(id));
+		}
+	}
+
+	private void deleteTradeDeletgate(Long tradeId) {
+		logger.info(ExposedTradeFunction.class +  ":  Deleting Trade with id : " + tradeId);
+		response = this.tradeCaptureService.deleteTrade(tradeId);
+	}
 }

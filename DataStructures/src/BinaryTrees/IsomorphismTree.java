@@ -1,7 +1,9 @@
 package BinaryTrees;
 
-import BinaryTrees.BinaryTreeTraversal.Node;
-
+/*
+ * Two trees are called isomorphic if one of them can be obtained from other by a
+ *  series of flips, i.e. by swapping left and right children of a number of nodes.
+ */
 public class IsomorphismTree {
 	
 	Node root1,root2;
@@ -10,7 +12,7 @@ public class IsomorphismTree {
 	    int data;
 	    Node left, right;
 	 
-	    public Node(int key)
+	    public Node(int data)
 	    {
 	        this.data = data;
 	        left = right = null;

@@ -1,5 +1,8 @@
 package com.trading.gateway;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 import com.google.inject.Inject;
 import com.trading.domain.trade.Trade;
 import com.trading.domain.trade.TradeStatus;
@@ -51,5 +54,23 @@ public class TradePersistServiceImpl implements TradePersistService{
 		{
 			highFrequencyTradeCapturePostOperationNotifier.perform(persistTrade);
 		}
+	}
+
+
+	@Override
+	public void deleteTrade(Long tradeId) {
+		{
+			// need to think about update and delete... basically we only notify the downstream and keep the payload mininum. the downstream will
+			// have dependency of trade capture and use its API for fetching data from db. we can also make use of caching.
+			if(this.tradeRepository.deleteTrade(tradeId)) 
+			{
+				Trade deletedTrade = new Trade();
+				deletedTrade.setTradeId(tradeId);
+				deletedTrade.setTradeStatus(TradeStatus.DELETED);
+				deletedTrade.setTradeDate(LocalDate.now());
+				
+				highFrequencyTradeCapturePostOperationNotifier.perform(deletedTrade);}
+		}
+		
 	}
 }

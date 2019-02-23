@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaDelete;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
@@ -16,10 +17,10 @@ import javax.persistence.criteria.Root;
 import org.apache.log4j.Logger;
 
 import com.google.inject.Inject;
-import com.trading.commons.util.EntityManagerFactoryWrapper;
-import com.trading.commons.util.HighFrequencyTradingPersistence;
+import com.trading.commons.persistence.util.EntityManagerFactoryWrapper;
+import com.trading.commons.persistence.util.HighFrequencyEntityManager;
+import com.trading.commons.persistence.util.TransactionUtil;
 import com.trading.commons.util.LogManagerUtil;
-import com.trading.commons.util.TransactionUtil;
 import com.trading.domain.trade.Trade;
 import com.trading.domain.trade.TradeStatus;
 import com.trading.gateway.jpa.persistable.PersistableTradeEntityModel;
@@ -34,7 +35,7 @@ public class TradeRepositoryImpl implements TradeRepository{
 	private static Logger logger;
 
 	@Inject
-	public TradeRepositoryImpl(@HighFrequencyTradingPersistence final EntityManagerFactoryWrapper entityManagerFactory,final TradePersistableTransformer persistableTransformer) {
+	public TradeRepositoryImpl(@HighFrequencyEntityManager final EntityManagerFactoryWrapper entityManagerFactory,final TradePersistableTransformer persistableTransformer) {
 		this.entityManagerFactory = entityManagerFactory;
 		this.persistableTransformer = persistableTransformer;
 		logger = LogManagerUtil.getLogger(TradeRepositoryImpl.class);
@@ -148,5 +149,34 @@ public class TradeRepositoryImpl implements TradeRepository{
 		entityModel.setPersistable(tradePersistable);
 		entityModel.setTrade(trade);
 		return entityModel;
+	}
+
+	@Override
+	public Boolean deleteTrade(Long tradeId) {
+		final AtomicReference<Boolean> isDeleted = new AtomicReference<>(false);
+		try{
+			TransactionUtil.doInJPA(logger,
+					this.entityManagerFactory.getEntityManagerFactory(),
+					entityManager -> {
+						final EntityTransaction transaction = entityManager.getTransaction();
+						transaction.begin();
+						
+						 final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+				            final CriteriaDelete<TradePersistable> criteriaDelete =
+				                criteriaBuilder.createCriteriaDelete(TradePersistable.class);
+				            final Root<TradePersistable> root =
+				                criteriaDelete.from(TradePersistable.class);
+				            criteriaDelete.where(
+				                criteriaBuilder.equal(root.get("id"), tradeId));
+				            isDeleted.set(
+				                entityManager.createQuery(criteriaDelete).executeUpdate() == 1 ? true : false);
+				            transaction.commit();
+						logger.info(TradeRepositoryImpl.class +":  Delete Successful for tradeId" + tradeId);
+					});
+		}catch(Exception e)
+		{
+			logger.info(TradeRepositoryImpl.class + ":  Delete Operation Failed for tradeId" +tradeId);
+		}
+		return isDeleted.get();
 	}
 }

@@ -17,9 +17,8 @@ public class HeightOfBinaryTreeIterative {
 		int key;
 		Node(int key)
 		{
-			this.left= left;
-			this.right= right;
 			this.key =key;
+			left= right = null;
 		}
 	}
 	
@@ -29,8 +28,8 @@ public class HeightOfBinaryTreeIterative {
         if (root == null)
             return 0;
         
-        // Create an empty queue for level order tarversal
-        Queue<Node> q = new LinkedList();
+        // Create an empty queue for level order traversal
+        Queue<Node> q = new LinkedList<Node>();
         // Enqueue Root and initialize height
         q.add(root);
         int height = 0;

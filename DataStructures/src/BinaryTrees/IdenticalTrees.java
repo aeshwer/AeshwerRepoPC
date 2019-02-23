@@ -4,8 +4,6 @@ package BinaryTrees;
  * need to compare data and children of the trees
  */
 
-import BinaryTrees.HeightOfBinaryTreeIterative.Node;
-
 public class IdenticalTrees {
 	Node root1,root2;
 	static class Node
@@ -15,8 +13,7 @@ public class IdenticalTrees {
 		int key;
 		Node(int key)
 		{
-			this.left= left;
-			this.right= right;
+			left = right = null;
 			this.key =key;
 		}
 	}

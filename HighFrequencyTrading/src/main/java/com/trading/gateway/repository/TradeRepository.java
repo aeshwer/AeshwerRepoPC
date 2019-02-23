@@ -13,4 +13,6 @@ public interface TradeRepository {
 
 	Trade copy(Trade copyTradeFromDb);
 
+	Boolean deleteTrade(Long tradeId);
+
 }

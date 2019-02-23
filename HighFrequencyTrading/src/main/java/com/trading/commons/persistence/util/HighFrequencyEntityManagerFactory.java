@@ -1,5 +1,6 @@
-package com.trading.commons.util;
+package com.trading.commons.persistence.util;
 
+import java.util.Map;
 import java.util.Optional;
 
 import javax.persistence.EntityManagerFactory;
@@ -9,10 +10,17 @@ public class HighFrequencyEntityManagerFactory  implements EntityManagerFactoryW
 
 	private EntityManagerFactory entityManagerFactory;
 	
+	/* Compatible with Old method	
 	public HighFrequencyEntityManagerFactory() {
 		this.entityManagerFactory =
 		        Persistence.createEntityManagerFactory("persistence");
-	}
+	}*/
+	
+	 public HighFrequencyEntityManagerFactory(
+		      final String persistenceUnitName, final Map<String, String> properties) {
+		    this.entityManagerFactory =
+		        Persistence.createEntityManagerFactory(persistenceUnitName, properties);
+		  }
 
 	@Override
 	public EntityManagerFactory getEntityManagerFactory() {

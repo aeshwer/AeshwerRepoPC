@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseConfig>
+	<properties id="1001">
+		<DBHost>localhost</DBHost>
+		<DBPort>3306</DBPort>
+		<DBType>mysql</DBType>
+		<DBUser>root</DBUser>
+		<DBPassword>password</DBPassword>
+		<ServiceName>hftdb</ServiceName>
+		<InstanceName>hftdb</InstanceName>
+	</properties>
+</databaseConfig>

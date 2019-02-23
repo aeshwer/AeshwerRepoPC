@@ -32,4 +32,9 @@ public class TradeGatewayNoImpl implements TradeGateway {
 	public void copyTrade(Long tradeId) {
 		LOG.info("This implementation does nothing.");
 	}
+
+	@Override
+	public void deleteTrade(Long tradeId) {
+		LOG.info("This implementation does nothing.");
+	}
 }

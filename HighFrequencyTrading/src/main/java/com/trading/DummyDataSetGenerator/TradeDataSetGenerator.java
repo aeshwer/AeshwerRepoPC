@@ -55,5 +55,12 @@ public class TradeDataSetGenerator {
 		dummyTradeIdForCopy.add(2L);
 		return dummyTradeIdForCopy;
 	} 
+	
+	public static List<Long> retriveTradesIdsForDeleteOperation()
+	{
+		List<Long> dummyTradeIdForDelete = new ArrayList<>();
+		dummyTradeIdForDelete.add(1L);
+		return dummyTradeIdForDelete;
+	}
 }
 
