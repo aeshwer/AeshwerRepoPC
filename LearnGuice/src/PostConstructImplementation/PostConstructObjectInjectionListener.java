@@ -29,6 +29,7 @@ public class PostConstructObjectInjectionListener<I> implements InjectionListene
 		List<Method> allMethodsList = new ArrayList<>(Arrays.asList(methods));
 		allMethodsList.addAll(Arrays.asList(declaredMethods));
 		
+		//removed duplicates method 
 		final Set<Method> allMethods = new HashSet<>(allMethodsList);
 		
 		//Iterate on all methods to scan for PostConstruct annotation and if found invoke that method
