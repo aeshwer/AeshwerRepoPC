@@ -38,7 +38,7 @@
 		<!-- <mapping class="ManyToMany.Actor"/>
 		<mapping class="ManyToMany.Movie"/> -->
 		<!-- <mapping class="MappingEnumns.Employee"/> -->
-		<!-- <mapping class="MappingCollectionsOfValueType.Friend"/> -->
+		<mapping class="MappingCollectionsOfValueType.Friend"/>
 		<!-- <mapping class="CompositeKeys.Parent"/>
 		<mapping class="CompositeKeys.Child"/> -->
 
