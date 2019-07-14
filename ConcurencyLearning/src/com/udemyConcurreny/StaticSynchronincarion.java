@@ -1,3 +1,9 @@
+/*
+ * Answer: Static synchronized methods synchronize on the class object. If one thread is executing a static synchronized method, 
+ * all other threads trying to execute any static synchronized methods will be blocked. 
+ * Non-static synchronized methods synchronize on this ie the instance of the class.
+ */
+
 package com.udemyConcurreny;
 
 public class StaticSynchronincarion implements Runnable{
