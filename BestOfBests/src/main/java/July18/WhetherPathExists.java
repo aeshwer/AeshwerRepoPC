@@ -2,7 +2,6 @@
 
 package July18;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class WhetherPathExists {
@@ -24,7 +23,7 @@ public class WhetherPathExists {
 		return true;
 	}
 
-	private static int resolvePath(int[][] arr, Pivot source, Pivot next, int n) {
+	private static boolean resolvePath(int[][] arr, Pivot source, Pivot next, int n) {
 		/*
 		 * for (int i = source.i; i < n; i++) { for (int j = source.j; j < n; j++) {
 		 * 
@@ -32,23 +31,28 @@ public class WhetherPathExists {
 		 */
 
 		if (arr[next.i][next.j] == 2) {
-			return 1;
+			return true;
 		}
 
-		if (isSafe(source.i + 1, source.j, n)) {
-			resolvePath(arr, source, new Pivot(source.i + 1, source.j), n);
-		}
-		if (isSafe(source.i, source.j + 1, n)) {
-			resolvePath(arr, source, new Pivot(source.i, source.j + 1), n);
-		}
-		if (isSafe(source.i - 1, source.j, n)) {
-			resolvePath(arr, source, new Pivot(source.i - 1, source.j), n);
-		}
-		if (isSafe(source.i, source.j - 1, n)) {
-			resolvePath(arr, source, new Pivot(source.i, source.j - 1), n);
+		if (isSafe(next.i, next.j, n)) {
+
+			return resolvePath(arr, source, new Pivot(source.i + 1, source.j), n) 
+					|| resolvePath(arr, source, new Pivot(source.i, source.j + 1), n)
+					|| resolvePath(arr, source, new Pivot(source.i - 1, source.j), n)
+					|| resolvePath(arr, source, new Pivot(source.i, source.j - 1), n);
+
 		}
 
-		return 0;
+		/*
+		 * return if (isSafe(source.i + 1, source.j, n)) { resolvePath(arr, source, new
+		 * Pivot(source.i + 1, source.j), n); } if (isSafe(source.i, source.j + 1, n)) {
+		 * resolvePath(arr, source, new Pivot(source.i, source.j + 1), n); } if
+		 * (isSafe(source.i - 1, source.j, n)) { resolvePath(arr, source, new
+		 * Pivot(source.i - 1, source.j), n); } if (isSafe(source.i, source.j - 1, n)) {
+		 * resolvePath(arr, source, new Pivot(source.i, source.j - 1), n); }
+		 */
+
+		return false;
 
 	}
 
@@ -70,7 +74,7 @@ public class WhetherPathExists {
 					}
 				}
 			}
-			int res = resolvePath(arr, source, source, n);
+			boolean res = resolvePath(arr, source, source, n);
 			System.out.println(res);
 		}
 	}
