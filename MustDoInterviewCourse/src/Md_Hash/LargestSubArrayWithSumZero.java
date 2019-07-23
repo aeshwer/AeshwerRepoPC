@@ -36,20 +36,28 @@ public class LargestSubArrayWithSumZero {
 	}
 
 	static int maxLen(int arr[], int n) {
-		Map<Integer, Integer> lookup = new HashMap<Integer, Integer>();
-		lookup.put(arr[0], 0);
-		int maxLen = 1;
-		int sum =arr[0];
-		for(int i=1;i<n;i++) {
-			
-			sum= sum+arr[i];
-			if(sum==0) 
-			{
-				maxLen=Math.max(maxLen, lookup.get(sum)-i);
-			}
-			
+		Map<Integer, Integer> lookup = new HashMap<>();
+		int maxLen = 0;
+		int sum = 0;
+		for (int i = 0; i < n; i++) {
+			sum = sum + arr[i];
+
+		    if (arr[i] == 0 && maxLen == 0) 
+		    	maxLen = 1; 
+		    
+		    if (sum == 0) 
+		    	maxLen = i + 1; 
+		    
+		    // Look this sum in hash table 
+            Integer previousIndexInLookup = lookup.get(sum); 
+
+            // If this sum is seen before, then update max_len if required 
+            if (previousIndexInLookup != null) 
+                maxLen = Math.max(maxLen, i - previousIndexInLookup); 
+            else // Else put this sum in hash table 
+            	lookup.put(sum, i); 
 		}
-		
+
 		return maxLen;
 	}
 
