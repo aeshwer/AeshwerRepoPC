@@ -1,3 +1,5 @@
+//ARRAYS ARE SORTED
+//https://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/
 package Md_Hash;
 
 import java.io.BufferedReader;
@@ -8,28 +10,6 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 public class CommonElements {
-
-	public static class Counter {
-		private int one;
-		private int two;
-		private int three;
-
-		public Counter setOne(int one) {
-			this.one = one;
-			return this;
-		}
-
-		public Counter setTwo(int two) {
-			this.two = two;
-			return this;
-		}
-
-		public Counter setThree(int three) {
-			this.three = three;
-			return this;
-		}
-
-	}
 
 	public static class FastReader {
 
@@ -56,38 +36,39 @@ public class CommonElements {
 		}
 	}
 
-	private static void printCommonElements(int[] a1, int[] a2, int[] a3) {
-
-		Map<Integer, Counter> lookup = new HashMap<>();
-		boolean falseFlag = false;
-
-		for (int i = 0; i < a1.length; i++) {
-			lookup.put(a1[i], new Counter().setOne(one));
-		}
-
-		for (int i = 0; i < a2.length; i++) {
-			if (lookup.containsKey(a2[i])) {
-				lookup.put(a2[i], count.two++);
-			}
-		}
-
-		for (int i = 0; i < a3.length; i++) {
-			if (lookup.containsKey(a3[i])) {
-				lookup.put(a3[i], count.three++);
-			}
-		}
-
-		for (Map.Entry<Integer, Integer> l : lookup.entrySet()) {
-			if (l.getValue().one == 3) {
-				System.out.println(l.getKey() + " ");
-				falseFlag = true;
-			}
-		}
-
-		if (!falseFlag) {
-			System.out.print(-1);
-		}
-
+	private static void printCommonElements(int[] ar1, int[] ar2, int[] ar3) {
+		
+		boolean noOutputFlag =true;
+		// Initialize starting indexes for ar1[], ar2[] and ar3[] 
+        int i = 0, j = 0, k = 0;
+        
+        // Iterate through three arrays while all arrays have elements 
+        while (i < ar1.length && j < ar2.length && k < ar3.length) 
+        { 
+             // If x = y and y = z, print any of them and move ahead 
+             // in all arrays 
+             if (ar1[i] == ar2[j] && ar2[j] == ar3[k]) 
+             {   System.out.print(ar1[i]+" ");   i++; j++; k++;
+             	noOutputFlag = false;
+             } 
+  
+             // x < y 
+             else if (ar1[i] < ar2[j]) 
+                 i++; 
+  
+             // y < z 
+             else if (ar2[j] < ar3[k]) 
+                 j++; 
+  
+             // We reach here when x > y and z < y, i.e., z is smallest 
+             else
+                 k++; 
+        } 
+        
+        if(noOutputFlag) {
+        	System.out.print(-1);
+        }
+  
 	}
 
 	public static void main(String[] args) {
