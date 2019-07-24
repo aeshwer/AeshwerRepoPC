@@ -6,7 +6,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 public class CommonElements {
@@ -38,6 +42,8 @@ public class CommonElements {
 
 	private static void printCommonElements(int[] ar1, int[] ar2, int[] ar3) {
 		
+		// we dont need to output repeated elements 
+		Set<Integer> set = new LinkedHashSet<>();
 		boolean noOutputFlag =true;
 		// Initialize starting indexes for ar1[], ar2[] and ar3[] 
         int i = 0, j = 0, k = 0;
@@ -48,7 +54,9 @@ public class CommonElements {
              // If x = y and y = z, print any of them and move ahead 
              // in all arrays 
              if (ar1[i] == ar2[j] && ar2[j] == ar3[k]) 
-             {   System.out.print(ar1[i]+" ");   i++; j++; k++;
+             {   set.add(ar1[i]);
+            	 //System.out.print(ar1[i]+" ");   
+             	  i++; j++; k++;
              	noOutputFlag = false;
              } 
   
@@ -64,6 +72,12 @@ public class CommonElements {
              else
                  k++; 
         } 
+        
+        Iterator<Integer> iterator = set.iterator();
+        while(iterator.hasNext()) 
+        {
+        	System.out.print(iterator.next() + " ");
+        }
         
         if(noOutputFlag) {
         	System.out.print(-1);
