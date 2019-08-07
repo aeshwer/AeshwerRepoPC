@@ -1,4 +1,4 @@
-package Md_Recursion;
+package Company_Solution;
 
 import java.io.BufferedReader;
 import java.io.IOException;
