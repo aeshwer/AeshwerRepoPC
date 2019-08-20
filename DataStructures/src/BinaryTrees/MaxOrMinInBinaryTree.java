@@ -31,16 +31,17 @@ public class MaxOrMinInBinaryTree {
 	
 	int findMin(Node root)
 	{
-		if(root == null){return 0;}
+		if(root == null){return Integer.MAX_VALUE;}
 		int res = root.key;
 		int lres = findMin(root.left);
 		int rres = findMin(root.right);
-		//res = Math.min(res, Math.min(lres,rres));
-		 if (lres < res && lres != 0)
+		res = Math.min(res, Math.min(lres,rres));
+		return res;
+		 /*if (lres < res && lres != 0)
 		      res = lres;
 		  if (rres < res && rres != 0)
 		      res = rres;	
-		    return res;
+		    return res;*/
 	}
 		
 	public static void main(String[] args) {
