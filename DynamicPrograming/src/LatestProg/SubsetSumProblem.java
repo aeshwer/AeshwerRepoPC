@@ -5,6 +5,8 @@ public class SubsetSumProblem {
 	public static void main(String[] args) {
 		int arr[] = { 2, 3, 7, 8, 10 };
 		subsetSum(arr, 11);
+		//int arr[] = { 2, 2,3,5};
+		//subsetSum(arr, 7);
 	}
 
 	private static void subsetSum(int[] arr, int sum) {
@@ -54,6 +56,10 @@ public class SubsetSumProblem {
 				j= j-arr[i];
 				i = i-1;
 			}
+		}
+		//in case the first element is also there in list
+		if(j!=0) {
+			System.out.print(arr[0]+" ");
 		}
 
 	}
