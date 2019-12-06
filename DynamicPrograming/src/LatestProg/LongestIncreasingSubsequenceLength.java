@@ -1,6 +1,6 @@
 package LatestProg;
 
-public class LongestIncreasingSubsequence {
+public class LongestIncreasingSubsequenceLength {
 
 	public static void main(String[] args) {
 		int arr[] = {50, 3, 10, 7, 40, 80};
