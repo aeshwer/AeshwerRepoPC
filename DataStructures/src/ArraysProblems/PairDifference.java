@@ -32,7 +32,7 @@ public class PairDifference {
     
 	public static void main(String[] args) {
         int arr[] = {1, 8, 30, 40, 100};
-        int n = 60;
+        int n = 70;
         findPair(arr,n);
 	}
 

@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
 	<item value="true" key="CommitDialog.showUntracked"/>
-	<item value="E:\In28Minutes\JavaInterviewQuestionsAndAnswers\.git" key="GitSelectRepositoryPage.lastRepository"/>
+	<item value="D:\AeshwerRepoPC\.git" key="GitSelectRepositoryPage.lastRepository"/>
 	<list key="CommitDialog.authorValues">
 		<item value="Aeshwer Tyagi &lt;aeshwer.tyagi16@gmail.com&gt;"/>
 	</list>
@@ -10,6 +10,7 @@
 		<item value="Aeshwer Tyagi &lt;aeshwer.tyagi16@gmail.com&gt;"/>
 	</list>
 	<section name="GitImportWizard">
+		<item value="true" key="GitProjectsImportPage.STORE_NESTED_PROJECTS"/>
 	</section>
 	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
 		<item value="718" key="DIALOG_WIDTH"/>
