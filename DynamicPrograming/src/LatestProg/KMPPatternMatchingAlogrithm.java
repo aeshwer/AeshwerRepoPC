@@ -27,17 +27,6 @@ public class KMPPatternMatchingAlogrithm {
 			}
 
 		}
-		// System.out.println(Arrays.toString(count));
-
-		// Now Make use of this suffix-Prefix Table To compute the Substring check
-		// efficiently
-
-		/*
-		 * int patternCountIndex = 0; for (i = 0; i < inputString.length; i++) { if
-		 * (patternCountIndex == pattern.length) { result = true; break; } if
-		 * (inputString[i] == pattern[patternCountIndex]) { patternCountIndex++; } else
-		 * { patternCountIndex = count[patternCountIndex]; i--; } }
-		 */
 
 		i = 0;
 		int j = 0;
@@ -45,20 +34,18 @@ public class KMPPatternMatchingAlogrithm {
 			if (inputString[i] == pattern[j]) {
 				i++;
 				j++;
-			}
-			else {
-				if(j!=0) {
-					j=count[j-1];
-				}
-				else {
+			} else {
+				if (j != 0) {
+					j = count[j - 1];
+				} else {
 					i++;
 				}
-				
+
 			}
 
 		}
 
-		if (j==pattern.length) {
+		if (j == pattern.length) {
 			System.out.println("Substring Pattern Matched");
 		} else {
 			System.out.println("Substring Pattern Not Matched");
