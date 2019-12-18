@@ -8,11 +8,11 @@ public class HeapSortTechique {
 	public static void main(String[] args) {
 		int arr[] = { 4, 1, 22, 2, 34, 44, 15 };
 		System.out.println("Before Sort : " + Arrays.toString(arr));
-		heapSort(arr, 0, arr.length - 1);
+		heapSort(arr);
 		System.out.println("After Sort : " + Arrays.toString(arr));
 	}
 
-	private static void heapSort(int[] arr, int l, int r) {
+	private static void heapSort(int[] arr) {
 
 		int n = arr.length;
 
