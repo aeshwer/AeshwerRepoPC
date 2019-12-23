@@ -1,9 +1,10 @@
-package Md_Heap;
+package Md_Trees;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,37 +64,46 @@ public class VerticalOrderOfTree {
 	public static class ValuesAndDepth {
 		int data;
 		int depth;
-		public ValuesAndDepth(int data,int depth) {
-			this.data=data;
-			this.depth=depth;
+
+		public ValuesAndDepth(int data, int depth) {
+			this.data = data;
+			this.depth = depth;
 		}
 	}
+
 	public static class BinaryTree {
 		static void verticalOrder(Node root) {
 			Map<Integer, List<ValuesAndDepth>> lookup = new TreeMap<>();
-			printVerticalOrder(root, lookup, 0);
+			printVerticalOrder(root, lookup, 0, 0);
 			lookup.forEach((k, v) -> {
-				for (Integer l : v) {
-					System.out.print(l + " ");
+				v.sort(new Comparator<ValuesAndDepth>() {
+					@Override
+					public int compare(ValuesAndDepth o1, ValuesAndDepth o2) {
+						return Integer.compare(o1.depth, o2.depth);
+					}
+				});
+				for (ValuesAndDepth l : v) {
+					System.out.print(l.data + " ");
 				}
 			});
 		}
 
-		private static void printVerticalOrder(Node root, Map<Integer, List<ValuesAndDepth>> lookup, int horizontalDistance) {
+		private static void printVerticalOrder(Node root, Map<Integer, List<ValuesAndDepth>> lookup,
+				int horizontalDistance, int depth) {
 			if (root == null) {
 				return;
 			}
 
 			if (lookup.containsKey(horizontalDistance)) {
 				List<ValuesAndDepth> list = lookup.get(horizontalDistance);
-				list.add(root.data);
+				list.add(new ValuesAndDepth(root.data, depth));
 			} else {
 				List<ValuesAndDepth> list = new ArrayList<>();
-				list.add(root.data);
+				list.add(new ValuesAndDepth(root.data, depth));
 				lookup.put(horizontalDistance, list);
 			}
-			printVerticalOrder(root.left, lookup, horizontalDistance - 1);
-			printVerticalOrder(root.right, lookup, horizontalDistance + 1);
+			printVerticalOrder(root.left, lookup, horizontalDistance - 1, depth++);
+			printVerticalOrder(root.right, lookup, horizontalDistance + 1, depth++);
 
 		}
 	}
