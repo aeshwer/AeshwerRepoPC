@@ -1,7 +1,5 @@
 package Md_linkList;
 
-import Md_linkList.NthNodeFromEnd.Node;
-
 public class RotateALinkList {
 
 	static class Node {
@@ -23,20 +21,32 @@ public class RotateALinkList {
 		Node tempHead1 = head;
 
 		// Get to the kth node
-		for (int i = 1; i <= k - 1; i++) {
-			tempHead1 = tempHead1.next;
-			if(tempHead1 == null) return null;
-		}
-		head = tempHead1.next;
-		tempHead1.next = null;
+		if (head != null) {
+			for (int i = 1; i <= k - 1; i++) {
+				if (tempHead1.next == null) {
+					tempHead1.next = head;
+					continue;
+				}
+				tempHead1 = tempHead1.next;
+			}
 
-		Node newHeadTemp = head;
-		while (newHeadTemp.next != null) {
-			newHeadTemp = newHeadTemp.next;
+			if (tempHead1.next != null) {
+				head = tempHead1.next;
+				tempHead1.next = null;
+				}
+
+			Node newHeadTemp = head;
+			while (newHeadTemp.next != null) {
+				newHeadTemp = newHeadTemp.next;
+			}
+
+			newHeadTemp.next = initialHead;
+			return head;
+
+		} else {
+			return null;
 		}
 
-		newHeadTemp.next = initialHead;
-		return head;
 	}
 
 	public static void main(String[] args) {
