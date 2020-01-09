@@ -90,6 +90,7 @@ public class CountDistintElementInEachWindow {
 				if (lookup.get(arr[start]) > 1) {
 					lookup.put(arr[start], lookup.get(arr[start]) - 1);
 				} else {
+					lookup.remove(arr[start]);
 					distintCount--;
 				}
 				start++;
