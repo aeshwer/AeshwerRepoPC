@@ -1,14 +1,3 @@
-//https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string/0/?track=md-string&batchId=144
-/*
- *Input
-2
-i.like.this.program.very.much
-pqr.mno
-
-Output:
-much.very.program.this.like.i
-mno.pqr
- */
 package Md_String;
 
 import java.io.BufferedReader;
@@ -16,9 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class ReverseWordsInAString {
+public class CheckIfStringIsRotatedBYTwoPlaces {
 
-	public static class FastReader {
+	static class FastReader {
 
 		BufferedReader reader;
 		StringTokenizer token;
@@ -27,9 +16,12 @@ public class ReverseWordsInAString {
 			reader = new BufferedReader(new InputStreamReader(System.in));
 		}
 
-		String next() {
+		Integer nextInt() {
+			return Integer.parseInt(next());
+		}
 
-			if (token == null || !token.hasMoreTokens()) {
+		private String next() {
+			if (token == null || !token.hasMoreElements()) {
 				try {
 					token = new StringTokenizer(reader.readLine());
 				} catch (IOException e) {
@@ -37,11 +29,6 @@ public class ReverseWordsInAString {
 				}
 			}
 			return token.nextToken();
-
-		}
-
-		Integer nextInt() {
-			return Integer.parseInt(next());
 		}
 
 		String nextLine() {
@@ -53,30 +40,28 @@ public class ReverseWordsInAString {
 			}
 			return str;
 		}
-
-	}
-
-	private static void reverseWordsInAString(String s1) {
-		s1 = s1.replace(".", " ");
-		String[] split = s1.split(" ");
-
-		for (int i = split.length - 1; i > 0; i--) {
-			System.out.print(split[i] + ".");
-		}
-
-		System.out.print(split[0]);
 	}
 
 	public static void main(String[] args) {
 		FastReader fastReader = new FastReader();
 		int cases = fastReader.nextInt();
-
 		while (--cases >= 0) {
 			String s1 = fastReader.nextLine();
-			reverseWordsInAString(s1);
-			System.out.println();
+			String s2 = fastReader.nextLine();
+
+			findSolution(s1, s2);
+		}
+	}
+
+	private static void findSolution(String s1, String s2) {
+		String frontRotate = s1.substring(2, s1.length()) + s1.substring(0, 2);
+		String backRotate = s1.substring(s1.length() - 2, s1.length()) + s1.substring(0, s1.length() - 2);
+
+		if (s2.equals(frontRotate) || s2.equals(backRotate)) {
+			System.out.println(1);
+		} else {
+			System.out.println(0);
 		}
 
 	}
-
 }

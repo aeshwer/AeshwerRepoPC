@@ -1,6 +1,5 @@
 package LatestProg;
 
-import java.util.Arrays;
 
 //O(n+m)
 public class KMPPatternMatchingAlogrithm {

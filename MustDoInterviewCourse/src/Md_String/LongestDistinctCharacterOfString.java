@@ -1,4 +1,14 @@
 //https://practice.geeksforgeeks.org/problems/longest-distinct-characters-in-string/0/?track=md-string&batchId=144
+/*
+Input:
+2
+abababcdefababcdab
+geeksforgeeks
+
+Output:
+6
+7
+ */
 package Md_String;
 
 import java.io.BufferedReader;
@@ -68,8 +78,28 @@ public class LongestDistinctCharacterOfString {
 		while (--cases >= 0) {
 			String s1 = fastReader.nextLine();
 			System.out.println(longestDistinctCharacter(s1, 0));
+			System.out.println(longestDistCharOptimized(s1));
 		}
 
+	}
+
+	// Sliding Window concept
+	private static int longestDistCharOptimized(String s) {
+		if (s.length() == 0)
+			return 0;
+		int l = 0, r = 1, max = 1;
+		HashSet<Character> hset = new HashSet<>();
+		hset.add(s.charAt(l));
+		while (r < s.length()) {
+			while (hset.contains(s.charAt(r))) {
+				hset.remove(s.charAt(l));
+				l++;
+			}
+			hset.add(s.charAt(r));
+			r++;
+			max = Math.max(max, r - l);
+		}
+		return max;
 	}
 
 }
