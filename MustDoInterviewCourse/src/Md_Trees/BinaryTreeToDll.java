@@ -79,46 +79,39 @@ public class BinaryTreeToDll {
 			}
 
 			BinaryTreeToDll g = new BinaryTreeToDll();
-			Node node = g.BinaryTreeToDoublyLinkList(root);
+			Node node = g.bToDLL(root);
 			obj.printList(node);
 			t--;
 			System.out.println();
 		}
 	}
 
-	private Node BinaryTreeToDoublyLinkList(Node root) {
-		if (root == null)
-			return null;
-		// Mark the head node
-		Node tempHead = root;
-		while (tempHead != null && tempHead.left != null) {
-			tempHead = tempHead.left;
-		}
+	Node head = null;
 
-		// traverse in In-order style and re wire connections
-		this.reWireTheNodesToDDLStyle(root);
-		return tempHead;
+	private Node bToDLL(Node root) {
+		Node temp = root;
+		// find the left most node, which will be the head
+		while (temp.left != null) {
+			temp = temp.left;
+		}
+		inorderTraverse(root);
+		return temp;
 	}
 
-	private Node reWireTheNodesToDDLStyle(Node root) {
-		if (root == null)
-			return null;
-
-		Node leftDataNode = reWireTheNodesToDDLStyle(root.left);
-		// do work
-		root.left = leftDataNode;
-		if (null != leftDataNode) {
-			leftDataNode.right = root;
+	void inorderTraverse(Node root) {
+		if (root == null) {
+			return;
 		}
-
-		Node rightDataNode = reWireTheNodesToDDLStyle(root.right);
-		// do work
-		root.right = rightDataNode;
-		if (null != rightDataNode) {
-			rightDataNode.left = root;
+		// Do work
+		inorderTraverse(root.left);
+		if (head != null) {
+			head.right = root;
+			root.left = head;
 		}
+		head = root;
 
-		return root;
+		inorderTraverse(root.right);
+
 	}
 
 }
