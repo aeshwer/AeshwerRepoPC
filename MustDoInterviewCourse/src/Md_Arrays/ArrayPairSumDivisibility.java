@@ -3,10 +3,11 @@ package Md_Arrays;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-//https://practice.geeksforgeeks.org/problems/number-of-pairs/0/?track=md-arrays&batchId=144
-public class NumberOfPais {
+//https://practice.geeksforgeeks.org/problems/array-pair-sum-divisibility-problem/0/?track=md-hashing&batchId=144
+public class ArrayPairSumDivisibility {
 
 	static class FastReader {
 
@@ -50,23 +51,34 @@ public class NumberOfPais {
 
 		while (--cases >= 0) {
 			int n = fastReader.nextInt();
-			int m = fastReader.nextInt();
-			int arr1[] = new int[n];
+			int arr[] = new int[n];
 			int i = 0;
 			while (--n >= 0) {
-				arr1[i++] = fastReader.nextInt();
+				arr[i++] = fastReader.nextInt();
 			}
-			i = 0;
-			int arr2[] = new int[m];
-			while (--m >= 0) {
-				arr2[i++] = fastReader.nextInt();
-			}
-			findNumberOfPairs(arr1,arr2);
+			int k = fastReader.nextInt();
+			IsPairSumDivisible(arr, k);
 		}
 	}
 
-	private static void findNumberOfPairs(int[] arr1, int[] arr2) {
+	private static void IsPairSumDivisible(int[] arr, int k) {
 
+		if(arr.length%2!=0) {
+			System.out.println("False");
+			return;
+		}
+		int sum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] % k != 0) {
+				sum += arr[i]%k;
+			}
+		}
+
+		if (sum % k == 0)
+			System.out.println("True");
+		else {
+			System.out.println("False");
+		}
 	}
 
 }

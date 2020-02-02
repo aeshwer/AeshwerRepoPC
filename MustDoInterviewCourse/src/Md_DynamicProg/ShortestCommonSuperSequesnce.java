@@ -82,15 +82,29 @@ public class ShortestCommonSuperSequesnce {
 		}
 
 		// backTrack Logic if u want String
-		/*
-		 * int r = str1.length(); int c = str2.length(); int start = T[r][c]; String
-		 * result = ""; while (start != 0) { if (start != T[r - 1][c] && start != T[r][c
-		 * - 1]) { result = str1.charAt(r - 1) + result; r = r - 1; c = c - 1; start =
-		 * T[r][c]; continue; } else if (start == T[r][c - 1]) { c = c - 1; start =
-		 * T[r][c]; } else if (start == T[r - 1][c]) { r = r - 1; start = T[r][c]; }
-		 * 
-		 * } return result;
-		 */
+
+		int r = str1.length();
+		int c = str2.length();
+		int start = T[r][c];
+		String result = "";
+		while (start != 0) {
+			if (start != T[r - 1][c] && start != T[r][c - 1]) {
+				result = str1.charAt(r - 1) + result;
+				r = r - 1;
+				c = c - 1;
+				start = T[r][c];
+				continue;
+			} else if (start == T[r][c - 1]) {
+				c = c - 1;
+				start = T[r][c];
+			} else if (start == T[r - 1][c]) {
+				r = r - 1;
+				start = T[r][c];
+			}
+
+		}
+		System.out.println( "LCS : result"+result);
+
 		return T[str1.length()][str2.length()];
 	}
 
