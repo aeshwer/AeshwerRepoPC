@@ -64,33 +64,33 @@ public class TopologicalSort {
 
 		// Traverse All edges
 		for (int i = 0; i < nov; i++) {
-			if (!visited[i]) {
-				visited[i] = true;
-				topoRecursive(stack, visited, list, i);
-				stack.add(i);
+			if (visited[i]) {
+				continue;
 			}
+			topoRecursive(stack, visited, list, i);
 		}
-		int res[] = new int[nov];
-		int i=0;
-		while(!stack.empty()) {
-			res[i++]=stack.pop();
-		}
-		return res;
+		/*
+		 * int res[] = new int[nov]; int i = 0; while (!stack.empty()) { res[i++] =
+		 * stack.pop(); } return res;
+		 */
+
+		int ans[] = new int[nov];
+		int i = nov - 1;
+		while (i > -1 && !stack.empty())
+			ans[i--] = (int) stack.pop();
+		return ans;
 	}
 
 	private static void topoRecursive(Stack<Integer> stack, Boolean[] visited, ArrayList<ArrayList<Integer>> list,
 			int edge) {
+		visited[edge] = true;
 		ArrayList<Integer> childs = list.get(edge);
-		if (childs.size() == 0) {
-			return;
-		}
-		for (int j = 0; j < childs.size(); j++) {
-			if (!visited[childs.get(j)]) {
-				visited[childs.get(j)] = true;
-				topoRecursive(stack, visited, list, childs.get(j));
-				stack.add(childs.get(j));
+		for (int i = 0; i < childs.size(); i++) {
+			if (visited[childs.get(i)]) {
+				continue;
 			}
-
+			topoRecursive(stack, visited, list, childs.get(i));
 		}
+		stack.push(edge);
 	}
 }
