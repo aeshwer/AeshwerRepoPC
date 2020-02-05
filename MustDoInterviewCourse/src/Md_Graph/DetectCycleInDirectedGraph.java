@@ -30,25 +30,38 @@ public class DetectCycleInDirectedGraph {
 
 	static boolean isCyclic(ArrayList<ArrayList<Integer>> list, int V) {
 
-		Boolean whiteSet[] = new Boolean[V];
 		Boolean greySet[] = new Boolean[V];
 		Boolean blackSet[] = new Boolean[V];
 
-		Arrays.fill(whiteSet, true);
 		Arrays.fill(greySet, false);
 		Arrays.fill(blackSet, false);
 
 		for (int i = 0; i < V; i++) {
-			if (!whiteSet[i]) {
-				isCyclicUtil(whiteSet, greySet, blackSet, list, i);
+			if (!greySet[i]) {
+				isCyclicUtil(greySet, blackSet, list, i);
 			}
 		}
 
 		return false;
 	}
 
-	private static void isCyclicUtil(Boolean[] whiteSet, Boolean[] greySet, Boolean[] blackSet,
-			ArrayList<ArrayList<Integer>> list, int i) {
+	private static boolean isCyclicUtil(Boolean[] greySet, Boolean[] blackSet, ArrayList<ArrayList<Integer>> list,
+			int vertex) {
+
+		greySet[vertex] = true;
+		ArrayList<Integer> childs = list.get(vertex);
+		for (Integer c : childs) {
+			if (blackSet[c]) {
+				continue;
+			}
+			if (greySet[c]) {
+				return true;
+			} else {
+				return isCyclicUtil(greySet, blackSet, list, c);
+			}
+		}
+		blackSet[vertex] = true;
+		return false;
 
 	}
 
