@@ -38,7 +38,8 @@ public class DetectCycleInDirectedGraph {
 
 		for (int i = 0; i < V; i++) {
 			if (!greySet[i]) {
-				isCyclicUtil(greySet, blackSet, list, i);
+				if (isCyclicUtil(greySet, blackSet, list, i))
+					return true;
 			}
 		}
 
@@ -57,12 +58,11 @@ public class DetectCycleInDirectedGraph {
 			if (greySet[c]) {
 				return true;
 			} else {
-				return isCyclicUtil(greySet, blackSet, list, c);
+				if (isCyclicUtil(greySet, blackSet, list, c))
+					return true;
 			}
 		}
 		blackSet[vertex] = true;
 		return false;
-
 	}
-
 }
