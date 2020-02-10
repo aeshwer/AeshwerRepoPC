@@ -37,6 +37,13 @@ public class FindNumberOfIslands {
 	// Function to find the number of island in the given list
 	// N, M: size of list row and column respectively
 	static int findIslands(ArrayList<ArrayList<Integer>> list, int N, int M) {
+
+		Integer[][] arr = new Integer[N][M];
+		for (int i = 0; i < list.size(); i++) {
+		    ArrayList<Integer> row = list.get(i);
+		    arr[i] = row.toArray(new Integer[N]);
+		}
+		
 		return M;
 	}
 
