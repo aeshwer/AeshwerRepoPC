@@ -1,50 +1,48 @@
 package Md_Graph;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
+//https://leetcode.com/problems/number-of-islands/
 public class FindNumberOfIslands {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int t = sc.nextInt();
+		char[][] grid = { { '1', '1', '0', '0', '0' }, { '1', '1', '0', '0', '0' }, { '0', '0', '1', '0', '0' },
+				{ '0', '0', '0', '1', '1' } };
+		System.out.println(numIslands(grid));
 
-		while (t-- > 0) {
-			int N = sc.nextInt();
-			int M = sc.nextInt();
+	}
 
-			ArrayList<ArrayList<Integer>> list = new ArrayList<>(N);
+	public static int numIslands(char[][] grid) {
+		if (grid == null || grid.length == 0) {
+			return 0;
+		}
+		int numOfLands = 0;
+		int rows = grid.length;
+		int cols = grid[0].length;
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[i].length; j++) {
+				if (grid[i][j] == '1') {
 
-			// creating arraylist of arraylist
-			for (int i = 0; i < N; i++) {
-				ArrayList<Integer> temp = new ArrayList<>(M);
-				list.add(i, temp);
-			}
-
-			// adding elements to the arraylist of arraylist
-			for (int i = 0; i < N; i++) {
-				for (int j = 0; j < M; j++) {
-					int val = sc.nextInt();
-					list.get(i).add(j, val);
+					numOfLands = numOfLands + dsfUtilToSinkTheIsland(grid, i, j, rows, cols);
 				}
 			}
-
-			System.out.println(findIslands(list, N, M));
-
 		}
+
+		return numOfLands;
+
 	}
 
-	// Function to find the number of island in the given list
-	// N, M: size of list row and column respectively
-	static int findIslands(ArrayList<ArrayList<Integer>> list, int N, int M) {
-
-		Integer[][] arr = new Integer[N][M];
-		for (int i = 0; i < list.size(); i++) {
-		    ArrayList<Integer> row = list.get(i);
-		    arr[i] = row.toArray(new Integer[N]);
+	private static int dsfUtilToSinkTheIsland(char[][] grid, int i, int j, int rows, int cols) {
+		if (i > rows-1 || i < 0 || j < 0 || j > cols-1) {
+			return 0;
 		}
-		
-		return M;
-	}
+		if (grid[i][j] == '0') {
+			return 0;
+		}
+		grid[i][j] = '0';
+		dsfUtilToSinkTheIsland(grid, i + 1, j, rows, cols);
+		dsfUtilToSinkTheIsland(grid, i, j + 1, rows, cols);
+		dsfUtilToSinkTheIsland(grid, i - 1, j, rows, cols);
+		dsfUtilToSinkTheIsland(grid, i, j - 1, rows, cols);
+		return 1;
 
+	}
 }
