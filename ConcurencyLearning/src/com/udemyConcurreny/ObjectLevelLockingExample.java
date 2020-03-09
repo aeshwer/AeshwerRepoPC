@@ -6,19 +6,26 @@
  */
 package com.udemyConcurreny;
 
+import java.util.concurrent.TimeUnit;
+
 // Java program to illustrate Object lock concept
 public class ObjectLevelLockingExample implements Runnable{
 	    public void run()
 	    {
-	        Lock();
+	        try {
+				Lock();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 	    }
-	    public void Lock()
+	    public void Lock() throws InterruptedException
 	    {
 	        System.out.println(Thread.currentThread().getName());
 	        synchronized(this)
 	        {
 	            System.out.println("in block "
 	                + Thread.currentThread().getName());
+	            TimeUnit.MILLISECONDS.sleep(2000);
 	            System.out.println("in block " + 
 	                Thread.currentThread().getName() + " end");
 	        }
