@@ -6,23 +6,31 @@
 
 package com.udemyConcurreny;
 
+import java.util.concurrent.TimeUnit;
+
 public class StaticSynchronincarion implements Runnable{
 	 public void run()
 	    {
-	        Lock2();
+	        try {
+				Lock2();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 	    }
-	    public static synchronized void Lock()
+	    public static synchronized void Lock() throws InterruptedException
 	    {
 	            System.out.println("in block lock 1 :"
 	                + Thread.currentThread().getName());
+	            TimeUnit.MILLISECONDS.sleep(2000);
 	            System.out.println("in block lock 1 :" + 
 	                Thread.currentThread().getName() + " end");
 	    }
 	    
-	    public synchronized void Lock2()
+	    public synchronized void Lock2() throws InterruptedException
 	    {
 	            System.out.println("in block lock 2 :"
 	                + Thread.currentThread().getName());
+	            TimeUnit.MILLISECONDS.sleep(2000);
 	            System.out.println("in block lock 2  :" + 
 	                Thread.currentThread().getName() + " end");
 	            Lock();

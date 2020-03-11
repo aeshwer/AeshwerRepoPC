@@ -51,7 +51,7 @@ public class ProducerConsumerWithLOck {
 			}
 		}
 	}
-	);
+	,"Producer-Thread") ;
 	
 	Thread t2 = new Thread(new Runnable(){
 		@Override
@@ -64,7 +64,7 @@ public class ProducerConsumerWithLOck {
 			}
 		}
 	}
-	);
+	,"Consumer-Thread");
 	
 
 	t1.start();
