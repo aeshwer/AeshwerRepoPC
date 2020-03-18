@@ -12,7 +12,7 @@ public class ExecutorsFrameworkJoin {public static void main(String[] args) thro
 	System.out.println(currentThread + "Main Thread Starts Here");
 
 	ExecutorService executorService = Executors.newCachedThreadPool(new NamedThreadFactory());
-	CountDownLatch latch = new CountDownLatch(4);
+	CountDownLatch latch = new CountDownLatch(3);
 
 	executorService.submit(new LoopTaskI(latch));
 	executorService.submit(new LoopTaskI(latch));

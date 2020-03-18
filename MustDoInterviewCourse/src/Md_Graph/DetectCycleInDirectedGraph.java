@@ -2,11 +2,9 @@ package Md_Graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
-public class DetectCycleInUnDirectedGraph {
+public class DetectCycleInDirectedGraph {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -16,15 +14,12 @@ public class DetectCycleInUnDirectedGraph {
 			ArrayList<ArrayList<Integer>> list = new ArrayList<>();
 			int nov = sc.nextInt();
 			int edg = sc.nextInt();
-
 			for (int i = 0; i < nov + 1; i++)
 				list.add(i, new ArrayList<Integer>());
-
 			for (int i = 1; i <= edg; i++) {
 				int u = sc.nextInt();
 				int v = sc.nextInt();
 				list.get(u).add(v);
-				list.get(v).add(u);
 			}
 			if (isCyclic(list, nov) == true)
 				System.out.println("1");
@@ -34,14 +29,16 @@ public class DetectCycleInUnDirectedGraph {
 	}
 
 	static boolean isCyclic(ArrayList<ArrayList<Integer>> list, int V) {
-		boolean[] visited = new boolean[V];
+
+		Boolean greySet[] = new Boolean[V];
+		Boolean blackSet[] = new Boolean[V];
+
+		Arrays.fill(greySet, false);
+		Arrays.fill(blackSet, false);
+
 		for (int i = 0; i < V; i++) {
-			visited[i] = false;
-		}
-
-		for (int u = 0; u < V; u++) {
-			if (!visited[u]) {
-				if (isCyclic(list, visited, u, -1)) // return and stop if u found a cycle
+			if (!greySet[i]) {
+				if (isCyclicUtil(greySet, blackSet, list, i))
 					return true;
 			}
 		}
@@ -49,18 +46,23 @@ public class DetectCycleInUnDirectedGraph {
 		return false;
 	}
 
-	static boolean isCyclic(ArrayList<ArrayList<Integer>> list, boolean[] visited, int v, int parent) {
-		visited[v] = true;
-		for (int i : list.get(v)) {
-			if (!visited[i]) {
-				if (isCyclic(list, visited, i, v))
-					return true;
-			} else if (i != parent) {
+	private static boolean isCyclicUtil(Boolean[] greySet, Boolean[] blackSet, ArrayList<ArrayList<Integer>> list,
+			int vertex) {
+
+		greySet[vertex] = true;
+		ArrayList<Integer> childs = list.get(vertex);
+		for (Integer c : childs) {
+			if (blackSet[c]) {
+				continue;
+			}
+			if (greySet[c]) {
 				return true;
+			} else {
+				if (isCyclicUtil(greySet, blackSet, list, c))
+					return true;
 			}
 		}
-
+		blackSet[vertex] = true;
 		return false;
 	}
-
 }

@@ -4,7 +4,7 @@ class  Processor{
 	
 	public void produce() throws InterruptedException
 	{
-		synchronized (this) {    // Intrinsic class levellock 
+		synchronized (this) {    // object level lock 
 			System.out.println("Producer");
 			wait(); // thread 1 hands over the lock to other threads which use the same lock, Thread 2 in our case
 			System.out.println("Producer Again ");

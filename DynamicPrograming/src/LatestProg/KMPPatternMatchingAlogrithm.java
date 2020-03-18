@@ -1,12 +1,13 @@
 package LatestProg;
 
+import java.util.Arrays;
 
 //O(n+m)
 public class KMPPatternMatchingAlogrithm {
 
 	public static void main(String[] args) {
-		String s1 = "dsgwadsgz";
-		String s2 = "dsgwadsgz";
+		String s1 = "abcabcdabcyabcdabca";
+		String s2 = "abcdabca";
 		isMatchingPattern(s1.toCharArray(), s2.toCharArray());
 	}
 
@@ -17,15 +18,23 @@ public class KMPPatternMatchingAlogrithm {
 		count[0] = 0;
 
 		int i = 0;
-		for (int j = 1; j < pattern.length; j++) {
+		for (int j = 1; j < pattern.length;) {
 			if (pattern[j] == pattern[i]) {
 				count[j] = i + 1;
 				i++;
+				j++;
 			} else {
-				count[j] = i - 1 > 0 ? count[i - 1] : 0;
+				if (i != 0) {
+					i = count[i - 1];
+				} else {
+					count[j] = 0;
+					j++;
+				}
 			}
 
 		}
+
+		System.out.println(Arrays.toString(count));
 
 		i = 0;
 		int j = 0;

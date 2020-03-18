@@ -53,7 +53,7 @@ class SecondWorker2 implements Runnable{
 	
 }
 } 
-public class PriorityQueueLearn {
+public class BlockingPriorityQueueLearn {
 
 	public static void main(String[] args) {
 		BlockingQueue<String> queue = new PriorityBlockingQueue<String>();
