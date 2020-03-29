@@ -9,8 +9,8 @@ public class CombinationalSum {
 
 	public static void main(String[] args) {
 		CombinationalSum obj = new CombinationalSum();
-		int target = 8;
-		int[] arr = { 2, 3, 5 };
+		int target = 7;
+		int[] arr = { 2, 3, 6,7 };
 		List<List<Integer>> result = obj.combinationSumSolver(arr, target);
 		result.forEach( v -> System.out.println(v));
 	}

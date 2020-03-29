@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+//DFS
 public class DetectCycleInDirectedGraph {
 
 	public static void main(String[] args) {

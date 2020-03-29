@@ -45,13 +45,14 @@ public class LargestSubArrayof01 {
 		for (int i = 1; i < arr.length; i++) {
 			sum = sum + arr[i];
 			if (sum == 0) {
-				maxlength = Math.max(maxlength, i+1);
+				maxlength = Math.max(maxlength, i + 1);
 			}
-				if (!lookup.containsKey(sum)) {
-					lookup.put(sum, i);
-				} else {
-					maxlength = Math.max(maxlength, i-lookup.get(sum));
-				}
+			
+			if (!lookup.containsKey(sum)) {
+				lookup.put(sum, i);
+			} else {
+				maxlength = Math.max(maxlength, i - lookup.get(sum));
+			}
 		}
 
 		return maxlength;

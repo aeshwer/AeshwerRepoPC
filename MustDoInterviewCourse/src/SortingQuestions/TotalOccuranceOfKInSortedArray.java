@@ -22,7 +22,7 @@ public class TotalOccuranceOfKInSortedArray {
 			if(arr[mid]>k) {
 				return getIndexForLastOccurance(arr, k, l,mid-1);
 			}
-			else if(arr[mid]>k) {
+			else if(arr[mid]<k) {
 				return getIndexForLastOccurance(arr, k, mid+1,r);
 			}
 			else if(arr[mid]==k && mid+1 <arr.length && arr[mid+1]== k) {
@@ -41,7 +41,7 @@ public class TotalOccuranceOfKInSortedArray {
 			if(arr[mid]>k) {
 				return getIndexForFirstOccurance(arr, k, l,mid-1);
 			}
-			else if(arr[mid]>k) {
+			else if(arr[mid]<k) {
 				return getIndexForFirstOccurance(arr, k, mid+1,r);
 			}
 			else if(arr[mid]==k && mid-1 >=0 && arr[mid-1]== k) {

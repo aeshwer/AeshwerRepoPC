@@ -57,7 +57,7 @@ public class NextGreaterElement {
 	}
 
 	public static void main(String args[]) {
-		int arr[] = { 11, 13, 21, 3 };
+		int arr[] = { 11, 6,7,13, 21, 3 };
 		int n = arr.length;
 		printNGE(arr, n);
 	}

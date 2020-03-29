@@ -4,6 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LRUCacheImpl {
+
+	  private class ListNode {
+	    int key;
+	    int value;
+
+	    ListNode prev;
+	    ListNode next;
+	  }
+	  
 	  // Hashtable backs up the Doubly Linked List for O(1) access to cache items
 	  Map<Integer, ListNode> hashtable = new HashMap<Integer, ListNode>();
 	  ListNode head;
@@ -110,12 +119,5 @@ public class LRUCacheImpl {
 	    addToFront(node);
 	  }
 
-	  private class ListNode {
-	    int key;
-	    int value;
-
-	    ListNode prev;
-	    ListNode next;
-	  }
 
 }

@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-import Company_Solution.NumberOfPaths.FastReader;
-
 public class test {
 
 	public static class FastReader {

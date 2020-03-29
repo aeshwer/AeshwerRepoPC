@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
-
+//apply DFS
 public class DetectCycleInUnDirectedGraph {
 
 	public static void main(String[] args) {
