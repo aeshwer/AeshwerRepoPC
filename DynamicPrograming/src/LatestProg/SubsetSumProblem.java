@@ -3,7 +3,7 @@ package LatestProg;
 public class SubsetSumProblem {
 
 	public static void main(String[] args) {
-		int arr[] = { 2, 3, 7, 8, 10 };
+		int arr[] = { 2, 3, 5};
 		subsetSum(arr, 11);
 		//int arr[] = { 2, 2,3,5};
 		//subsetSum(arr, 7);
