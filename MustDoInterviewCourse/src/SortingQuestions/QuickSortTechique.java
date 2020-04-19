@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class QuickSortTechique {
 
 	public static void main(String[] args) {
-		int arr[] = { 4, 1, 22, 2, 34, 44, 15, 9 };
+		int arr[] = { 1, 4, 5, 2, 3 };
 		System.out.println("Before Sort : " + Arrays.toString(arr));
 		quickSort(arr, 0, arr.length - 1);
 		System.out.println("After Sort : " + Arrays.toString(arr));
@@ -35,12 +35,12 @@ public class QuickSortTechique {
 				arr[i] = temp;
 			}
 		}
-		//swap the pivot with arr[i] so the pivot is at the correct position
+		// swap the pivot with arr[i] so the pivot is at the correct position
 		int temp = arr[i];
 		arr[i] = arr[l];
 		arr[l] = temp;
-		
-		System.out.println("Sorting  : " + Arrays.toString(arr)); 
+
+		System.out.println("Sorting  : " + Arrays.toString(arr));
 		return i;
 	}
 }
