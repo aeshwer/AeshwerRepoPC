@@ -10,7 +10,7 @@ public class SquareRootOfANumber {
 		int left = 1, right = x, ans = 0;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
-
+			
 			// If x is a perfect square
 			if (mid * mid == x)
 				return mid;
