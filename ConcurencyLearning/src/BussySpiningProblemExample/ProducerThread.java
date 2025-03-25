@@ -1,4 +1,4 @@
-package BussySpiningExample;
+package BussySpiningProblemExample;
 
 import java.util.ArrayList;
 import java.util.List;

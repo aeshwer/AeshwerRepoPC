@@ -1,4 +1,4 @@
-package BussySpiningExample;
+package BussySpiningProblemExample;
 
 public class ConsumerThread implements Runnable{
 	
