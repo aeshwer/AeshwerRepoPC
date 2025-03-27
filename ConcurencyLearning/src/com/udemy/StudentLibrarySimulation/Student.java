@@ -2,10 +2,10 @@ package com.udemy.StudentLibrarySimulation;
 
 import java.util.Random;
 
-public class Student  implements Runnable{
-	
+public class Student implements Runnable {
+
 	private int id;
-	
+
 	private Book[] book;
 
 	public Student(int id, Book[] book) {
@@ -15,18 +15,20 @@ public class Student  implements Runnable{
 
 	@Override
 	public void run() {
-		
 		Random randon = new Random();
 		// infinite simulation
-		while(true){
-			int bookId =randon.nextInt(ConstantNumber.NUMBER_OF_BOOKS); // selects a random book to read
-			try{
+		while (true) {
+			int bookId = randon.nextInt(StartApp.NUMBER_OF_BOOKS); // selects a random book to read
+			try {
 				book[bookId].read(this);
-			}catch(Exception e){e.printStackTrace();}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
+
 	@Override
 	public String toString() {
-		return "Student #"+id;
+		return "Student #" + id;
 	}
 }
