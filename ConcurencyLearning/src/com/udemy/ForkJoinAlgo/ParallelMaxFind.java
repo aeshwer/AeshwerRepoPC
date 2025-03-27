@@ -28,6 +28,7 @@ public class ParallelMaxFind extends RecursiveTask<Integer>{
 			ParallelMaxFind parallelMaxFind1 = new ParallelMaxFind(nums, lowIndex, middleIndex);
 			ParallelMaxFind parallelMaxFind2 = new ParallelMaxFind(nums, middleIndex+1, highIndex);
 			
+			//start and Waits for all tasks to complete before returning.
 			invokeAll(parallelMaxFind1,parallelMaxFind2);
 			return Math.max(parallelMaxFind1.join(), parallelMaxFind1.join());
 					
