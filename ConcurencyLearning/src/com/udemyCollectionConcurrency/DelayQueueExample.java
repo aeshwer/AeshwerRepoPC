@@ -25,8 +25,8 @@ public class DelayQueueExample {
 		@Override
 		public void run() {
 			for (int i = 0; i < numberOfElementsToProduce; i++) {
-				DelayedElement object = new DelayedElement(UUID.randomUUID().toString(),System.currentTimeMillis()+
-						delayOfEachProducedMessageMilliseconds);
+				DelayedElement object = new DelayedElement(UUID.randomUUID().toString(),
+						System.currentTimeMillis() + delayOfEachProducedMessageMilliseconds);
 				System.out.println("Put object: " + object);
 				try {
 					queue.put(object);
