@@ -8,47 +8,37 @@
 package com.udemyConcurreny;
 
 // Java program to illustrate Object lock concept
-public class ReentrantNatureOfSynchronizedBlock implements Runnable{
-	    public void run()
-	    {
-	        Lock1();
-	    }
-	    public void Lock1()
-	    {
-	        System.out.println(Thread.currentThread().getName());
-	        synchronized(this)
-	        {
-	            System.out.println("in block lock1 "
-	                + Thread.currentThread().getName());
-	            System.out.println("in block lock 1 " + 
-	                Thread.currentThread().getName() + " end");
-	            Lock2();
-	        }
-	    }
-	    
-		private  void Lock2()
-	    {
-	        synchronized(this)
-	        {
-	            System.out.println("in block lock 2 "
-	                + Thread.currentThread().getName());
-	            System.out.println("in block lock 2 " + 
-	                Thread.currentThread().getName() + " end");
-	        }
-	    }
-	 
-	    public static void main(String[] args)
-	    {
-	    	ReentrantNatureOfSynchronizedBlock g = new ReentrantNatureOfSynchronizedBlock();
-	        Thread t1 = new Thread(g);
-	        Thread t2 = new Thread(g);
-	        ReentrantNatureOfSynchronizedBlock g1 = new ReentrantNatureOfSynchronizedBlock();
-	        Thread t3 = new Thread(g1);
-	        t1.setName("t1");
-	        t2.setName("t2");
-	        t3.setName("t3");
-	        t1.start();
-	        t2.start();
-	        t3.start();
-	    }
+public class ReentrantNatureOfSynchronizedBlock implements Runnable {
+	public void run() {
+		Lock1();
+	}
+
+	public void Lock1() {
+		synchronized (this) {
+			System.out.println("in block lock 1 " + Thread.currentThread().getName());
+			System.out.println("in block lock 1 " + Thread.currentThread().getName() + " end");
+			Lock2();
+		}
+	}
+
+	private void Lock2() {
+		synchronized (this) {
+			System.out.println("in block lock 2 " + Thread.currentThread().getName());
+			System.out.println("in block lock 2 " + Thread.currentThread().getName() + " end");
+		}
+	}
+
+	public static void main(String[] args) {
+		ReentrantNatureOfSynchronizedBlock g = new ReentrantNatureOfSynchronizedBlock();
+		Thread t1 = new Thread(g);
+		Thread t2 = new Thread(g);
+		ReentrantNatureOfSynchronizedBlock g1 = new ReentrantNatureOfSynchronizedBlock();
+		Thread t3 = new Thread(g1);
+		t1.setName("t1");
+		t2.setName("t2");
+		t3.setName("t3");
+		t1.start();
+		t2.start();
+		t3.start();
+	}
 }
