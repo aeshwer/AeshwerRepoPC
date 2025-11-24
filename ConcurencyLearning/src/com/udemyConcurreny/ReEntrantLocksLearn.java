@@ -11,7 +11,7 @@ public class ReEntrantLocksLearn {
 
 	public static void increment() {
 		// Reentrant lock used
-		lock.lock();
+		lock.lock();		
 		try {
 			for (int i = 0; i < 100; ++i) {
 				counter++;

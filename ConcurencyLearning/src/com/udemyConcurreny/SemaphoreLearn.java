@@ -1,18 +1,11 @@
 package com.udemyConcurreny;
 
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 /*
  * Simulate download data from the web and create a singleton pattern using enums
  */
-
 // thread safe singleton enum implementation
 enum Downloader {
 	INSTANCE;

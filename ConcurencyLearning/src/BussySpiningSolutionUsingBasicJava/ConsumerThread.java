@@ -11,6 +11,7 @@ public class ConsumerThread implements Runnable {
 
 	@Override
 	public void run() {
+		System.out.println("consumer before sync entry...");
 		synchronized (pt) {
 			while (pt.flag) { // Proper waiting instead of busy spinning
 				System.out.println("Waiting...");
