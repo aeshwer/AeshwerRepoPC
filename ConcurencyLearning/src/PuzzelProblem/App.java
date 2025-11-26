@@ -1,6 +1,7 @@
 package PuzzelProblem;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 public class App {
 
@@ -30,6 +31,11 @@ public class App {
 		CompletableFuture.runAsync(() -> tester.callAfterDealy(obj2, 2));
 		CompletableFuture.runAsync(() -> tester.callAfterDealy(obj3, 5));
 		CompletableFuture.runAsync(() -> tester.callAfterDealy(obj4, 1));
+		
+		/*CompletableFuture.runAsync(obj1, CompletableFuture.delayedExecutor(3, TimeUnit.SECONDS));
+		CompletableFuture.runAsync(obj2, CompletableFuture.delayedExecutor(2, TimeUnit.SECONDS));
+		CompletableFuture.runAsync(obj3, CompletableFuture.delayedExecutor(5, TimeUnit.SECONDS));
+		CompletableFuture.runAsync(obj4, CompletableFuture.delayedExecutor(1, TimeUnit.SECONDS));*/
 
 		while (true) {
 			Thread.sleep(1000);

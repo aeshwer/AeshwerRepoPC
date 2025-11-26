@@ -17,12 +17,30 @@ public class StaticSynchronincarion implements Runnable {
 		}
 	}
 
+	/*
+	 * This is a static synchronized method. Lock object:
+	 * StaticSynchronincarion.class (the class object itself) Effect: Only one
+	 * thread at a time can execute any static synchronized method of this class.
+	 * 
+	 * Other threads trying to enter any static synchronized method will block.
+	 */
 	public static synchronized void Lock() throws InterruptedException {
 		System.out.println("in block lock 1 :" + Thread.currentThread().getName());
 		TimeUnit.MILLISECONDS.sleep(2000);
 		System.out.println("in block lock 1 :" + Thread.currentThread().getName() + " end");
 	}
 
+	/*
+	 * This is a non-static synchronized method. 
+	 * Lock object: this (the instance of StaticSynchronincarion on which it is
+	 * called)
+	 * 
+	 * Effect: Only one thread per object can execute non-static synchronized
+	 * methods on that object.
+	 * 
+	 * Other threads using different objects are independent and don’t block each
+	 * other
+	 */
 	public synchronized void Lock2() throws InterruptedException {
 		System.out.println("in block lock 2 :" + Thread.currentThread().getName());
 		TimeUnit.MILLISECONDS.sleep(2000);

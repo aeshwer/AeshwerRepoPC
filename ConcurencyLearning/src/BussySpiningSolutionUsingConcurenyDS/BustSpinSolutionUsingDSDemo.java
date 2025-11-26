@@ -34,7 +34,7 @@ public class BustSpinSolutionUsingDSDemo {
 
 		// Create a thread pool that auto-scales consumers
 		ThreadPoolExecutor consumerPool = new ThreadPoolExecutor(coreConsumers, maxConsumers, keepAliveTime,
-				TimeUnit.SECONDS, new SynchronousQueue<>(), // Allows immediate scaling
+				TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(), // Allows immediate scaling
 				new ThreadPoolExecutor.CallerRunsPolicy() // Prevents dropping tasks
 		);
 
@@ -58,7 +58,7 @@ public class BustSpinSolutionUsingDSDemo {
 					System.out.println("🔹 Scaling up consumers. Queue size: " + queueSize);
 					consumerPool.execute(new ConsumerThread(queue));
 				}
-
+				
 				try {
 					Thread.sleep(2000); // Monitor every 2 seconds
 				} catch (InterruptedException e) {

@@ -20,17 +20,18 @@ class working implements Runnable {
 	}
 
 	private void doWorks() {
-		System.out.println("Thread with id : " + id + "Start Working");
+		System.out.println("Thread with id : " + id + " Start Working");
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
-		System.out.println("Thread with id : " + id + "Finished");
+		System.out.println("Thread with id : " + id + " Finished");
 
 		try {
 			cyclicBarrier.await();
+			//The 5th (last thread triggers barrier action
 			// this step is executed after the threads are released from the cyclic barrier
 			System.out.println("After await");
 		} catch (InterruptedException | BrokenBarrierException e) {
@@ -49,7 +50,7 @@ public class CyclicBarrierLearn {
 
 	public static void main(String[] args) {
 		ExecutorService executerService = Executors.newFixedThreadPool(5);
-		// this runnable is called when the last last thread is executed
+		// this runnable is called when the last thread is executed
 		CyclicBarrier cyclicBarrier = new CyclicBarrier(5, new Runnable() {
 			@Override
 			public void run() {

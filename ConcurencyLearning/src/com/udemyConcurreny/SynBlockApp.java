@@ -9,12 +9,14 @@ public class SynBlockApp {
 	private static Object lock2 = new Object();
 
 	public static void add1() {
+		//→ You cannot use synchronized(this) inside a static method
 		synchronized (lock1) {
 			++counter1;
 		}
 	}
 
 	public static void add2() {
+		//→ You cannot use synchronized(this) inside a static method
 		synchronized (lock2) {
 			++counter2;
 		}

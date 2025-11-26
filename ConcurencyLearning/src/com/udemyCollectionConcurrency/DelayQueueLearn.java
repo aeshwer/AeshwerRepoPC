@@ -27,7 +27,7 @@ class DelayedWorker implements Delayed {
 
 	@Override
 	public long getDelay(TimeUnit unit) {
-		return unit.convert(duration - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
+		return unit.convert(this.duration - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
 	}
 
 	public long getDuration() {
@@ -55,7 +55,7 @@ class DelayedWorker implements Delayed {
 public class DelayQueueLearn {
 
 	public static void main(String[] args) {
-		BlockingQueue<DelayedWorker> queue = new DelayQueue();
+		BlockingQueue<DelayedWorker> queue = new DelayQueue<>();
 		try {
 			queue.put(new DelayedWorker(1000, "This is the first message")); // this delay 1s expires first
 			queue.put(new DelayedWorker(10000, "This is the second message")); // this delay 10s expires third

@@ -41,7 +41,9 @@ class SecondWorker2 implements Runnable {
 	@Override
 	public void run() {
 		try {
-			Thread.sleep(7000); // ensure the put operation is complete so we get a sorted output
+			System.out.println("waiting to consume Item from Queue ");
+			Thread.sleep(5000); // ensure the put operation is complete so we get a sorted output
+			System.out.println("Consuming now");
 			System.out.println(blockingQueue.take());
 			Thread.sleep(1000);
 			System.out.println(blockingQueue.take());

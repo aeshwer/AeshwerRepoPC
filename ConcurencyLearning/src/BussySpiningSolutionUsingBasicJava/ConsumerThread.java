@@ -13,12 +13,14 @@ public class ConsumerThread implements Runnable {
 	public void run() {
 		System.out.println("consumer before sync entry...");
 		synchronized (pt) {
+			System.out.println("consumer got producer lock...");
 			while (pt.flag) { // Proper waiting instead of busy spinning
 				System.out.println("Waiting...");
 				try {
+					System.out.println("consumer release lock as producer still not produced ...");
 					pt.wait();
 				} catch (InterruptedException e) {
-					 Thread.currentThread().interrupt();
+					Thread.currentThread().interrupt();
 					e.printStackTrace();
 				}
 			}

@@ -24,7 +24,7 @@ public class ConsumerThread implements Runnable {
                 
 				if (data == -1) { // Shutdown signal
 					System.out.println(Thread.currentThread().getName() + " received shutdown signal. Exiting...");
-					queue.put(-1); // Pass shutdown signal to other consumers
+					//queue.put(-1); // Pass shutdown signal to other consumers
 					break;
 				}
 				System.out.println(Thread.currentThread().getName() + " consumed: " + data);
