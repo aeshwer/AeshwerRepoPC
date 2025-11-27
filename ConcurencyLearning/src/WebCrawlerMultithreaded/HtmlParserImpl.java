@@ -1,22 +1,32 @@
 package WebCrawlerMultithreaded;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HtmlParserImpl implements HtmlParser {
 
 	@Override
 	public List<String> getUrls(String url) {
+		List<String> urls = new ArrayList<>();
 
 		if (url.equals("http://news.yahoo.com/news")) {
-			return List.of("http://news.yahoo.com/news", "http://news.yahoo.com/news/topics/",
-					"http://news.yahoo.com/us", "http://news.google.com");
+			urls.add("http://news.yahoo.com/news/topics/");
+			urls.add("http://news.yahoo.com/us");
+			urls.add("http://news.google.com"); // Should be filtered out
+		} else if (url.equals("http://news.yahoo.com/news/topics/")) {
+			urls.add("http://news.yahoo.com/news"); // Cycle back to start
+			urls.add("http://news.yahoo.com/tech");
+		} else if (url.equals("http://news.yahoo.com/us")) {
+			urls.add("http://news.yahoo.com/us/politics");
 		}
 
-		if (url.equals("http://news.yahoo.com/topics")) {
-			return List.of("http://news.yahoo.com/news/topics/", "http://news.yahoo.com/us");
+		// Simulate network delay
+		try {
+			Thread.sleep(20);
+		} catch (InterruptedException e) {
 		}
 
-		return List.of();
+		return urls;
 	}
 
 }

@@ -17,24 +17,25 @@ public class Main {
 	// Thread pool to process URLs concurrently
 	private ExecutorService executor = Executors.newFixedThreadPool(5);
 
-	// Counter to track URLs to be processed
+	// Counter to track URLs to be processed - used as a stopping condition 
 	private AtomicInteger numOfUrlsToParse = new AtomicInteger(0);
 
 	public List<String> crawl(String startUrl, HtmlParser htmlParser) {
-		// Extract hostname from startUrl
 		// startUrl Split Array = ["http:", "", "news.yahoo.com", "news", "topics", ""]
 		// hostname = "news.yahoo.com"
-		hostName = startUrl.split("/")[2];
-		System.out.println("HostName is : " + hostName);
+		// 1. Extract hostname from startUrl
+		String hostName = startUrl.split("/")[2];
+		System.out.println("Target HostName: " + hostName);
 
-		// Mark startUrl as visited
+		// 2. Mark startUrl as visited
 		urlHashMap.put(startUrl, true);
+		numOfUrlsToParse.set(1); // Set directly to 1 for the start
 
-		// Initialize counter and submit first task
-		numOfUrlsToParse.addAndGet(1);
-		executor.submit(new Task(startUrl, numOfUrlsToParse, executor));
+		// 3. Submit first task
+		executor.submit(new Task(startUrl, numOfUrlsToParse, executor, urlHashMap, hostName, htmlParser));
 
-		// Wait until all URLs have been processed
+		// 4. Wait logic
+		// We wait as long as there are URLs being parsed or queued
 		while (numOfUrlsToParse.get() > 0) {
 			try {
 				// Sleep to avoid busy waiting
