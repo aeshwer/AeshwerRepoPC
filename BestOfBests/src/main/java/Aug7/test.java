@@ -20,6 +20,7 @@ public class test {
 			while (!stk.isEmpty() && nums[stk.peek()] > nums[i]) {
 				stk.pop();
 			}
+			
 			if (startIndex == -1) {
 				startIndex = stk.isEmpty() ? 0 : stk.peek()+1;
 			}
