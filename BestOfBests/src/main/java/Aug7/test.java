@@ -15,7 +15,6 @@ public class test {
 				stk.push(i);
 				continue;
 			}
-
 			int maxNumIndex = stk.peek();
 			while (!stk.isEmpty() && nums[stk.peek()] > nums[i]) {
 				stk.pop();
