@@ -7,6 +7,9 @@
  */
 package com.udemyConcurreny;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 // Java program to illustrate Object lock concept
 public class ReentrantNatureOfSynchronizedBlock implements Runnable {
 	public void run() {

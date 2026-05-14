@@ -1,41 +1,45 @@
 package Aug7;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class test {
-	public int findUnsortedSubarray(int[] nums) {
-		int startIndex = -1;
-		int endIndex = -1;
-		Stack<Integer> stk = new Stack<>();
 
-		for (int i = 0; i < nums.length; i++) {
-			if (stk.isEmpty() || nums[stk.peek()] < nums[i]) {
-				stk.push(i);
-				continue;
-			}
-			int maxNumIndex = stk.peek();
-			while (!stk.isEmpty() && nums[stk.peek()] > nums[i]) {
-				stk.pop();
-			}
+	public boolean isNStraightHand(int[] hand, int groupSize) {
+		TreeMap<Integer, Integer> map = new TreeMap<>();
+		TreeSet<Integer> set = new TreeSet<>();
 		
-			if (startIndex == -1) {
-				startIndex = stk.isEmpty() ? 0 : stk.peek()+1;
-			}
-			stk.push(maxNumIndex);
-			endIndex = Math.max(endIndex, i);
+		for (Integer h : hand) {
+			map.put(h, map.getOrDefault(h, 0) + 1);
+		}
+		int size = groupSize;
 
+		while (!map.isEmpty()) {
+			int num = map.firstKey();
+			while (size > 0 && map.containsKey(num)) {
+				int val = map.get(num);
+				if (val == 1) {
+					map.remove(num);
+				} else {
+					map.put(num, val - 1);
+				}
+				num = num + 1;
+				size--;
+			}
+
+			if (size > 0) {
+				return false;
+			}
+			size = groupSize;
 		}
 
-		System.out.println(startIndex + "  " + endIndex);
-		return startIndex == -1 ? 0 : (endIndex - startIndex + 1);
+		return true;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		int[] a = new int[] { 1, 2, 3 };
 		test obj = new test();
-		obj.findUnsortedSubarray(new int[] { 2, 6, 4, 8, 10, 9, 15 });
-
+		obj.isNStraightHand(new int[] { 1, 2, 3, 6, 2, 3, 4, 7, 8 }, 3);
 	}
 
 }

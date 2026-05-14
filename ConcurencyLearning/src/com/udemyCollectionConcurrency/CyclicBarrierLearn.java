@@ -58,12 +58,12 @@ public class CyclicBarrierLearn {
 			}
 		});
 		// create five tasks
-		for (int i = 0; i < 5; i++) {
+		for (int i = 1; i <= 5; i++) {
 			executerService.submit(new working(i, cyclicBarrier));
 		}
 
 		// see here it can be re-used
-		for (int i = 0; i < 5; i++) {
+		for (int i = 1; i <= 5; i++) {
 			executerService.submit(new working(i, cyclicBarrier));
 		}
 
