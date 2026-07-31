@@ -1,2 +1,21 @@
-/.metadata/
-/.recommenders/
+# Maven
+target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+.recommenders/
+bin/
+RemoteSystemsTempFiles/
+
+# OS
+.DS_Store
+
+# Build output
+out/
