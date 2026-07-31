@@ -21,16 +21,13 @@
         <module>ChatApp</module>
         <module>ClientServerProgram</module>
         <module>ConcurencyLearning</module>
-        <module>DataStructures</module>
         <module>Design_Patterns</module>
         <module>DynamicPrograming</module>
         <module>GeekForGeeksCollectionPractice</module>
-        <module>GreedyAlgorithms</module>
         <module>LearningToCode</module>
         <module>MemoryMangement</module>
         <module>MinerGameProject</module>
         <module>MustDoInterviewCourse</module>
-        <module>StringProblems</module>
         <module>WebSocket</module>
     </modules>
 </project>
