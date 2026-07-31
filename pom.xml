@@ -23,11 +23,9 @@
         <module>ConcurencyLearning</module>
         <module>Design_Patterns</module>
         <module>DynamicPrograming</module>
-        <module>GeekForGeeksCollectionPractice</module>
         <module>LearningToCode</module>
         <module>MemoryMangement</module>
         <module>MinerGameProject</module>
-        <module>MustDoInterviewCourse</module>
         <module>WebSocket</module>
     </modules>
 </project>
